@@ -1210,11 +1210,7 @@ service cloudstack-agent start
             as hosts and only on the KVM hosts.</para>
           <orderedlist numeration="loweralpha">
             <listitem>
-              <para>Manually clean up <filename>/var/cache/cloudstack</filename>.</para>
-            </listitem>
-            <listitem>
-              <para>Copy the 4.2 tar file to the host, untar it, and change directory to the
-                resulting directory.</para>
+              <para>Configure the CloudStack yum repository as detailed above.</para> 
             </listitem>
             <listitem>
               <para>Stop the running agent.</para>
@@ -1222,10 +1218,7 @@ service cloudstack-agent start
             </listitem>
             <listitem>
               <para>Update the agent software.</para>
-              <programlisting># ./install.sh</programlisting>
-            </listitem>
-            <listitem>
-              <para>Choose "U" to update the packages.</para>
+              <programlisting># yum update cloudstack-agent</programlisting>
             </listitem>
             <listitem>
               <para>Start the agent.</para>
