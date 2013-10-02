@@ -1277,19 +1277,6 @@ gpgcheck=0
               <programlisting language="Bash">$ sudo yum upgrade cloudstack-agent</programlisting>
             </listitem>
             <listitem>
-              <para>For CentOS 5.5, perform the following:</para>
-              <orderedlist numeration="lowerroman">
-                <listitem>
-                  <para>Run the following command:</para>
-                  <programlisting>rpm -Uvh http://download.cloud.com/support/jsvc/jakarta-commons-daemon-jsvc-1.0.1-8.9.el6.x86_64.rpm</programlisting>
-                </listitem>
-                <listitem>
-                  <para>Upgrade the Usage server.</para>
-                  <programlisting>sudo yum upgrade cloudstack-usage</programlisting>
-                </listitem>
-              </orderedlist>
-            </listitem>
-            <listitem>
               <para>Verify that the file
                   <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
                 reads:</para>
@@ -1336,6 +1323,10 @@ Done restarting router(s).
           </note>
           <para>Copy the file <filename>vhd-utils</filename> to
               <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
+        </listitem>
+        <listitem>
+          <para>Now it's time to restart the management server</para>
+          <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
         </listitem>
       </orderedlist>
     </section>
