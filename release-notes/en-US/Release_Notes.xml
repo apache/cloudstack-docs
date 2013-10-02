@@ -1045,6 +1045,13 @@ under the License.
       made while CloudStack was in the Apache Incubator.</para>
     <para>If you run into any issues during upgrades, please feel free to ask questions on
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
+    <note>
+      <title>Overprovisioning cautions</title>
+      <para>If the &PRODUCT; instance you are upgrading is leveraging overprovisioning you need to read and understand
+        <xref linkend="cpu-ram-overcommit"/>. The overprovisioning factors are now cluster specific and should you be 
+        overprovisioned, your new system VMs may not start up. 
+      </para> 
+    </note> 
     <section id="upgrade-from-4.0-to-4.1">
       <title>Upgrade from 4.1.x to 4.2.0</title>
       <para>This section will guide you from &PRODUCT; 4.1.x versions to &PRODUCT; 4.2.0.</para>
