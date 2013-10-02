@@ -1293,6 +1293,10 @@ service cloudstack-agent start
             </listitem>
           </orderedlist>
         </listitem>
+        <listitem id="restart-mgmt-server">
+          <para>Now it's time to restart the management server</para>
+          <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
+        </listitem>
         <listitem id="restart-system-vms">
           <para>Once you've upgraded the packages on your management servers, you'll need to restart
             the system VMs. Ensure that the admin port is set to 8096 by using the "integration.api.port" global parameter.
@@ -1323,10 +1327,6 @@ Done restarting router(s).
           </note>
           <para>Copy the file <filename>vhd-utils</filename> to
               <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
-        </listitem>
-        <listitem>
-          <para>Now it's time to restart the management server</para>
-          <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
         </listitem>
       </orderedlist>
     </section>
