@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3.3. System Template Setup</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="" /></head><body><div class="section" id="sect-qig-Management-templatesetup"><div class="titlepage"><div><div><h1 class="title" id="sect-qig-Management-templatesetup">3.3. System Template Setup</h1></div></div></div><div class="para">
+			CloudStack uses a number of system VMs to provide functionality for accessing the console of virtual machines, providing various networking services, and managing various aspects of storage. This step will acquire those system images ready for deployment when we bootstrap your cloud.
+		</div><div class="para">
+			Now we need to download the system VM template and deploy that to the share we just mounted. The management server includes a script to properly manipulate the system VMs images.
+		</div><pre class="screen"><code class="prompt"># </code><strong class="userinput"><code><code class="command">/usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt</code> -m /secondary -u http://download.cloud.com/templates/acton/acton-systemvm-02062012.qcow2.bz2 -h kvm -F</code></strong>
+</pre><div class="para">
+			That concludes our setup of the management server. We still need to configure CloudStack, but we will do that after we get our hypervisor set up.
+		</div></div></body></html>

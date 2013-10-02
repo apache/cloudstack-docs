@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Chapter 4. KVM Setup and installation</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="" /></head><body><div class="chapter" id="chap-qig-KVM"><div class="titlepage"><div><div><h1 class="title">Chapter 4. KVM Setup and installation</h1></div></div></div><div class="para">
+		KVM is the hypervisor we'll be using - we will recover the initial setup which has already been done on the hypervisor host and cover installation of the agent software, you can use the same steps to add additional KVM nodes to your CloudStack environment.
+	</div><div class="section" id="sect-qig-KVM-Prerequisites"><div class="titlepage"><div><div><h1 class="title" id="sect-qig-KVM-Prerequisites">4.1. Prerequisites</h1></div></div></div><div class="para">
+			We explicitly are using the management server as a compute node as well, which means that we have already performed many of the prerequisite steps when setting up the management server, but we will list them here for clarity. Those steps are: 
+			<div class="orderedlist"><ol><li class="listitem"><div class="para">
+						<a class="xref" href="chap-qig-Environment.html#sect-qig-Environment-operatingsys-network">Section 2.1.1, “Configuring the network”</a>
+					</div></li><li class="listitem"><div class="para">
+						<a class="xref" href="chap-qig-Environment.html#sect-qig-Environment-operatingsys-hostname">Section 2.1.2, “Hostname”</a>
+					</div></li><li class="listitem"><div class="para">
+						<a class="xref" href="chap-qig-Environment.html#sect-qig-Environment-operatingsys-selinux">Section 2.1.3, “SELinux”</a>
+					</div></li><li class="listitem"><div class="para">
+						<a class="xref" href="chap-qig-Environment.html#sect-qig-Environment-operatingsys-ntp">Section 2.1.4, “NTP”</a>
+					</div></li><li class="listitem"><div class="para">
+						<a class="xref" href="chap-qig-Environment.html#sect-qig-Environment-operatingsys-repoconfig">Section 2.1.5, “Configuring the CloudStack Package Repository”</a>
+					</div></li></ol></div>
+
+		</div><div class="para">
+			You shouldn't need to do that for the management server, of course, but any additional hosts will need for you to complete the above steps.
+		</div></div></div></body></html>

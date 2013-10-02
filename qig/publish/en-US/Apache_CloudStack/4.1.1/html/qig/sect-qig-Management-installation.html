@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>3.2. Installation</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta name="generator" content="publican 2.8" /><meta name="package" content="Apache_CloudStack-qig-4.1.1-en-US-0-0" /><script type="text/javascript" src="../../../../../toc.js"></script><script type="text/javascript">
+              addID('Apache_CloudStack');
+              
+	      addID('Apache_CloudStack.4.1.1');
+              
+              addID('Apache_CloudStack.4.1.1.books');
+	      addID('Apache_CloudStack.4.1.1.qig');
+              </script><link rel="home" href="index.html" title="Quick Install Guide" /><link rel="up" href="chap-qig-Management.html" title="Chapter 3. Installation of the management server" /><link rel="prev" href="chap-qig-Management.html" title="Chapter 3. Installation of the management server" /><link rel="next" href="sect-qig-Management-templatesetup.html" title="3.3. System Template Setup" /></head><body class="toc_embeded "><div id="tocdiv" class="toc"><iframe id="tocframe" class="toc" src="../../../../toc.html">This is an iframe, to view it upgrade your browser or enable iframe display.</iframe></div><p id="title"><a class="left" href="http://cloudstack.apache.org"><img src="Common_Content/images/image_left.png" alt="Product Site" /></a><a class="right" href="http://cloudstack.apache.org/docs"><img src="Common_Content/images/image_right.png" alt="Documentation Site" /></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-qig-Management.html"><strong>Prev</strong></a></li><li class="next"><a accesskey="n" href="sect-qig-Management-templatesetup.html"><strong>Next</strong></a></li></ul><div class="section" id="sect-qig-Management-installation"><div class="titlepage"><div><div><h2 class="title">3.2. Installation</h2></div></div></div><div class="para">
+			We are now going to install the management server. We do that by executing the following command: 
+<pre class="screen"><code class="prompt"># </code><strong class="userinput"><code><code class="command">yum</code> -y install cloud-client</code></strong></pre>
+
+		</div><div class="para">
+			With the application itself installed we can now setup the database, we'll do that with the following command and options:
+		</div><pre class="screen"><code class="prompt"># </code><strong class="userinput"><code><code class="command">cloudstack-setup-databases</code> cloud:<em class="replaceable"><code>password</code></em>@localhost --deploy-as=root</code></strong></pre><div class="para">
+			When this process is finished, you should see a message like "CloudStack has successfully initialized the database."
+		</div><div class="para">
+			Now that the database has been created, we can take the final step in setting up the management server by issuing the following command:
+		</div><pre class="screen"><code class="prompt"># </code><strong class="userinput"><code><code class="command">cloudstack-setup-management</code></code></strong></pre></div><ul class="docnav"><li class="previous"><a accesskey="p" href="chap-qig-Management.html"><strong>Prev</strong>Chapter 3. Installation of the management server</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="sect-qig-Management-templatesetup.html"><strong>Next</strong>3.3. System Template Setup</a></li></ul></body></html>
