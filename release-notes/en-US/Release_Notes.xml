@@ -152,6 +152,19 @@ under the License.
         <para>&PRODUCT; 4.2 introduces initial support for IPv6. This feature is provided as a
           technical preview only. Full support is planned for a future release.</para>
       </section>
+      <section id="advancedsg">
+        <title>Security Groups Isolation in Advanced Zone </title>
+        <para>(Supported on XenServer and KVM)</para>
+        <para>Isolation of VM Traffic is achieved using Security Groups in Basic Zones. For Advanced zone,
+          traffic can be isolated on a per network basis using VLANs.  Advanced Zones support shared as
+          well as isolated networks. This functionality uses security group rules to isolate guest VM
+          within a shared network in advanced zone. And in Advanced zone, VM can be on multiple shared
+          networks, different NICs of a VM can have different SG sets, says SG works on NIC level in
+          Advanced zone.</para>
+         <para>This functionality was added to &PRODUCT; 2.2.X and 3.0.X products, but not in &PRODUCT; 4.0.X
+          and 4.1.X products. The users who use this functionality in older verions can upgrade there
+          platforms to &PRODUCT; 4.2.</para>
+      </section>
       <section id="portable-ip">
         <title>Portable IPs</title>
         <para>Portable IPs in &PRODUCT; are elastic IPs that can be transferred across
