@@ -45,7 +45,7 @@
         When using one of these storage plugins, you configure Swift or S3 storage for
         the entire &PRODUCT;, then set up the NFS Secondary Staging Store for each zone. The NFS
         storage in each zone acts as a staging area through which all templates and other secondary
-        storage data pass before being forwarded to Swoft or S3.
+        storage data pass before being forwarded to Swift or S3.
         The backing object storage acts as a cloud-wide
         resource, making templates and other data available to any zone in the cloud.</para>
 </section>

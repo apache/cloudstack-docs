@@ -56,7 +56,7 @@
     </para>
     <para>
        When VMware is used, every VMware cluster is managed by a vCenter server.
-       Administrator must register the vCenter server with &PRODUCT;. There may
+       An Administrator must register the vCenter server with &PRODUCT;. There may
        be multiple vCenter servers per zone. Each vCenter server may manage 
        multiple VMware clusters.
     </para>
