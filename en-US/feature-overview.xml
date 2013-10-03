@@ -33,7 +33,7 @@
 		<emphasis role="bold">Massively Scalable Infrastructure Management</emphasis>
 	</para>
 	<para>
-		&PRODUCT; can manage tens of thousands of servers installed in multiple geographically distributed datacenters. The centralized management server scales linearly, eliminating the need for intermediate cluster-level management servers. No single component failure can cause cloud-wide outage. Periodic maintenance of the management server can be performed without affecting the functioning of virtual machines running in the cloud.
+		&PRODUCT; can manage tens of thousands of servers installed in multiple geographically distributed datacenters. The centralized management server scales linearly, eliminating the need for intermediate cluster-level management servers. No single component failure can cause a cloud-wide outage. Periodic maintenance of the management server can be performed without affecting the functioning of virtual machines running in the cloud.
 	</para>
 	<para>
 		<emphasis role="bold">Automatic Configuration Management</emphasis>

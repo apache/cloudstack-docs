@@ -33,6 +33,5 @@
       url="http://docs.cloudstack.org/CloudStack_Documentation/API_Reference%3A_CloudStack">the API
       Reference</ulink>.</para>
   <xi:include href="provisioning-auth-api.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="allocators.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="user-data-and-meta-data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>

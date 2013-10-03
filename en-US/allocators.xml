@@ -23,6 +23,16 @@
 -->
 
 <section id="allocators">
-    <title>Allocators</title>
-    <para>&PRODUCT; enables administrators to write custom allocators that will choose the Host to place a new guest and the storage host from which to allocate guest virtual disk images.</para>
-   </section>
+  <title>Allocators</title>
+  <para>&PRODUCT; enables administrators to write custom allocators that will choose the Host to place a new guest and the storage host from which to allocate guest virtual disk images.</para>
+  <para>These are following categories of allocators currently supported:</para>
+  <itemizedlist>
+    <listitem>
+      <para>HostAllocators - Allows you to create custom rules to determine which physical host to allocate the guest virtual machines on. </para>
+    </listitem>
+    <listitem>
+      <para>StoragePoolAllocators - Allows you to create custom rules to determine which storage pool to allocate the guest virtual machines on. </para>
+    </listitem>
+  </itemizedlist>
+  
+</section>

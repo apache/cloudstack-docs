@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ 
+   http://www.apache.org/licenses/LICENSE-2.0
+ 
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+
+<section id="custom-storagepoolallocator">
+  <title>Implementing a custom StoragePoolAllocator</title>
+  <para>StoragePoolAllocators are written by extending com.cloud.storage.allocator. StoragePoolAllocator interface.</para>
+  
+  <section>
+    <title>StoragePoolAllocator Interface</title>
+    <para>A custom StoragePoolAllocator can be written by implementing the ‘allocateTo’ method.</para>
+    
+    <programlisting>
+      /**
+        * Determines which storage pools are suitable for the guest virtual machine
+        * @param DiskProfile dskCh
+        * @param VirtualMachineProfile vmProfile
+        * @param DeploymentPlan plan
+        * @param ExcludeList avoid
+        * @param int returnUpTo
+        * @return List<StoragePool> List of storage pools that are suitable for the VM
+      **/
+
+      public List<StoragePool> allocateToPool(DiskProfile dskCh, VirtualMachineProfile<? extends VirtualMachine> vm, DeploymentPlan plan, ExcludeList avoid, int returnUpTo);
+    </programlisting>
+    <para>This interface also contains some other methods to support some legacy code. However your custom allocator can extend the existing com.cloud.storage.allocator. AbstractStoragePoolAllocator. This class provides default implementation for all the other interface methods.</para>
+    
+    <section>
+      <title>Input Parameters for the method ‘StoragePoolAllocator :: allocateTo’</title>
+      
+      <para><emphasis role="italic">com.cloud.vm.DiskProfile dskCh</emphasis></para>
+      <para>DiskCharacteristics describes a disk and what functionality is required from it. It specifies the storage pool tags if any to be used while searching for a storage pool.</para>
+      
+      <para><emphasis role="italic">com.cloud.vm.VirtualMachineProfile vmProfile</emphasis></para>
+      <para>VirtualMachineProfile describes one virtual machine. This allows the adapters like Allocators to process the information in the virtual machine and make determinations on what the virtual machine profile should look like before it is actually started on the hypervisor.</para>
+      <para>StoragePoolAllocators can make use of the following information present in the VirtualMachineProfile:</para>
+      <itemizedlist>
+        <listitem>
+          <para>The VirtualMachine instance that specifies properties of the guest VM.</para>
+        </listitem>
+        <listitem>
+          <para>The VirtualMachineTemplate, the template to be used to start the VM.</para>
+        </listitem>
+      </itemizedlist>
+      
+      <para><emphasis role="italic">com.cloud.deploy.DeploymentPlan plan</emphasis></para>
+      <para>DeploymentPlan should specify:</para>
+      <itemizedlist>
+        <listitem>
+          <para>dataCenterId: The data center the VM should deploy in</para>
+        </listitem>
+        <listitem>
+          <para>podId: The pod the VM should deploy in; null if no preference</para>
+        </listitem>
+        <listitem>
+          <para>clusterId: The cluster the VM should deploy in; null if no preference</para>
+        </listitem>
+        <listitem>
+          <para>poolId: The storage pool the VM should be created in; null if no preference</para>
+        </listitem>
+      </itemizedlist>
+      
+      <para><emphasis role="italic">com.cloud.deploy.DeploymentPlanner.ExcludeList avoid</emphasis></para>
+      <para>The ExcludeList specifies what datacenters, pods, clusters, hosts, storagePools should not be considered for allocating this guest VM. StoragePoolAllocators should avoid the pools that are mentioned in ExcludeList.poolIds</para>
+      <itemizedlist>
+        <listitem>
+          <para>Set<Long> dcIds;</para>
+        </listitem>
+        <listitem>
+          <para>Set<Long> podIds;</para>
+        </listitem>
+        <listitem>
+          <para>Set<Long> clusterIds;</para>
+        </listitem>
+        <listitem>
+          <para>Set<Long> hostIds;</para>
+        </listitem>
+        <listitem>
+          <para>Set<Long> poolIds;</para>
+        </listitem>
+      </itemizedlist>
+      
+      <para><emphasis role="italic">int returnUpTo</emphasis></para>
+      <para>This specifies return up to that many available pools for this guest VM</para>
+      <para>To get all possible pools, set this value to -1</para>
+    </section>
+    
+    <section>
+      <title>Reference StoragePoolAllocator implementation</title>
+      
+      <para>Refer com.cloud.storage.allocator.FirstFitStoragePoolAllocator that implements the StoragePoolAllocator interface. This allocator checks available pools in the specified datacenter, Pod, Cluster and considering the given DiskProfile characteristics.</para>
+      <para>If returnUpTo = 1, this allocator would return the first Storage Pool that fits the requirements of the guest VM.</para>
+    </section>
+    
+    <section>
+      <title>Loading a custom StoragePoolAllocator</title>
+      <orderedlist>
+        <listitem>
+          <para>Write a custom StoragePoolAllocator class, implementing the interface described above.</para>
+        </listitem>
+        <listitem>
+          <para>Package the code into a JAR file and make the JAR available in the classpath of the Management Server/tomcat.</para>
+        </listitem>
+        <listitem>
+          <para>Modify the components.xml and components-premium.xml files found in /client/ tomcatconf as follows.</para>
+        </listitem>
+        <listitem>
+          <para>Search for ‘StoragePoolAllocator’ in these files.</para>
+          <programlisting>
+            <adapters key="com.cloud.storage.allocator.StoragePoolAllocator">
+              <adapter name="Storage" class="com.cloud.storage.allocator.FirstFitStoragePoolAllocator"/>
+            </adapters>
+          </programlisting>
+        </listitem>
+        <listitem>
+          <para>Replace the FirstFitStoragePoolAllocator with your class name. Optionally, you can change the name of the adapter as well.</para>
+        </listitem>
+        <listitem>
+          <para>Restart the Management Server.</para>
+        </listitem>
+      </orderedlist>
+    </section>
+  </section>
+</section>
