@@ -38,10 +38,10 @@ $ sudo yum install nfs-utils
 # mkdir -p /export/secondary
         </programlisting>
         </listitem>
-        <listitem><para>To configure the new directories as NFS exports, edit /etc/exports. Export the NFS share(s) with rw,async,no_root_squash. For example:</para>
+        <listitem><para>To configure the new directories as NFS exports, edit /etc/exports. Export the NFS share(s) with rw,async,no_root_squash,no_subtree_check. For example:</para>
             <programlisting># vi /etc/exports</programlisting>
             <para>Insert the following line.</para>
-            <programlisting>/export  *(rw,async,no_root_squash)</programlisting>
+            <programlisting>/export  *(rw,async,no_root_squash,no_subtree_check)</programlisting>
         </listitem>
         <listitem><para>Export the /export directory.</para>
             <programlisting># exportfs -a</programlisting>

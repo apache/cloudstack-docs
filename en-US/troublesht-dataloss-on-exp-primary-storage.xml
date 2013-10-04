@@ -36,7 +36,7 @@
         <title>Solution</title>
         <para>When setting up LUN exports, restrict the range of IP addresses that are allowed access by specifying a subnet mask. For example:</para>
     </formalpara>
-    <programlisting>echo “/export 192.168.1.0/24(rw,async,no_root_squash)” &gt; /etc/exports</programlisting>
+    <programlisting>echo “/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check)” &gt; /etc/exports</programlisting>
     <para>Adjust the above command to suit your deployment needs.</para>
     <formalpara>
         <title>More Information</title>
