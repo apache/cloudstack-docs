@@ -58,7 +58,7 @@ binlog-format = 'ROW'</programlisting>
         manually.</para>
       <programlisting language="Bash">service mysqld start</programlisting>
       <para>On Ubuntu, restart MySQL.</para>
-      <programlisting language="Bash">service mysqld restart</programlisting>
+      <programlisting language="Bash">service mysql restart</programlisting>
     </listitem>
     <listitem>
       <para>(CentOS and RHEL only; not required on Ubuntu)</para>

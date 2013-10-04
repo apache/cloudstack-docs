@@ -84,13 +84,13 @@
           <listitem><para>If you have more than 16TB of storage on one host, create multiple EXT3 file systems and multiple NFS exports. Individual EXT3 file systems cannot exceed 16TB.</para></listitem>
           <listitem>
           <para>After /export directory is created, run the following command to configure it as an NFS export.</para>
-          <programlisting># echo "/export &lt;CIDR&gt;(rw,async,no_root_squash)" >> /etc/exports</programlisting>
+          <programlisting># echo "/export &lt;CIDR&gt;(rw,async,no_root_squash,no_subtree_check)" >> /etc/exports</programlisting>
           <para>Adjust the above command to suit your deployment needs.</para>
           <itemizedlist>
               <listitem>
               <para><emphasis role="bold">Limiting NFS export.</emphasis> It is highly recommended that you limit the NFS export to a particular subnet by specifying a subnet mask (e.g.,”192.168.1.0/24”). By allowing access from only within the expected cluster, you avoid having non-pool member mount the storage. The limit you place must include the management network(s) and the storage network(s). If the two are the same network then one CIDR is sufficient. If you have a separate storage network you must provide separate CIDR’s for both or one CIDR that is broad enough to span both.</para>
               <para>The following is an example with separate CIDRs:</para>
-              <programlisting>/export 192.168.1.0/24(rw,async,no_root_squash) 10.50.1.0/24(rw,async,no_root_squash)</programlisting>
+              <programlisting>/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check) 10.50.1.0/24(rw,async,no_root_squash,no_subtree_check)</programlisting>
               </listitem>
               <listitem>
               <para><emphasis role="bold">Removing the async flag.</emphasis> The async flag improves performance by allowing the NFS server to respond before writes are committed to the disk. Remove the async flag in your mission critical production deployment.</para>
@@ -183,7 +183,7 @@ Attached scsi disk sdb State: running
           <listitem>
           <para><emphasis role="bold">Limiting NFS export.</emphasis> In order to avoid data loss, it is highly recommended that you limit the NFS export to a particular subnet by specifying a subnet mask (e.g.,”192.168.1.0/24”). By allowing access from only within the expected cluster, you avoid having non-pool member mount the storage and inadvertently delete all its data. The limit you place must include the management network(s) and the storage network(s). If the two are the same network then one CIDR is sufficient. If you have a separate storage network you must provide separate CIDRs for both or one CIDR that is broad enough to span both. </para>
           <para>The following is an example with separate CIDRs:</para>
-          <programlisting>/export 192.168.1.0/24(rw,async,no_root_squash) 10.50.1.0/24(rw,async,no_root_squash)</programlisting>
+          <programlisting>/export 192.168.1.0/24(rw,async,no_root_squash,no_subtree_check) 10.50.1.0/24(rw,async,no_root_squash,no_subtree_check)</programlisting>
           </listitem>
           <listitem><para><emphasis role="bold">Removing the async flag.</emphasis> The async flag improves performance by allowing the NFS server to respond before writes are committed to the disk. Remove the async flag in your mission critical production deployment.</para></listitem>
       </itemizedlist>
