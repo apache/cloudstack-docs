@@ -329,7 +329,7 @@
           <para>For NetScaler:</para>
           <itemizedlist>
             <listitem>
-              <para><emphasis role="bold">IP Address</emphasis>: The IP address of the SRX.</para>
+              <para><emphasis role="bold">IP Address</emphasis>: The IP address of the SDX.</para>
             </listitem>
             <listitem>
               <para><emphasis role="bold">Username/Password</emphasis>: The authentication
