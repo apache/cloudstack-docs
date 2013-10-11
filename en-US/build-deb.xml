@@ -55,25 +55,16 @@
 </screen>
 
 <para>
-    This command will build 16 Debian packages. You should have all of the following:
+    This command will build the following debian packages. You should have all of the following:
 </para>
 <programlisting>
-cloud-agent_4.0.0-incubating_amd64.deb
-cloud-agent-deps_4.0.0-incubating_amd64.deb
-cloud-agent-libs_4.0.0-incubating_amd64.deb
-cloud-awsapi_4.0.0-incubating_amd64.deb
-cloud-cli_4.0.0-incubating_amd64.deb
-cloud-client_4.0.0-incubating_amd64.deb
-cloud-client-ui_4.0.0-incubating_amd64.deb
-cloud-core_4.0.0-incubating_amd64.deb
-cloud-deps_4.0.0-incubating_amd64.deb
-cloud-python_4.0.0-incubating_amd64.deb
-cloud-scripts_4.0.0-incubating_amd64.deb
-cloud-server_4.0.0-incubating_amd64.deb
-cloud-setup_4.0.0-incubating_amd64.deb
-cloud-system-iso_4.0.0-incubating_amd64.deb
-cloud-usage_4.0.0-incubating_amd64.deb
-cloud-utils_4.0.0-incubating_amd64.deb
+cloudstack-common-4.2.0.amd64.deb
+cloudstack-management-4.2.0.amd64.deb
+cloudstack-agent-4.2.0.amd64.deb
+cloudstack-usage-4.2.0.amd64.deb
+cloudstack-awsapi-4.2.0.amd64.deb
+cloudstack-cli-4.2.0.amd64.deb
+cloudstack-docs-4.2.0.amd64.deb
 </programlisting>
 
     <section id="sect-source-builddebs-repo">
