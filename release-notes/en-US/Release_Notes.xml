@@ -1404,7 +1404,7 @@ Done restarting router(s).
                       <entry><para>XenServer</para></entry>
                       <entry><para>Name: systemvm-xenserver-4.2</para>
                         <para>Description: systemvm-xenserver-4.2</para>
-                        <para>URL:http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: XenServer</para>
                         <para>Format: VHD</para>
@@ -1421,7 +1421,7 @@ Done restarting router(s).
                       <entry><para>Name: systemvm-kvm-4.2</para>
                         <para>Description: systemvm-kvm-4.2</para>
                         <para>URL:
-                          http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: KVM</para>
                         <para>Format: QCOW2</para>
@@ -1438,7 +1438,7 @@ Done restarting router(s).
                       <entry><para>Name: systemvm-vmware-4.2</para>
                         <para>Description: systemvm-vmware-4.2</para>
                         <para>URL:
-                          http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: VMware</para>
                         <para>Format: OVA</para>
@@ -2045,7 +2045,7 @@ service cloudstack-agent start
                       <entry><para>XenServer</para></entry>
                       <entry><para>Name: systemvm-xenserver-4.2</para>
                         <para>Description: systemvm-xenserver-4.2</para>
-                        <para>URL:http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: XenServer</para>
                         <para>Format: VHD</para>
@@ -2062,7 +2062,7 @@ service cloudstack-agent start
                       <entry><para>Name: systemvm-kvm-4.2</para>
                         <para>Description: systemvm-kvm-4.2</para>
                         <para>URL:
-                          http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: KVM</para>
                         <para>Format: QCOW2</para>
@@ -2079,7 +2079,7 @@ service cloudstack-agent start
                       <entry><para>Name: systemvm-vmware-4.2</para>
                         <para>Description: systemvm-vmware-4.2</para>
                         <para>URL:
-                          http://d21ifhcun6b1t2.cloudfront.net/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
                         <para>Zone: Choose the zone where this hypervisor is used</para>
                         <para>Hypervisor: VMware</para>
                         <para>Format: OVA</para>
