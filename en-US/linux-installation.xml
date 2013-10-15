@@ -29,14 +29,8 @@
       <para>Download the script file cloud-set-guest-password:</para>
       <itemizedlist>
         <listitem>
-          <para>Linux: <ulink
-              url="http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>Windows: <ulink
-              url="http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download"
-            />
+          <para>
+            <ulink url="http://download.cloud.com/templates/4.2/bindir/cloud-set-guest-password.in"/>
           </para>
         </listitem>
       </itemizedlist>
