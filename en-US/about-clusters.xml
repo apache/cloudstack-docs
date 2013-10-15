@@ -34,7 +34,7 @@
        cluster, without interrupting service to the user.
     </para>
     <para>
-       A cluster is the third-largest organizational unit within a &PRODUCT;
+       A cluster is the fourth-largest organizational unit within a &PRODUCT;
        deployment. Clusters are contained within pods, and pods are contained
        within zones. Size of the cluster is limited by the underlying hypervisor,
        although the &PRODUCT; recommends less in most cases; see Best Practices.
