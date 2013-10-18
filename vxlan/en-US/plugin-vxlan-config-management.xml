@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+<!ENTITY % xinclude SYSTEM "http://www.docbook.org/xml/4.4/xinclude.mod">
+%xinclude;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0.
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<section id="plugin-vxlan-config-management">
+  <title>Setup zone using VXLAN</title>
+  <para>
+    In almost all parts of zone setup, you can just follow the advanced zone setup istruction in "&PRODUCT; Installation Guide" to use this plugin.
+    It is not required to add a network element nor to reconfigure the network offering.
+    The only thing you have to do is configure the physical network to use VXLAN as the isolation method for Guest Network.
+  </para>
+  <section id="plugin-vxlan-config-management-zone">
+    <title>Configure the physical network</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="./images/vxlan-physicalnetwork.png"/>
+      </imageobject>
+      <textobject>
+        <phrase>vxlan-physicalnetowkr.png: physicalnetwork configuration for VXLAN</phrase>
+      </textobject>
+    </mediaobject>
+    <para>
+      CloudStack needs to have one physical network for Guest Traffic with the isolation method set to "VXLAN".
+    </para>
+
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="./images/vxlan-trafficlabel.png"/>
+      </imageobject>
+      <textobject>
+        <phrase>vxlan-trafficlabel.png: traffic label configuration for VXLAN</phrase>
+      </textobject>
+    </mediaobject>
+     <para>
+      Guest Network traffic label should be name of the bridge interface and the bridge interface should have an IPv4 address.
+      See <xref linkend="plugin-vxlan-config-hypervisor-kvm-ip"/> for details.
+    </para>
+  </section>
+</section>
