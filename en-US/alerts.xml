@@ -20,34 +20,35 @@
     specific language governing permissions and limitations
     under the License.
 -->
-
 <appendix id="alerts">
-		<title>Alerts</title>
-		<para>The following is the list of alert type numbers. The current alerts can be found by calling listAlerts.</para>
-		<programlisting>MEMORY = 0</programlisting>
-		<programlisting>CPU = 1</programlisting>
-		<programlisting>STORAGE =2</programlisting>
-		<programlisting>STORAGE_ALLOCATED = 3</programlisting>
-		<programlisting>PUBLIC_IP = 4</programlisting>
-		<programlisting>PRIVATE_IP = 5</programlisting>
-		<programlisting>HOST = 6</programlisting>
-		<programlisting>USERVM = 7</programlisting>
-		<programlisting>DOMAIN_ROUTER = 8</programlisting>
-		<programlisting>CONSOLE_PROXY = 9</programlisting>
-		<programlisting>ROUTING = 10// lost connection to default route (to the gateway)</programlisting>
-		<programlisting>STORAGE_MISC = 11 // lost connection to default route (to the gateway)</programlisting>
-		<programlisting>USAGE_SERVER = 12 // lost connection to default route (to the gateway)</programlisting>
-		<programlisting>MANAGMENT_NODE = 13 // lost connection to default route (to the gateway)</programlisting>
-		<programlisting>DOMAIN_ROUTER_MIGRATE = 14</programlisting>
-		<programlisting>CONSOLE_PROXY_MIGRATE = 15</programlisting>
-		<programlisting>USERVM_MIGRATE = 16</programlisting>
-		<programlisting>VLAN = 17</programlisting>
-		<programlisting>SSVM = 18</programlisting>
-		<programlisting>USAGE_SERVER_RESULT = 19</programlisting>
-		<programlisting>STORAGE_DELETE = 20;</programlisting>
-		<programlisting>UPDATE_RESOURCE_COUNT = 21; //Generated when we fail to update the resource count</programlisting>
-		<programlisting>USAGE_SANITY_RESULT = 22;</programlisting>
-		<programlisting>DIRECT_ATTACHED_PUBLIC_IP = 23;</programlisting>
-		<programlisting>LOCAL_STORAGE = 24;</programlisting>
-		<programlisting>RESOURCE_LIMIT_EXCEEDED = 25; //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only</programlisting>
+  <title>Alerts</title>
+  <para>The following is the list of alert type numbers. The current alerts can be found by calling
+    listAlerts.</para>
+  <programlisting>MEMORY = 0 // Available Memory below configured threshold</programlisting>
+  <programlisting>CPU = 1 // Unallocated CPU below configured threshold</programlisting>
+  <programlisting>STORAGE =2 // Available Storage below configured threshold</programlisting>
+  <programlisting>STORAGE_ALLOCATED = 3 // Remaining unallocated Storage is below configured threshold</programlisting>
+  <programlisting>PUBLIC_IP = 4 // Number of unallocated virtual network public IPs is below configured threshold</programlisting>
+  <programlisting>PRIVATE_IP = 5 // Number of unallocated private IPs is below configured threshold</programlisting>
+  <programlisting>SECONDARY_STORAGE = 6 //  Available Secondary Storage in availability zone is below configured threshold</programlisting>
+  <programlisting>HOST = 7 // Host related alerts like host disconnected</programlisting>
+  <programlisting>USERVM = 8 // User VM stopped unexpectedly</programlisting>
+  <programlisting>DOMAIN_ROUTER = 9 // Domain Router VM stopped unexpectedly</programlisting>
+  <programlisting>CONSOLE_PROXY = 10 // Console Proxy VM stopped unexpectedly</programlisting>
+  <programlisting>ROUTING = 11 // Lost connection to default route (to the gateway)</programlisting>
+  <programlisting>STORAGE_MISC = 12 // Storage issue in system VMs</programlisting>
+  <programlisting>USAGE_SERVER = 13 // No usage server process running</programlisting>
+  <programlisting>MANAGMENT_NODE = 14 // Management network CIDR is not configured originally</programlisting>
+  <programlisting>DOMAIN_ROUTER_MIGRATE = 15 // Domain Router VM Migration was unsuccessful</programlisting>
+  <programlisting>CONSOLE_PROXY_MIGRATE = 16 // Console Proxy VM Migration was unsuccessful</programlisting>
+  <programlisting>USERVM_MIGRATE = 17 // User VM Migration was unsuccessful</programlisting>
+  <programlisting>VLAN = 18 // Number of unallocated VLANs is below configured threshold in availability zone</programlisting>
+  <programlisting>SSVM = 19 // SSVM stopped unexpectedly</programlisting>
+  <programlisting>USAGE_SERVER_RESULT = 20 // Usage job failed</programlisting>
+  <programlisting>STORAGE_DELETE = 21 // Failed to delete storage pool</programlisting>
+  <programlisting>UPDATE_RESOURCE_COUNT = 22 // Failed to update the resource count</programlisting>
+  <programlisting>USAGE_SANITY_RESULT = 23 // Usage Sanity Check failed</programlisting>
+  <programlisting>DIRECT_ATTACHED_PUBLIC_IP = 24 // Number of unallocated shared network IPs is low in availability zone</programlisting>
+  <programlisting>LOCAL_STORAGE = 25 // Remaining unallocated Local Storage is below configured threshold</programlisting>
+  <programlisting>RESOURCE_LIMIT_EXCEEDED = 26 //Generated when the resource limit exceeds the limit. Currently used for recurring snapshots only</programlisting>
 </appendix>
