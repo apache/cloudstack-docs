@@ -995,37 +995,6 @@ under the License.
           retrieved md5 hash of the stored password against the supplied md5 hash of the password,
           because clients no longer hash the password.</para>
       </section>
-      <section id="cloud-bugtool">
-        <title>Log Collection Utility cloud-bugtool</title>
-        <para>&PRODUCT; provides a command-line utility called cloud-bugtool to make it easier to
-          collect the logs and other diagnostic data required for troubleshooting. This is
-          especially useful when interacting with Citrix Technical Support.</para>
-        <para>You can use cloud-bugtool to collect the following:</para>
-        <itemizedlist>
-          <listitem>
-            <para>Basic system and environment information and network configuration including IP
-              addresses, routing, and name resolver settings </para>
-          </listitem>
-          <listitem>
-            <para>Information about running processes</para>
-          </listitem>
-          <listitem>
-            <para>Management Server logs</para>
-          </listitem>
-          <listitem>
-            <para>System logs in /var/log/</para>
-          </listitem>
-          <listitem>
-            <para>Dump of the cloud database</para>
-          </listitem>
-        </itemizedlist>
-        <warning>
-          <para>cloud-bugtool collects information which might be considered sensitive and
-            confidential. Using the <code>--nodb</code> option to avoid the cloud database can
-            reduce this concern, though it is not guaranteed to exclude all sensitive data.</para>
-        </warning>
-        <para/>
-      </section>
       <section id="rbd-primary-storage">
         <title>Snaphotting, Backups, Cloning and System VMs for RBD Primary Storage</title>
         <note>
