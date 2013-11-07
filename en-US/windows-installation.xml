@@ -23,8 +23,8 @@
 -->
 <section id="windows-installation">
 	<title>Windows OS Installation</title>
-  <para>Download the installer, CloudInstanceManager.msi, from the 
-    <ulink url="http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download">Download page</ulink> 
+  <para>Download the installer, CloudInstanceManager.msi, from the
+    <ulink url="http://sourceforge.net/projects/cloudstack/files/Password%20Management%20Scripts/CloudInstanceManager.msi/download">Download page</ulink>
     and run the installer in the newly created Windows VM.
   </para>
 </section>
