@@ -363,62 +363,97 @@
             <para>VPC.RESTART</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>Network ACL NETWORK.ACL.CREATE NETWORK.ACL.DELETE NETWORK.ACL.REPLACE
-              NETWORK.ACL.ITEM.CREATE NETWORK.ACL.ITEM.UPDATE NETWORK.ACL.ITEM.DELETE</para></entry>
+          <entry><para>Network ACL</para></entry>
+          <entry><para>NETWORK.ACL.CREATE</para>
+            <para>NETWORK.ACL.DELETE</para>
+            <para>NETWORK.ACL.REPLACE </para>
+            <para>NETWORK.ACL.ITEM.CREATE </para>
+            <para>NETWORK.ACL.ITEM.UPDATE </para>
+            <para>NETWORK.ACL.ITEM.DELETE</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>VPC offerings VPC.OFFERING.CREATE VPC.OFFERING.UPDATE
-              VPC.OFFERING.DELETE</para></entry>
+          <entry><para>VPC offerings</para></entry>
+          <entry><para>VPC.OFFERING.CREATE</para>
+            <para>VPC.OFFERING.UPDATE </para>
+            <para>VPC.OFFERING.DELETE</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>Private gateway PRIVATE.GATEWAY.CREATE PRIVATE.GATEWAY.DELETE </para></entry>
+          <entry><para>Private gateway</para></entry>
+          <entry><para>PRIVATE.GATEWAY.CREATE</para>
+            <para>PRIVATE.GATEWAY.DELETE </para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>Static routes STATIC.ROUTE.CREATE STATIC.ROUTE.DELETE </para></entry>
+          <entry><para>Static routes</para></entry>
+          <entry><para>STATIC.ROUTE.CREATE</para>
+            <para>STATIC.ROUTE.DELETE </para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>tag related events CREATE_TAGS DELETE_TAGS</para></entry>
+          <entry><para>Tag-related events</para></entry>
+          <entry><para>CREATE_TAGS</para>
+            <para>DELETE_TAGS</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>meta data related events CREATE_RESOURCE_DETAILS DELETE_RESOURCE_DETAILS
-            </para></entry>
+          <entry><para>Meta data-related events</para></entry>
+          <entry><para>CREATE_RESOURCE_DETAILS</para>
+            <para>DELETE_RESOURCE_DETAILS </para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>vm snapshot events VMSNAPSHOT.CREATE VMSNAPSHOT.DELETE
-              VMSNAPSHOT.REVERTTO</para></entry>
+          <entry><para>VM snapshot events</para></entry>
+          <entry><para>VMSNAPSHOT.CREATE</para>
+            <para>VMSNAPSHOT.DELETE</para>
+            <para>VMSNAPSHOT.REVERTTO</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>external network device events PHYSICAL.NVPCONTROLLER.ADD
-              PHYSICAL.NVPCONTROLLER.DELETE PHYSICAL.NVPCONTROLLER.CONFIGURE</para></entry>
+          <entry><para>External network device events</para></entry>
+          <entry><para>PHYSICAL.NVPCONTROLLER.ADD</para>
+            <para>PHYSICAL.NVPCONTROLLER.DELETE</para>
+            <para>PHYSICAL.NVPCONTROLLER.CONFIGURE</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>AutoScale COUNTER.CREATE COUNTER.DELETE CONDITION.CREATE CONDITION.DELETE
-              AUTOSCALEPOLICY.CREATE AUTOSCALEPOLICY.UPDATE AUTOSCALEPOLICY.DELETE
-              AUTOSCALEVMPROFILE.CREATE AUTOSCALEVMPROFILE.DELETE AUTOSCALEVMPROFILE.UPDATE
-              AUTOSCALEVMGROUP.CREATE AUTOSCALEVMGROUP.DELETE AUTOSCALEVMGROUP.UPDATE
-              AUTOSCALEVMGROUP.ENABLE AUTOSCALEVMGROUP.DISABLE PHYSICAL.DHCP.ADD
-              PHYSICAL.DHCP.DELETE PHYSICAL.PXE.ADD PHYSICAL.PXE.DELETE AG.CREATE AG.DELETE
-              AG.ASSIGN AG.REMOVE VM.AG.UPDATE INTERNALLBVM.START INTERNALLBVM.STOP
-              HOST.RESERVATION.RELEASE</para></entry>
+          <entry><para>AutoScale</para></entry>
+          <entry><para>COUNTER.CREATE</para>
+            <para>COUNTER.DELETE</para>
+            <para>CONDITION.CREATE</para>
+            <para>CONDITION.DELETE </para>
+            <para>AUTOSCALEPOLICY.CREATE </para>
+            <para>AUTOSCALEPOLICY.UPDATE </para>
+            <para>AUTOSCALEPOLICY.DELETE </para>
+            <para>AUTOSCALEVMPROFILE.CREATE </para>
+            <para>AUTOSCALEVMPROFILE.DELETE </para>
+            <para>AUTOSCALEVMPROFILE.UPDATE </para>
+            <para>AUTOSCALEVMGROUP.CREATE </para>
+            <para>AUTOSCALEVMGROUP.DELETE </para>
+            <para>AUTOSCALEVMGROUP.UPDATE </para>
+            <para>AUTOSCALEVMGROUP.ENABLE </para>
+            <para>AUTOSCALEVMGROUP.DISABLE </para>
+            <para>PHYSICAL.DHCP.ADD </para>
+            <para>PHYSICAL.DHCP.DELETE </para>
+            <para>PHYSICAL.PXE.ADD </para>
+            <para>PHYSICAL.PXE.DELETE </para>
+            <para>AG.CREATE </para>
+            <para>AG.DELETE </para>
+            <para>AG.ASSIGN </para>
+            <para>AG.REMOVE </para>
+            <para>VM.AG.UPDATE </para>
+            <para>INTERNALLBVM.START </para>
+            <para>INTERNALLBVM.STOP </para>
+            <para>HOST.RESERVATION.RELEASE</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>Dedicated guest vlan range GUESTVLANRANGE.DEDICATE GUESTVLANRANGE.RELEASE
-              PORTABLE.IP.RANGE.CREATE PORTABLE.IP.RANGE.DELETE PORTABLE.IP.TRANSFER</para></entry>
+          <entry><para>Dedicated guest vlan range</para></entry>
+          <entry><para>GUESTVLANRANGE.DEDICATE</para>
+            <para>GUESTVLANRANGE.RELEASE </para>
+            <para>PORTABLE.IP.RANGE.CREATE </para>
+            <para>PORTABLE.IP.RANGE.DELETE </para>
+            <para>PORTABLE.IP.TRANSFER</para></entry>
         </row>
         <row>
-          <entry><para/></entry>
-          <entry><para>Dedicated Resources DEDICATE.RESOURCE DEDICATE.RESOURCE.RELEASE
-              VM.RESERVATION.CLEANUP UCS.ASSOCIATEPROFILE UCS.DISASSOCIATEPROFILE</para></entry>
+          <entry><para>Dedicated Resources</para></entry>
+          <entry><para>DEDICATE.RESOURCE</para>
+            <para>DEDICATE.RESOURCE.RELEASE </para>
+            <para>VM.RESERVATION.CLEANUP </para>
+            <para>UCS.ASSOCIATEPROFILE </para>
+            <para>UCS.DISASSOCIATEPROFILE</para></entry>
         </row>
       </tbody>
     </tgroup>
