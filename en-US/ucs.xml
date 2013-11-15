@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "file:///C:/Program%20Files%20(x86)/Publican/DocBook_DTD/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<section id="ucs">
+    <!-- CS-17380 -->
+    <title>Using Cisco UCS as a Bare Metal Host</title>
+    <para>(Supported only for use in &PRODUCT; zones with basic networking.)</para>
+    <para>You can provision Cisco UCS server blades into &PRODUCT; for use
+        as bare metal hosts. The goal is to enable easy expansion of the cloud by leveraging the
+        programmability of the UCS converged infrastructure and &PRODUCT;’s knowledge of the cloud
+        architecture and ability to orchestrate. &PRODUCT; can
+        automatically understand the UCS environment and server profiles so &PRODUCT; administrators can
+        deploy a bare metal OS on a Cisco UCS.</para>
+    <para>An overview of the steps involved in using UCS with &PRODUCT;:</para>
+    <orderedlist>
+        <listitem><para>Set up your UCS blades, profiles, and UCS Manager according to Cisco documentation</para></listitem>
+        <listitem><para>Register the UCS Manager with &PRODUCT;</para></listitem>
+        <listitem><para>Associate a profile with a UCS blade</para></listitem>
+        <listitem><para>Provision the blade as a bare metal host as described in
+            <phrase condition="install"><xref linkend="baremetal-howto"/>.</phrase>
+            <phrase condition="admin">Provisioning a Bare Metal Host with Kickstart in the &PRODUCT; Installation Guide.</phrase>
+        </para></listitem>
+    </orderedlist>
+    <section id="ucs-manager-add">
+        <title>Registering a UCS Manager</title>
+        <para>Register the UCS Manager with &PRODUCT; by following these steps:</para>
+        <orderedlist>
+            <listitem id="ucs-login"><para>Install the UCS hardware (blades) and UCS Manager according to the vendor's instructions.
+                Make a note of the following information:</para>
+                <itemizedlist>
+                    <listitem><para>UCS manager IP address</para></listitem>
+                    <listitem><para>UCS manager username</para></listitem>
+                    <listitem><para>UCS manager password</para></listitem>
+                </itemizedlist>
+            </listitem>
+            <listitem><para>Log in to the &PRODUCT; UI as administrator.</para></listitem>
+            <listitem><para>In the left navigation bar, click Infrastructure, then click Zones.</para></listitem>
+            <listitem><para>Click the name of a zone where Network Type is Basic.</para></listitem>
+            <listitem><para>Click the Compute and Storage tab.</para></listitem>
+            <listitem><para>Scroll down in the diagram and click UCS.</para></listitem>
+            <listitem><para>Click the Add UCS Manager button.</para></listitem>
+            <listitem><para>In the dialog box, provide a display name, then the IP address, username, and password
+                that you made a note of in step <xref linkend="ucs-login"/>.</para></listitem>
+            <listitem><para>Click OK.</para></listitem>
+        </orderedlist>
+        <para>&PRODUCT; will register the UCS Manager, then automatically discover the blades on this UCS Manager and add them to the resource pool.</para>
+    </section>
+    <section id="ucs-profile-associate">
+        <title>Associating a Profile with a UCS Blade</title>
+        <para>Before associating a profile with a UCS blade, you must first do the steps in
+            <xref linkend="ucs-manager-add"/>.</para>
+        <orderedlist>
+            <listitem><para>Log in to the &PRODUCT; UI as administrator.</para></listitem>
+            <listitem><para>In the left navigation bar, click Infrastructure, then click Zones.</para></listitem>
+            <listitem><para>Click the name of a zone where you have registered a UCS Manager.</para></listitem>
+            <listitem><para>Click the Compute and Storage tab.</para></listitem>
+            <listitem><para>Scroll down in the diagram and click UCS.</para></listitem>
+            <listitem><para>Click the name of the UCS Manager.</para></listitem>
+            <listitem><para>Click the Blades tab.</para>
+                <para>A list is displayed that shows the names of the blades that are installed under the selected manager.</para></listitem>
+            <listitem><para>In the Actions column, click the Associate Profile icon.
+                <inlinemediaobject>
+                    <imageobject>
+                        <imagedata fileref="./images/attach-disk-icon.png" format="PNG"/>
+                    </imageobject>
+                    <textobject>
+                        <phrase>attach-disk-icon.png: Attach Profile icon for UCS blade</phrase>
+                    </textobject>
+                </inlinemediaobject></para></listitem>
+            <listitem><para>In the dialog, select the name of the template for the profile you want to associate with this blade, then click OK.</para>
+                <para>The dropdown list in the dialog box lists the profile templates that are currently defined in the UCS Manager where this blade resides.
+                    The list is refreshed any time you add or remove profile templates on the UCS Manager.</para>
+                <para>You might need to wait a few minutes for this operation to finish.
+                    The operation might take a long time, depending on the complexity of the setup.
+                    The timeout is 60 minutes.</para>
+            </listitem>
+        </orderedlist>
+    </section>
+    <section id="ucs-profile-dissociate">
+        <title>Disassociating a Profile from a UCS Blade</title>
+        <orderedlist>
+            <listitem><para>Log in to the &PRODUCT; UI as administrator.</para></listitem>
+            <listitem><para>In the left navigation bar, click Infrastructure, then click Zones.</para></listitem>
+            <listitem><para>Click the name of a zone where you have registered a UCS Manager.</para></listitem>
+            <listitem><para>Click the Compute and Storage tab.</para></listitem>
+            <listitem><para>Scroll down in the diagram and click UCS.</para></listitem>
+            <listitem><para>Click the name of the UCS Manager.</para></listitem>
+            <listitem><para>Click the Blades tab.</para>
+                <para>A list is displayed that shows the names of the blades that are installed under the selected manager.</para></listitem>
+            <listitem><para>Select the name of a blade that has been associated with a profile.</para></listitem>
+            <listitem><para>In the Actions column, click the Disassociate Profile icon.
+                <inlinemediaobject>
+                    <imageobject>
+                        <imagedata fileref="./images/detach-disk-icon.png" format="PNG"/>
+                    </imageobject>
+                    <textobject>
+                        <phrase>detach-disk-icon.png: Detach Profile icon for UCS blade</phrase>
+                    </textobject>
+                </inlinemediaobject></para></listitem>
+            <listitem><para>Click OK.</para>
+                <para>You might need to wait a few minutes for this operation to finish.
+                    The operation might take a long time, depending on the complexity of the setup.
+                    The timeout is 60 minutes.</para></listitem>
+        </orderedlist>
+    </section>
+    <section id="ucs-sync">
+    <title>Synchronizing UCS Manager Changes with &PRODUCT;</title>
+    <para>At any time, &PRODUCT; users might directly
+        associate or dissociate blades on the Cisco UCS Manager,
+        and &PRODUCT; would not be aware of these changes.
+        Periodically, or whenever you become aware that such changes have been made,
+        you can force &PRODUCT; to synchronize itself with UCS Manager
+        in order to become aware of
+        any changes that are made manually.</para>
+        <orderedlist>
+            <listitem><para>Log in to the &PRODUCT; UI as administrator.</para></listitem>
+            <listitem><para>In the left navigation bar, click Infrastructure, then click Zones.</para></listitem>
+            <listitem><para>Click the name of a zone where you have registered a UCS Manager.</para></listitem>
+            <listitem><para>Click the Compute and Storage tab.</para></listitem>
+            <listitem><para>Scroll down in the diagram and click UCS.</para></listitem>
+            <listitem><para>Click the name of the UCS Manager.</para></listitem>
+            <listitem><para>Click the Blades tab.</para></listitem>
+            <listitem><para>Click the Refresh Blades button.</para></listitem>
+            <listitem><para>Click OK.</para>
+            <para>You might need to wait a few minutes for this operation to finish.
+                    The operation might take a long time, depending on the complexity of the setup.
+                    The timeout is 60 minutes.</para></listitem>
+        </orderedlist>
+    </section>
+</section>
