@@ -22,13 +22,14 @@
  under the License.
 -->
 <section id="vm-snapshots">
-  <title>Virtual Machine Snapshots for VMware</title>
+  <title>Virtual Machine Snapshots</title>
+  <para>(Supported on VMware and XenServer)</para>
   <para>In addition to the existing &PRODUCT; ability to snapshot individual VM
     volumes, you can now take a VM snapshot to preserve all the VM's data volumes as well as
     (optionally) its CPU/memory state. This is useful for quick restore of a VM. For example, you
     can snapshot a VM, then make changes such as software upgrades. If anything goes wrong, simply
     restore the VM to its previous state using the previously saved VM snapshot. </para>
-  <para>The snapshot is created using the VMware native snapshot facility. The VM snapshot includes
+  <para>The snapshot is created using the hypervisor's native snapshot facility. The VM snapshot includes
     not only the data volumes, but optionally also whether the VM is running or turned off (CPU
     state) and the memory contents. The snapshot is stored in &PRODUCT;'s primary storage.</para>
   <para>VM snapshots can have a parent/child relationship. Each successive snapshot of the same VM
@@ -38,8 +39,7 @@
     snapshot is its child. It is possible to create a long chain of these parent/child snapshots,
     which amount to a "redo" record leading from the current state of the VM back to the
     original.</para>
-  <para>This feature is supported on VMware and XenServer hypervisors.</para>
-  <para>If you need more information about VM snapshots, check out the VMware documentation and the
+  <para>If you need more information about VM snapshots on VMware, check out the VMware documentation and the
     VMware Knowledge Base, especially <ulink
       url="http://kb.vmware.com/selfservice/microsites/search.do?cmd=displayKC&amp;externalId=1015180"
       >Understanding virtual machine snapshots</ulink>.</para>
@@ -62,15 +62,16 @@
           snapshot.</para>
       </listitem>
       <listitem>
-        <para>The "quiesce" option is not supported. This option is provided by the underlying
-          VMware snapshot facility so that you can choose whether to quiesce the file system on a
-          running virtual machine before taking the snapshot. In &PRODUCT;, the quiesce option is
-          always set to false; the file system is not quiesced before taking a snapshot of a running
-          VM. </para>
+        <para>You can not specify the "quiesce" option on the &PRODUCT;
+          side when taking a VM snapshot. This option is provided by the underlying
+          snapshot facility so that you can choose whether to quiesce the file system on a
+          running virtual machine before taking the snapshot. The quiesce option is
+          passed along from the user's choice on the hypervisor side,
+          through the underlying API, and up to &PRODUCT;.</para>
       </listitem>
       <listitem>
-        <para>You should use only &PRODUCT; to create VM snapshots on VMware hosts managed by
-          &PRODUCT;. Any snapshots that you make directly on vSphere will not be tracked in
+        <para>You should use only &PRODUCT; to create VM snapshots on hosts managed by
+          &PRODUCT;. Any snapshots that you make directly on the hypervisor will not be tracked in
           &PRODUCT;.</para>
       </listitem>
     </itemizedlist>
@@ -94,7 +95,7 @@
             <entry><para>The maximum number of VM snapshots that can be saved for any given virtual
                 machine in the cloud. The total possible number of VM snapshots in the cloud is
                 (number of VMs) * vmsnapshots.max. If the number of snapshots for any VM ever hits
-                the maximum, the older ones are removed by the snapshot expunge job. </para></entry>
+                the maximum, the older ones are removed by the snapshot expunge job.</para></entry>
           </row>
           <row>
             <entry><para>vmsnapshot.create.wait</para></entry>
