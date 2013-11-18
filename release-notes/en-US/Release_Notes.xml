@@ -300,7 +300,7 @@ under the License.
         issue number.</para>
       <para>For the list of issues fixed, see <ulink
           url="https://issues.apache.org/jira/issues/?filter=12325707">Issues Fixed in
-        4.2</ulink>.</para>
+        4.2.1</ulink>.</para>
     </section>
     <section id="known-issues-4.2.1">
       <title>Known Issues in 4.2.1</title>
@@ -317,13 +317,285 @@ under the License.
       made while CloudStack was in the Apache Incubator.</para>
     <para>If you run into any issues during upgrades, please feel free to ask questions on
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
-    <note>
-      <title>Overprovisioning cautions</title>
-      <para>If the &PRODUCT; instance you are upgrading is leveraging overprovisioning you need to
-        read and understand <xref linkend="cpu-ram-overcommit"/>. The overprovisioning factors are
-        now cluster specific and should you be overprovisioned, your new system VMs may not start
-        up. </para>
-    </note>
+    <section id="upgrade-from-4.2-to-4.2.1">
+      <title>Upgrade from 4.2.0 to 4.2.1</title>
+      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.2.1.</para>
+      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
+      <para>We recommend reading through this section once or twice before beginning your upgrade
+        procedure, and working through it on a test system before working on a production
+        system.</para>
+      <orderedlist>
+        <listitem>
+          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
+            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
+            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
+            Ubuntu).</para>
+        </listitem>
+        <listitem>
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
+            source, or check the Apache CloudStack downloads page at <ulink
+              url="http://cloudstack.apache.org/downloads.html"
+              >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-4.2.1"/> or step <xref
+              linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
+              url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
+            Guide</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>Stop your management server or servers. Run this on all management server
+            hosts:</para>
+          <programlisting><prompt>#</prompt> service cloudstack-management stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>If you are running a usage server or usage servers, stop those as well:</para>
+          <programlisting><prompt>#</prompt> service cloudstack-usage stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>Make a backup of your MySQL database. If you run into any issues or need to roll
+            back the upgrade, this will assist in debugging or restoring your existing environment.
+            You'll be prompted for your password.</para>
+          <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql</programlisting>
+        </listitem>
+        <listitem>
+          <para>(KVM Only) If primary storage of type local storage is in use, the path for this
+            storage needs to be verified to ensure it passes new validation. Check local storage by
+            querying the cloud.storage_pool table: </para>
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:
+            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          </para>
+        </listitem>
+        <listitem id="upgrade-deb-packages-4.2.1">
+          <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
+            skip to step <xref linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and APT repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="debsteps-4.2.1" numeration="loweralpha">
+            <listitem>
+              <para>The first order of business will be to change the sources list for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
+                any systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+              <para>We'll change it to point to the new package repository:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
+            </listitem>
+            <listitem>
+              <para>Now update your apt package list:</para>
+              <programlisting language="Bash">$ sudo apt-get update</programlisting>
+            </listitem>
+            <listitem id="deb-master-4.2.1">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package. This will pull in any other
+                dependencies you need.</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-deb-4.2.1">
+              <para>You will need to manually install the <filename>cloudstack-agent</filename>
+                package:</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
+              <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
+                your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
+                and <filename>environment.properties</filename> from
+                  <filename>/etc/cloud/agent</filename> to
+                  <filename>/etc/cloudstack/agent</filename>.</para>
+              <para>When prompted whether you wish to keep your configuration, say Yes.</para>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
+service cloudstack-agent stop
+killall jsvc
+service cloudstack-agent start
+                            </programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <para>(VMware only) Additional steps are required for each VMware cluster. These steps
+            will not affect running guests in the cloud. These steps are required only for clouds
+            using VMware clusters:</para>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>Stop the Management Server:</para>
+              <programlisting>service cloudstack-management stop</programlisting>
+            </listitem>
+            <listitem>
+              <para>Generate the encrypted equivalent of your vCenter password:</para>
+              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
+              <para>Store the output from this step, we need to add this in cluster_details table
+                and vmware_data_center tables in place of the plain text password</para>
+            </listitem>
+            <listitem>
+              <para>Find the ID of the row of cluster_details table that you have to update:</para>
+              <programlisting>mysql -u &lt;username&gt; -p&lt;password&gt;</programlisting>
+              <programlisting>select * from cloud.cluster_details;</programlisting>
+            </listitem>
+            <listitem>
+              <para>Update the plain text password with the encrypted one</para>
+              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;</programlisting>
+            </listitem>
+            <listitem>
+              <para>Confirm that the table is updated:</para>
+              <programlisting>select * from cloud.cluster_details; </programlisting>
+            </listitem>
+            <listitem>
+              <para>Find the ID of the correct row of vmware_data_center that you want to
+                update</para>
+              <programlisting>select * from cloud.vmware_data_center; </programlisting>
+            </listitem>
+            <listitem>
+              <para>update the plain text password with the encrypted one:</para>
+              <programlisting>update cloud.vmware_data_center set password = '_ciphertext_from_step_1_' where id = _id_from_step_5_; </programlisting>
+            </listitem>
+            <listitem>
+              <para>Confirm that the table is updated:</para>
+              <programlisting>select * from cloud.vmware_data_center; </programlisting>
+            </listitem>
+            <listitem>
+              <para>Start the &PRODUCT; Management server </para>
+              <programlisting>service cloudstack-management start</programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <para>(KVM only) Additional steps are required for each KVM host. These steps will not
+            affect running guests in the cloud. These steps are required only for clouds using KVM
+            as hosts and only on the KVM hosts.</para>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>Configure the CloudStack yum repository as detailed above.</para>
+            </listitem>
+            <listitem>
+              <para>Stop the running agent.</para>
+              <programlisting># service cloud-agent stop</programlisting>
+            </listitem>
+            <listitem>
+              <para>Update the agent software.</para>
+              <programlisting># yum update cloudstack-agent</programlisting>
+            </listitem>
+            <listitem>
+              <para>Start the agent.</para>
+              <programlisting># service cloudstack-agent start</programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="upgrade-rpm-packages-4.2.1">
+          <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If
+            not, skip to step <xref linkend="restart-system-vms-4.2.1"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and yum repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="rpmsteps-4.2.1" numeration="loweralpha">
+            <listitem>
+              <para>The first order of business will be to change the yum repository for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. </para>
+              <para>(No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/yum.repos.d/cloudstack.repo</filename> on any
+                systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have content similar to the following:</para>
+              <programlisting language="Bash">
+[apache-cloudstack]
+name=Apache CloudStack
+baseurl=http://cloudstack.apt-get.eu/rhel/4.0/
+enabled=1
+gpgcheck=0
+                            </programlisting>
+              <para>If you are using the community provided package repository, change the base url
+                to http://cloudstack.apt-get.eu/rhel/4.2/</para>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
+            </listitem>
+            <listitem id="rpm-master-4.2.1">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package by upgrading the older
+                  <filename>cloudstack-management</filename> package.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloudstack-management</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-rpm-4.2.1">
+              <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename>
+                package, similarly installing the new version as
+                  <filename>cloudstack-agent</filename>.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloudstack-agent</programlisting>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
+service cloudstack-agent stop
+killall jsvc
+service cloudstack-agent start
+                            </programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="restart-mgmt-server-4.2.1">
+          <para>Now it's time to restart the management server</para>
+          <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
+        </listitem>
+        <listitem id="restart-system-vms-4.2.1">
+          <para>Once you've upgraded the packages on your management servers, you'll need to restart
+            the system VMs. Ensure that the admin port is set to 8096 by using the
+            "integration.api.port" global parameter. This port is used by the cloud-sysvmadm script
+            at the end of the upgrade procedure. For information about how to set this parameter,
+            see "Setting Global Configuration Parameters" in the Installation Guide. Changing this
+            parameter will require management server restart. Also make sure port 8096 is open in
+            your local host firewall to do this. </para>
+          <para>There is a script that will do this for you, all you need to do is run the script
+            and supply the IP address for your MySQL instance and your MySQL credentials:</para>
+          <programlisting language="Bash"><prompt>#</prompt> nohup cloudstack-sysvmadm -d <replaceable>IP address</replaceable> -u cloud -p -a &gt; sysvm.log 2&gt;&amp;1 &amp;</programlisting>
+          <para>You can monitor the log for progress. The process of restarting the system VMs can
+            take an hour or more.</para>
+          <programlisting language="Bash"><prompt>#</prompt> tail -f sysvm.log</programlisting>
+          <para>The output to <filename>sysvm.log</filename> will look something like this:</para>
+          <programlisting language="Bash">
+Stopping and starting 1 secondary storage vm(s)...
+Done stopping and starting secondary storage vm(s)
+Stopping and starting 1 console proxy vm(s)...
+Done stopping and starting console proxy vm(s).
+Stopping and starting 4 running routing vm(s)...
+Done restarting router(s).
+                    </programlisting>
+        </listitem>
+        <listitem>
+          <note>
+            <title>For Xen Hosts: Copy vhd-utils</title>
+            <para>This step is only for CloudStack installs that are using Xen hosts.</para>
+          </note>
+          <para>Copy the file <filename>vhd-utils</filename> to
+              <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
+        </listitem>
+      </orderedlist>
+    </section>
     <section id="upgrade-from-4.0-to-4.2.1">
       <title>Upgrade from 4.1.x to 4.2.1</title>
       <para>This section will guide you from &PRODUCT; 4.1.x versions to &PRODUCT; 4.2.1.</para>
@@ -1947,8 +2219,8 @@ service cloudstack-agent start
       </orderedlist>
     </section>
   </chapter>
-  <chapter id="api-changes-42.1">
-    <title>API Changes from 3.0 to 4.2.1</title>
+  <chapter id="api-changes">
+    <title>API Changes from 4.2 to 4.2.1</title>
     <para>Due to the <xref linkend="ucs-enhancements"/>, the following API changes have been
       introduced:</para>
     <itemizedlist>
