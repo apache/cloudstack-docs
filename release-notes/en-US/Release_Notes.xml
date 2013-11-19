@@ -1461,11 +1461,13 @@ under the License.
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
     <section id="upgrade-from-4.2-to-4.2.1">
       <title>Upgrade from 4.2.0 to 4.2.1</title>
-      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.2.1.</para>
-      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
-      <para>We recommend reading through this section once or twice before beginning your upgrade
-        procedure, and working through it on a test system before working on a production
-        system.</para>
+      <para>This section will guide you to upgrade from &PRODUCT; 4.2 to &PRODUCT; 4.2.1. Any steps
+        that are hypervisor-specific will be called out with a note. We recommend reading through
+        this section once or twice before beginning your upgrade procedure, and working through it
+        on a test system before working on a production system.</para>
+      <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one of
+        Linux's predominant package systems, RPM or APT. This guide assumes you are using RPM and
+        Yum for Red Hat Enterprise Linux or CentOS, or APT and Debian packages for Ubuntu.</para>
       <orderedlist>
         <note>
           <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
@@ -1556,26 +1558,20 @@ under the License.
           </listitem>
         </orderedlist>
         <listitem>
-          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
-            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
-            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
-            Ubuntu).</para>
-        </listitem>
-        <listitem>
-          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
-            source, or check the Apache CloudStack downloads page at <ulink
+          <para>Create RPM or Debian packages as appropriate and a repository from the 4.2.1 source,
+            or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
-            by community members. You will need them for step <xref
-              linkend="upgrade-deb-packages-4.2.1"/> or step <xref
-              linkend="upgrade-rpm-packages-4.2.1"/>.</para>
-          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
+            by community members. </para>
+          <para>You will need them for step <xref linkend="upgrade-deb-packages-4.2.1"/> or step
+              <xref linkend="upgrade-rpm-packages-4.2.1"/>. Instructions for creating packages from
+            the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
         </listitem>
         <listitem>
-          <para>Stop your management server or servers. Run this on all management server
-            hosts:</para>
+          <para>Stop your management server or servers. </para>
+          <para>Run the following on all the Management Server hosts:</para>
           <programlisting><prompt>#</prompt> service cloudstack-management stop</programlisting>
         </listitem>
         <listitem>
@@ -1589,13 +1585,42 @@ under the License.
           <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql</programlisting>
         </listitem>
         <listitem>
-          <para>(KVM Only) If primary storage of type local storage is in use, the path for this
-            storage needs to be verified to ensure it passes new validation. Check local storage by
-            querying the cloud.storage_pool table: </para>
-          <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:
-            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
-          </para>
+          <para>Perform the following to verify the artifacts:</para>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>(optional) Install GPG keys if needed:</para>
+              <programlisting>sudo apt-get install gpg</programlisting>
+            </listitem>
+            <listitem>
+              <para>Import the GPG keys stored in the source distribution's KEYS file</para>
+              <programlisting>gpg --import KEYS</programlisting>
+              <para>Alternatively, download the signing keys, the IDs found in the KEYS file,
+                individually by using a keyserver.</para>
+              <para>For example:</para>
+              <programlisting>gpg --recv-keys CC56CEA8</programlisting>
+            </listitem>
+            <listitem>
+              <para>Verify signatures and hash files:</para>
+              <programlisting>gpg --verify apache-cloudstack-4.2.0-src.tar.bz2.asc</programlisting>
+              <programlisting>gpg --print-md MD5 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-cloudstack-4.2.0-src.tar.bz2.md5
+gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-cloudstack-4.2.0-src.tar.bz2.sha</programlisting>
+              <para>Each of these commands should return no output. Any output from them implies
+                that there is a difference between the hash you generated locally and the hash that
+                has been pulled from the server.</para>
+            </listitem>
+            <listitem><para></para></listitem>
+            <listitem><para></para></listitem>
+            <listitem><para></para></listitem>
+            <listitem><para></para></listitem>
+            <listitem><para></para></listitem>
+          </orderedlist>
+        </listitem>
+        <listitem><para>(KVM Only) If primary storage of type local storage is in use, the path for
+            this storage needs to be verified to ensure it passes new validation. Check local
+            storage by querying the cloud.storage_pool table:
+          </para><programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>If
+          local storage paths are found to have a trailing forward slash, remove it:
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
         </listitem>
         <listitem id="upgrade-deb-packages-4.2.1">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -1608,38 +1633,39 @@ under the License.
           </note>
           <orderedlist id="debsteps-4.2.1" numeration="loweralpha">
             <listitem>
-              <para>The first order of business will be to change the sources list for each system
-                with &PRODUCT; packages. This means all management servers, and any hosts that have
-                the KVM agent. (No changes should be necessary for hosts that are running VMware or
-                Xen.)</para>
-              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
-                any systems that have &PRODUCT; packages installed.</para>
-              <para>This file should have one line, which contains:</para>
-              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
-              <para>We'll change it to point to the new package repository:</para>
-              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
-              <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+              <para>Change the sources list for each system with &PRODUCT; packages. </para>
+              <para>This means all management servers, and any hosts that have the KVM agent. No
+                changes should be necessary for hosts that are running VMware or XenServer</para>
             </listitem>
             <listitem>
-              <para>Now update your apt package list:</para>
+              <para>Open <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on any systems
+                that have &PRODUCT; packages installed.</para>
+              <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
+            </listitem>
+            <listitem><para>Change it to point to the new package
+              repository:</para><programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2.1</programlisting>If
+              you're using your own package repository, change this line to read as appropriate for
+              your 4.2.1 repository.</listitem>
+            <listitem>
+              <para>Update your APT package list:</para>
               <programlisting language="Bash">$ sudo apt-get update</programlisting>
             </listitem>
             <listitem id="deb-master-4.2.1">
-              <para>Now that you have the repository configured, it's time to install the
-                  <filename>cloudstack-management</filename> package. This will pull in any other
-                dependencies you need.</para>
+              <para>Install the <filename>cloudstack-management</filename> package. </para>
+              <para>This fetches in any other dependencies you need.</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
             </listitem>
             <listitem id="kvm-agent-deb-4.2.1">
-              <para>You will need to manually install the <filename>cloudstack-agent</filename>
-                package:</para>
+              <para>Manually install the <filename>cloudstack-agent</filename> package:</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
               <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
                 your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
                 and <filename>environment.properties</filename> from
                   <filename>/etc/cloud/agent</filename> to
                   <filename>/etc/cloudstack/agent</filename>.</para>
+            </listitem>
+            <listitem>
               <para>When prompted whether you wish to keep your configuration, say Yes.</para>
             </listitem>
             <listitem>
@@ -1651,11 +1677,9 @@ under the License.
             </listitem>
             <listitem>
               <para>Restart the agent:</para>
-              <programlisting language="Bash">
-service cloudstack-agent stop
+              <programlisting language="Bash">service cloudstack-agent stop
 killall jsvc
-service cloudstack-agent start
-                            </programlisting>
+service cloudstack-agent start                            </programlisting>
             </listitem>
           </orderedlist>
         </listitem>
