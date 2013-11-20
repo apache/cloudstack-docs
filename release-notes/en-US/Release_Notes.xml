@@ -994,7 +994,7 @@ Done restarting router(s).
                             <programlisting language="Bash">
                                 [apache-cloudstack]
                                 name=Apache CloudStack
-                                baseurl=http://cloudstack.apt-get.eu/rhel/4.2/
+                                baseurl=http://cloudstack.apt-get.eu/rhel/4.0/
                                 enabled=1
                                 gpgcheck=0
                             </programlisting>
@@ -1821,7 +1821,7 @@ service cloudstack-agent start
             gpgcheck=0
             [apache CloudStack]
             name= Apache CloudStack
-            baseurl= http://cloudstack.apt-get.eu/rhel/4.0/
+            baseurl= http://cloudstack.apt-get.eu/rhel/4.2/
             enabled=1
             gpgcheck=0</programlisting>
               <para>If you are using the community provided package repository, change the baseurl
