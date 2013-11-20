@@ -318,7 +318,7 @@ under the License.
                         </row>
                     </thead>
                     <tbody>
-                    
+
 						<row>
 						 <entry>
 						   <para>CLOUDSTACK-3237</para>
@@ -1471,6 +1471,7 @@ under the License.
           <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
         </note>
         <para>In each zone that includes VMware hosts, you need to add a new system VM template. </para>
+        <listitem>
         <orderedlist numeration="loweralpha">
           <listitem>
             <para>While running the existing 3.0.x system, log in to the UI as root
@@ -1555,6 +1556,7 @@ under the License.
             </informaltable>
           </listitem>
         </orderedlist>
+      </listitem>
         <listitem>
           <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
             of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
