@@ -325,6 +325,94 @@ under the License.
         procedure, and working through it on a test system before working on a production
         system.</para>
       <orderedlist>
+        <note>
+          <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
+        </note>
+        <para>In each zone that includes VMware hosts, you need to add a new system VM template. </para>
+        <orderedlist numeration="loweralpha">
+          <listitem>
+            <para>While running the existing 3.0.x system, log in to the UI as root
+              administrator.</para>
+          </listitem>
+          <listitem>
+            <para>In the left navigation bar, click Templates.</para>
+          </listitem>
+          <listitem>
+            <para>In Select view, click Templates.</para>
+          </listitem>
+          <listitem>
+            <para>Click Register template.</para>
+            <para>The Register template dialog box is displayed.</para>
+          </listitem>
+          <listitem>
+            <para>In the Register template dialog box, specify the following values (do not change
+              these):</para>
+            <informaltable>
+              <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                <colspec colwidth="1*" colname="1" colnum="1"/>
+                <colspec colwidth="2*" colname="2" colnum="2"/>
+                <thead>
+                  <row>
+                    <entry><para>Hypervisor</para></entry>
+                    <entry><para>Description</para></entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry><para>XenServer</para></entry>
+                    <entry><para>Name: systemvm-xenserver-4.2</para>
+                      <para>Description: systemvm-xenserver-4.2</para>
+                      <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                      <para>Zone: Choose the zone where this hypervisor is used</para>
+                      <para>Hypervisor: XenServer</para>
+                      <para>Format: VHD</para>
+                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                        number available in the dropdown)</para>
+                      <para>Extractable: no</para>
+                      <para>Password Enabled: no</para>
+                      <para>Public: no</para>
+                      <para>Featured: no</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><para>KVM</para></entry>
+                    <entry><para>Name: systemvm-kvm-4.2</para>
+                      <para>Description: systemvm-kvm-4.2</para>
+                      <para>URL:
+                        http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                      <para>Zone: Choose the zone where this hypervisor is used</para>
+                      <para>Hypervisor: KVM</para>
+                      <para>Format: QCOW2</para>
+                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                        number available in the dropdown)</para>
+                      <para>Extractable: no</para>
+                      <para>Password Enabled: no</para>
+                      <para>Public: no</para>
+                      <para>Featured: no</para>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><para>VMware</para></entry>
+                    <entry><para>Name: systemvm-vmware-4.2</para>
+                      <para>Description: systemvm-vmware-4.2</para>
+                      <para>URL:
+                        http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                      <para>Zone: Choose the zone where this hypervisor is used</para>
+                      <para>Hypervisor: VMware</para>
+                      <para>Format: OVA</para>
+                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                        number available in the dropdown)</para>
+                      <para>Extractable: no</para>
+                      <para>Password Enabled: no</para>
+                      <para>Public: no</para>
+                      <para>Featured: no</para>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </informaltable>
+          </listitem>
+        </orderedlist>
         <listitem>
           <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
             of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
@@ -881,9 +969,7 @@ Done restarting router(s).
       <orderedlist>
         <listitem>
           <note>
-            <para>The following upgrade instructions apply only if you're using VMware hosts. If
-              you're not using VMware hosts, skip this step and move on to <xref
-                linkend="stopping-usage-servers"/>.</para>
+            <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
           </note>
           <para>In each zone that includes VMware hosts, you need to add a new system VM template. </para>
           <orderedlist numeration="loweralpha">
