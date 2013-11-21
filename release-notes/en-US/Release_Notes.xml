@@ -1618,7 +1618,7 @@ under the License.
                               <para>CLOUDSTACK-4593</para>
                             </entry>
                             <entry>
-                              <para> [VMWARE] [Upgrade]Livestorage Migration & VM Snapshot features are not fully functional after upgrade</para>
+                              <para> [VMWARE] [Upgrade]Livestorage Migration and VM Snapshot features are not fully functional after upgrade</para>
                             </entry>
                            </row>
                            <row>
