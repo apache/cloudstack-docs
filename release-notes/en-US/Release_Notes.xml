@@ -1700,7 +1700,7 @@ under the License.
               <para>Check out the 4.2.1 branch:</para>
               <programlisting>#git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git /tmp/cloudstack/git
 #cd /tmp/cloudstack/git
-#git archive --format=tar --prefix=/tmp/cloudstack/tree/ &lt;commit-hash&gt; | tar Pxf -</programlisting>
+#git archive --format=tar --prefix=/tmp/cloudstack/tree/ &lt;commit-hash&gt; | tar Pxf - </programlisting>
             </listitem>
             <listitem>
               <para>Unpack the release artifact:</para>
@@ -1724,11 +1724,12 @@ under the License.
             </listitem>
           </orderedlist>
         </listitem>
-        <listitem><para>(KVM Only) If primary storage of type local storage is in use, the path for
-            this storage needs to be verified to ensure it passes new validation. Check local
-            storage by querying the cloud.storage_pool table:
-          </para><programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>If
-          local storage paths are found to have a trailing forward slash, remove it:
+        <listitem>
+          <para>(KVM Only) If primary storage of type local storage is in use, the path for this
+            storage needs to be verified to ensure it passes new validation. Check local storage by
+            querying the cloud.storage_pool table: </para>
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
         </listitem>
         <listitem id="upgrade-deb-packages-4.2.1">
@@ -1788,7 +1789,7 @@ under the License.
               <para>Restart the agent:</para>
               <programlisting language="Bash">service cloudstack-agent stop
 killall jsvc
-service cloudstack-agent start                            </programlisting>
+service cloudstack-agent start</programlisting>
             </listitem>
           </orderedlist>
         </listitem>
@@ -1805,7 +1806,7 @@ service cloudstack-agent start                            </programlisting>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
               <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
-                and vmware_data_center tables in place of the plain text password</para>
+                and vmware_data_center tables in place of the plain text password.</para>
             </listitem>
             <listitem>
               <para>Find the ID of the row of cluster_details table that you have to update:</para>
@@ -2004,9 +2005,8 @@ Done restarting router(s).
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:
-            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
-          </para>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
         </listitem>
         <listitem id="upgrade-deb-packages">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -2083,7 +2083,7 @@ service cloudstack-agent start
               <para>Generate the encrypted equivalent of your vCenter password:</para>
               <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
-                and vmware_data_center tables in place of the plain text password</para>
+                and vmware_data_center tables in place of the plain text password.</para>
             </listitem>
             <listitem>
               <para>Find the ID of the row of cluster_details table that you have to update:</para>
@@ -2393,7 +2393,7 @@ Done restarting router(s).
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
           <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
-                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
+<prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
         </listitem>
         <listitem>
           <para>Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -2976,7 +2976,7 @@ service cloudstack-agent start
         </listitem>
         <listitem>
           <para>Watch the screen to be sure that the template downloads successfully and enters the
-            READY state. Do not proceed until this is successful</para>
+            READY state. Do not proceed until this is successful.</para>
         </listitem>
         <listitem>
           <para><emphasis role="bold">WARNING</emphasis>: If you use more than one type of
@@ -3040,7 +3040,7 @@ service cloudstack-agent start
             root password.</para>
           <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
  <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename>
-                    </programlisting>
+</programlisting>
         </listitem>
         <listitem>
           <para> Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -3217,7 +3217,7 @@ service cloudstack-agent start
             <listitem>
               <para>Merge your changes from the backup file into the new components.xml file.</para>
               <programlisting><prompt>#</prompt> <command>vi</command> <filename>/etc/cloudstack/management/components.xml</filename>
-                            </programlisting>
+</programlisting>
             </listitem>
           </orderedlist>
         </listitem>
@@ -3326,7 +3326,7 @@ service cloudstack-agent start
               <programlisting>
  <prompt>#</prompt> <command>apt-get</command> update
  <prompt>#</prompt> <command>apt-get</command> upgrade cloud-*
-                            </programlisting>
+</programlisting>
             </listitem>
             <listitem>
               <para> Copy the contents of the <filename>agent.properties</filename> file to the new
