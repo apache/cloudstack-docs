@@ -298,1493 +298,1599 @@ under the License.
           >Jira</ulink> to track its issues. All new features and bugs for 4.2.1 have been tracked
         in Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the
         issue number.</para>
-
-        <para>This section includes a summary of known issues were fixed in 4.2.1. Approximately 150 bugs were resolved or closed in the 4.2.1 cycle.</para>
-            <informaltable>
-                <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                    <colspec colwidth="1*" colname="1" colnum="1"/>
-                    <colspec colwidth="2*" colname="2" colnum="2"/>
-                    <thead>
-                        <row>
-                            <entry>
-                                <para>Defect</para>
-                            </entry>
-                            <entry>
-                                <para>Description</para>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3237</para>
-                         </entry>
-                         <entry>
-                           <para>[vmware][SM] Migrate volume is failing when there are snapshots for that volume</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4300</para>
-                         </entry>
-                         <entry>
-                           <para>[upgrade][2.2.14 to 4.2][KVM] system vms are not coming up after upgrade</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4405</para>
-                         </entry>
-                         <entry>
-                           <para>(Upgrade) Migrate failed between existing hosts and new hosts</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4436</para>
-                         </entry>
-                         <entry>
-                           <para>Virtual Router fails to start on RHEL6.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4446</para>
-                         </entry>
-                         <entry>
-                           <para>AWSAPI server fails to start because of error in bean creation.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4464</para>
-                         </entry>
-                         <entry>
-                           <para>"Parallel deployment - Vmware - When deploying 30 parallel Vms , Vm fails to get deployed due to ""StartCommand failed due to Exception: javax.xml.ws.soap.SOAPFaultException"""</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4479</para>
-                         </entry>
-                         <entry>
-                           <para>VPC Network Tier creation fails</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4516</para>
-                         </entry>
-                         <entry>
-                           <para>[Upgrade][VMWare] MySQLIntegrityConstraintViolationException while performing any task using local storage after upgrade  from 3.0.7 to 4.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4522</para>
-                         </entry>
-                         <entry>
-                           <para>[upgrade][vmware] Creation of VM from ISO is failing </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4554</para>
-                         </entry>
-                         <entry>
-                           <para>[upgrade from 3.0.6 to 4.2][vmware] System VM agent doesn't come up after adding a zone on an upgraded setup</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4555</para>
-                         </entry>
-                         <entry>
-                           <para>"[Upgrade from 3.0.6 to 4.2][vmware] After upgrade the system vms fail to come up because ""Secondary storage mount point"" is pointing to a wrong location"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4561</para>
-                         </entry>
-                         <entry>
-                           <para>DeployVm failed after upgrading from earlier version having a private zone to 4.2 </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4579</para>
-                         </entry>
-                         <entry>
-                           <para>"[Upgrade 2.2.14 - 4.2][KVM] -  After upgrade , Not able to deploy Vms with existing templates."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4580</para>
-                         </entry>
-                         <entry>
-                           <para>"[Upgrade 2.2.14 - 4.2][KVM] -  After upgrade , Not able to start existing Vms after stopping them."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4618</para>
-                         </entry>
-                         <entry>
-                           <para>storage refactor has broken CLVM</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4671</para>
-                         </entry>
-                         <entry>
-                           <para>ListZone API failed with Assertion error if assertion is turned on for MS.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4864</para>
-                         </entry>
-                         <entry>
-                           <para>Create VMWare 64 bit system VM template</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5065</para>
-                         </entry>
-                         <entry>
-                           <para>KVM snapshot doesn't take VM snapshot if the VM is running</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-532</para>
-                         </entry>
-                         <entry>
-                           <para>Storage-template-cleanup corrupts templates</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-732</para>
-                         </entry>
-                         <entry>
-                           <para>Add back KVM snapshot support</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-1670</para>
-                         </entry>
-                         <entry>
-                           <para>"When Vm is part of 2 networks say N1(default) and N2  , the ip address from N1 is being assigned to eth1. "</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-1775</para>
-                         </entry>
-                         <entry>
-                           <para>" Events related User/Domain/Account are not being generated expect for USER-DISABLE,DOMAIN-DELETE and ACCOUNT.DISABLE event."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-1819</para>
-                         </entry>
-                         <entry>
-                           <para>AWS Regions - Issues seen when trying to move a zone from 1 region to another.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2792</para>
-                         </entry>
-                         <entry>
-                           <para>Redundant router: Password is reset again after fail-over happened</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3010</para>
-                         </entry>
-                         <entry>
-                           <para>"[VMWare] [SharedNetworkWithServices] router VM deployment fails with error ""Message: Invalid configuration for device '2'."""</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3285</para>
-                         </entry>
-                         <entry>
-                           <para>UCS: Need support for HTTP redirects and HTTPS Certificate handling</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3424</para>
-                         </entry>
-                         <entry>
-                           <para>"IPV6 - When a Vm is expunged and a new Vm is deployed with the same name , /etc/dhchosts.txt has 2 entries with the same name."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3583</para>
-                         </entry>
-                         <entry>
-                           <para>Management server stop is not removing the PID </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3715</para>
-                         </entry>
-                         <entry>
-                           <para>Live Migration of Virtual instances operation is getting timedout </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3737</para>
-                         </entry>
-                         <entry>
-                           <para>Uploaded volume is not getting deleted from secondary storage after attaching it to guest vm</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3765</para>
-                         </entry>
-                         <entry>
-                           <para>[packaging][document] unable to upgrade cp 4.2 build on centos5.5</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3808</para>
-                         </entry>
-                         <entry>
-                           <para>Attach volume should work when root is at zone level primary store and data at cluster level or host level store</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3911</para>
-                         </entry>
-                         <entry>
-                           <para>[PortableIP] there is no check while adding a zone  public range to see whether the same VLAN exists in portable IP range.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4095</para>
-                         </entry>
-                         <entry>
-                           <para>Region id within the Database Transaction code...</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4128</para>
-                         </entry>
-                         <entry>
-                           <para>[Object_store_Refactor] System VMs  start up should check for existence of staging secondary storage in a zone</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4137</para>
-                         </entry>
-                         <entry>
-                           <para>"KVM: After unmanaging cluster, manage cluster will not bring KVM hosts to UP state. cloud-agent on KVM hosts has to be restarted manually"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4190</para>
-                         </entry>
-                         <entry>
-                           <para>[Object_store_refactor] volume should be deleted from staging storage after successfule volume migration</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4199</para>
-                         </entry>
-                         <entry>
-                           <para>Redundant Virtual Router - no failover occur</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4239</para>
-                         </entry>
-                         <entry>
-                           <para>"[vmware]Snapshot creation on ESX 4.1 host fails with ""BackupSnapshotCommand exception: javax.xml.ws.soap.SOAPFaultException"""</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4327</para>
-                         </entry>
-                         <entry>
-                           <para>"[Storage Maintenance] SSVM, CPVM and routerVMs are running even after storage entered into maintenance."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4350</para>
-                         </entry>
-                         <entry>
-                           <para>[Performance Testing] Adding hosts take much longer time than baselines</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4432</para>
-                         </entry>
-                         <entry>
-                           <para>[VMWare] NPE thrown during VM Deployment</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4433</para>
-                         </entry>
-                         <entry>
-                           <para>[VMware]Registration of template using the downloaded template URL is failing.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4434</para>
-                         </entry>
-                         <entry>
-                           <para>"EN: Ubuntu: Direct input ""- _ "", ""? /"", ""keyboard /"" ,""keyboard -"" keys are not working well for the US keyboard."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4454</para>
-                         </entry>
-                         <entry>
-                           <para>object_store - Not able to delete secondary storage when existing snapshots are deleted.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4455</para>
-                         </entry>
-                         <entry>
-                           <para>object_store - Template sync results in private templates being synced to all the secondary stores.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4458</para>
-                         </entry>
-                         <entry>
-                           <para>[VMWare] Failed to create Snapshot on Data Disk because of backup snapshot exception</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4465</para>
-                         </entry>
-                         <entry>
-                           <para>Resource count is not decremented for domain if User Vm is being destroyed as a part of account removal</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4485</para>
-                         </entry>
-                         <entry>
-                           <para>3.0.6 to ASF 4.2 Upgrade [VMWare]: System VMs Fail to create in the Cluster due to invalid path information of the template on the Primary Storage in the cluster</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4495</para>
-                         </entry>
-                         <entry>
-                           <para>systemVM template URL is pointing to old template location in upgrade file</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4499</para>
-                         </entry>
-                         <entry>
-                           <para>Xen6.1/Xen6.2 hosts initially transition to 'Alert' and then to 'Up' after addHost</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4513</para>
-                         </entry>
-                         <entry>
-                           <para>"[Vmware] new mapping vmware datacenter cloudstack zone - Host in second cluster in DC put in maintenance mode, CPVM and  guest VMs that were migrated failed to come up"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4520</para>
-                         </entry>
-                         <entry>
-                           <para>[upgrade][vmware]ExtractVolumeCmd fails with NPE while attempting to download a volume</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4530</para>
-                         </entry>
-                         <entry>
-                           <para>Create Template from a Snapshot fails with unable to find any snapshot ova/ovf when we have multiple secondary storage for a zone.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4539</para>
-                         </entry>
-                         <entry>
-                           <para>[VMWARE] vmware.create.full.clone is set to true in upgraded setup;default nature of vms are full clone</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4551</para>
-                         </entry>
-                         <entry>
-                           <para>"Migrating the data volume from NFS to local storage ,underlying disk offering is not changed."</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4573</para>
-                         </entry>
-                         <entry>
-                           <para>Aquire IP address above domain limit in VPC</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4596</para>
-                         </entry>
-                         <entry>
-                           <para>CloudStack is currently allowing same ip range to be defined in different VLANs across public and portable ranges</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4600</para>
-                         </entry>
-                         <entry>
-                           <para>Registered Cross-zone template does not populate template_zone_ref for later added zones using S3</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4624</para>
-                         </entry>
-                         <entry>
-                           <para>VM Migration fails in 'Security Group Enabled Advanced Zone' with CloudRuntimeException: callHostPlugin failed for cmd: network_rules</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4625</para>
-                         </entry>
-                         <entry>
-                           <para>Snapshots and templates should be deleted from staging storage after create template from snapshot on S3.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4674</para>
-                         </entry>
-                         <entry>
-                           <para>[baremetal] /usr/share/cloudstack-common/scripts/util/ipmi.py script need to recognize various ipmi version and BMC type of server</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4698</para>
-                         </entry>
-                         <entry>
-                           <para>No DHCP service enabled network cannot expunge VMs</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4704</para>
-                         </entry>
-                         <entry>
-                           <para>"DB upgrade bug caused by the new table ""vpc_service_map"""</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4707</para>
-                         </entry>
-                         <entry>
-                           <para>"""sourcetemplateid"" field is not getting set for derived templates"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4711</para>
-                         </entry>
-                         <entry>
-                           <para>UCS:API: Premature API response prevent CS from syncing association status</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4717</para>
-                         </entry>
-                         <entry>
-                           <para>associate IP does not work on shared networks with out source NAT service</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4725</para>
-                         </entry>
-                         <entry>
-                           <para>KVM agent fails to join if local pool is already registered</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4745</para>
-                         </entry>
-                         <entry>
-                           <para>Exception happened when try to apply static nat rule using CreateIpForwardingCmd API</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4746</para>
-                         </entry>
-                         <entry>
-                           <para>Allocation capacity of a cluster during HA</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4750</para>
-                         </entry>
-                         <entry>
-                           <para>bond.VLAN mapping in iptables FORWARD chain not created consistently</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4777</para>
-                         </entry>
-                         <entry>
-                           <para>NullPointerException instead of working KVM HA</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4783</para>
-                         </entry>
-                         <entry>
-                           <para>Unable to see a derieved template if the parent template is deleted</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4816</para>
-                         </entry>
-                         <entry>
-                           <para>provide configurable option to choose single vs multipart upload to S3 object storage </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4817</para>
-                         </entry>
-                         <entry>
-                           <para>Backup snapshot on Xen should take global setting s3.multipart.enabled.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4828</para>
-                         </entry>
-                         <entry>
-                           <para>remove nic fails if dhcp wasn't enabled in network offering</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4836</para>
-                         </entry>
-                         <entry>
-                           <para>Restart network with cleanup=true won't reprogram remote access VPN users in the VR</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4849</para>
-                         </entry>
-                         <entry>
-                           <para>LXC not working when using nonoss build</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4859</para>
-                         </entry>
-                         <entry>
-                           <para>Add global config to disable storage migration during HA </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4862</para>
-                         </entry>
-                         <entry>
-                           <para>Admin cannot delete shared network scoped to user account.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4872</para>
-                         </entry>
-                         <entry>
-                           <para>VM provisioned using a registered Windows Server 2012 template will show as other os in VCenter.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4888</para>
-                         </entry>
-                         <entry>
-                           <para>API:UCS:NPE Refresh blades on a decommissioned chassis results in NPE</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4913</para>
-                         </entry>
-                         <entry>
-                           <para>Disable security group for bridge mode non-security group zone</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4921</para>
-                         </entry>
-                         <entry>
-                           <para>usage service doesn't start after reboot</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4946</para>
-                         </entry>
-                         <entry>
-                           <para>Restore VM with template id feature doesnt work on VMware</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4988</para>
-                         </entry>
-                         <entry>
-                           <para>"listTemplates: public templates created in domain /ROOT/a/b, are not visible in /ROOT/a domain"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5061</para>
-                         </entry>
-                         <entry>
-                           <para>Cloudstack doesn't consider storage overprovisioning factor when using thin Provisioning over VMWare VMFS datastores</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5066</para>
-                         </entry>
-                         <entry>
-                           <para>Existed remote access VPN got dropped when adding new VPN users</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5076</para>
-                         </entry>
-                         <entry>
-                           <para>(Upgrade) reboot VM failed after bridge name change</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5122</para>
-                         </entry>
-                         <entry>
-                           <para>[VMware] System VMs are getting recreated with old template after upgrading to 4.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-1236</para>
-                         </entry>
-                         <entry>
-                           <para>Warning while adding Xen 6.1 host [Unable to create local link network]</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-1749</para>
-                         </entry>
-                         <entry>
-                           <para>Used Master Branch System VM Template: Cloud agent service running on Secondary Storage VM and Console Proxy VM is named as cloud.com service</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2024</para>
-                         </entry>
-                         <entry>
-                           <para>cloudstack-setup-management with https not works (incorrect path and missing keystore file)</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2034</para>
-                         </entry>
-                         <entry>
-                           <para>No alert generated for deletion of primarystorage failed event</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2413</para>
-                         </entry>
-                         <entry>
-                           <para>"The dialog box Change Compute Offering for a instance, display the Description (instead of the Name) of compute offering"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2767</para>
-                         </entry>
-                         <entry>
-                           <para>"There is no check on input parameters in API for Global settings,zone settings  and account  settings "</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2804</para>
-                         </entry>
-                         <entry>
-                           <para>getEthByIp function in vpc_func.sh can return the wrong network interface</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-2918</para>
-                         </entry>
-                         <entry>
-                           <para>"In a scaled up environment, hosts fail to come up after Management server restart in clustered set up"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3223</para>
-                         </entry>
-                         <entry>
-                           <para>Exception occured while creating the CPVM in the VmWare Setup using the latest SystemVM template.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3508</para>
-                         </entry>
-                         <entry>
-                           <para> NullPointerException observed during API call ListVolumeAnswer</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3603</para>
-                         </entry>
-                         <entry>
-                           <para>"""template_store_ref"" table has Invalid URL References"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3803</para>
-                         </entry>
-                         <entry>
-                           <para>Unable to complete Add zone wizard.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3873</para>
-                         </entry>
-                         <entry>
-                           <para>No error notification is generated when Primary storage (Cluster level) is added with wrong path </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4449</para>
-                         </entry>
-                         <entry>
-                           <para>Possibility of /tmp/xapilog filling up the Root disk on Xenserver </para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4466</para>
-                         </entry>
-                         <entry>
-                           <para>DHCP capability breaks in 4.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4482</para>
-                         </entry>
-                         <entry>
-                           <para>getVMPassword() API call does not retuen password for Vms that are deployed with password enabled templates.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4521</para>
-                         </entry>
-                         <entry>
-                           <para>[upgrade][vmware]Attaching an uploaded volume to a VM throws NPE</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4572</para>
-                         </entry>
-                         <entry>
-                           <para>findHostsForMigration API does not return correct host list</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4612</para>
-                         </entry>
-                         <entry>
-                           <para>Specified keyboard language is not showing as default in consoleView passed during deployVM</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4613</para>
-                         </entry>
-                         <entry>
-                           <para>security group rules issue in host</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4627</para>
-                         </entry>
-                         <entry>
-                           <para>"HA not working, User VM wasn't Migrated"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4636</para>
-                         </entry>
-                         <entry>
-                           <para>In a scaled up setup all Vm's in a cluster were stopped and/or started after management server restart</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4661</para>
-                         </entry>
-                         <entry>
-                           <para>[DB Upgrade] SecondaryStorage entry in host table before upgrade is not marked as removed after migrating them to image_store table.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4716</para>
-                         </entry>
-                         <entry>
-                           <para>(Upgrade) resource_count table is not updated after upgrade to 4.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4755</para>
-                         </entry>
-                         <entry>
-                           <para>cloudstack 4.x does not allow memory upgrade</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4765</para>
-                         </entry>
-                         <entry>
-                           <para>PF rules configure public ip address is not set on the VR when network is up after GC</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4785</para>
-                         </entry>
-                         <entry>
-                           <para>Add support for adding details to UserVm</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4786</para>
-                         </entry>
-                         <entry>
-                           <para>Redundant router: the priority limitation</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4797</para>
-                         </entry>
-                         <entry>
-                           <para>Installation guide for 4.2 instructs users to install 4.1</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4813</para>
-                         </entry>
-                         <entry>
-                           <para>get ExitValue when run bash commands</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4827</para>
-                         </entry>
-                         <entry>
-                           <para>Build failed on 4.2</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4839</para>
-                         </entry>
-                         <entry>
-                           <para>"Install Guide, section 3.5, provides wrong list of .deb packages"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4867</para>
-                         </entry>
-                         <entry>
-                           <para>NullPointerException on agent while remounting primary storage</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4882</para>
-                         </entry>
-                         <entry>
-                           <para>listClusters/pods/zones and listCapacity(dashboard view) API not accounting for reserved in the used capacity percentage.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4895</para>
-                         </entry>
-                         <entry>
-                           <para>Management server fails to start because snapshot policy time zones have day light savings</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4911</para>
-                         </entry>
-                         <entry>
-                           <para>[Mixed Hypervisor] VM Status is marked as alive when exit status of ping command is not available within command timeout</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4923</para>
-                         </entry>
-                         <entry>
-                           <para>Network limits is missing in Accounts details page</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4924</para>
-                         </entry>
-                         <entry>
-                           <para>AcountCleanup: never release the ip address if the network failed to delete</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4947</para>
-                         </entry>
-                         <entry>
-                           <para>if apply.allocation.algorithm.to.pods is set to true VM creationFails.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4948</para>
-                         </entry>
-                         <entry>
-                           <para>"DeploymentPlanner: Logic to check if cluster can be avoided, needs to consider if VM is using local storage and/or shared storage"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4964</para>
-                         </entry>
-                         <entry>
-                           <para>Cisco VNMC: Nexus password gets logged in MS logs during guest n/w implementation with VNMC provider</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4985</para>
-                         </entry>
-                         <entry>
-                           <para>NPE while deleting old root volumes of a restored VM during storage garbage collection</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4987</para>
-                         </entry>
-                         <entry>
-                           <para>Able to add isolated network belonging to an account to a virtual machine belonging to different account</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-4998</para>
-                         </entry>
-                         <entry>
-                           <para>"assignVirtualMachine API has wrong response string, causing Cloudmonkey to crash"</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5018</para>
-                         </entry>
-                         <entry>
-                           <para>Creation of VM using template from snapshot of RBD volume fails</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5029</para>
-                         </entry>
-                         <entry>
-                           <para>cloud-bugtool isn't in release package like release notes say</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5038</para>
-                         </entry>
-                         <entry>
-                           <para>Upgrade to 4.2 - used cpu is getting bumped up when the over provisioning factor > 1</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5096</para>
-                         </entry>
-                         <entry>
-                           <para>[VMware] Corrupt template is left behind after the copy of a template from secondary to primary fails.</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-5140</para>
-                         </entry>
-                         <entry>
-                           <para>A stopped vm cant start after disable threshold has been reached on the storage pool</para>
-                         </entry>
-                        </row>
-                        <row>
-                         <entry>
-                           <para>CLOUDSTACK-3100</para>
-                         </entry>
-                         <entry>
-                           <para>"[DR] add ""displayvm"" flag to listVirtualMachines API"</para>
-                         </entry>
-                        </row>
-
-                    </tbody>
-                </tgroup>
-            </informaltable>
+      <para>This section includes a summary of known issues were fixed in 4.2.1. Approximately 150
+        bugs were resolved or closed in the 4.2.1 cycle.</para>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1*" colname="1" colnum="1"/>
+          <colspec colwidth="2*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>
+                <para>Defect</para>
+              </entry>
+              <entry>
+                <para>Description</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3237</para>
+              </entry>
+              <entry>
+                <para>[vmware][SM] Migrate volume is failing when there are snapshots for that
+                  volume</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4300</para>
+              </entry>
+              <entry>
+                <para>[upgrade][2.2.14 to 4.2][KVM] system vms are not coming up after
+                  upgrade</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4405</para>
+              </entry>
+              <entry>
+                <para>(Upgrade) Migrate failed between existing hosts and new hosts</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4436</para>
+              </entry>
+              <entry>
+                <para>Virtual Router fails to start on RHEL6.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4446</para>
+              </entry>
+              <entry>
+                <para>AWSAPI server fails to start because of error in bean creation.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4464</para>
+              </entry>
+              <entry>
+                <para>"Parallel deployment - Vmware - When deploying 30 parallel Vms , Vm fails to
+                  get deployed due to ""StartCommand failed due to Exception:
+                  javax.xml.ws.soap.SOAPFaultException"""</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4479</para>
+              </entry>
+              <entry>
+                <para>VPC Network Tier creation fails</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4516</para>
+              </entry>
+              <entry>
+                <para>[Upgrade][VMWare] MySQLIntegrityConstraintViolationException while performing
+                  any task using local storage after upgrade from 3.0.7 to 4.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4522</para>
+              </entry>
+              <entry>
+                <para>[upgrade][vmware] Creation of VM from ISO is failing </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4554</para>
+              </entry>
+              <entry>
+                <para>[upgrade from 3.0.6 to 4.2][vmware] System VM agent doesn't come up after
+                  adding a zone on an upgraded setup</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4555</para>
+              </entry>
+              <entry>
+                <para>"[Upgrade from 3.0.6 to 4.2][vmware] After upgrade the system vms fail to come
+                  up because ""Secondary storage mount point"" is pointing to a wrong
+                  location"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4561</para>
+              </entry>
+              <entry>
+                <para>DeployVm failed after upgrading from earlier version having a private zone to
+                  4.2 </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4579</para>
+              </entry>
+              <entry>
+                <para>"[Upgrade 2.2.14 - 4.2][KVM] - After upgrade , Not able to deploy Vms with
+                  existing templates."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4580</para>
+              </entry>
+              <entry>
+                <para>"[Upgrade 2.2.14 - 4.2][KVM] - After upgrade , Not able to start existing Vms
+                  after stopping them."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4618</para>
+              </entry>
+              <entry>
+                <para>storage refactor has broken CLVM</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4671</para>
+              </entry>
+              <entry>
+                <para>ListZone API failed with Assertion error if assertion is turned on for
+                  MS.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4864</para>
+              </entry>
+              <entry>
+                <para>Create VMWare 64 bit system VM template</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5065</para>
+              </entry>
+              <entry>
+                <para>KVM snapshot doesn't take VM snapshot if the VM is running</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-532</para>
+              </entry>
+              <entry>
+                <para>Storage-template-cleanup corrupts templates</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-732</para>
+              </entry>
+              <entry>
+                <para>Add back KVM snapshot support</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-1670</para>
+              </entry>
+              <entry>
+                <para>"When Vm is part of 2 networks say N1(default) and N2 , the ip address from N1
+                  is being assigned to eth1. "</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-1775</para>
+              </entry>
+              <entry>
+                <para>" Events related User/Domain/Account are not being generated expect for
+                  USER-DISABLE,DOMAIN-DELETE and ACCOUNT.DISABLE event."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-1819</para>
+              </entry>
+              <entry>
+                <para>AWS Regions - Issues seen when trying to move a zone from 1 region to
+                  another.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2792</para>
+              </entry>
+              <entry>
+                <para>Redundant router: Password is reset again after fail-over happened</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3010</para>
+              </entry>
+              <entry>
+                <para>"[VMWare] [SharedNetworkWithServices] router VM deployment fails with error
+                  ""Message: Invalid configuration for device '2'."""</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3285</para>
+              </entry>
+              <entry>
+                <para>UCS: Need support for HTTP redirects and HTTPS Certificate handling</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3424</para>
+              </entry>
+              <entry>
+                <para>"IPV6 - When a Vm is expunged and a new Vm is deployed with the same name ,
+                  /etc/dhchosts.txt has 2 entries with the same name."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3583</para>
+              </entry>
+              <entry>
+                <para>Management server stop is not removing the PID </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3715</para>
+              </entry>
+              <entry>
+                <para>Live Migration of Virtual instances operation is getting timedout </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3737</para>
+              </entry>
+              <entry>
+                <para>Uploaded volume is not getting deleted from secondary storage after attaching
+                  it to guest vm</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3765</para>
+              </entry>
+              <entry>
+                <para>[packaging][document] unable to upgrade cp 4.2 build on centos5.5</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3808</para>
+              </entry>
+              <entry>
+                <para>Attach volume should work when root is at zone level primary store and data at
+                  cluster level or host level store</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3911</para>
+              </entry>
+              <entry>
+                <para>[PortableIP] there is no check while adding a zone public range to see whether
+                  the same VLAN exists in portable IP range.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4095</para>
+              </entry>
+              <entry>
+                <para>Region id within the Database Transaction code...</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4128</para>
+              </entry>
+              <entry>
+                <para>[Object_store_Refactor] System VMs start up should check for existence of
+                  staging secondary storage in a zone</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4137</para>
+              </entry>
+              <entry>
+                <para>"KVM: After unmanaging cluster, manage cluster will not bring KVM hosts to UP
+                  state. cloud-agent on KVM hosts has to be restarted manually"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4190</para>
+              </entry>
+              <entry>
+                <para>[Object_store_refactor] volume should be deleted from staging storage after
+                  successfule volume migration</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4199</para>
+              </entry>
+              <entry>
+                <para>Redundant Virtual Router - no failover occur</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4239</para>
+              </entry>
+              <entry>
+                <para>"[vmware]Snapshot creation on ESX 4.1 host fails with ""BackupSnapshotCommand
+                  exception: javax.xml.ws.soap.SOAPFaultException"""</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4327</para>
+              </entry>
+              <entry>
+                <para>"[Storage Maintenance] SSVM, CPVM and routerVMs are running even after storage
+                  entered into maintenance."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4350</para>
+              </entry>
+              <entry>
+                <para>[Performance Testing] Adding hosts take much longer time than baselines</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4432</para>
+              </entry>
+              <entry>
+                <para>[VMWare] NPE thrown during VM Deployment</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4433</para>
+              </entry>
+              <entry>
+                <para>[VMware]Registration of template using the downloaded template URL is
+                  failing.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4434</para>
+              </entry>
+              <entry>
+                <para>"EN: Ubuntu: Direct input ""- _ "", ""? /"", ""keyboard /"" ,""keyboard -""
+                  keys are not working well for the US keyboard."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4454</para>
+              </entry>
+              <entry>
+                <para>object_store - Not able to delete secondary storage when existing snapshots
+                  are deleted.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4455</para>
+              </entry>
+              <entry>
+                <para>object_store - Template sync results in private templates being synced to all
+                  the secondary stores.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4458</para>
+              </entry>
+              <entry>
+                <para>[VMWare] Failed to create Snapshot on Data Disk because of backup snapshot
+                  exception</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4465</para>
+              </entry>
+              <entry>
+                <para>Resource count is not decremented for domain if User Vm is being destroyed as
+                  a part of account removal</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4485</para>
+              </entry>
+              <entry>
+                <para>3.0.6 to ASF 4.2 Upgrade [VMWare]: System VMs Fail to create in the Cluster
+                  due to invalid path information of the template on the Primary Storage in the
+                  cluster</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4495</para>
+              </entry>
+              <entry>
+                <para>systemVM template URL is pointing to old template location in upgrade
+                  file</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4499</para>
+              </entry>
+              <entry>
+                <para>Xen6.1/Xen6.2 hosts initially transition to 'Alert' and then to 'Up' after
+                  addHost</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4513</para>
+              </entry>
+              <entry>
+                <para>"[Vmware] new mapping vmware datacenter cloudstack zone - Host in second
+                  cluster in DC put in maintenance mode, CPVM and guest VMs that were migrated
+                  failed to come up"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4520</para>
+              </entry>
+              <entry>
+                <para>[upgrade][vmware]ExtractVolumeCmd fails with NPE while attempting to download
+                  a volume</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4530</para>
+              </entry>
+              <entry>
+                <para>Create Template from a Snapshot fails with unable to find any snapshot ova/ovf
+                  when we have multiple secondary storage for a zone.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4539</para>
+              </entry>
+              <entry>
+                <para>[VMWARE] vmware.create.full.clone is set to true in upgraded setup;default
+                  nature of vms are full clone</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4551</para>
+              </entry>
+              <entry>
+                <para>"Migrating the data volume from NFS to local storage ,underlying disk offering
+                  is not changed."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4573</para>
+              </entry>
+              <entry>
+                <para>Aquire IP address above domain limit in VPC</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4596</para>
+              </entry>
+              <entry>
+                <para>CloudStack is currently allowing same ip range to be defined in different
+                  VLANs across public and portable ranges</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4600</para>
+              </entry>
+              <entry>
+                <para>Registered Cross-zone template does not populate template_zone_ref for later
+                  added zones using S3</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4624</para>
+              </entry>
+              <entry>
+                <para>VM Migration fails in 'Security Group Enabled Advanced Zone' with
+                  CloudRuntimeException: callHostPlugin failed for cmd: network_rules</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4625</para>
+              </entry>
+              <entry>
+                <para>Snapshots and templates should be deleted from staging storage after create
+                  template from snapshot on S3.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4674</para>
+              </entry>
+              <entry>
+                <para>[baremetal] /usr/share/cloudstack-common/scripts/util/ipmi.py script need to
+                  recognize various ipmi version and BMC type of server</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4698</para>
+              </entry>
+              <entry>
+                <para>No DHCP service enabled network cannot expunge VMs</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4704</para>
+              </entry>
+              <entry>
+                <para>"DB upgrade bug caused by the new table ""vpc_service_map"""</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4707</para>
+              </entry>
+              <entry>
+                <para>"""sourcetemplateid"" field is not getting set for derived templates"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4711</para>
+              </entry>
+              <entry>
+                <para>UCS:API: Premature API response prevent CS from syncing association
+                  status</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4717</para>
+              </entry>
+              <entry>
+                <para>associate IP does not work on shared networks with out source NAT
+                  service</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4725</para>
+              </entry>
+              <entry>
+                <para>KVM agent fails to join if local pool is already registered</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4745</para>
+              </entry>
+              <entry>
+                <para>Exception happened when try to apply static nat rule using
+                  CreateIpForwardingCmd API</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4746</para>
+              </entry>
+              <entry>
+                <para>Allocation capacity of a cluster during HA</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4750</para>
+              </entry>
+              <entry>
+                <para>bond.VLAN mapping in iptables FORWARD chain not created consistently</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4777</para>
+              </entry>
+              <entry>
+                <para>NullPointerException instead of working KVM HA</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4783</para>
+              </entry>
+              <entry>
+                <para>Unable to see a derieved template if the parent template is deleted</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4816</para>
+              </entry>
+              <entry>
+                <para>provide configurable option to choose single vs multipart upload to S3 object
+                  storage </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4817</para>
+              </entry>
+              <entry>
+                <para>Backup snapshot on Xen should take global setting s3.multipart.enabled.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4828</para>
+              </entry>
+              <entry>
+                <para>remove nic fails if dhcp wasn't enabled in network offering</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4836</para>
+              </entry>
+              <entry>
+                <para>Restart network with cleanup=true won't reprogram remote access VPN users in
+                  the VR</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4849</para>
+              </entry>
+              <entry>
+                <para>LXC not working when using nonoss build</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4859</para>
+              </entry>
+              <entry>
+                <para>Add global config to disable storage migration during HA </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4862</para>
+              </entry>
+              <entry>
+                <para>Admin cannot delete shared network scoped to user account.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4872</para>
+              </entry>
+              <entry>
+                <para>VM provisioned using a registered Windows Server 2012 template will show as
+                  other os in VCenter.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4888</para>
+              </entry>
+              <entry>
+                <para>API:UCS:NPE Refresh blades on a decommissioned chassis results in NPE</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4913</para>
+              </entry>
+              <entry>
+                <para>Disable security group for bridge mode non-security group zone</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4921</para>
+              </entry>
+              <entry>
+                <para>usage service doesn't start after reboot</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4946</para>
+              </entry>
+              <entry>
+                <para>Restore VM with template id feature doesnt work on VMware</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4988</para>
+              </entry>
+              <entry>
+                <para>"listTemplates: public templates created in domain /ROOT/a/b, are not visible
+                  in /ROOT/a domain"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5061</para>
+              </entry>
+              <entry>
+                <para>Cloudstack doesn't consider storage overprovisioning factor when using thin
+                  Provisioning over VMWare VMFS datastores</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5066</para>
+              </entry>
+              <entry>
+                <para>Existed remote access VPN got dropped when adding new VPN users</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5076</para>
+              </entry>
+              <entry>
+                <para>(Upgrade) reboot VM failed after bridge name change</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5122</para>
+              </entry>
+              <entry>
+                <para>[VMware] System VMs are getting recreated with old template after upgrading to
+                  4.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-1236</para>
+              </entry>
+              <entry>
+                <para>Warning while adding Xen 6.1 host [Unable to create local link network]</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-1749</para>
+              </entry>
+              <entry>
+                <para>Used Master Branch System VM Template: Cloud agent service running on
+                  Secondary Storage VM and Console Proxy VM is named as cloud.com service</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2024</para>
+              </entry>
+              <entry>
+                <para>cloudstack-setup-management with https not works (incorrect path and missing
+                  keystore file)</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2034</para>
+              </entry>
+              <entry>
+                <para>No alert generated for deletion of primarystorage failed event</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2413</para>
+              </entry>
+              <entry>
+                <para>"The dialog box Change Compute Offering for a instance, display the
+                  Description (instead of the Name) of compute offering"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2767</para>
+              </entry>
+              <entry>
+                <para>"There is no check on input parameters in API for Global settings,zone
+                  settings and account settings "</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2804</para>
+              </entry>
+              <entry>
+                <para>getEthByIp function in vpc_func.sh can return the wrong network
+                  interface</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2918</para>
+              </entry>
+              <entry>
+                <para>"In a scaled up environment, hosts fail to come up after Management server
+                  restart in clustered set up"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3223</para>
+              </entry>
+              <entry>
+                <para>Exception occured while creating the CPVM in the VmWare Setup using the latest
+                  SystemVM template.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3508</para>
+              </entry>
+              <entry>
+                <para> NullPointerException observed during API call ListVolumeAnswer</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3603</para>
+              </entry>
+              <entry>
+                <para>"""template_store_ref"" table has Invalid URL References"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3803</para>
+              </entry>
+              <entry>
+                <para>Unable to complete Add zone wizard.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3873</para>
+              </entry>
+              <entry>
+                <para>No error notification is generated when Primary storage (Cluster level) is
+                  added with wrong path </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4449</para>
+              </entry>
+              <entry>
+                <para>Possibility of /tmp/xapilog filling up the Root disk on Xenserver </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4466</para>
+              </entry>
+              <entry>
+                <para>DHCP capability breaks in 4.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4482</para>
+              </entry>
+              <entry>
+                <para>getVMPassword() API call does not retuen password for Vms that are deployed
+                  with password enabled templates.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4521</para>
+              </entry>
+              <entry>
+                <para>[upgrade][vmware]Attaching an uploaded volume to a VM throws NPE</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4572</para>
+              </entry>
+              <entry>
+                <para>findHostsForMigration API does not return correct host list</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4612</para>
+              </entry>
+              <entry>
+                <para>Specified keyboard language is not showing as default in consoleView passed
+                  during deployVM</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4613</para>
+              </entry>
+              <entry>
+                <para>security group rules issue in host</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4627</para>
+              </entry>
+              <entry>
+                <para>"HA not working, User VM wasn't Migrated"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4636</para>
+              </entry>
+              <entry>
+                <para>In a scaled up setup all Vm's in a cluster were stopped and/or started after
+                  management server restart</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4661</para>
+              </entry>
+              <entry>
+                <para>[DB Upgrade] SecondaryStorage entry in host table before upgrade is not marked
+                  as removed after migrating them to image_store table.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4716</para>
+              </entry>
+              <entry>
+                <para>(Upgrade) resource_count table is not updated after upgrade to 4.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4755</para>
+              </entry>
+              <entry>
+                <para>cloudstack 4.x does not allow memory upgrade</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4765</para>
+              </entry>
+              <entry>
+                <para>PF rules configure public ip address is not set on the VR when network is up
+                  after GC</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4785</para>
+              </entry>
+              <entry>
+                <para>Add support for adding details to UserVm</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4786</para>
+              </entry>
+              <entry>
+                <para>Redundant router: the priority limitation</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4797</para>
+              </entry>
+              <entry>
+                <para>Installation guide for 4.2 instructs users to install 4.1</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4813</para>
+              </entry>
+              <entry>
+                <para>get ExitValue when run bash commands</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4827</para>
+              </entry>
+              <entry>
+                <para>Build failed on 4.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4839</para>
+              </entry>
+              <entry>
+                <para>"Install Guide, section 3.5, provides wrong list of .deb packages"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4867</para>
+              </entry>
+              <entry>
+                <para>NullPointerException on agent while remounting primary storage</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4882</para>
+              </entry>
+              <entry>
+                <para>listClusters/pods/zones and listCapacity(dashboard view) API not accounting
+                  for reserved in the used capacity percentage.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4895</para>
+              </entry>
+              <entry>
+                <para>Management server fails to start because snapshot policy time zones have day
+                  light savings</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4911</para>
+              </entry>
+              <entry>
+                <para>[Mixed Hypervisor] VM Status is marked as alive when exit status of ping
+                  command is not available within command timeout</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4923</para>
+              </entry>
+              <entry>
+                <para>Network limits is missing in Accounts details page</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4924</para>
+              </entry>
+              <entry>
+                <para>AcountCleanup: never release the ip address if the network failed to
+                  delete</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4947</para>
+              </entry>
+              <entry>
+                <para>if apply.allocation.algorithm.to.pods is set to true VM creationFails.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4948</para>
+              </entry>
+              <entry>
+                <para>"DeploymentPlanner: Logic to check if cluster can be avoided, needs to
+                  consider if VM is using local storage and/or shared storage"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4964</para>
+              </entry>
+              <entry>
+                <para>Cisco VNMC: Nexus password gets logged in MS logs during guest n/w
+                  implementation with VNMC provider</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4985</para>
+              </entry>
+              <entry>
+                <para>NPE while deleting old root volumes of a restored VM during storage garbage
+                  collection</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4987</para>
+              </entry>
+              <entry>
+                <para>Able to add isolated network belonging to an account to a virtual machine
+                  belonging to different account</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4998</para>
+              </entry>
+              <entry>
+                <para>"assignVirtualMachine API has wrong response string, causing Cloudmonkey to
+                  crash"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5018</para>
+              </entry>
+              <entry>
+                <para>Creation of VM using template from snapshot of RBD volume fails</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5029</para>
+              </entry>
+              <entry>
+                <para>cloud-bugtool isn't in release package like release notes say</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5038</para>
+              </entry>
+              <entry>
+                <para>Upgrade to 4.2 - used cpu is getting bumped up when the over provisioning
+                  factor > 1</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5096</para>
+              </entry>
+              <entry>
+                <para>[VMware] Corrupt template is left behind after the copy of a template from
+                  secondary to primary fails.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5140</para>
+              </entry>
+              <entry>
+                <para>A stopped vm cant start after disable threshold has been reached on the
+                  storage pool</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-3100</para>
+              </entry>
+              <entry>
+                <para>"[DR] add ""displayvm"" flag to listVirtualMachines API"</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
     </section>
     <section id="known-issues-4.2.1">
       <title>Known Issues in 4.2.1</title>
       <para>This section includes a summary of known issues in 4.2.1 </para>
-
-              <informaltable>
-                <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                    <colspec colwidth="1*" colname="1" colnum="1"/>
-                    <colspec colwidth="2*" colname="2" colnum="2"/>
-                    <thead>
-                        <row>
-                            <entry>
-                                <para>Issue ID</para>
-                            </entry>
-                            <entry>
-                                <para>Description</para>
-                            </entry>
-                        </row>
-                    </thead>
-                    <tbody>
-
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4875</para>
-                            </entry>
-                            <entry>
-                              <para>VMWARE: vCenter 5.5 - SYSTEM VM: Unable to create deployment for VM</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5159</para>
-                            </entry>
-                            <entry>
-                              <para>Reset SSH keypair sometimes fails in Vmware</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5188</para>
-                            </entry>
-                            <entry>
-                              <para>Password reset of vm on Xen and VMware does not work on first reboot</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-2140</para>
-                            </entry>
-                            <entry>
-                              <para>"Host is still marked as being in ""Up"" state when the host is shutdown (when there are no more hosts in the cluster)"</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4545</para>
-                            </entry>
-                            <entry>
-                              <para>VMWare:Template:Cloning: Master templte used by linked clones should not be available for deletion</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4577</para>
-                            </entry>
-                            <entry>
-                              <para>VMWare:Volumes: Unexpected exception while executing org.apache.cloudstack.api.command.user.volume.ResizeVolumeCmd java.lang.NullPointerException</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4587</para>
-                            </entry>
-                            <entry>
-                              <para>VM is failing to deploy on a Legacy zone after adding zone wide primary storage and moving cluster wide primary storage to maintenance  mode</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4594</para>
-                            </entry>
-                            <entry>
-                              <para>[VMWARE] [Upgrade] Failed to revert VM Snapshot which were created before Live Storage Migrating the VM to other Cluster</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4616</para>
-                            </entry>
-                            <entry>
-                              <para>"When system Vms fail to start when host is down ,  link local Ip addresses do not get released resulting in all the link local Ip addresses being consumed eventually."</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5008</para>
-                            </entry>
-                            <entry>
-                              <para>[VMWARE]Failed to start the VM after performing Cold Migration of Volume to Second Zone wide primary Storage</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5014</para>
-                            </entry>
-                            <entry>
-                              <para>vmware:deployVM with data disk failed with exception</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5054</para>
-                            </entry>
-                            <entry>
-                              <para>"vm migration involving storage migration on vmware fails with exception "" The object has already been deleted or has not been completely created """</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5119</para>
-                            </entry>
-                            <entry>
-                              <para>F5 plugin : VLAN provisioning broken</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4475</para>
-                            </entry>
-                            <entry>
-                              <para>[ZWPS] attaching an uploaded volume to a VM is always going to first primary storage added</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4492</para>
-                            </entry>
-                            <entry>
-                              <para>[object_store_ref] Attaching volume to a vm is failing after upgrade if the volume was uploaded before upgrade </para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4496</para>
-                            </entry>
-                            <entry>
-                              <para>[VMWARE]System VM's are failed to start with NPE when host is maitanance state</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4504</para>
-                            </entry>
-                            <entry>
-                              <para>VM creation Is failing using the Ubuntu ISO with Xen 6.1 and 6.2</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4536</para>
-                            </entry>
-                            <entry>
-                              <para>[object_store_refactor] Inconsistency in volume store location on secondary storage for uploaded and extracted volume</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4574</para>
-                            </entry>
-                            <entry>
-                              <para>"MS:NPE at ""CapacityManagerImpl.java:187"" while executing DestroyVMCmd "</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4593</para>
-                            </entry>
-                            <entry>
-                              <para> [VMWARE] [Upgrade]Livestorage Migration and VM Snapshot features are not fully functional after upgrade</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4620</para>
-                            </entry>
-                            <entry>
-                              <para>Vm failed to start on the host on which it was running due to not having enough reservedMem when the host was powered on after being shutdown.</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4638</para>
-                            </entry>
-                            <entry>
-                              <para>state information is not synced on Starting VM  directly via Vcenter </para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4639</para>
-                            </entry>
-                            <entry>
-                              <para>status of VM is not synced properly when host is HA  during hypervisor failure</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4657</para>
-                            </entry>
-                            <entry>
-                              <para>ceph:fail to attach a volume to instance which is  migrated from one primary to another primary.</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4697</para>
-                            </entry>
-                            <entry>
-                              <para>Not able to delete Primary storage when there are no hosts in the cluster.</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4734</para>
-                            </entry>
-                            <entry>
-                              <para>"Creating snapshot from ROOT volume fails with error message - ""Failed to create snapshot due to an internal error creating snapshot for volume 14”"</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4743</para>
-                            </entry>
-                            <entry>
-                              <para>VPC: applyStaticRoutes/createPrivateGatway/deletePrivateGateway - read from vpc_service_map table instead of relying on hardcoded values</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4789</para>
-                            </entry>
-                            <entry>
-                              <para>Fix ResourceMetaDataManagerTest</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4850</para>
-                            </entry>
-                            <entry>
-                              <para>[UCS] using template instead of cloning profile</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4861</para>
-                            </entry>
-                            <entry>
-                              <para>"[VMware] If Guest traffic spans across multiple physical networks, selection of physical network to implement guest network is not working correctly."</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4906</para>
-                            </entry>
-                            <entry>
-                              <para>add netaddr to marvin dependency list</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-4978</para>
-                            </entry>
-                            <entry>
-                              <para>Provisioning VMs from templates fails on VMWare with error ROOT-249/ROOT-249.vmdk was not found</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5002</para>
-                            </entry>
-                            <entry>
-                              <para>unable to destroy vm ;VM destroy failed in Stop i-2-59-VM Command due to You gave an invalid object reference.  The object may have recently been deleted. </para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5005</para>
-                            </entry>
-                            <entry>
-                              <para>issue with stopping vms parallelly </para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5020</para>
-                            </entry>
-                            <entry>
-                              <para>fail to recreate system VM  in a specific scenario during storage maintenance</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5075</para>
-                            </entry>
-                            <entry>
-                              <para>"issue with destroy vm with local storage  ; Unable to update vm disk statistics for vm: 42 from host: 1 java.lang.IndexOutOfBoundsException: Index: 0, Size: 0"</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5090</para>
-                            </entry>
-                            <entry>
-                              <para>Anti-Affinity: VM fails to start on a cluster belonging to a different pod.</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5098</para>
-                            </entry>
-                            <entry>
-                              <para>[VMWARE] Entries in vmware_data_center and vmware_data_center_zone_map are not cleaned up when there is a failure to add the cluster</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5118</para>
-                            </entry>
-                            <entry>
-                              <para>Intrastructure > Virtual Routers listed multiple times</para>
-                            </entry>
-                           </row>
-                           <row>
-                            <entry>
-                              <para>CLOUDSTACK-5123</para>
-                            </entry>
-                            <entry>
-                              <para>vmware - mem overprovisioning behaviour</para>
-                            </entry>
-                           </row>
-
-                   </tbody>
-                </tgroup>
-            </informaltable>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1*" colname="1" colnum="1"/>
+          <colspec colwidth="2*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>
+                <para>Issue ID</para>
+              </entry>
+              <entry>
+                <para>Description</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4875</para>
+              </entry>
+              <entry>
+                <para>VMWARE: vCenter 5.5 - SYSTEM VM: Unable to create deployment for VM</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5159</para>
+              </entry>
+              <entry>
+                <para>Reset SSH keypair sometimes fails in Vmware</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5188</para>
+              </entry>
+              <entry>
+                <para>Password reset of vm on Xen and VMware does not work on first reboot</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2140</para>
+              </entry>
+              <entry>
+                <para>"Host is still marked as being in ""Up"" state when the host is shutdown (when
+                  there are no more hosts in the cluster)"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4545</para>
+              </entry>
+              <entry>
+                <para>VMWare:Template:Cloning: Master templte used by linked clones should not be
+                  available for deletion</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4577</para>
+              </entry>
+              <entry>
+                <para>VMWare:Volumes: Unexpected exception while executing
+                  org.apache.cloudstack.api.command.user.volume.ResizeVolumeCmd
+                  java.lang.NullPointerException</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4587</para>
+              </entry>
+              <entry>
+                <para>VM is failing to deploy on a Legacy zone after adding zone wide primary
+                  storage and moving cluster wide primary storage to maintenance mode</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4594</para>
+              </entry>
+              <entry>
+                <para>[VMWARE] [Upgrade] Failed to revert VM Snapshot which were created before Live
+                  Storage Migrating the VM to other Cluster</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4616</para>
+              </entry>
+              <entry>
+                <para>"When system Vms fail to start when host is down , link local Ip addresses do
+                  not get released resulting in all the link local Ip addresses being consumed
+                  eventually."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5008</para>
+              </entry>
+              <entry>
+                <para>[VMWARE]Failed to start the VM after performing Cold Migration of Volume to
+                  Second Zone wide primary Storage</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5014</para>
+              </entry>
+              <entry>
+                <para>vmware:deployVM with data disk failed with exception</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5054</para>
+              </entry>
+              <entry>
+                <para>"vm migration involving storage migration on vmware fails with exception ""
+                  The object has already been deleted or has not been completely created """</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5119</para>
+              </entry>
+              <entry>
+                <para>F5 plugin : VLAN provisioning broken</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4475</para>
+              </entry>
+              <entry>
+                <para>[ZWPS] attaching an uploaded volume to a VM is always going to first primary
+                  storage added</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4492</para>
+              </entry>
+              <entry>
+                <para>[object_store_ref] Attaching volume to a vm is failing after upgrade if the
+                  volume was uploaded before upgrade </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4496</para>
+              </entry>
+              <entry>
+                <para>[VMWARE]System VM's are failed to start with NPE when host is maitanance
+                  state</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4504</para>
+              </entry>
+              <entry>
+                <para>VM creation Is failing using the Ubuntu ISO with Xen 6.1 and 6.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4536</para>
+              </entry>
+              <entry>
+                <para>[object_store_refactor] Inconsistency in volume store location on secondary
+                  storage for uploaded and extracted volume</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4574</para>
+              </entry>
+              <entry>
+                <para>"MS:NPE at ""CapacityManagerImpl.java:187"" while executing DestroyVMCmd
+                  "</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4593</para>
+              </entry>
+              <entry>
+                <para> [VMWARE] [Upgrade]Livestorage Migration and VM Snapshot features are not
+                  fully functional after upgrade</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4620</para>
+              </entry>
+              <entry>
+                <para>Vm failed to start on the host on which it was running due to not having
+                  enough reservedMem when the host was powered on after being shutdown.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4638</para>
+              </entry>
+              <entry>
+                <para>state information is not synced on Starting VM directly via Vcenter </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4639</para>
+              </entry>
+              <entry>
+                <para>status of VM is not synced properly when host is HA during hypervisor
+                  failure</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4657</para>
+              </entry>
+              <entry>
+                <para>ceph:fail to attach a volume to instance which is migrated from one primary to
+                  another primary.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4697</para>
+              </entry>
+              <entry>
+                <para>Not able to delete Primary storage when there are no hosts in the
+                  cluster.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4734</para>
+              </entry>
+              <entry>
+                <para>"Creating snapshot from ROOT volume fails with error message - ""Failed to
+                  create snapshot due to an internal error creating snapshot for volume 14”"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4743</para>
+              </entry>
+              <entry>
+                <para>VPC: applyStaticRoutes/createPrivateGatway/deletePrivateGateway - read from
+                  vpc_service_map table instead of relying on hardcoded values</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4789</para>
+              </entry>
+              <entry>
+                <para>Fix ResourceMetaDataManagerTest</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4850</para>
+              </entry>
+              <entry>
+                <para>[UCS] using template instead of cloning profile</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4861</para>
+              </entry>
+              <entry>
+                <para>"[VMware] If Guest traffic spans across multiple physical networks, selection
+                  of physical network to implement guest network is not working correctly."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4906</para>
+              </entry>
+              <entry>
+                <para>add netaddr to marvin dependency list</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4978</para>
+              </entry>
+              <entry>
+                <para>Provisioning VMs from templates fails on VMWare with error
+                  ROOT-249/ROOT-249.vmdk was not found</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5002</para>
+              </entry>
+              <entry>
+                <para>unable to destroy vm ;VM destroy failed in Stop i-2-59-VM Command due to You
+                  gave an invalid object reference. The object may have recently been deleted.
+                </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5005</para>
+              </entry>
+              <entry>
+                <para>issue with stopping vms parallelly </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5020</para>
+              </entry>
+              <entry>
+                <para>fail to recreate system VM in a specific scenario during storage
+                  maintenance</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5075</para>
+              </entry>
+              <entry>
+                <para>"issue with destroy vm with local storage ; Unable to update vm disk
+                  statistics for vm: 42 from host: 1 java.lang.IndexOutOfBoundsException: Index: 0,
+                  Size: 0"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5090</para>
+              </entry>
+              <entry>
+                <para>Anti-Affinity: VM fails to start on a cluster belonging to a different
+                  pod.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5098</para>
+              </entry>
+              <entry>
+                <para>[VMWARE] Entries in vmware_data_center and vmware_data_center_zone_map are not
+                  cleaned up when there is a failure to add the cluster</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5118</para>
+              </entry>
+              <entry>
+                <para>Intrastructure > Virtual Routers listed multiple times</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5123</para>
+              </entry>
+              <entry>
+                <para>vmware - mem overprovisioning behaviour</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
     </section>
   </chapter>
   <chapter id="upgrade-instructions">
@@ -1804,96 +1910,97 @@ under the License.
       <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one of
         Linux's predominant package systems, RPM or APT. This guide assumes you are using RPM and
         Yum for Red Hat Enterprise Linux or CentOS, or APT and Debian packages for Ubuntu.</para>
+      <note>
+        <para>The following upgrade instructions should be performed regardless of hypervisor
+          type.</para>
+      </note>
       <orderedlist>
-        <note>
-          <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
-        </note>
         <listitem>
-        <orderedlist numeration="loweralpha">
-          <listitem>
-            <para>While running the existing 4.2.0 system, log in to the UI as root
-              administrator.</para>
-          </listitem>
-          <listitem>
-            <para>In the left navigation bar, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>In Select view, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>Click Register template.</para>
-            <para>The Register template dialog box is displayed.</para>
-          </listitem>
-          <listitem>
-            <para>In the Register template dialog box, specify the following values (do not change
-              these):</para>
-            <informaltable>
-              <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                <colspec colwidth="1*" colname="1" colnum="1"/>
-                <colspec colwidth="2*" colname="2" colnum="2"/>
-                <thead>
-                  <row>
-                    <entry><para>Hypervisor</para></entry>
-                    <entry><para>Description</para></entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry><para>XenServer</para></entry>
-                    <entry><para>Name: systemvm-xenserver-4.2</para>
-                      <para>Description: systemvm-xenserver-4.2</para>
-                      <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: XenServer</para>
-                      <para>Format: VHD</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>KVM</para></entry>
-                    <entry><para>Name: systemvm-kvm-4.2</para>
-                      <para>Description: systemvm-kvm-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: KVM</para>
-                      <para>Format: QCOW2</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>VMware</para></entry>
-                    <entry><para>Name: systemvm-vmware-4.2</para>
-                      <para>Description: systemvm-vmware-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: VMware</para>
-                      <para>Format: OVA</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </informaltable>
-          </listitem>
-        </orderedlist>
-      </listitem>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>While running the existing 4.2.0 system, log in to the UI as root
+                administrator.</para>
+            </listitem>
+            <listitem>
+              <para>In the left navigation bar, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>In Select view, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>Click Register template.</para>
+              <para>The Register template dialog box is displayed.</para>
+            </listitem>
+            <listitem>
+              <para>In the Register template dialog box, specify the following values (do not change
+                these):</para>
+              <informaltable>
+                <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry><para>Hypervisor</para></entry>
+                      <entry><para>Description</para></entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry><para>XenServer</para></entry>
+                      <entry><para>Name: systemvm-xenserver-4.2</para>
+                        <para>Description: systemvm-xenserver-4.2</para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: XenServer</para>
+                        <para>Format: VHD</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>KVM</para></entry>
+                      <entry><para>Name: systemvm-kvm-4.2</para>
+                        <para>Description: systemvm-kvm-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: KVM</para>
+                        <para>Format: QCOW2</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>VMware</para></entry>
+                      <entry><para>Name: systemvm-vmware-4.2</para>
+                        <para>Description: systemvm-vmware-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: VMware</para>
+                        <para>Format: OVA</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </informaltable>
+            </listitem>
+          </orderedlist>
+        </listitem>
         <listitem>
           <para>Create RPM or Debian packages as appropriate and a repository from the 4.2.1 source,
             or check the Apache CloudStack downloads page at <ulink
@@ -1945,18 +2052,14 @@ gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-clouds
                 that there is a difference between the hash you generated locally and the hash that
                 has been pulled from the server.</para>
             </listitem>
-            <listitem><para></para></listitem>
-            <listitem><para></para></listitem>
-            <listitem><para></para></listitem>
-            <listitem><para></para></listitem>
-            <listitem><para></para></listitem>
           </orderedlist>
         </listitem>
-        <listitem><para>(KVM Only) If primary storage of type local storage is in use, the path for
-            this storage needs to be verified to ensure it passes new validation. Check local
-            storage by querying the cloud.storage_pool table:
-          </para><programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>If
-          local storage paths are found to have a trailing forward slash, remove it:
+        <listitem>
+          <para>(KVM Only) If primary storage of type local storage is in use, the path for this
+            storage needs to be verified to ensure it passes new validation. Check local storage by
+            querying the cloud.storage_pool table: </para>
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
         </listitem>
         <listitem id="upgrade-deb-packages-4.2.1">
@@ -2031,7 +2134,7 @@ service cloudstack-agent start                            </programlisting>
             </listitem>
             <listitem>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
-              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
+              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false </programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
                 and vmware_data_center tables in place of the plain text password</para>
             </listitem>
@@ -2042,7 +2145,7 @@ service cloudstack-agent start                            </programlisting>
             </listitem>
             <listitem>
               <para>Update the plain text password with the encrypted one</para>
-              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;</programlisting>
+              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_; </programlisting>
             </listitem>
             <listitem>
               <para>Confirm that the table is updated:</para>
@@ -2201,102 +2304,104 @@ Done restarting router(s).
             RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
             Ubuntu).</para>
         </listitem>
-        <note>
-          <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
-        </note>
         <listitem>
-        <orderedlist numeration="loweralpha">
-          <listitem>
-            <para>While running the existing 4.1.x system, log in to the UI as root
-              administrator.</para>
-          </listitem>
-          <listitem>
-            <para>In the left navigation bar, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>In Select view, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>Click Register template.</para>
-            <para>The Register template dialog box is displayed.</para>
-          </listitem>
-          <listitem>
-            <para>In the Register template dialog box, specify the following values (do not change
-              these):</para>
-            <informaltable>
-              <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                <colspec colwidth="1*" colname="1" colnum="1"/>
-                <colspec colwidth="2*" colname="2" colnum="2"/>
-                <thead>
-                  <row>
-                    <entry><para>Hypervisor</para></entry>
-                    <entry><para>Description</para></entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry><para>XenServer</para></entry>
-                    <entry><para>Name: systemvm-xenserver-4.2</para>
-                      <para>Description: systemvm-xenserver-4.2</para>
-                      <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: XenServer</para>
-                      <para>Format: VHD</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>KVM</para></entry>
-                    <entry><para>Name: systemvm-kvm-4.2</para>
-                      <para>Description: systemvm-kvm-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: KVM</para>
-                      <para>Format: QCOW2</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>VMware</para></entry>
-                    <entry><para>Name: systemvm-vmware-4.2</para>
-                      <para>Description: systemvm-vmware-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: VMware</para>
-                      <para>Format: OVA</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </informaltable>
-          </listitem>
-        </orderedlist>
-      </listitem>
+          <note>
+            <para>The following upgrade instructions should be performed regardless of hypervisor
+              type.</para>
+          </note>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>While running the existing 4.1.x system, log in to the UI as root
+                administrator.</para>
+            </listitem>
+            <listitem>
+              <para>In the left navigation bar, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>In Select view, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>Click Register template.</para>
+              <para>The Register template dialog box is displayed.</para>
+            </listitem>
+            <listitem>
+              <para>In the Register template dialog box, specify the following values (do not change
+                these):</para>
+              <informaltable>
+                <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry><para>Hypervisor</para></entry>
+                      <entry><para>Description</para></entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry><para>XenServer</para></entry>
+                      <entry><para>Name: systemvm-xenserver-4.2</para>
+                        <para>Description: systemvm-xenserver-4.2</para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: XenServer</para>
+                        <para>Format: VHD</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>KVM</para></entry>
+                      <entry><para>Name: systemvm-kvm-4.2</para>
+                        <para>Description: systemvm-kvm-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: KVM</para>
+                        <para>Format: QCOW2</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>VMware</para></entry>
+                      <entry><para>Name: systemvm-vmware-4.2</para>
+                        <para>Description: systemvm-vmware-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: VMware</para>
+                        <para>Format: OVA</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </informaltable>
+            </listitem>
+          </orderedlist>
+        </listitem>
         <listitem>
           <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
             source, or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
-            by community members. You will need them for step <xref linkend="upgrade-deb-packages-41to42"/>
-            or step <xref linkend="upgrade-rpm-packages-41to42"/>.</para>
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-41to42"/> or step <xref
+              linkend="upgrade-rpm-packages-41to42"/>.</para>
           <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
@@ -2321,9 +2426,8 @@ Done restarting router(s).
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:
-            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
-          </para>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
+          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"'; </programlisting>
         </listitem>
         <listitem id="upgrade-deb-packages-41to42">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -2398,7 +2502,7 @@ service cloudstack-agent start
             </listitem>
             <listitem>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
-              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
+              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false </programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
                 and vmware_data_center tables in place of the plain text password</para>
             </listitem>
@@ -2409,7 +2513,7 @@ service cloudstack-agent start
             </listitem>
             <listitem>
               <para>Update the plain text password with the encrypted one</para>
-              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;</programlisting>
+              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_; </programlisting>
             </listitem>
             <listitem>
               <para>Confirm that the table is updated:</para>
@@ -2554,133 +2658,164 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
-        <section id="upgrade-from-4.0-to-4.2.1">
-            <title>Upgrade from 4.0.x to 4.2.1</title>
-            <para>This section will guide you from &PRODUCT; 4.0.x versions to &PRODUCT; 4.2.1.</para>
-            <para>Any steps that are hypervisor-specific will be called out with a note.</para>
-            <warning><title>Package Structure Changes</title>
-                <para>The package structure for &PRODUCT; has changed significantly since the 4.0.x releases. If you've compiled your own packages, you'll notice that the package names and the number of packages has changed. This is <emphasis>not</emphasis> a bug.</para>
-                <para>However, this <emphasis>does</emphasis> mean that the procedure is not as simple as an <command>apt-get upgrade</command> or <command>yum update</command>, so please follow this section carefully.</para>
-            </warning>
-            <para>We recommend reading through this section once or twice before beginning your upgrade procedure, and working through it on a test system before working on a production system.</para>
-            <orderedlist>
-                <listitem>
-                    <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for Ubuntu).</para>
-                    <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.1.0 source, or check the Apache CloudStack downloads page at <ulink url="http://cloudstack.apache.org/downloads.html">http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied by community members. You will need them for step <xref linkend="upgrade-deb-packages-40to41" /> or step <xref linkend="upgrade-rpm-packages-40to41" />.</para>
-                    <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink url="http://cloudstack.apache.org/docs/en-US/index.html">Installation Guide</ulink>.</para>
-                </listitem>
-        <note>
-          <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
-        </note>
+    <section id="upgrade-from-4.0-to-4.2.1">
+      <title>Upgrade from 4.0.x to 4.2.1</title>
+      <para>This section will guide you from &PRODUCT; 4.0.x versions to &PRODUCT; 4.2.1.</para>
+      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
+      <warning>
+        <title>Package Structure Changes</title>
+        <para>The package structure for &PRODUCT; has changed significantly since the 4.0.x
+          releases. If you've compiled your own packages, you'll notice that the package names and
+          the number of packages has changed. This is <emphasis>not</emphasis> a bug.</para>
+        <para>However, this <emphasis>does</emphasis> mean that the procedure is not as simple as an
+            <command>apt-get upgrade</command> or <command>yum update</command>, so please follow
+          this section carefully.</para>
+      </warning>
+      <para>We recommend reading through this section once or twice before beginning your upgrade
+        procedure, and working through it on a test system before working on a production
+        system.</para>
+      <orderedlist>
         <listitem>
-        <orderedlist numeration="loweralpha">
-          <listitem>
-            <para>While running the existing 4.0.0 system, log in to the UI as root
-              administrator.</para>
-          </listitem>
-          <listitem>
-            <para>In the left navigation bar, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>In Select view, click Templates.</para>
-          </listitem>
-          <listitem>
-            <para>Click Register template.</para>
-            <para>The Register template dialog box is displayed.</para>
-          </listitem>
-          <listitem>
-            <para>In the Register template dialog box, specify the following values (do not change
-              these):</para>
-            <informaltable>
-              <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                <colspec colwidth="1*" colname="1" colnum="1"/>
-                <colspec colwidth="2*" colname="2" colnum="2"/>
-                <thead>
-                  <row>
-                    <entry><para>Hypervisor</para></entry>
-                    <entry><para>Description</para></entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry><para>XenServer</para></entry>
-                    <entry><para>Name: systemvm-xenserver-4.2</para>
-                      <para>Description: systemvm-xenserver-4.2</para>
-                      <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: XenServer</para>
-                      <para>Format: VHD</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>KVM</para></entry>
-                    <entry><para>Name: systemvm-kvm-4.2</para>
-                      <para>Description: systemvm-kvm-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: KVM</para>
-                      <para>Format: QCOW2</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><para>VMware</para></entry>
-                    <entry><para>Name: systemvm-vmware-4.2</para>
-                      <para>Description: systemvm-vmware-4.2</para>
-                      <para>URL:
-                        http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
-                      <para>Zone: Choose the zone where this hypervisor is used</para>
-                      <para>Hypervisor: VMware</para>
-                      <para>Format: OVA</para>
-                      <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
-                        number available in the dropdown)</para>
-                      <para>Extractable: no</para>
-                      <para>Password Enabled: no</para>
-                      <para>Public: no</para>
-                      <para>Featured: no</para>
-                    </entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </informaltable>
-          </listitem>
-        </orderedlist>
-      </listitem>
-                <listitem>
-                    <para>Stop your management server or servers. Run this on all management server hosts:</para>
-                    <programlisting><prompt>#</prompt> service cloud-management stop</programlisting>
-                </listitem>
-                <listitem>
-                    <para>If you are running a usage server or usage servers, stop those as well:</para>
-                    <programlisting><prompt>#</prompt> service cloud-usage stop</programlisting>
-                </listitem>
-                <listitem>
-                    <para>Make a backup of your MySQL database. If you run into any issues or need to roll back the upgrade, this will assist in debugging or restoring your existing environment. You'll be prompted for your password.</para>
-                    <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql</programlisting>
-                </listitem>
-                <listitem>
-                    <para>Whether you're upgrading a Red Hat/CentOS based system or Ubuntu based system, you're going to need to stop the CloudStack management server before proceeding.</para>
-                    <programlisting language="Bash"><prompt>#</prompt> service cloud-management stop</programlisting>
-                </listitem>
-                <listitem>
-                    <para>If you have made changes to <filename>/etc/cloud/management/components.xml</filename>, you'll need to carry these over manually to the new file, <filename>/etc/cloudstack/management/componentContext.xml</filename>. This is not done automatically. (If you're unsure, we recommend making a backup of the original <filename>components.xml</filename> to be on the safe side.</para>
-                </listitem>
-                <listitem>
-                    <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for login and user creation, instead of MD5 hash. Incase, api client changes are not acceptable, following changes are to be made for backward compatibility:</para>
-                    <para>Modify componentsContext.xml, and make PlainTextUserAuthenticator as the default authenticator (1st entry in the userAuthenticators adapter list is default)</para>
-                    <programlisting language="XML">
+          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
+            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
+            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
+            Ubuntu).</para>
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.1.0
+            source, or check the Apache CloudStack downloads page at <ulink
+              url="http://cloudstack.apache.org/downloads.html"
+              >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-40to41"/> or step <xref
+              linkend="upgrade-rpm-packages-40to41"/>.</para>
+          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
+              url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
+            Guide</ulink>.</para>
+        </listitem>
+        <listitem>
+          <note>
+            <para>The following upgrade instructions should be performed regardless of hypervisor
+              type.</para>
+          </note>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>While running the existing 4.0.0 system, log in to the UI as root
+                administrator.</para>
+            </listitem>
+            <listitem>
+              <para>In the left navigation bar, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>In Select view, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>Click Register template.</para>
+              <para>The Register template dialog box is displayed.</para>
+            </listitem>
+            <listitem>
+              <para>In the Register template dialog box, specify the following values (do not change
+                these):</para>
+              <informaltable>
+                <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry><para>Hypervisor</para></entry>
+                      <entry><para>Description</para></entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry><para>XenServer</para></entry>
+                      <entry><para>Name: systemvm-xenserver-4.2</para>
+                        <para>Description: systemvm-xenserver-4.2</para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: XenServer</para>
+                        <para>Format: VHD</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>KVM</para></entry>
+                      <entry><para>Name: systemvm-kvm-4.2</para>
+                        <para>Description: systemvm-kvm-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: KVM</para>
+                        <para>Format: QCOW2</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>VMware</para></entry>
+                      <entry><para>Name: systemvm-vmware-4.2</para>
+                        <para>Description: systemvm-vmware-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: VMware</para>
+                        <para>Format: OVA</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </informaltable>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <para>Stop your management server or servers. Run this on all management server
+            hosts:</para>
+          <programlisting><prompt>#</prompt> service cloud-management stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>If you are running a usage server or usage servers, stop those as well:</para>
+          <programlisting><prompt>#</prompt> service cloud-usage stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>Make a backup of your MySQL database. If you run into any issues or need to roll
+            back the upgrade, this will assist in debugging or restoring your existing environment.
+            You'll be prompted for your password.</para>
+          <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql </programlisting>
+        </listitem>
+        <listitem>
+          <para>Whether you're upgrading a Red Hat/CentOS based system or Ubuntu based system,
+            you're going to need to stop the CloudStack management server before proceeding.</para>
+          <programlisting language="Bash"><prompt>#</prompt> service cloud-management stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>If you have made changes to
+              <filename>/etc/cloud/management/components.xml</filename>, you'll need to carry these
+            over manually to the new file,
+              <filename>/etc/cloudstack/management/componentContext.xml</filename>. This is not done
+            automatically. (If you're unsure, we recommend making a backup of the original
+              <filename>components.xml</filename> to be on the safe side.</para>
+        </listitem>
+        <listitem>
+          <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for
+            login and user creation, instead of MD5 hash. Incase, api client changes are not
+            acceptable, following changes are to be made for backward compatibility:</para>
+          <para>Modify componentsContext.xml, and make PlainTextUserAuthenticator as the default
+            authenticator (1st entry in the userAuthenticators adapter list is default)</para>
+          <programlisting language="XML">
 &lt;!-- Security adapters --&gt;
 &lt;bean id="userAuthenticators" class="com.cloud.utils.component.AdapterList"&gt;
   &lt;property name="Adapters"&gt;
@@ -2692,116 +2827,165 @@ Done restarting router(s).
   &lt;/property&gt;
 &lt;/bean&gt;
                     </programlisting>
-                    <para>PlainTextUserAuthenticator works the same way MD5UserAuthenticator worked prior to 4.2.1.</para>
-                </listitem>
-                <listitem id="upgrade-deb-packages-40to41">
-                    <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not, skip to step <xref linkend="upgrade-rpm-packages-40to41" />.</para>
-                    <note><title>Community Packages</title>
-                        <para>This section assumes you're using the community supplied packages for &PRODUCT;. If you've created your own packages and APT repository, substitute your own URL for the ones used in these examples.</para>
-                    </note>
-                    <orderedlist id="debsteps-40to41">
-                        <listitem>
-                            <para>The first order of business will be to change the sources list for each system with &PRODUCT; packages. This means all management servers, and any hosts that have the KVM agent. (No changes should be necessary for hosts that are running VMware or Xen.)</para>
-                            <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on any systems that have &PRODUCT; packages installed.</para>
-                            <para>This file should have one line, which contains:</para>
-                            <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
-                            <para>We'll change it to point to the new package repository:</para>
-                            <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.1</programlisting>
-                            <para>If you're using your own package repository, change this line to read as appropriate for your 4.1.0 repository.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Now update your apt package list:</para>
-                            <programlisting language="Bash">$ sudo apt-get update</programlisting>
-                        </listitem>
-                        <listitem id="deb-master-40to41">
-                            <para>Now that you have the repository configured, it's time to install the <filename>cloudstack-management</filename> package. This will pull in any other dependencies you need.</para>
-                            <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
-                        </listitem>
-                        <listitem id="kvm-agent-deb-40to41">
-                            <para>You will need to manually install the <filename>cloudstack-agent</filename> package:</para>
-                            <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
-                            <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>, and <filename>environment.properties</filename> from <filename>/etc/cloud/agent</filename> to <filename>/etc/cloudstack/agent</filename>.</para>
-                            <para>When prompted whether you wish to keep your configuration, say Yes.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Verify that the file <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that reads:</para>
-                            <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
-                            <para>If not, add the line.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Restart the agent:</para>
-                            <programlisting language="Bash">
+          <para>PlainTextUserAuthenticator works the same way MD5UserAuthenticator worked prior to
+            4.2.1.</para>
+        </listitem>
+        <listitem id="upgrade-deb-packages-40to41">
+          <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
+            skip to step <xref linkend="upgrade-rpm-packages-40to41"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and APT repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="debsteps-40to41">
+            <listitem>
+              <para>The first order of business will be to change the sources list for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
+                any systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+              <para>We'll change it to point to the new package repository:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.1</programlisting>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.1.0 repository.</para>
+            </listitem>
+            <listitem>
+              <para>Now update your apt package list:</para>
+              <programlisting language="Bash">$ sudo apt-get update</programlisting>
+            </listitem>
+            <listitem id="deb-master-40to41">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package. This will pull in any other
+                dependencies you need.</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-deb-40to41">
+              <para>You will need to manually install the <filename>cloudstack-agent</filename>
+                package:</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
+              <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
+                your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
+                and <filename>environment.properties</filename> from
+                  <filename>/etc/cloud/agent</filename> to
+                  <filename>/etc/cloudstack/agent</filename>.</para>
+              <para>When prompted whether you wish to keep your configuration, say Yes.</para>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
                                 service cloud-agent stop
                                 killall jsvc
                                 service cloudstack-agent start
                             </programlisting>
-                        </listitem>
-                        <listitem>
-                            <para>During the upgrade, <filename>log4j-cloud.xml</filename> was simply copied over, so the logs will continue to be added to <filename>/var/log/cloud/agent/agent.log</filename>. There's nothing <emphasis>wrong</emphasis> with this, but if you prefer to be consistent, you can change this by copying over the sample configuration file:</para>
-                            <programlisting language="Bash">
+            </listitem>
+            <listitem>
+              <para>During the upgrade, <filename>log4j-cloud.xml</filename> was simply copied over,
+                so the logs will continue to be added to
+                  <filename>/var/log/cloud/agent/agent.log</filename>. There's nothing
+                  <emphasis>wrong</emphasis> with this, but if you prefer to be consistent, you can
+                change this by copying over the sample configuration file:</para>
+              <programlisting language="Bash">
                                 cd /etc/cloudstack/agent
                                 mv log4j-cloud.xml.dpkg-dist log4j-cloud.xml
                                 service cloudstack-agent restart
                             </programlisting>
-                        </listitem>
-                        <listitem>
-                            <para>Once the agent is running, you can uninstall the old cloud-* packages from your system:</para>
-                            <programlisting language="Bash">sudo dpkg --purge cloud-agent</programlisting>
-                        </listitem>
-                    </orderedlist>
-                </listitem>
-                <listitem id="upgrade-rpm-packages-40to41">
-                    <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If not, skip to step <xref linkend="restart-system-vms-40to41" />.</para>
-                    <note><title>Community Packages</title>
-                        <para>This section assumes you're using the community supplied packages for &PRODUCT;. If you've created your own packages and yum repository, substitute your own URL for the ones used in these examples.</para>
-                    </note>
-                    <orderedlist id="rpmsteps-40to41">
-                        <listitem>
-                            <para>The first order of business will be to change the yum repository for each system with &PRODUCT; packages. This means all management servers, and any hosts that have the KVM agent. (No changes should be necessary for hosts that are running VMware or Xen.)</para>
-                            <para>Start by opening <filename>/etc/yum.repos.d/cloudstack.repo</filename> on any systems that have &PRODUCT; packages installed.</para>
-                            <para>This file should have content similar to the following:</para>
-                            <programlisting language="Bash">
+            </listitem>
+            <listitem>
+              <para>Once the agent is running, you can uninstall the old cloud-* packages from your
+                system:</para>
+              <programlisting language="Bash">sudo dpkg --purge cloud-agent</programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="upgrade-rpm-packages-40to41">
+          <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If
+            not, skip to step <xref linkend="restart-system-vms-40to41"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and yum repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="rpmsteps-40to41">
+            <listitem>
+              <para>The first order of business will be to change the yum repository for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/yum.repos.d/cloudstack.repo</filename> on any
+                systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have content similar to the following:</para>
+              <programlisting language="Bash">
                                 [apache-cloudstack]
                                 name=Apache CloudStack
                                 baseurl=http://cloudstack.apt-get.eu/rhel/4.0/
                                 enabled=1
                                 gpgcheck=0
                             </programlisting>
-                            <para>If you are using the community provided package repository, change the baseurl to http://cloudstack.apt-get.eu/rhel/4.1/</para>
-                            <para>If you're using your own package repository, change this line to read as appropriate for your 4.2.1 repository.</para>
-                        </listitem>
-                        <listitem id="rpm-master-40to41">
-                            <para>Now that you have the repository configured, it's time to install the <filename>cloudstack-management</filename> package by upgrading the older <filename>cloud-client</filename> package.</para>
-                            <programlisting language="Bash">$ sudo yum upgrade cloud-client</programlisting>
-                        </listitem>
-                        <listitem id="kvm-agent-rpm-40to41">
-                            <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename> package, similarly installing the new version as <filename>cloudstack-agent</filename>.</para>
-                            <programlisting language="Bash">$ sudo yum upgrade cloud-agent</programlisting>
-                            <para>During the installation of <filename>cloudstack-agent</filename>, the RPM will copy your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>, and <filename>environment.properties</filename> from <filename>/etc/cloud/agent</filename> to <filename>/etc/cloudstack/agent</filename>.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Verify that the file <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that reads:</para>
-                            <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
-                            <para>If not, add the line.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Restart the agent:</para>
-                            <programlisting language="Bash">
+              <para>If you are using the community provided package repository, change the baseurl
+                to http://cloudstack.apt-get.eu/rhel/4.1/</para>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
+            </listitem>
+            <listitem id="rpm-master-40to41">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package by upgrading the older
+                  <filename>cloud-client</filename> package.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloud-client</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-rpm-40to41">
+              <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename>
+                package, similarly installing the new version as
+                  <filename>cloudstack-agent</filename>.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloud-agent</programlisting>
+              <para>During the installation of <filename>cloudstack-agent</filename>, the RPM will
+                copy your <filename>agent.properties</filename>,
+                  <filename>log4j-cloud.xml</filename>, and
+                  <filename>environment.properties</filename> from
+                  <filename>/etc/cloud/agent</filename> to
+                  <filename>/etc/cloudstack/agent</filename>.</para>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
                                 service cloud-agent stop
                                 killall jsvc
                                 service cloudstack-agent start
                             </programlisting>
-                        </listitem>
-                    </orderedlist>
-                </listitem>
-                <listitem id="restart-system-vms-40to41">
-                    <para>Once you've upgraded the packages on your management servers, you'll need to restart the system VMs. Make sure port 8096 is open in your local host firewall to do this.</para>
-                    <para>There is a script that will do this for you, all you need to do is run the script and supply the IP address for your MySQL instance and your MySQL credentials:</para>
-                    <programlisting language="Bash"><prompt>#</prompt> nohup cloudstack-sysvmadm -d <replaceable>IP address</replaceable> -u cloud -p -a &gt; sysvm.log 2&gt;&amp;1 &amp;</programlisting>
-                    <para>You can monitor the log for progress. The process of restarting the system VMs can take an hour or more.</para>
-                    <programlisting language="Bash"><prompt>#</prompt> tail -f sysvm.log</programlisting>
-                    <para>The output to <filename>sysvm.log</filename> will look something like this:</para>
-                    <programlisting language="Bash">
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="restart-system-vms-40to41">
+          <para>Once you've upgraded the packages on your management servers, you'll need to restart
+            the system VMs. Make sure port 8096 is open in your local host firewall to do
+            this.</para>
+          <para>There is a script that will do this for you, all you need to do is run the script
+            and supply the IP address for your MySQL instance and your MySQL credentials:</para>
+          <programlisting language="Bash"><prompt>#</prompt> nohup cloudstack-sysvmadm -d <replaceable>IP address</replaceable> -u cloud -p -a &gt; sysvm.log 2&gt;&amp;1 &amp;</programlisting>
+          <para>You can monitor the log for progress. The process of restarting the system VMs can
+            take an hour or more.</para>
+          <programlisting language="Bash"><prompt>#</prompt> tail -f sysvm.log</programlisting>
+          <para>The output to <filename>sysvm.log</filename> will look something like this:</para>
+          <programlisting language="Bash">
                         Stopping and starting 1 secondary storage vm(s)...
                         Done stopping and starting secondary storage vm(s)
                         Stopping and starting 1 console proxy vm(s)...
@@ -2809,15 +2993,17 @@ Done restarting router(s).
                         Stopping and starting 4 running routing vm(s)...
                         Done restarting router(s).
                     </programlisting>
-                </listitem>
-                <listitem>
-                    <note><title>For Xen Hosts: Copy vhd-utils</title>
-                        <para>This step is only for CloudStack installs that are using Xen hosts.</para>
-                    </note>
-                    <para>Copy the file <filename>vhd-utils</filename> to <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
-                </listitem>
-            </orderedlist>
-        </section>
+        </listitem>
+        <listitem>
+          <note>
+            <title>For Xen Hosts: Copy vhd-utils</title>
+            <para>This step is only for CloudStack installs that are using Xen hosts.</para>
+          </note>
+          <para>Copy the file <filename>vhd-utils</filename> to
+              <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
+        </listitem>
+      </orderedlist>
+    </section>
     <section id="upgrade-from-3.0.x-to-4.2.1">
       <title>Upgrade from 3.0.x to 4.2.1</title>
       <para>This section will guide you from Citrix CloudStack 3.0.x to Apache CloudStack 4.2.1.
@@ -2825,7 +3011,8 @@ Done restarting router(s).
       <orderedlist>
         <listitem>
           <note>
-            <para>The following upgrade instructions should be performed regardless of hypervisor type.</para>
+            <para>The following upgrade instructions should be performed regardless of hypervisor
+              type.</para>
           </note>
           <orderedlist numeration="loweralpha">
             <listitem>
