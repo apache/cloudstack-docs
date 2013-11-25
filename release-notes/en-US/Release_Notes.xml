@@ -2052,6 +2052,42 @@ gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-clouds
                 that there is a difference between the hash you generated locally and the hash that
                 has been pulled from the server.</para>
             </listitem>
+            <listitem>
+              <para>Get the commit hash from the VOTE email.</para>
+              <para>For example: <code>4cd60f3d1683a3445c3248f48ae064fb573db2a1</code>. The value
+                changes between releases.</para>
+            </listitem>
+            <listitem>
+              <para>Create two new temporary directories:</para>
+              <programlisting>#mkdir /tmp/cloudstack/git
+#mkdir /tmp/cloudstack/tree</programlisting>
+            </listitem>
+            <listitem>
+              <para>Check out the 4.2.1 branch:</para>
+              <programlisting>#git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git /tmp/cloudstack/git
+#cd /tmp/cloudstack/git
+#git archive --format=tar --prefix=/tmp/cloudstack/tree/ &lt;commit-hash&gt; | tar Pxf - </programlisting>
+            </listitem>
+            <listitem>
+              <para>Unpack the release artifact:</para>
+              <programlisting>#cd /tmp/cloudstack
+#tar xvfj apache-cloudstack-4.2.1-src.tar.bz2</programlisting>
+            </listitem>
+            <listitem>
+              <para>Compare the contents of the release artifact with the contents pulled from the
+                repo:</para>
+              <programlisting>#diff -r /tmp/cloudstack/apache-cloudstack-4.2.1-src /tmp/cloudstack/tree</programlisting>
+              <para>Ensure that content is the same.</para>
+            </listitem>
+            <listitem>
+              <para>Verify the Code License Headers:</para>
+              <programlisting>#cd /tmp/cloudstack/apache-cloudstack-4.2.1-src
+#mvn --projects='org.apache.cloudstack:cloudstack' org.apache.rat:apache-rat-plugin:0.8:check</programlisting>
+              <para>The build fails if any non-compliant files are present that are not specifically
+                excluded from the ASF license header requirement. You can optionally review the
+                target/rat.txt file after the run completes. Passing the build implies that RAT
+                certifies that the files are compliant and this test is passed.</para>
+            </listitem>
           </orderedlist>
         </listitem>
         <listitem>
