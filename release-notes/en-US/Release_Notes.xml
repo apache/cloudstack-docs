@@ -3194,8 +3194,8 @@ Done restarting router(s).
           <para>In the following commands, it is assumed that you have set the root password on the
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
-          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
-                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
+          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud &gt; <filename>cloud-backup.dmp</filename>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage &gt; <filename>cloud-usage-backup.dmp</filename></programlisting>
         </listitem>
         <listitem>
           <para>Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -3840,8 +3840,8 @@ service cloudstack-agent start
           <para>In the following commands, it is assumed that you have set the root password on the
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
-          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
-                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename>
+          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud &gt; <filename>cloud-backup.dmp</filename>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage &gt; <filename>cloud-usage-backup.dmp</filename>
                     </programlisting>
         </listitem>
         <listitem>
@@ -4212,7 +4212,7 @@ service cloudstack-agent start
           <programlisting><prompt>#</prompt> <command>ssh</command> -i <replaceable>private-key-path</replaceable> <replaceable>link-local-ip</replaceable> -p 3922
                         # cat /etc/cloudstack-release</programlisting>
           <para>The output should be like the following:</para>
-          <programlisting>Cloudstack Release 4.0.0-incubating Mon Oct 9 15:10:04 PST 2012</programlisting>
+          <programlisting>Cloudstack Release 4.2.1 Mon Dec 9 15:10:04 PST 2013</programlisting>
           <formalpara>
             <title>ESXi</title>
             <para>SSH in using the private IP address of the system VM. For example, in the command
