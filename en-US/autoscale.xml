@@ -36,7 +36,7 @@
   <para>&PRODUCT; uses the NetScaler load balancer to monitor all aspects of a system's health and
     work in unison with &PRODUCT; to initiate scale-up or scale-down actions.</para>
   <note>
-    <para>AutoScale is supported on NetScaler Release 10 Build 73.e and beyond.</para>
+    <para>AutoScale is supported on NetScaler Release 10 Build 74.4006.e and beyond.</para>
   </note>
   <formalpara>
     <title>Prerequisites</title>
