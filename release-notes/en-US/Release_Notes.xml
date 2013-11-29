@@ -302,8 +302,8 @@ under the License.
         bugs were resolved or closed in the 4.2.1 cycle.</para>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
-          <colspec colwidth="1*" colname="1" colnum="1"/>
-          <colspec colwidth="2*" colname="2" colnum="2"/>
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="6.19*" colname="2" colnum="2"/>
           <thead>
             <row>
               <entry>
@@ -320,8 +320,8 @@ under the License.
                 <para>CLOUDSTACK-3237</para>
               </entry>
               <entry>
-                <para>[vmware][SM] Migrate volume is failing when there are snapshots for that
-                  volume</para>
+                <para>[VMware] Migrate volume is failing when snapshots exist for that
+                  volume.</para>
               </entry>
             </row>
             <row>
@@ -329,8 +329,8 @@ under the License.
                 <para>CLOUDSTACK-4300</para>
               </entry>
               <entry>
-                <para>[upgrade][2.2.14 to 4.2][KVM] system vms are not coming up after
-                  upgrade</para>
+                <para>[KVM] [Upgrade][2.2.14 to 4.2] System VMs are not coming up after
+                  upgrade.</para>
               </entry>
             </row>
             <row>
@@ -338,7 +338,7 @@ under the License.
                 <para>CLOUDSTACK-4405</para>
               </entry>
               <entry>
-                <para>(Upgrade) Migrate failed between existing hosts and new hosts</para>
+                <para>[Upgrade] Migration failed between existing hosts and new hosts.</para>
               </entry>
             </row>
             <row>
@@ -346,7 +346,7 @@ under the License.
                 <para>CLOUDSTACK-4436</para>
               </entry>
               <entry>
-                <para>Virtual Router fails to start on RHEL6.2</para>
+                <para>Virtual Router fails to start on RHEL6.2.</para>
               </entry>
             </row>
             <row>
@@ -354,7 +354,7 @@ under the License.
                 <para>CLOUDSTACK-4446</para>
               </entry>
               <entry>
-                <para>AWSAPI server fails to start because of error in bean creation.</para>
+                <para>AWSAPI server fails to start due to an error in bean creation.</para>
               </entry>
             </row>
             <row>
@@ -362,9 +362,9 @@ under the License.
                 <para>CLOUDSTACK-4464</para>
               </entry>
               <entry>
-                <para>"Parallel deployment - Vmware - When deploying 30 parallel Vms , Vm fails to
-                  get deployed due to ""StartCommand failed due to Exception:
-                  javax.xml.ws.soap.SOAPFaultException"""</para>
+                <para>[VMware] When deploying 30 parallel VMs, a VM fails to get deployed due to the
+                  "StartCommand failed due to Exception: javax.xml.ws.soap.SOAPFaultException"
+                  error.</para>
               </entry>
             </row>
             <row>
@@ -372,7 +372,7 @@ under the License.
                 <para>CLOUDSTACK-4479</para>
               </entry>
               <entry>
-                <para>VPC Network Tier creation fails</para>
+                <para>VPC Network Tier creation fails.</para>
               </entry>
             </row>
             <row>
@@ -380,8 +380,8 @@ under the License.
                 <para>CLOUDSTACK-4516</para>
               </entry>
               <entry>
-                <para>[Upgrade][VMWare] MySQLIntegrityConstraintViolationException while performing
-                  any task using local storage after upgrade from 3.0.7 to 4.2</para>
+                <para>[VMware][Upgrade] MySQLIntegrityConstraintViolationException while performing
+                  any task by using local storage after upgrade from 3.0.7 to 4.2.</para>
               </entry>
             </row>
             <row>
@@ -389,7 +389,7 @@ under the License.
                 <para>CLOUDSTACK-4522</para>
               </entry>
               <entry>
-                <para>[upgrade][vmware] Creation of VM from ISO is failing </para>
+                <para>[VMware][Upgrade] Creation of VM from ISO fails. </para>
               </entry>
             </row>
             <row>
@@ -397,8 +397,8 @@ under the License.
                 <para>CLOUDSTACK-4554</para>
               </entry>
               <entry>
-                <para>[upgrade from 3.0.6 to 4.2][vmware] System VM agent doesn't come up after
-                  adding a zone on an upgraded setup</para>
+                <para>[VMware][Upgrade from 3.0.6 to 4.2] System VM agent doesn't come up after
+                  adding a zone on an upgraded setup.</para>
               </entry>
             </row>
             <row>
@@ -406,9 +406,9 @@ under the License.
                 <para>CLOUDSTACK-4555</para>
               </entry>
               <entry>
-                <para>"[Upgrade from 3.0.6 to 4.2][vmware] After upgrade the system vms fail to come
-                  up because ""Secondary storage mount point"" is pointing to a wrong
-                  location"</para>
+                <para>[VMware][Upgrade from 3.0.6 to 4.2] After upgrade the system VMs fail to come
+                  up because the Secondary Storage mount point is pointing to a wrong
+                  location.</para>
               </entry>
             </row>
             <row>
@@ -416,8 +416,8 @@ under the License.
                 <para>CLOUDSTACK-4561</para>
               </entry>
               <entry>
-                <para>DeployVm failed after upgrading from earlier version having a private zone to
-                  4.2 </para>
+                <para>Deploying a VM fails after upgrading to 4.2 from earlier version having a
+                  private zone.</para>
               </entry>
             </row>
             <row>
@@ -425,8 +425,8 @@ under the License.
                 <para>CLOUDSTACK-4579</para>
               </entry>
               <entry>
-                <para>"[Upgrade 2.2.14 - 4.2][KVM] - After upgrade , Not able to deploy Vms with
-                  existing templates."</para>
+                <para>[KVM] [Upgrade 2.2.14 to 4.2] After upgrade, deploying VMs with existing
+                  templates does not work.</para>
               </entry>
             </row>
             <row>
@@ -434,8 +434,8 @@ under the License.
                 <para>CLOUDSTACK-4580</para>
               </entry>
               <entry>
-                <para>"[Upgrade 2.2.14 - 4.2][KVM] - After upgrade , Not able to start existing Vms
-                  after stopping them."</para>
+                <para>[KVM] [Upgrade 2.2.14 - 4.2] After upgrade, existing VMs cannot be started
+                  after stopping them.</para>
               </entry>
             </row>
             <row>
@@ -443,7 +443,7 @@ under the License.
                 <para>CLOUDSTACK-4618</para>
               </entry>
               <entry>
-                <para>storage refactor has broken CLVM</para>
+                <para>Storage refactoring has broken CLVM.</para>
               </entry>
             </row>
             <row>
@@ -452,7 +452,7 @@ under the License.
               </entry>
               <entry>
                 <para>ListZone API failed with Assertion error if assertion is turned on for
-                  MS.</para>
+                  Management Server.</para>
               </entry>
             </row>
             <row>
@@ -460,7 +460,7 @@ under the License.
                 <para>CLOUDSTACK-4864</para>
               </entry>
               <entry>
-                <para>Create VMWare 64 bit system VM template</para>
+                <para>[VMware] 64-bit system VM template does not exist.</para>
               </entry>
             </row>
             <row>
@@ -468,7 +468,7 @@ under the License.
                 <para>CLOUDSTACK-5065</para>
               </entry>
               <entry>
-                <para>KVM snapshot doesn't take VM snapshot if the VM is running</para>
+                <para>[KVM] Snapshot doesn't take VM snapshot if the VM is running.</para>
               </entry>
             </row>
             <row>
@@ -476,7 +476,7 @@ under the License.
                 <para>CLOUDSTACK-532</para>
               </entry>
               <entry>
-                <para>Storage-template-cleanup corrupts templates</para>
+                <para>Cleaning up Storage template corrupts templates.</para>
               </entry>
             </row>
             <row>
@@ -484,7 +484,7 @@ under the License.
                 <para>CLOUDSTACK-732</para>
               </entry>
               <entry>
-                <para>Add back KVM snapshot support</para>
+                <para>[KVM] No Snapshot support.</para>
               </entry>
             </row>
             <row>
@@ -492,8 +492,8 @@ under the License.
                 <para>CLOUDSTACK-1670</para>
               </entry>
               <entry>
-                <para>"When Vm is part of 2 networks say N1(default) and N2 , the ip address from N1
-                  is being assigned to eth1. "</para>
+                <para>When a VM is part of two networks, the IP address from the first network is
+                  being assigned to eth1.</para>
               </entry>
             </row>
             <row>
@@ -501,8 +501,8 @@ under the License.
                 <para>CLOUDSTACK-1775</para>
               </entry>
               <entry>
-                <para>" Events related User/Domain/Account are not being generated expect for
-                  USER-DISABLE,DOMAIN-DELETE and ACCOUNT.DISABLE event."</para>
+                <para>Events related to User/Domain/Account are not generated, instead USER-DISABLE,
+                  DOMAIN-DELETE and ACCOUNT.DISABLE event are generated.</para>
               </entry>
             </row>
             <row>
@@ -510,7 +510,7 @@ under the License.
                 <para>CLOUDSTACK-1819</para>
               </entry>
               <entry>
-                <para>AWS Regions - Issues seen when trying to move a zone from 1 region to
+                <para>In AWS Regions, various issues persist when moving a zone from one region to
                   another.</para>
               </entry>
             </row>
@@ -519,7 +519,7 @@ under the License.
                 <para>CLOUDSTACK-2792</para>
               </entry>
               <entry>
-                <para>Redundant router: Password is reset again after fail-over happened</para>
+                <para>In a Redundant router, password is reset again after a fail-over.</para>
               </entry>
             </row>
             <row>
@@ -527,8 +527,8 @@ under the License.
                 <para>CLOUDSTACK-3010</para>
               </entry>
               <entry>
-                <para>"[VMWare] [SharedNetworkWithServices] router VM deployment fails with error
-                  ""Message: Invalid configuration for device '2'."""</para>
+                <para>[VMware] Router VM deployment fails with a "Message: Invalid configuration for
+                  device '2' error in Shared networks.</para>
               </entry>
             </row>
             <row>
@@ -536,7 +536,7 @@ under the License.
                 <para>CLOUDSTACK-3285</para>
               </entry>
               <entry>
-                <para>UCS: Need support for HTTP redirects and HTTPS Certificate handling</para>
+                <para>No support for HTTP redirects and HTTPS certificate handling in UCS.</para>
               </entry>
             </row>
             <row>
@@ -544,8 +544,8 @@ under the License.
                 <para>CLOUDSTACK-3424</para>
               </entry>
               <entry>
-                <para>"IPV6 - When a Vm is expunged and a new Vm is deployed with the same name ,
-                  /etc/dhchosts.txt has 2 entries with the same name."</para>
+                <para>[IPv6] When a VM is expunged and a new VM is deployed with the same name,
+                  <code>/etc/dhchosts.txt</code> has two entries with the same name.</para>
               </entry>
             </row>
             <row>
@@ -553,7 +553,7 @@ under the License.
                 <para>CLOUDSTACK-3583</para>
               </entry>
               <entry>
-                <para>Management server stop is not removing the PID </para>
+                <para>Stopping Management Server does not remove PID. </para>
               </entry>
             </row>
             <row>
@@ -561,7 +561,7 @@ under the License.
                 <para>CLOUDSTACK-3715</para>
               </entry>
               <entry>
-                <para>Live Migration of Virtual instances operation is getting timedout </para>
+                <para>Live Migration of virtual instances operation is getting timed out.</para>
               </entry>
             </row>
             <row>
@@ -569,8 +569,8 @@ under the License.
                 <para>CLOUDSTACK-3737</para>
               </entry>
               <entry>
-                <para>Uploaded volume is not getting deleted from secondary storage after attaching
-                  it to guest vm</para>
+                <para>Uploaded volume is not getting deleted from Secondary storage after attaching
+                  it to guest VM.</para>
               </entry>
             </row>
             <row>
@@ -578,7 +578,7 @@ under the License.
                 <para>CLOUDSTACK-3765</para>
               </entry>
               <entry>
-                <para>[packaging][document] unable to upgrade cp 4.2 build on centos5.5</para>
+                <para>[Packaging] Unable to upgrade 4.2 build on Centos 5.5.</para>
               </entry>
             </row>
             <row>
@@ -586,8 +586,8 @@ under the License.
                 <para>CLOUDSTACK-3808</para>
               </entry>
               <entry>
-                <para>Attach volume should work when root is at zone level primary store and data at
-                  cluster level or host level store</para>
+                <para>Attaching a volume does not work when root is at zone-level primary store and
+                  data at cluster-level or host-level store.</para>
               </entry>
             </row>
             <row>
@@ -595,8 +595,8 @@ under the License.
                 <para>CLOUDSTACK-3911</para>
               </entry>
               <entry>
-                <para>[PortableIP] there is no check while adding a zone public range to see whether
-                  the same VLAN exists in portable IP range.</para>
+                <para>[Portable IP] No mechanism to check while adding a zone-level public range to
+                  check whether the same VLAN exists in portable IP range.</para>
               </entry>
             </row>
             <row>
@@ -604,7 +604,7 @@ under the License.
                 <para>CLOUDSTACK-4095</para>
               </entry>
               <entry>
-                <para>Region id within the Database Transaction code...</para>
+                <para>Region ID appears within the Database Transaction code.</para>
               </entry>
             </row>
             <row>
@@ -612,8 +612,8 @@ under the License.
                 <para>CLOUDSTACK-4128</para>
               </entry>
               <entry>
-                <para>[Object_store_Refactor] System VMs start up should check for existence of
-                  staging secondary storage in a zone</para>
+                <para>Starting a System VMs does not check for existence of staging Secondary
+                  Storage in a zone.</para>
               </entry>
             </row>
             <row>
@@ -621,8 +621,9 @@ under the License.
                 <para>CLOUDSTACK-4137</para>
               </entry>
               <entry>
-                <para>"KVM: After unmanaging cluster, manage cluster will not bring KVM hosts to UP
-                  state. cloud-agent on KVM hosts has to be restarted manually"</para>
+                <para>[KVM]After unmanaging a cluster, managing another cluster does not bring hosts
+                  to UP state. </para>
+                <para>To work around manually restart cloud-agent on KVM hosts.</para>
               </entry>
             </row>
             <row>
@@ -630,8 +631,8 @@ under the License.
                 <para>CLOUDSTACK-4190</para>
               </entry>
               <entry>
-                <para>[Object_store_refactor] volume should be deleted from staging storage after
-                  successfule volume migration</para>
+                <para>Volume is not deleted from staging storage after a successful volume
+                  migration.</para>
               </entry>
             </row>
             <row>
@@ -639,7 +640,7 @@ under the License.
                 <para>CLOUDSTACK-4199</para>
               </entry>
               <entry>
-                <para>Redundant Virtual Router - no failover occur</para>
+                <para>In Redundant Virtual Router,no failover occurs.</para>
               </entry>
             </row>
             <row>
@@ -647,8 +648,9 @@ under the License.
                 <para>CLOUDSTACK-4239</para>
               </entry>
               <entry>
-                <para>"[vmware]Snapshot creation on ESX 4.1 host fails with ""BackupSnapshotCommand
-                  exception: javax.xml.ws.soap.SOAPFaultException"""</para>
+                <para>[VMware] Snapshot creation on ESX 4.1 host fails with a
+                  ""BackupSnapshotCommand exception: javax.xml.ws.soap.SOAPFaultException"
+                  error.</para>
               </entry>
             </row>
             <row>
@@ -656,8 +658,8 @@ under the License.
                 <para>CLOUDSTACK-4327</para>
               </entry>
               <entry>
-                <para>"[Storage Maintenance] SSVM, CPVM and routerVMs are running even after storage
-                  entered into maintenance."</para>
+                <para>SSVM, CPVM and router VMs are running even after storage entered into
+                  maintenance.</para>
               </entry>
             </row>
             <row>
@@ -665,7 +667,8 @@ under the License.
                 <para>CLOUDSTACK-4350</para>
               </entry>
               <entry>
-                <para>[Performance Testing] Adding hosts take much longer time than baselines</para>
+                <para>[Performance Testing] Adding hosts take much longer time than
+                  baselines.</para>
               </entry>
             </row>
             <row>
@@ -673,7 +676,7 @@ under the License.
                 <para>CLOUDSTACK-4432</para>
               </entry>
               <entry>
-                <para>[VMWare] NPE thrown during VM Deployment</para>
+                <para>[VMware] Null Pointer exception is thrown during VM deployment.</para>
               </entry>
             </row>
             <row>
@@ -681,7 +684,7 @@ under the License.
                 <para>CLOUDSTACK-4433</para>
               </entry>
               <entry>
-                <para>[VMware]Registration of template using the downloaded template URL is
+                <para>[VMware] Registration of template by using the downloaded template URL is
                   failing.</para>
               </entry>
             </row>
@@ -690,8 +693,8 @@ under the License.
                 <para>CLOUDSTACK-4434</para>
               </entry>
               <entry>
-                <para>"EN: Ubuntu: Direct input ""- _ "", ""? /"", ""keyboard /"" ,""keyboard -""
-                  keys are not working well for the US keyboard."</para>
+                <para>[Ubuntu] Direct input ""- _ "", ""? /"", ""keyboard /"" ,""keyboard -"" keys
+                  are not working well for the US keyboard.</para>
               </entry>
             </row>
             <row>
@@ -699,8 +702,8 @@ under the License.
                 <para>CLOUDSTACK-4454</para>
               </entry>
               <entry>
-                <para>object_store - Not able to delete secondary storage when existing snapshots
-                  are deleted.</para>
+                <para>Not able to delete secondary storage when existing snapshots are
+                  deleted.</para>
               </entry>
             </row>
             <row>
@@ -708,8 +711,8 @@ under the License.
                 <para>CLOUDSTACK-4455</para>
               </entry>
               <entry>
-                <para>object_store - Template sync results in private templates being synced to all
-                  the secondary stores.</para>
+                <para>Template sync results in private templates being synced to all the secondary
+                  stores.</para>
               </entry>
             </row>
             <row>
@@ -717,8 +720,8 @@ under the License.
                 <para>CLOUDSTACK-4458</para>
               </entry>
               <entry>
-                <para>[VMWare] Failed to create Snapshot on Data Disk because of backup snapshot
-                  exception</para>
+                <para>[VMware] Failed to create Snapshot on data disk because of backup snapshot
+                  exception.</para>
               </entry>
             </row>
             <row>
@@ -726,8 +729,8 @@ under the License.
                 <para>CLOUDSTACK-4465</para>
               </entry>
               <entry>
-                <para>Resource count is not decremented for domain if User Vm is being destroyed as
-                  a part of account removal</para>
+                <para>Resource count is not decremented for domain if user VM is being destroyed as
+                  a part of account removal.</para>
               </entry>
             </row>
             <row>
@@ -735,9 +738,9 @@ under the License.
                 <para>CLOUDSTACK-4485</para>
               </entry>
               <entry>
-                <para>3.0.6 to ASF 4.2 Upgrade [VMWare]: System VMs Fail to create in the Cluster
+                <para>[VMware] [3.0.6 to ASF 4.2 Upgrade] System VMs is not created in the cluster
                   due to invalid path information of the template on the Primary Storage in the
-                  cluster</para>
+                  cluster.</para>
               </entry>
             </row>
             <row>
@@ -745,8 +748,8 @@ under the License.
                 <para>CLOUDSTACK-4495</para>
               </entry>
               <entry>
-                <para>systemVM template URL is pointing to old template location in upgrade
-                  file</para>
+                <para>System VM template URL is pointing to old template location in the Upgrade
+                  file.</para>
               </entry>
             </row>
             <row>
@@ -754,8 +757,8 @@ under the License.
                 <para>CLOUDSTACK-4499</para>
               </entry>
               <entry>
-                <para>Xen6.1/Xen6.2 hosts initially transition to 'Alert' and then to 'Up' after
-                  addHost</para>
+                <para>[XenServer v 6.1 and 6.2] Hosts initially transition to 'Alert' state and then
+                  to 'Up' after adding a host.</para>
               </entry>
             </row>
             <row>
@@ -763,9 +766,9 @@ under the License.
                 <para>CLOUDSTACK-4513</para>
               </entry>
               <entry>
-                <para>"[Vmware] new mapping vmware datacenter cloudstack zone - Host in second
-                  cluster in DC put in maintenance mode, CPVM and guest VMs that were migrated
-                  failed to come up"</para>
+                <para>[VMware] In a new mapping between a datacenter and a zone, when hosts in the
+                  second cluster in data center put in maintenance mode, CPVM and guest VMs that are
+                  migrated failed to come up.</para>
               </entry>
             </row>
             <row>
@@ -773,8 +776,8 @@ under the License.
                 <para>CLOUDSTACK-4520</para>
               </entry>
               <entry>
-                <para>[upgrade][vmware]ExtractVolumeCmd fails with NPE while attempting to download
-                  a volume</para>
+                <para>[VMware][Upgrade] ExtractVolumeCmd fails with NPE while attempting to download
+                  a volume.</para>
               </entry>
             </row>
             <row>
@@ -782,8 +785,8 @@ under the License.
                 <para>CLOUDSTACK-4530</para>
               </entry>
               <entry>
-                <para>Create Template from a Snapshot fails with unable to find any snapshot ova/ovf
-                  when we have multiple secondary storage for a zone.</para>
+                <para>Creating template from a Snapshot fails with having not able to find any
+                  ova/ovf snapshot when multiple secondary storage exist for a zone.</para>
               </entry>
             </row>
             <row>
@@ -791,8 +794,8 @@ under the License.
                 <para>CLOUDSTACK-4539</para>
               </entry>
               <entry>
-                <para>[VMWARE] vmware.create.full.clone is set to true in upgraded setup;default
-                  nature of vms are full clone</para>
+                <para>[VMware] If <parameter>vmware.create.full.clone</parameter> is set to true in
+                  an upgraded setup, default nature of VMs are full clone.</para>
               </entry>
             </row>
             <row>
@@ -800,8 +803,8 @@ under the License.
                 <para>CLOUDSTACK-4551</para>
               </entry>
               <entry>
-                <para>"Migrating the data volume from NFS to local storage ,underlying disk offering
-                  is not changed."</para>
+                <para>Migrating the data volume from NFS to local storage does not change the
+                  underlying disk offering.</para>
               </entry>
             </row>
             <row>
@@ -809,7 +812,7 @@ under the License.
                 <para>CLOUDSTACK-4573</para>
               </entry>
               <entry>
-                <para>Acquire IP address above domain limit in VPC</para>
+                <para>Acquiring IP addresses above domain limit is possible in VPC.</para>
               </entry>
             </row>
             <row>
@@ -817,8 +820,8 @@ under the License.
                 <para>CLOUDSTACK-4596</para>
               </entry>
               <entry>
-                <para>CloudStack is currently allowing same ip range to be defined in different
-                  VLANs across public and portable ranges</para>
+                <para>Same IP range is allowed to be defined in different VLANs across public and
+                  portable ranges.</para>
               </entry>
             </row>
             <row>
@@ -826,8 +829,8 @@ under the License.
                 <para>CLOUDSTACK-4600</para>
               </entry>
               <entry>
-                <para>Registered Cross-zone template does not populate template_zone_ref for later
-                  added zones using S3</para>
+                <para>Registered cross-zone template does not populate template_zone_ref for later
+                  added zones using S3.</para>
               </entry>
             </row>
             <row>
@@ -835,8 +838,9 @@ under the License.
                 <para>CLOUDSTACK-4624</para>
               </entry>
               <entry>
-                <para>VM Migration fails in 'Security Group Enabled Advanced Zone' with
-                  CloudRuntimeException: callHostPlugin failed for cmd: network_rules</para>
+                <para>VM Migration fails in Security Group-enabled Advanced Zone with
+                  'CloudRuntimeException: callHostPlugin failed for cmd: network_rules'
+                  error.</para>
               </entry>
             </row>
             <row>
@@ -844,7 +848,7 @@ under the License.
                 <para>CLOUDSTACK-4625</para>
               </entry>
               <entry>
-                <para>Snapshots and templates should be deleted from staging storage after create
+                <para>Snapshots and templates cannot be deleted from staging storage after create
                   template from snapshot on S3.</para>
               </entry>
             </row>
@@ -853,8 +857,9 @@ under the License.
                 <para>CLOUDSTACK-4674</para>
               </entry>
               <entry>
-                <para>[baremetal] /usr/share/cloudstack-common/scripts/util/ipmi.py script need to
-                  recognize various ipmi version and BMC type of server</para>
+                <para>[Baremetal]
+                    <filename>/usr/share/cloudstack-common/scripts/util/ipmi.py</filename> script
+                  need to recognize various IPMI version and BMC type of server.</para>
               </entry>
             </row>
             <row>
@@ -862,7 +867,7 @@ under the License.
                 <para>CLOUDSTACK-4698</para>
               </entry>
               <entry>
-                <para>No DHCP service enabled network cannot expunge VMs</para>
+                <para>DHCP-service enabled network cannot expunge VMs.</para>
               </entry>
             </row>
             <row>
@@ -870,7 +875,7 @@ under the License.
                 <para>CLOUDSTACK-4704</para>
               </entry>
               <entry>
-                <para>"DB upgrade bug caused by the new table ""vpc_service_map"""</para>
+                <para>Database upgrade bug is caused by the vpc_service_map table.</para>
               </entry>
             </row>
             <row>
@@ -878,7 +883,7 @@ under the License.
                 <para>CLOUDSTACK-4707</para>
               </entry>
               <entry>
-                <para>"""sourcetemplateid"" field is not getting set for derived templates"</para>
+                <para>The sourcetemplateid field is not getting set for derived templates.</para>
               </entry>
             </row>
             <row>
@@ -886,8 +891,7 @@ under the License.
                 <para>CLOUDSTACK-4711</para>
               </entry>
               <entry>
-                <para>UCS:API: Premature API response prevent CS from syncing association
-                  status</para>
+                <para>Premature API response prevents &PRODUCT; from syncing association status in UCS environment.</para>
               </entry>
             </row>
             <row>
@@ -895,8 +899,8 @@ under the License.
                 <para>CLOUDSTACK-4717</para>
               </entry>
               <entry>
-                <para>associate IP does not work on shared networks with out source NAT
-                  service</para>
+                <para>Associate IP does not work on shared networks without Source NAT
+                  service.</para>
               </entry>
             </row>
             <row>
@@ -904,7 +908,7 @@ under the License.
                 <para>CLOUDSTACK-4725</para>
               </entry>
               <entry>
-                <para>KVM agent fails to join if local pool is already registered</para>
+                <para>KVM agent fails to join if local pool is already registered.</para>
               </entry>
             </row>
             <row>
@@ -912,8 +916,8 @@ under the License.
                 <para>CLOUDSTACK-4745</para>
               </entry>
               <entry>
-                <para>Exception happened when try to apply static nat rule using
-                  CreateIpForwardingCmd API</para>
+                <para>Exception occurs when trying to apply static NAT rule by using
+                  CreateIpForwardingCmd API.</para>
               </entry>
             </row>
             <row>
@@ -921,7 +925,7 @@ under the License.
                 <para>CLOUDSTACK-4746</para>
               </entry>
               <entry>
-                <para>Allocation capacity of a cluster during HA</para>
+                <para>Allocation capacity of a cluster during HA.</para>
               </entry>
             </row>
             <row>
@@ -929,7 +933,8 @@ under the License.
                 <para>CLOUDSTACK-4750</para>
               </entry>
               <entry>
-                <para>bond.VLAN mapping in iptables FORWARD chain not created consistently</para>
+                <para>The bond.VLAN mapping in iptables forward chain is not created
+                  consistently.</para>
               </entry>
             </row>
             <row>
@@ -937,7 +942,7 @@ under the License.
                 <para>CLOUDSTACK-4777</para>
               </entry>
               <entry>
-                <para>NullPointerException instead of working KVM HA</para>
+                <para>NullPointerException instead of working KVM HA.</para>
               </entry>
             </row>
             <row>
@@ -945,7 +950,7 @@ under the License.
                 <para>CLOUDSTACK-4783</para>
               </entry>
               <entry>
-                <para>Unable to see a derieved template if the parent template is deleted</para>
+                <para>Unable to see a derived template if the parent template is deleted.</para>
               </entry>
             </row>
             <row>
@@ -953,8 +958,8 @@ under the License.
                 <para>CLOUDSTACK-4816</para>
               </entry>
               <entry>
-                <para>provide configurable option to choose single vs multipart upload to S3 object
-                  storage </para>
+                <para>No configurable option to choose single or  multipart upload to S3 object
+                  storage.</para>
               </entry>
             </row>
             <row>
@@ -962,7 +967,8 @@ under the License.
                 <para>CLOUDSTACK-4817</para>
               </entry>
               <entry>
-                <para>Backup snapshot on Xen should take global setting s3.multipart.enabled.</para>
+                <para>Backup snapshot on XenServer should take global setting
+                  s3.multipart.enabled.</para>
               </entry>
             </row>
             <row>
@@ -970,7 +976,7 @@ under the License.
                 <para>CLOUDSTACK-4828</para>
               </entry>
               <entry>
-                <para>remove nic fails if dhcp wasn't enabled in network offering</para>
+                <para>Removing NIC fails if DHCP was not enabled in the network offering.</para>
               </entry>
             </row>
             <row>
@@ -978,8 +984,8 @@ under the License.
                 <para>CLOUDSTACK-4836</para>
               </entry>
               <entry>
-                <para>Restart network with cleanup=true won't reprogram remote access VPN users in
-                  the VR</para>
+                <para>Restart network with cleanup=true  does not reprogram remote access VPN users
+                  in the virtual router.</para>
               </entry>
             </row>
             <row>
@@ -987,7 +993,7 @@ under the License.
                 <para>CLOUDSTACK-4849</para>
               </entry>
               <entry>
-                <para>LXC not working when using nonoss build</para>
+                <para>LXC not working when using non-oss build.</para>
               </entry>
             </row>
             <row>
@@ -995,7 +1001,7 @@ under the License.
                 <para>CLOUDSTACK-4859</para>
               </entry>
               <entry>
-                <para>Add global config to disable storage migration during HA </para>
+                <para>No global configuration available to disable storage migration during HA. </para>
               </entry>
             </row>
             <row>
@@ -1012,7 +1018,7 @@ under the License.
               </entry>
               <entry>
                 <para>VM provisioned using a registered Windows Server 2012 template will show as
-                  other os in VCenter.</para>
+                  other OS in vCenter.</para>
               </entry>
             </row>
             <row>
@@ -1020,7 +1026,8 @@ under the License.
                 <para>CLOUDSTACK-4888</para>
               </entry>
               <entry>
-                <para>API:UCS:NPE Refresh blades on a decommissioned chassis results in NPE</para>
+                <para>Refresh blades on a decommissioned chassis results in NPE in UCS
+                  environment.</para>
               </entry>
             </row>
             <row>
@@ -1028,7 +1035,7 @@ under the License.
                 <para>CLOUDSTACK-4913</para>
               </entry>
               <entry>
-                <para>Disable security group for bridge mode non-security group zone</para>
+                <para>Disabling security group for bridge mode non-security group zone</para>
               </entry>
             </row>
             <row>
@@ -1036,7 +1043,7 @@ under the License.
                 <para>CLOUDSTACK-4921</para>
               </entry>
               <entry>
-                <para>usage service doesn't start after reboot</para>
+                <para>Usage service does not start after reboot.</para>
               </entry>
             </row>
             <row>
@@ -1044,7 +1051,7 @@ under the License.
                 <para>CLOUDSTACK-4946</para>
               </entry>
               <entry>
-                <para>Restore VM with template id feature doesnt work on VMware</para>
+                <para>[VMware] Restore VM with template ID feature does not work.</para>
               </entry>
             </row>
             <row>
@@ -1052,8 +1059,8 @@ under the License.
                 <para>CLOUDSTACK-4988</para>
               </entry>
               <entry>
-                <para>"listTemplates: public templates created in domain /ROOT/a/b, are not visible
-                  in /ROOT/a domain"</para>
+                <para>The public templates created in ROOT/a/b domains  are not visible in /ROOT/a
+                  domains</para>
               </entry>
             </row>
             <row>
@@ -1061,8 +1068,8 @@ under the License.
                 <para>CLOUDSTACK-5061</para>
               </entry>
               <entry>
-                <para>Cloudstack doesn't consider storage overprovisioning factor when using thin
-                  Provisioning over VMWare VMFS datastores</para>
+                <para>[VMware] Storage over-provisioning factor is not considered when using thin
+                  provisioning over VMFS datastores.</para>
               </entry>
             </row>
             <row>
@@ -1070,7 +1077,7 @@ under the License.
                 <para>CLOUDSTACK-5066</para>
               </entry>
               <entry>
-                <para>Existed remote access VPN got dropped when adding new VPN users</para>
+                <para>Existed remote access VPN is dropped when adding new VPN users.</para>
               </entry>
             </row>
             <row>
@@ -1078,7 +1085,7 @@ under the License.
                 <para>CLOUDSTACK-5076</para>
               </entry>
               <entry>
-                <para>(Upgrade) reboot VM failed after bridge name change</para>
+                <para>[Upgrade] Rebooting VM failed after bridge name change.</para>
               </entry>
             </row>
             <row>
@@ -1087,7 +1094,7 @@ under the License.
               </entry>
               <entry>
                 <para>[VMware] System VMs are getting recreated with old template after upgrading to
-                  4.2</para>
+                  4.2.</para>
               </entry>
             </row>
             <row>
@@ -1095,7 +1102,8 @@ under the License.
                 <para>CLOUDSTACK-1236</para>
               </entry>
               <entry>
-                <para>Warning while adding Xen 6.1 host [Unable to create local link network]</para>
+                <para>Warning while adding XenServer 6.1 host: Unable to create local link
+                  network.</para>
               </entry>
             </row>
             <row>
@@ -1103,8 +1111,8 @@ under the License.
                 <para>CLOUDSTACK-1749</para>
               </entry>
               <entry>
-                <para>Used Master Branch System VM Template: Cloud agent service running on
-                  Secondary Storage VM and Console Proxy VM is named as cloud.com service</para>
+                <para>Cloud agent service running on Secondary Storage VM and Console Proxy VM is
+                  named as cloud.com service.</para>
               </entry>
             </row>
             <row>
@@ -1112,8 +1120,8 @@ under the License.
                 <para>CLOUDSTACK-2024</para>
               </entry>
               <entry>
-                <para>cloudstack-setup-management with https not works (incorrect path and missing
-                  keystore file)</para>
+                <para>The cloudstack-setup-management script with https does not work due to
+                  incorrect path and missing keystore file.</para>
               </entry>
             </row>
             <row>
@@ -1121,7 +1129,7 @@ under the License.
                 <para>CLOUDSTACK-2034</para>
               </entry>
               <entry>
-                <para>No alert generated for deletion of primarystorage failed event</para>
+                <para>No alert generated when deleting a primary storage is failed.</para>
               </entry>
             </row>
             <row>
@@ -1129,8 +1137,8 @@ under the License.
                 <para>CLOUDSTACK-2413</para>
               </entry>
               <entry>
-                <para>"The dialog box Change Compute Offering for a instance, display the
-                  Description (instead of the Name) of compute offering"</para>
+                <para>The Change Compute Offering dialog box for a instance displays the Description
+                  instead of the Name of compute offering.</para>
               </entry>
             </row>
             <row>
@@ -1138,8 +1146,8 @@ under the License.
                 <para>CLOUDSTACK-2767</para>
               </entry>
               <entry>
-                <para>"There is no check on input parameters in API for Global settings,zone
-                  settings and account settings "</para>
+                <para>There is no check on input parameters in API for Global settings, zone
+                  settings, and account settings.</para>
               </entry>
             </row>
             <row>
@@ -1147,8 +1155,8 @@ under the License.
                 <para>CLOUDSTACK-2804</para>
               </entry>
               <entry>
-                <para>getEthByIp function in vpc_func.sh can return the wrong network
-                  interface</para>
+                <para>The getEthByIp function in vpc_func.sh can return the wrong network
+                  interface.</para>
               </entry>
             </row>
             <row>
@@ -1156,8 +1164,8 @@ under the License.
                 <para>CLOUDSTACK-2918</para>
               </entry>
               <entry>
-                <para>"In a scaled up environment, hosts fail to come up after Management server
-                  restart in clustered set up"</para>
+                <para>In a scaledup environment, hosts fail to come up after Management Server
+                  restart in a clustered setup.</para>
               </entry>
             </row>
             <row>
@@ -1165,8 +1173,8 @@ under the License.
                 <para>CLOUDSTACK-3223</para>
               </entry>
               <entry>
-                <para>Exception occured while creating the CPVM in the VmWare Setup using the latest
-                  SystemVM template.</para>
+                <para>[VMware] Exception occurred while creating the CPVM in a setup using the
+                  latest SystemVM template.</para>
               </entry>
             </row>
             <row>
@@ -1174,7 +1182,7 @@ under the License.
                 <para>CLOUDSTACK-3508</para>
               </entry>
               <entry>
-                <para> NullPointerException observed during API call ListVolumeAnswer</para>
+                <para>NullPointerException observed during the ListVolumeAnswer API call.</para>
               </entry>
             </row>
             <row>
@@ -1182,7 +1190,7 @@ under the License.
                 <para>CLOUDSTACK-3603</para>
               </entry>
               <entry>
-                <para>"""template_store_ref"" table has Invalid URL References"</para>
+                <para>The template_store_ref"" table has Invalid URL References.</para>
               </entry>
             </row>
             <row>
@@ -1198,8 +1206,8 @@ under the License.
                 <para>CLOUDSTACK-3873</para>
               </entry>
               <entry>
-                <para>No error notification is generated when Primary storage (Cluster level) is
-                  added with wrong path </para>
+                <para>No error notification is generated when cluster-level Primary storage is added
+                  with wrong path.</para>
               </entry>
             </row>
             <row>
@@ -1207,7 +1215,7 @@ under the License.
                 <para>CLOUDSTACK-4449</para>
               </entry>
               <entry>
-                <para>Possibility of /tmp/xapilog filling up the Root disk on Xenserver </para>
+                <para>Possibility of /tmp/xapilog filling up the Root disk on XenServer.</para>
               </entry>
             </row>
             <row>
@@ -1215,7 +1223,7 @@ under the License.
                 <para>CLOUDSTACK-4466</para>
               </entry>
               <entry>
-                <para>DHCP capability breaks in 4.2</para>
+                <para>DHCP capability breaks in 4.2.</para>
               </entry>
             </row>
             <row>
@@ -1223,8 +1231,8 @@ under the License.
                 <para>CLOUDSTACK-4482</para>
               </entry>
               <entry>
-                <para>getVMPassword() API call does not retuen password for Vms that are deployed
-                  with password enabled templates.</para>
+                <para>The getVMPassword() API call does not return password for VMs that are
+                  deployed with password enabled templates.</para>
               </entry>
             </row>
             <row>
@@ -1232,7 +1240,7 @@ under the License.
                 <para>CLOUDSTACK-4521</para>
               </entry>
               <entry>
-                <para>[upgrade][vmware]Attaching an uploaded volume to a VM throws NPE</para>
+                <para>[VMware] [upgrade] Attaching an uploaded volume to a VM throws NPE.</para>
               </entry>
             </row>
             <row>
@@ -1240,7 +1248,7 @@ under the License.
                 <para>CLOUDSTACK-4572</para>
               </entry>
               <entry>
-                <para>findHostsForMigration API does not return correct host list</para>
+                <para>The findHostsForMigration API does not return correct host list.</para>
               </entry>
             </row>
             <row>
@@ -1249,7 +1257,7 @@ under the License.
               </entry>
               <entry>
                 <para>Specified keyboard language is not showing as default in consoleView passed
-                  during deployVM</para>
+                  during deployVM.</para>
               </entry>
             </row>
             <row>
@@ -1257,7 +1265,7 @@ under the License.
                 <para>CLOUDSTACK-4613</para>
               </entry>
               <entry>
-                <para>security group rules issue in host</para>
+                <para>Security group rules issue in hosts.</para>
               </entry>
             </row>
             <row>
@@ -1265,7 +1273,7 @@ under the License.
                 <para>CLOUDSTACK-4627</para>
               </entry>
               <entry>
-                <para>"HA not working, User VM wasn't Migrated"</para>
+                <para>HA does not work, nor user VM migrate.</para>
               </entry>
             </row>
             <row>
@@ -1273,8 +1281,8 @@ under the License.
                 <para>CLOUDSTACK-4636</para>
               </entry>
               <entry>
-                <para>In a scaled up setup all Vm's in a cluster were stopped and/or started after
-                  management server restart</para>
+                <para>In a scaled-up setup all VMs in a cluster were stopped or started after
+                  Management Server restart.</para>
               </entry>
             </row>
             <row>
@@ -1282,8 +1290,8 @@ under the License.
                 <para>CLOUDSTACK-4661</para>
               </entry>
               <entry>
-                <para>[DB Upgrade] SecondaryStorage entry in host table before upgrade is not marked
-                  as removed after migrating them to image_store table.</para>
+                <para>[DB Upgrade] The SecondaryStorage entry in the host table before upgrade is
+                  not marked as removed after migrating them to image_store table.</para>
               </entry>
             </row>
             <row>
@@ -1291,7 +1299,7 @@ under the License.
                 <para>CLOUDSTACK-4716</para>
               </entry>
               <entry>
-                <para>(Upgrade) resource_count table is not updated after upgrade to 4.2</para>
+                <para>[Upgrade] The resource_count table is not updated after upgrade to 4.2</para>
               </entry>
             </row>
             <row>
@@ -1299,7 +1307,7 @@ under the License.
                 <para>CLOUDSTACK-4755</para>
               </entry>
               <entry>
-                <para>cloudstack 4.x does not allow memory upgrade</para>
+                <para>Version 4.x does not allow memory upgrade.</para>
               </entry>
             </row>
             <row>
@@ -1307,8 +1315,8 @@ under the License.
                 <para>CLOUDSTACK-4765</para>
               </entry>
               <entry>
-                <para>PF rules configure public ip address is not set on the VR when network is up
-                  after GC</para>
+                <para>PF rules configure public IP address is not set on the VR when network is up
+                  after GC.</para>
               </entry>
             </row>
             <row>
@@ -1316,7 +1324,7 @@ under the License.
                 <para>CLOUDSTACK-4785</para>
               </entry>
               <entry>
-                <para>Add support for adding details to UserVm</para>
+                <para>No support for adding details to a user VM.</para>
               </entry>
             </row>
             <row>
@@ -1324,7 +1332,7 @@ under the License.
                 <para>CLOUDSTACK-4786</para>
               </entry>
               <entry>
-                <para>Redundant router: the priority limitation</para>
+                <para>Redundant router has a priority limitation.</para>
               </entry>
             </row>
             <row>
@@ -1332,7 +1340,8 @@ under the License.
                 <para>CLOUDSTACK-4797</para>
               </entry>
               <entry>
-                <para>Installation guide for 4.2 instructs users to install 4.1</para>
+                <para>[Documentation] Installation guide for 4.2 instructs users to install
+                  4.1.</para>
               </entry>
             </row>
             <row>
@@ -1340,7 +1349,7 @@ under the License.
                 <para>CLOUDSTACK-4813</para>
               </entry>
               <entry>
-                <para>get ExitValue when run bash commands</para>
+                <para>Get ExitValue when running bash commands.</para>
               </entry>
             </row>
             <row>
@@ -1348,7 +1357,7 @@ under the License.
                 <para>CLOUDSTACK-4827</para>
               </entry>
               <entry>
-                <para>Build failed on 4.2</para>
+                <para>Build failed on 4.2.</para>
               </entry>
             </row>
             <row>
@@ -1356,7 +1365,8 @@ under the License.
                 <para>CLOUDSTACK-4839</para>
               </entry>
               <entry>
-                <para>"Install Guide, section 3.5, provides wrong list of .deb packages"</para>
+                <para>[Documentation] The section 3.5 in the Install Guide provides wrong list of
+                  .deb packages.</para>
               </entry>
             </row>
             <row>
@@ -1364,7 +1374,7 @@ under the License.
                 <para>CLOUDSTACK-4867</para>
               </entry>
               <entry>
-                <para>NullPointerException on agent while remounting primary storage</para>
+                <para>NullPointerException on agent while remounting primary storage.</para>
               </entry>
             </row>
             <row>
@@ -1381,8 +1391,8 @@ under the License.
                 <para>CLOUDSTACK-4895</para>
               </entry>
               <entry>
-                <para>Management server fails to start because snapshot policy time zones have day
-                  light savings</para>
+                <para>Management Server fails to start because snapshot policy time zones have day
+                  light savings.</para>
               </entry>
             </row>
             <row>
@@ -1390,8 +1400,8 @@ under the License.
                 <para>CLOUDSTACK-4911</para>
               </entry>
               <entry>
-                <para>[Mixed Hypervisor] VM Status is marked as alive when exit status of ping
-                  command is not available within command timeout</para>
+                <para>[Mixed Hypervisor] VM status is marked as alive when exit status of ping
+                  command is not available within command timeout.</para>
               </entry>
             </row>
             <row>
@@ -1399,7 +1409,7 @@ under the License.
                 <para>CLOUDSTACK-4923</para>
               </entry>
               <entry>
-                <para>Network limits is missing in Accounts details page</para>
+                <para>Network limits is missing in Accounts details page.</para>
               </entry>
             </row>
             <row>
@@ -1407,8 +1417,8 @@ under the License.
                 <para>CLOUDSTACK-4924</para>
               </entry>
               <entry>
-                <para>AcountCleanup: never release the ip address if the network failed to
-                  delete</para>
+                <para>AcountCleanup: The IP address is not released if the network failed to
+                  delete.</para>
               </entry>
             </row>
             <row>
@@ -1416,7 +1426,7 @@ under the License.
                 <para>CLOUDSTACK-4947</para>
               </entry>
               <entry>
-                <para>if apply.allocation.algorithm.to.pods is set to true VM creationFails.</para>
+                <para>if apply.allocation.algorithm.to.pods is set to true VM creation fails.</para>
               </entry>
             </row>
             <row>
@@ -1424,8 +1434,8 @@ under the License.
                 <para>CLOUDSTACK-4948</para>
               </entry>
               <entry>
-                <para>"DeploymentPlanner: Logic to check if cluster can be avoided, needs to
-                  consider if VM is using local storage and/or shared storage"</para>
+                <para>DeploymentPlanner: Logic to check if cluster can be avoided needs to consider
+                  if VM is using a local storage and shared storage.</para>
               </entry>
             </row>
             <row>
@@ -1433,8 +1443,8 @@ under the License.
                 <para>CLOUDSTACK-4964</para>
               </entry>
               <entry>
-                <para>Cisco VNMC: Nexus password gets logged in MS logs during guest n/w
-                  implementation with VNMC provider</para>
+                <para>Nexus password is logged in Management Server logs during guest network
+                  implementation with Cisco VNMC provider.</para>
               </entry>
             </row>
             <row>
@@ -1443,7 +1453,7 @@ under the License.
               </entry>
               <entry>
                 <para>NPE while deleting old root volumes of a restored VM during storage garbage
-                  collection</para>
+                  collection.</para>
               </entry>
             </row>
             <row>
@@ -1451,8 +1461,8 @@ under the License.
                 <para>CLOUDSTACK-4987</para>
               </entry>
               <entry>
-                <para>Able to add isolated network belonging to an account to a virtual machine
-                  belonging to different account</para>
+                <para>Adding an Isolated network belonging to an account to a VM belonging to
+                  different account is possible.</para>
               </entry>
             </row>
             <row>
@@ -1460,8 +1470,8 @@ under the License.
                 <para>CLOUDSTACK-4998</para>
               </entry>
               <entry>
-                <para>"assignVirtualMachine API has wrong response string, causing Cloudmonkey to
-                  crash"</para>
+                <para>The assignVirtualMachine API has wrong response string, causing Cloudmonkey to
+                  crash.</para>
               </entry>
             </row>
             <row>
@@ -1469,7 +1479,7 @@ under the License.
                 <para>CLOUDSTACK-5018</para>
               </entry>
               <entry>
-                <para>Creation of VM using template from snapshot of RBD volume fails</para>
+                <para>Creation of VM using template from snapshot of RBD volume fails.</para>
               </entry>
             </row>
             <row>
@@ -1477,7 +1487,7 @@ under the License.
                 <para>CLOUDSTACK-5029</para>
               </entry>
               <entry>
-                <para>cloud-bugtool isn't in release package like release notes say</para>
+                <para>The cloud-bugtool is not available release package.</para>
               </entry>
             </row>
             <row>
@@ -1485,8 +1495,8 @@ under the License.
                 <para>CLOUDSTACK-5038</para>
               </entry>
               <entry>
-                <para>Upgrade to 4.2 - used cpu is getting bumped up when the over provisioning
-                  factor > 1</para>
+                <para>[Upgrade] Used CPU is getting bumped up when the over provisioning factor is
+                  greater than 1.</para>
               </entry>
             </row>
             <row>
@@ -1503,8 +1513,8 @@ under the License.
                 <para>CLOUDSTACK-5140</para>
               </entry>
               <entry>
-                <para>A stopped vm cant start after disable threshold has been reached on the
-                  storage pool</para>
+                <para>A stopped VM cant start after disable threshold has been reached on the
+                  storage pool.</para>
               </entry>
             </row>
             <row>
@@ -1512,7 +1522,7 @@ under the License.
                 <para>CLOUDSTACK-3100</para>
               </entry>
               <entry>
-                <para>"[DR] add ""displayvm"" flag to listVirtualMachines API"</para>
+                <para>Add the displayvmflag to listVirtualMachines API.</para>
               </entry>
             </row>
           </tbody>
@@ -1524,8 +1534,8 @@ under the License.
       <para>This section includes a summary of known issues in 4.2.1 </para>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
-          <colspec colwidth="1*" colname="1" colnum="1"/>
-          <colspec colwidth="2*" colname="2" colnum="2"/>
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="5.69*" colname="2" colnum="2"/>
           <thead>
             <row>
               <entry>
@@ -1542,7 +1552,7 @@ under the License.
                 <para>CLOUDSTACK-4875</para>
               </entry>
               <entry>
-                <para>VMWARE: vCenter 5.5 - SYSTEM VM: Unable to create deployment for VM</para>
+                <para>[VMware] vCenter 5.5 - SYSTEM VM: Unable to create deployment for VM</para>
               </entry>
             </row>
             <row>
@@ -1550,7 +1560,7 @@ under the License.
                 <para>CLOUDSTACK-5159</para>
               </entry>
               <entry>
-                <para>Reset SSH keypair sometimes fails in Vmware</para>
+                <para>[VMware] Reset SSH keypair randomly fails.</para>
               </entry>
             </row>
             <row>
@@ -1558,7 +1568,8 @@ under the License.
                 <para>CLOUDSTACK-5188</para>
               </entry>
               <entry>
-                <para>Password reset of vm on Xen and VMware does not work on first reboot</para>
+                <para>Password reset of vm on XenServer and VMware does not work on first
+                  reboot.</para>
               </entry>
             </row>
             <row>
@@ -1566,8 +1577,8 @@ under the License.
                 <para>CLOUDSTACK-2140</para>
               </entry>
               <entry>
-                <para>"Host is still marked as being in ""Up"" state when the host is shutdown (when
-                  there are no more hosts in the cluster)"</para>
+                <para>Host is still marked as being in UP state when the host is shutdown and there
+                  are no more hosts in the cluster.</para>
               </entry>
             </row>
             <row>
@@ -1575,8 +1586,8 @@ under the License.
                 <para>CLOUDSTACK-4545</para>
               </entry>
               <entry>
-                <para>VMWare:Template:Cloning: Master templte used by linked clones should not be
-                  available for deletion</para>
+                <para>[VMware] Master template used by linked clones should not be available for
+                  deletion.</para>
               </entry>
             </row>
             <row>
@@ -1584,9 +1595,9 @@ under the License.
                 <para>CLOUDSTACK-4577</para>
               </entry>
               <entry>
-                <para>VMWare:Volumes: Unexpected exception while executing
+                <para>[VMware] Unexpected exception while executing
                   org.apache.cloudstack.api.command.user.volume.ResizeVolumeCmd
-                  java.lang.NullPointerException</para>
+                  java.lang.NullPointerException.</para>
               </entry>
             </row>
             <row>
@@ -1595,7 +1606,7 @@ under the License.
               </entry>
               <entry>
                 <para>VM is failing to deploy on a Legacy zone after adding zone wide primary
-                  storage and moving cluster wide primary storage to maintenance mode</para>
+                  storage and moving cluster wide primary storage to maintenance mode.</para>
               </entry>
             </row>
             <row>
@@ -1603,8 +1614,8 @@ under the License.
                 <para>CLOUDSTACK-4594</para>
               </entry>
               <entry>
-                <para>[VMWARE] [Upgrade] Failed to revert VM Snapshot which were created before Live
-                  Storage Migrating the VM to other Cluster</para>
+                <para>[VMware] [Upgrade] Failed to revert VM Snapshot which were created before Live
+                  Storage Migrating the VM to other clusters.</para>
               </entry>
             </row>
             <row>
@@ -1612,9 +1623,9 @@ under the License.
                 <para>CLOUDSTACK-4616</para>
               </entry>
               <entry>
-                <para>"When system Vms fail to start when host is down , link local Ip addresses do
-                  not get released resulting in all the link local Ip addresses being consumed
-                  eventually."</para>
+                <para>When system VMs fail to start when host is down, link local IP addresses do
+                  not get released resulting in all the link local IPs being consumed
+                  eventually.</para>
               </entry>
             </row>
             <row>
@@ -1622,8 +1633,8 @@ under the License.
                 <para>CLOUDSTACK-5008</para>
               </entry>
               <entry>
-                <para>[VMWARE]Failed to start the VM after performing Cold Migration of Volume to
-                  Second Zone wide primary Storage</para>
+                <para>[VMware] Failed to start the VM after performing Cold Migration of Volume to
+                  Second Zone wide primary Storage.</para>
               </entry>
             </row>
             <row>
@@ -1631,7 +1642,7 @@ under the License.
                 <para>CLOUDSTACK-5014</para>
               </entry>
               <entry>
-                <para>vmware:deployVM with data disk failed with exception</para>
+                <para>[VMware] DeployVM with data disk failed with exception.</para>
               </entry>
             </row>
             <row>
@@ -1639,8 +1650,8 @@ under the License.
                 <para>CLOUDSTACK-5054</para>
               </entry>
               <entry>
-                <para>"vm migration involving storage migration on vmware fails with exception ""
-                  The object has already been deleted or has not been completely created """</para>
+                <para>VM migration involving storage migration on vmware fails with the 'The object
+                  has already been deleted or has not been completely created'  exception.</para>
               </entry>
             </row>
             <row>
@@ -1648,7 +1659,7 @@ under the License.
                 <para>CLOUDSTACK-5119</para>
               </entry>
               <entry>
-                <para>F5 plugin : VLAN provisioning broken</para>
+                <para>VLAN provisioning broken in F5</para>
               </entry>
             </row>
             <row>
@@ -1656,8 +1667,8 @@ under the License.
                 <para>CLOUDSTACK-4475</para>
               </entry>
               <entry>
-                <para>[ZWPS] attaching an uploaded volume to a VM is always going to first primary
-                  storage added</para>
+                <para>Attaching an uploaded volume to a VM is always going to first primary storage
+                  added.</para>
               </entry>
             </row>
             <row>
@@ -1665,8 +1676,8 @@ under the License.
                 <para>CLOUDSTACK-4492</para>
               </entry>
               <entry>
-                <para>[object_store_ref] Attaching volume to a vm is failing after upgrade if the
-                  volume was uploaded before upgrade </para>
+                <para>Attaching volume to a VM fails after upgrade if the volume was uploaded before
+                  upgrade. </para>
               </entry>
             </row>
             <row>
@@ -1674,8 +1685,8 @@ under the License.
                 <para>CLOUDSTACK-4496</para>
               </entry>
               <entry>
-                <para>[VMWARE]System VM's are failed to start with NPE when host is maitanance
-                  state</para>
+                <para>[VMware] System VMs are failed to start with NPE when host is in maintenance
+                  state.</para>
               </entry>
             </row>
             <row>
@@ -1683,7 +1694,7 @@ under the License.
                 <para>CLOUDSTACK-4504</para>
               </entry>
               <entry>
-                <para>VM creation Is failing using the Ubuntu ISO with Xen 6.1 and 6.2</para>
+                <para>VM creation is failing using the Ubuntu ISO with XenServer 6.1 and 6.2</para>
               </entry>
             </row>
             <row>
@@ -1691,8 +1702,8 @@ under the License.
                 <para>CLOUDSTACK-4536</para>
               </entry>
               <entry>
-                <para>[object_store_refactor] Inconsistency in volume store location on secondary
-                  storage for uploaded and extracted volume</para>
+                <para>Inconsistency in volume store location on secondary storage for uploaded and
+                  extracted volume.</para>
               </entry>
             </row>
             <row>
@@ -1700,8 +1711,7 @@ under the License.
                 <para>CLOUDSTACK-4574</para>
               </entry>
               <entry>
-                <para>"MS:NPE at ""CapacityManagerImpl.java:187"" while executing DestroyVMCmd
-                  "</para>
+                <para>NPE while executing DestroyVM command.</para>
               </entry>
             </row>
             <row>
@@ -1709,8 +1719,8 @@ under the License.
                 <para>CLOUDSTACK-4593</para>
               </entry>
               <entry>
-                <para> [VMWARE] [Upgrade]Livestorage Migration and VM Snapshot features are not
-                  fully functional after upgrade</para>
+                <para>[VMware] [Upgrade] Livestorage Migration and VM Snapshot features are not
+                  fully functional after upgrade.</para>
               </entry>
             </row>
             <row>
@@ -1718,8 +1728,8 @@ under the License.
                 <para>CLOUDSTACK-4620</para>
               </entry>
               <entry>
-                <para>Vm failed to start on the host on which it was running due to not having
-                  enough reservedMem when the host was powered on after being shutdown.</para>
+                <para>VM failed to start on the host on which it was running due to not having
+                  enough reserved memory when the host was powered on after being shutdown.</para>
               </entry>
             </row>
             <row>
@@ -1727,7 +1737,7 @@ under the License.
                 <para>CLOUDSTACK-4638</para>
               </entry>
               <entry>
-                <para>state information is not synced on Starting VM directly via Vcenter </para>
+                <para>State information is not synced on Starting VM directly via vCenter.</para>
               </entry>
             </row>
             <row>
@@ -1735,8 +1745,8 @@ under the License.
                 <para>CLOUDSTACK-4639</para>
               </entry>
               <entry>
-                <para>status of VM is not synced properly when host is HA during hypervisor
-                  failure</para>
+                <para>Status of VM is not synced properly when host is HA during hypervisor
+                  failure.</para>
               </entry>
             </row>
             <row>
@@ -1744,8 +1754,8 @@ under the License.
                 <para>CLOUDSTACK-4657</para>
               </entry>
               <entry>
-                <para>ceph:fail to attach a volume to instance which is migrated from one primary to
-                  another primary.</para>
+                <para>[CEPH] Attaching a volume to an instance that is migrated from one primary to
+                  another primary fails.</para>
               </entry>
             </row>
             <row>
@@ -1762,8 +1772,8 @@ under the License.
                 <para>CLOUDSTACK-4734</para>
               </entry>
               <entry>
-                <para>"Creating snapshot from ROOT volume fails with error message - ""Failed to
-                  create snapshot due to an internal error creating snapshot for volume 14”"</para>
+                <para>Creating snapshot from ROOT volume fails with the Failed to create snapshot
+                  due to an internal error creating snapshot for volume 14 error message.</para>
               </entry>
             </row>
             <row>
@@ -1771,8 +1781,8 @@ under the License.
                 <para>CLOUDSTACK-4743</para>
               </entry>
               <entry>
-                <para>VPC: applyStaticRoutes/createPrivateGatway/deletePrivateGateway - read from
-                  vpc_service_map table instead of relying on hardcoded values</para>
+                <para>The applyStaticRoutes/createPrivateGatway/deletePrivateGateway APIs read from
+                  the vpc_service_map table instead of relying on hard-coded values.</para>
               </entry>
             </row>
             <row>
@@ -1780,7 +1790,7 @@ under the License.
                 <para>CLOUDSTACK-4789</para>
               </entry>
               <entry>
-                <para>Fix ResourceMetaDataManagerTest</para>
+                <para>Fix ResourceMetaDataManagerTest.</para>
               </entry>
             </row>
             <row>
@@ -1788,7 +1798,7 @@ under the License.
                 <para>CLOUDSTACK-4850</para>
               </entry>
               <entry>
-                <para>[UCS] using template instead of cloning profile</para>
+                <para>[UCS] using template instead of cloning profile.</para>
               </entry>
             </row>
             <row>
@@ -1796,8 +1806,8 @@ under the License.
                 <para>CLOUDSTACK-4861</para>
               </entry>
               <entry>
-                <para>"[VMware] If Guest traffic spans across multiple physical networks, selection
-                  of physical network to implement guest network is not working correctly."</para>
+                <para>[VMware] If Guest traffic spans across multiple physical networks, selection
+                  of physical network to implement guest network is not working correctly.</para>
               </entry>
             </row>
             <row>
@@ -1805,7 +1815,7 @@ under the License.
                 <para>CLOUDSTACK-4906</para>
               </entry>
               <entry>
-                <para>add netaddr to marvin dependency list</para>
+                <para>Add network address to the Marvin dependency list.</para>
               </entry>
             </row>
             <row>
@@ -1813,8 +1823,8 @@ under the License.
                 <para>CLOUDSTACK-4978</para>
               </entry>
               <entry>
-                <para>Provisioning VMs from templates fails on VMWare with error
-                  ROOT-249/ROOT-249.vmdk was not found</para>
+                <para>[VMware] Provisioning VMs from templates fails with the ROOT-249/ROOT-249.vmdk
+                  not found error</para>
               </entry>
             </row>
             <row>
@@ -1822,9 +1832,8 @@ under the License.
                 <para>CLOUDSTACK-5002</para>
               </entry>
               <entry>
-                <para>unable to destroy vm ;VM destroy failed in Stop i-2-59-VM Command due to You
-                  gave an invalid object reference. The object may have recently been deleted.
-                </para>
+                <para>Destroying VM does not work. VM destroy failed with the Stop i-2-59-VM command
+                  due to invalid object reference. The object may have recently been deleted. </para>
               </entry>
             </row>
             <row>
@@ -1832,7 +1841,7 @@ under the License.
                 <para>CLOUDSTACK-5005</para>
               </entry>
               <entry>
-                <para>issue with stopping vms parallelly </para>
+                <para>Stopping multiple VMs does not work.</para>
               </entry>
             </row>
             <row>
@@ -1840,8 +1849,8 @@ under the License.
                 <para>CLOUDSTACK-5020</para>
               </entry>
               <entry>
-                <para>fail to recreate system VM in a specific scenario during storage
-                  maintenance</para>
+                <para>Recreate system VM fails in a specific scenario during storage
+                  maintenance.</para>
               </entry>
             </row>
             <row>
@@ -1849,9 +1858,8 @@ under the License.
                 <para>CLOUDSTACK-5075</para>
               </entry>
               <entry>
-                <para>"issue with destroy vm with local storage ; Unable to update vm disk
-                  statistics for vm: 42 from host: 1 java.lang.IndexOutOfBoundsException: Index: 0,
-                  Size: 0"</para>
+                <para>Various issues with destroying a VM with local storage. VM disk statistics
+                  cannot be updated for a VM.</para>
               </entry>
             </row>
             <row>
@@ -1868,8 +1876,8 @@ under the License.
                 <para>CLOUDSTACK-5098</para>
               </entry>
               <entry>
-                <para>[VMWARE] Entries in vmware_data_center and vmware_data_center_zone_map are not
-                  cleaned up when there is a failure to add the cluster</para>
+                <para>[VMware] Entries in <code>vmware_data_center</code> and <code>vmware_data_center_zone_map</code> are not
+                  cleaned up when there is a failure to add the cluster.</para>
               </entry>
             </row>
             <row>
@@ -1877,7 +1885,7 @@ under the License.
                 <para>CLOUDSTACK-5118</para>
               </entry>
               <entry>
-                <para>Intrastructure > Virtual Routers listed multiple times</para>
+                <para>Virtual Routers are listed multiple times in the Infrastructure page.</para>
               </entry>
             </row>
             <row>
@@ -1885,7 +1893,7 @@ under the License.
                 <para>CLOUDSTACK-5123</para>
               </entry>
               <entry>
-                <para>vmware - mem overprovisioning behaviour</para>
+                <para>[VMware] Memory over-provisioning behaviour.</para>
               </entry>
             </row>
           </tbody>
