@@ -809,7 +809,7 @@ under the License.
                 <para>CLOUDSTACK-4573</para>
               </entry>
               <entry>
-                <para>Aquire IP address above domain limit in VPC</para>
+                <para>Acquire IP address above domain limit in VPC</para>
               </entry>
             </row>
             <row>
@@ -1903,18 +1903,16 @@ under the License.
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
     <section id="upgrade-from-4.2-to-4.2.1">
       <title>Upgrade from 4.2.0 to 4.2.1</title>
-      <para>This section will guide you to upgrade from &PRODUCT; 4.2 to &PRODUCT; 4.2.1. Any steps
-        that are hypervisor-specific will be called out with a note. We recommend reading through
-        this section once or twice before beginning your upgrade procedure, and working through it
-        on a test system before working on a production system.</para>
-      <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one of
-        Linux's predominant package systems, RPM or APT. This guide assumes you are using RPM and
-        Yum for Red Hat Enterprise Linux or CentOS, or APT and Debian packages for Ubuntu.</para>
-      <note>
-        <para>The following upgrade instructions should be performed regardless of hypervisor
-          type.</para>
-      </note>
+      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.2.1.</para>
+      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
+      <para>We recommend reading through this section once or twice before beginning your upgrade
+        procedure, and working through it on a test system before working on a production
+        system.</para>
       <orderedlist>
+        <note>
+          <para>The following upgrade instructions should be performed regardless of hypervisor
+            type.</para>
+        </note>
         <listitem>
           <orderedlist numeration="loweralpha">
             <listitem>
@@ -2002,20 +2000,26 @@ under the License.
           </orderedlist>
         </listitem>
         <listitem>
-          <para>Create RPM or Debian packages as appropriate and a repository from the 4.2.1 source,
-            or check the Apache CloudStack downloads page at <ulink
+          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
+            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
+            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
+            Ubuntu).</para>
+        </listitem>
+        <listitem>
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
+            source, or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
-            by community members. </para>
-          <para>You will need them for step <xref linkend="upgrade-deb-packages-4.2.1"/> or step
-              <xref linkend="upgrade-rpm-packages-4.2.1"/>. Instructions for creating packages from
-            the &PRODUCT; source are in the <ulink
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-4.2.1"/> or step <xref
+              linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
         </listitem>
         <listitem>
-          <para>Stop your management server or servers. </para>
-          <para>Run the following on all the Management Server hosts:</para>
+          <para>Stop your management server or servers. Run this on all management server
+            hosts:</para>
           <programlisting><prompt>#</prompt> service cloudstack-management stop</programlisting>
         </listitem>
         <listitem>
@@ -2045,9 +2049,9 @@ under the License.
             </listitem>
             <listitem>
               <para>Verify signatures and hash files:</para>
-              <programlisting>gpg --verify apache-cloudstack-4.2.0-src.tar.bz2.asc</programlisting>
-              <programlisting>gpg --print-md MD5 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-cloudstack-4.2.0-src.tar.bz2.md5
-gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-cloudstack-4.2.0-src.tar.bz2.sha</programlisting>
+              <programlisting>#gpg --verify apache-cloudstack-4.2.1-src.tar.bz2.asc
+#gpg --print-md MD5 apache-cloudstack-4.2.1-src.tar.bz2 | diff - apache-cloudstack-4.2.1-src.tar.bz2.md5
+#gpg --print-md SHA512 apache-cloudstack-4.2.1-src.tar.bz2 | diff - apache-cloudstack-4.2.1-src.tar.bz2.sha</programlisting>
               <para>Each of these commands should return no output. Any output from them implies
                 that there is a difference between the hash you generated locally and the hash that
                 has been pulled from the server.</para>
@@ -2095,8 +2099,9 @@ gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-clouds
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
-          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:
+            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          </para>
         </listitem>
         <listitem id="upgrade-deb-packages-4.2.1">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -2109,39 +2114,38 @@ gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-clouds
           </note>
           <orderedlist id="debsteps-4.2.1" numeration="loweralpha">
             <listitem>
-              <para>Change the sources list for each system with &PRODUCT; packages. </para>
-              <para>This means all management servers, and any hosts that have the KVM agent. No
-                changes should be necessary for hosts that are running VMware or XenServer</para>
-            </listitem>
-            <listitem>
-              <para>Open <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on any systems
-                that have &PRODUCT; packages installed.</para>
+              <para>The first order of business will be to change the sources list for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
+                any systems that have &PRODUCT; packages installed.</para>
               <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+              <para>We'll change it to point to the new package repository:</para>
               <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
             </listitem>
-            <listitem><para>Change it to point to the new package
-              repository:</para><programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2.1</programlisting>If
-              you're using your own package repository, change this line to read as appropriate for
-              your 4.2.1 repository.</listitem>
             <listitem>
-              <para>Update your APT package list:</para>
+              <para>Now update your apt package list:</para>
               <programlisting language="Bash">$ sudo apt-get update</programlisting>
             </listitem>
             <listitem id="deb-master-4.2.1">
-              <para>Install the <filename>cloudstack-management</filename> package. </para>
-              <para>This fetches in any other dependencies you need.</para>
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package. This will pull in any other
+                dependencies you need.</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
             </listitem>
             <listitem id="kvm-agent-deb-4.2.1">
-              <para>Manually install the <filename>cloudstack-agent</filename> package:</para>
+              <para>You will need to manually install the <filename>cloudstack-agent</filename>
+                package:</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
               <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
                 your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
                 and <filename>environment.properties</filename> from
                   <filename>/etc/cloud/agent</filename> to
                   <filename>/etc/cloudstack/agent</filename>.</para>
-            </listitem>
-            <listitem>
               <para>When prompted whether you wish to keep your configuration, say Yes.</para>
             </listitem>
             <listitem>
@@ -2153,9 +2157,11 @@ gpg --print-md SHA512 apache-cloudstack-4.2.0-src.tar.bz2 | diff - apache-clouds
             </listitem>
             <listitem>
               <para>Restart the agent:</para>
-              <programlisting language="Bash">service cloudstack-agent stop
+              <programlisting language="Bash">
+service cloudstack-agent stop
 killall jsvc
-service cloudstack-agent start                            </programlisting>
+service cloudstack-agent start
+                            </programlisting>
             </listitem>
           </orderedlist>
         </listitem>
@@ -2170,7 +2176,7 @@ service cloudstack-agent start                            </programlisting>
             </listitem>
             <listitem>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
-              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false </programlisting>
+              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
                 and vmware_data_center tables in place of the plain text password</para>
             </listitem>
@@ -2181,7 +2187,7 @@ service cloudstack-agent start                            </programlisting>
             </listitem>
             <listitem>
               <para>Update the plain text password with the encrypted one</para>
-              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_; </programlisting>
+              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;</programlisting>
             </listitem>
             <listitem>
               <para>Confirm that the table is updated:</para>
@@ -2462,8 +2468,9 @@ Done restarting router(s).
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
-          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"'; </programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:
+            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          </para>
         </listitem>
         <listitem id="upgrade-deb-packages-41to42">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -2538,7 +2545,7 @@ service cloudstack-agent start
             </listitem>
             <listitem>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
-              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false </programlisting>
+              <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
                 and vmware_data_center tables in place of the plain text password</para>
             </listitem>
@@ -2549,7 +2556,7 @@ service cloudstack-agent start
             </listitem>
             <listitem>
               <para>Update the plain text password with the encrypted one</para>
-              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_; </programlisting>
+              <programlisting>update cloud.cluster_details set value = '_ciphertext_from_step_1_' where id = _id_from_step_2_;</programlisting>
             </listitem>
             <listitem>
               <para>Confirm that the table is updated:</para>
@@ -2830,7 +2837,7 @@ Done restarting router(s).
           <para>Make a backup of your MySQL database. If you run into any issues or need to roll
             back the upgrade, this will assist in debugging or restoring your existing environment.
             You'll be prompted for your password.</para>
-          <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql </programlisting>
+          <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql</programlisting>
         </listitem>
         <listitem>
           <para>Whether you're upgrading a Red Hat/CentOS based system or Ubuntu based system,
@@ -3194,8 +3201,8 @@ Done restarting router(s).
           <para>In the following commands, it is assumed that you have set the root password on the
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
-          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud &gt; <filename>cloud-backup.dmp</filename>
-                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage &gt; <filename>cloud-usage-backup.dmp</filename></programlisting>
+          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
         </listitem>
         <listitem>
           <para>Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -3840,8 +3847,8 @@ service cloudstack-agent start
           <para>In the following commands, it is assumed that you have set the root password on the
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
-          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud &gt; <filename>cloud-backup.dmp</filename>
-                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage &gt; <filename>cloud-usage-backup.dmp</filename>
+          <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename>
                     </programlisting>
         </listitem>
         <listitem>
@@ -4212,7 +4219,7 @@ service cloudstack-agent start
           <programlisting><prompt>#</prompt> <command>ssh</command> -i <replaceable>private-key-path</replaceable> <replaceable>link-local-ip</replaceable> -p 3922
                         # cat /etc/cloudstack-release</programlisting>
           <para>The output should be like the following:</para>
-          <programlisting>Cloudstack Release 4.2.1 Mon Dec 9 15:10:04 PST 2013</programlisting>
+          <programlisting>Cloudstack Release 4.0.0-incubating Mon Oct 9 15:10:04 PST 2012</programlisting>
           <formalpara>
             <title>ESXi</title>
             <para>SSH in using the private IP address of the system VM. For example, in the command
