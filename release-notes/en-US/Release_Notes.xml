@@ -298,15 +298,12 @@ under the License.
           >Jira</ulink> to track its issues. All new features and bugs for 4.2.1 have been tracked
         in Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the
         issue number.</para>
-      <para>For the list of issues fixed, see <ulink
-          url="https://issues.apache.org/jira/issues/?filter=12325707">Issues Fixed in
-        4.2.1</ulink>.</para>
       <para>This section includes a summary of known issues were fixed in 4.2.1. Approximately 150
         bugs were resolved or closed in the 4.2.1 cycle.</para>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
-          <colspec colwidth="1.0*" colname="1" colnum="1"/>
-          <colspec colwidth="3.84*" colname="2" colnum="2"/>
+          <colspec colwidth="1*" colname="1" colnum="1"/>
+          <colspec colwidth="2*" colname="2" colnum="2"/>
           <thead>
             <row>
               <entry>
@@ -812,7 +809,7 @@ under the License.
                 <para>CLOUDSTACK-4573</para>
               </entry>
               <entry>
-                <para>Aquire IP address above domain limit in VPC</para>
+                <para>Acquire IP address above domain limit in VPC</para>
               </entry>
             </row>
             <row>
@@ -1524,9 +1521,376 @@ under the License.
     </section>
     <section id="known-issues-4.2.1">
       <title>Known Issues in 4.2.1</title>
-      <para>This section includes a summary of known issues that were fixed in 4.2.1. For the list
-        of known issues, see <ulink url=" https://issues.apache.org/jira/issues/?filter=12325708"
-          >Known Issues</ulink>.</para>
+      <para>This section includes a summary of known issues in 4.2.1 </para>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1*" colname="1" colnum="1"/>
+          <colspec colwidth="2*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry>
+                <para>Issue ID</para>
+              </entry>
+              <entry>
+                <para>Description</para>
+              </entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4875</para>
+              </entry>
+              <entry>
+                <para>VMWARE: vCenter 5.5 - SYSTEM VM: Unable to create deployment for VM</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5159</para>
+              </entry>
+              <entry>
+                <para>Reset SSH keypair sometimes fails in Vmware</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5188</para>
+              </entry>
+              <entry>
+                <para>Password reset of vm on Xen and VMware does not work on first reboot</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-2140</para>
+              </entry>
+              <entry>
+                <para>"Host is still marked as being in ""Up"" state when the host is shutdown (when
+                  there are no more hosts in the cluster)"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4545</para>
+              </entry>
+              <entry>
+                <para>VMWare:Template:Cloning: Master templte used by linked clones should not be
+                  available for deletion</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4577</para>
+              </entry>
+              <entry>
+                <para>VMWare:Volumes: Unexpected exception while executing
+                  org.apache.cloudstack.api.command.user.volume.ResizeVolumeCmd
+                  java.lang.NullPointerException</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4587</para>
+              </entry>
+              <entry>
+                <para>VM is failing to deploy on a Legacy zone after adding zone wide primary
+                  storage and moving cluster wide primary storage to maintenance mode</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4594</para>
+              </entry>
+              <entry>
+                <para>[VMWARE] [Upgrade] Failed to revert VM Snapshot which were created before Live
+                  Storage Migrating the VM to other Cluster</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4616</para>
+              </entry>
+              <entry>
+                <para>"When system Vms fail to start when host is down , link local Ip addresses do
+                  not get released resulting in all the link local Ip addresses being consumed
+                  eventually."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5008</para>
+              </entry>
+              <entry>
+                <para>[VMWARE]Failed to start the VM after performing Cold Migration of Volume to
+                  Second Zone wide primary Storage</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5014</para>
+              </entry>
+              <entry>
+                <para>vmware:deployVM with data disk failed with exception</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5054</para>
+              </entry>
+              <entry>
+                <para>"vm migration involving storage migration on vmware fails with exception ""
+                  The object has already been deleted or has not been completely created """</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5119</para>
+              </entry>
+              <entry>
+                <para>F5 plugin : VLAN provisioning broken</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4475</para>
+              </entry>
+              <entry>
+                <para>[ZWPS] attaching an uploaded volume to a VM is always going to first primary
+                  storage added</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4492</para>
+              </entry>
+              <entry>
+                <para>[object_store_ref] Attaching volume to a vm is failing after upgrade if the
+                  volume was uploaded before upgrade </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4496</para>
+              </entry>
+              <entry>
+                <para>[VMWARE]System VM's are failed to start with NPE when host is maitanance
+                  state</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4504</para>
+              </entry>
+              <entry>
+                <para>VM creation Is failing using the Ubuntu ISO with Xen 6.1 and 6.2</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4536</para>
+              </entry>
+              <entry>
+                <para>[object_store_refactor] Inconsistency in volume store location on secondary
+                  storage for uploaded and extracted volume</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4574</para>
+              </entry>
+              <entry>
+                <para>"MS:NPE at ""CapacityManagerImpl.java:187"" while executing DestroyVMCmd
+                  "</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4593</para>
+              </entry>
+              <entry>
+                <para> [VMWARE] [Upgrade]Livestorage Migration and VM Snapshot features are not
+                  fully functional after upgrade</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4620</para>
+              </entry>
+              <entry>
+                <para>Vm failed to start on the host on which it was running due to not having
+                  enough reservedMem when the host was powered on after being shutdown.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4638</para>
+              </entry>
+              <entry>
+                <para>state information is not synced on Starting VM directly via Vcenter </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4639</para>
+              </entry>
+              <entry>
+                <para>status of VM is not synced properly when host is HA during hypervisor
+                  failure</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4657</para>
+              </entry>
+              <entry>
+                <para>ceph:fail to attach a volume to instance which is migrated from one primary to
+                  another primary.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4697</para>
+              </entry>
+              <entry>
+                <para>Not able to delete Primary storage when there are no hosts in the
+                  cluster.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4734</para>
+              </entry>
+              <entry>
+                <para>"Creating snapshot from ROOT volume fails with error message - ""Failed to
+                  create snapshot due to an internal error creating snapshot for volume 14”"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4743</para>
+              </entry>
+              <entry>
+                <para>VPC: applyStaticRoutes/createPrivateGatway/deletePrivateGateway - read from
+                  vpc_service_map table instead of relying on hardcoded values</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4789</para>
+              </entry>
+              <entry>
+                <para>Fix ResourceMetaDataManagerTest</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4850</para>
+              </entry>
+              <entry>
+                <para>[UCS] using template instead of cloning profile</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4861</para>
+              </entry>
+              <entry>
+                <para>"[VMware] If Guest traffic spans across multiple physical networks, selection
+                  of physical network to implement guest network is not working correctly."</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4906</para>
+              </entry>
+              <entry>
+                <para>add netaddr to marvin dependency list</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-4978</para>
+              </entry>
+              <entry>
+                <para>Provisioning VMs from templates fails on VMWare with error
+                  ROOT-249/ROOT-249.vmdk was not found</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5002</para>
+              </entry>
+              <entry>
+                <para>unable to destroy vm ;VM destroy failed in Stop i-2-59-VM Command due to You
+                  gave an invalid object reference. The object may have recently been deleted.
+                </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5005</para>
+              </entry>
+              <entry>
+                <para>issue with stopping vms parallelly </para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5020</para>
+              </entry>
+              <entry>
+                <para>fail to recreate system VM in a specific scenario during storage
+                  maintenance</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5075</para>
+              </entry>
+              <entry>
+                <para>"issue with destroy vm with local storage ; Unable to update vm disk
+                  statistics for vm: 42 from host: 1 java.lang.IndexOutOfBoundsException: Index: 0,
+                  Size: 0"</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5090</para>
+              </entry>
+              <entry>
+                <para>Anti-Affinity: VM fails to start on a cluster belonging to a different
+                  pod.</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5098</para>
+              </entry>
+              <entry>
+                <para>[VMWARE] Entries in vmware_data_center and vmware_data_center_zone_map are not
+                  cleaned up when there is a failure to add the cluster</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5118</para>
+              </entry>
+              <entry>
+                <para>Intrastructure > Virtual Routers listed multiple times</para>
+              </entry>
+            </row>
+            <row>
+              <entry>
+                <para>CLOUDSTACK-5123</para>
+              </entry>
+              <entry>
+                <para>vmware - mem overprovisioning behaviour</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
     </section>
   </chapter>
   <chapter id="upgrade-instructions">
@@ -1539,20 +1903,20 @@ under the License.
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
     <section id="upgrade-from-4.2-to-4.2.1">
       <title>Upgrade from 4.2.0 to 4.2.1</title>
-      <para>This section will guide you to upgrade from &PRODUCT; 4.2 to &PRODUCT; 4.2.1. Any steps
-        that are hypervisor-specific will be called out with a note. We recommend reading through
-        this section once or twice before beginning your upgrade procedure, and working through it
-        on a test system before working on a production system.</para>
-      <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one of
-        Linux's predominant package systems, RPM or APT. This guide assumes you are using RPM and
-        Yum for Red Hat Enterprise Linux or CentOS, or APT and Debian packages for Ubuntu.</para>
+      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.2.1.</para>
+      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
+      <para>We recommend reading through this section once or twice before beginning your upgrade
+        procedure, and working through it on a test system before working on a production
+        system.</para>
       <orderedlist>
+        <note>
+          <para>The following upgrade instructions should be performed regardless of hypervisor
+            type.</para>
+        </note>
         <listitem>
-          <para>Perform the following upgrade instructions regardless of hypervisor type.</para>
-          <para>In each zone that includes VMware hosts, you need to add a new system VM template. </para>
           <orderedlist numeration="loweralpha">
             <listitem>
-              <para>While running the existing 3.0.x system, log in to the UI as root
+              <para>While running the existing 4.2.0 system, log in to the UI as root
                 administrator.</para>
             </listitem>
             <listitem>
@@ -1570,8 +1934,8 @@ under the License.
                 these):</para>
               <informaltable>
                 <tgroup cols="2" align="left" colsep="1" rowsep="1">
-                  <colspec colwidth="1.0*" colname="1" colnum="1"/>
-                  <colspec colwidth="4.77*" colname="2" colnum="2"/>
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
                   <thead>
                     <row>
                       <entry><para>Hypervisor</para></entry>
@@ -1636,20 +2000,26 @@ under the License.
           </orderedlist>
         </listitem>
         <listitem>
-          <para>Create RPM or Debian packages as appropriate and a repository from the 4.2.1 source,
-            or check the Apache CloudStack downloads page at <ulink
+          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
+            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
+            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
+            Ubuntu).</para>
+        </listitem>
+        <listitem>
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
+            source, or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
-            by community members. </para>
-          <para>You will need them for step <xref linkend="upgrade-deb-packages-4.2.1"/> or step
-              <xref linkend="upgrade-rpm-packages-4.2.1"/>. Instructions for creating packages from
-            the &PRODUCT; source are in the <ulink
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-4.2.1"/> or step <xref
+              linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
         </listitem>
         <listitem>
-          <para>Stop your management server or servers. </para>
-          <para>Run the following on all the Management Server hosts:</para>
+          <para>Stop your management server or servers. Run this on all management server
+            hosts:</para>
           <programlisting><prompt>#</prompt> service cloudstack-management stop</programlisting>
         </listitem>
         <listitem>
@@ -1729,8 +2099,9 @@ under the License.
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
-          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:
+            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          </para>
         </listitem>
         <listitem id="upgrade-deb-packages-4.2.1">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -1743,39 +2114,38 @@ under the License.
           </note>
           <orderedlist id="debsteps-4.2.1" numeration="loweralpha">
             <listitem>
-              <para>Change the sources list for each system with &PRODUCT; packages. </para>
-              <para>This means all management servers, and any hosts that have the KVM agent. No
-                changes should be necessary for hosts that are running VMware or XenServer</para>
-            </listitem>
-            <listitem>
-              <para>Open <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on any systems
-                that have &PRODUCT; packages installed.</para>
+              <para>The first order of business will be to change the sources list for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
+                any systems that have &PRODUCT; packages installed.</para>
               <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+              <para>We'll change it to point to the new package repository:</para>
               <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
             </listitem>
-            <listitem><para>Change it to point to the new package
-              repository:</para><programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2.1</programlisting>If
-              you're using your own package repository, change this line to read as appropriate for
-              your 4.2.1 repository.</listitem>
             <listitem>
-              <para>Update your APT package list:</para>
+              <para>Now update your apt package list:</para>
               <programlisting language="Bash">$ sudo apt-get update</programlisting>
             </listitem>
             <listitem id="deb-master-4.2.1">
-              <para>Install the <filename>cloudstack-management</filename> package. </para>
-              <para>This fetches in any other dependencies you need.</para>
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package. This will pull in any other
+                dependencies you need.</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
             </listitem>
             <listitem id="kvm-agent-deb-4.2.1">
-              <para>Manually install the <filename>cloudstack-agent</filename> package:</para>
+              <para>You will need to manually install the <filename>cloudstack-agent</filename>
+                package:</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
               <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
                 your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
                 and <filename>environment.properties</filename> from
                   <filename>/etc/cloud/agent</filename> to
                   <filename>/etc/cloudstack/agent</filename>.</para>
-            </listitem>
-            <listitem>
               <para>When prompted whether you wish to keep your configuration, say Yes.</para>
             </listitem>
             <listitem>
@@ -1787,9 +2157,11 @@ under the License.
             </listitem>
             <listitem>
               <para>Restart the agent:</para>
-              <programlisting language="Bash">service cloudstack-agent stop
+              <programlisting language="Bash">
+service cloudstack-agent stop
 killall jsvc
-service cloudstack-agent start</programlisting>
+service cloudstack-agent start
+                            </programlisting>
             </listitem>
           </orderedlist>
         </listitem>
@@ -1806,7 +2178,7 @@ service cloudstack-agent start</programlisting>
               <para>Generate the encrypted equivalent of your vCenter password:</para>
               <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
-                and vmware_data_center tables in place of the plain text password.</para>
+                and vmware_data_center tables in place of the plain text password</para>
             </listitem>
             <listitem>
               <para>Find the ID of the row of cluster_details table that you have to update:</para>
@@ -1960,7 +2332,7 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
-    <section id="upgrade-from-4.0-to-4.2.1">
+    <section id="upgrade-from-4.1-to-4.2.1">
       <title>Upgrade from 4.1.x to 4.2.1</title>
       <para>This section will guide you from &PRODUCT; 4.1.x versions to &PRODUCT; 4.2.1.</para>
       <para>Any steps that are hypervisor-specific will be called out with a note.</para>
@@ -1975,12 +2347,103 @@ Done restarting router(s).
             Ubuntu).</para>
         </listitem>
         <listitem>
+          <note>
+            <para>The following upgrade instructions should be performed regardless of hypervisor
+              type.</para>
+          </note>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>While running the existing 4.1.x system, log in to the UI as root
+                administrator.</para>
+            </listitem>
+            <listitem>
+              <para>In the left navigation bar, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>In Select view, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>Click Register template.</para>
+              <para>The Register template dialog box is displayed.</para>
+            </listitem>
+            <listitem>
+              <para>In the Register template dialog box, specify the following values (do not change
+                these):</para>
+              <informaltable>
+                <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry><para>Hypervisor</para></entry>
+                      <entry><para>Description</para></entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry><para>XenServer</para></entry>
+                      <entry><para>Name: systemvm-xenserver-4.2</para>
+                        <para>Description: systemvm-xenserver-4.2</para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: XenServer</para>
+                        <para>Format: VHD</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>KVM</para></entry>
+                      <entry><para>Name: systemvm-kvm-4.2</para>
+                        <para>Description: systemvm-kvm-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: KVM</para>
+                        <para>Format: QCOW2</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>VMware</para></entry>
+                      <entry><para>Name: systemvm-vmware-4.2</para>
+                        <para>Description: systemvm-vmware-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: VMware</para>
+                        <para>Format: OVA</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </informaltable>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
           <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
             source, or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
-            by community members. You will need them for step <xref linkend="upgrade-deb-packages"/>
-            or step <xref linkend="upgrade-rpm-packages"/>.</para>
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-41to42"/> or step <xref
+              linkend="upgrade-rpm-packages-41to42"/>.</para>
           <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
@@ -2005,19 +2468,20 @@ Done restarting router(s).
             storage needs to be verified to ensure it passes new validation. Check local storage by
             querying the cloud.storage_pool table: </para>
           <programlisting><prompt>#</prompt>mysql -u cloud -p -e "select id,name,path from cloud.storage_pool where pool_type='Filesystem'"</programlisting>
-          <para>If local storage paths are found to have a trailing forward slash, remove it:</para>
-          <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          <para>If local storage paths are found to have a trailing forward slash, remove it:
+            <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
+          </para>
         </listitem>
-        <listitem id="upgrade-deb-packages">
+        <listitem id="upgrade-deb-packages-41to42">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
-            skip to step <xref linkend="upgrade-rpm-packages"/>.</para>
+            skip to step <xref linkend="upgrade-rpm-packages-41to42"/>.</para>
           <note>
             <title>Community Packages</title>
             <para>This section assumes you're using the community supplied packages for &PRODUCT;.
               If you've created your own packages and APT repository, substitute your own URL for
               the ones used in these examples.</para>
           </note>
-          <orderedlist id="debsteps" numeration="loweralpha">
+          <orderedlist id="debsteps-41to42" numeration="loweralpha">
             <listitem>
               <para>The first order of business will be to change the sources list for each system
                 with &PRODUCT; packages. This means all management servers, and any hosts that have
@@ -2036,13 +2500,13 @@ Done restarting router(s).
               <para>Now update your apt package list:</para>
               <programlisting language="Bash">$ sudo apt-get update</programlisting>
             </listitem>
-            <listitem id="deb-master">
+            <listitem id="deb-master-41to42">
               <para>Now that you have the repository configured, it's time to install the
                   <filename>cloudstack-management</filename> package. This will pull in any other
                 dependencies you need.</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
             </listitem>
-            <listitem id="kvm-agent-deb">
+            <listitem id="kvm-agent-deb-41to42">
               <para>You will need to manually install the <filename>cloudstack-agent</filename>
                 package:</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
@@ -2083,7 +2547,7 @@ service cloudstack-agent start
               <para>Generate the encrypted equivalent of your vCenter password:</para>
               <programlisting>java -classpath /usr/share/cloudstack-common/lib/jasypt-1.9.0.jar org.jasypt.intf.cli.JasyptPBEStringEncryptionCLI encrypt.sh input="_your_vCenter_password_" password="`cat /etc/cloudstack/management/key`" verbose=false</programlisting>
               <para>Store the output from this step, we need to add this in cluster_details table
-                and vmware_data_center tables in place of the plain text password.</para>
+                and vmware_data_center tables in place of the plain text password</para>
             </listitem>
             <listitem>
               <para>Find the ID of the row of cluster_details table that you have to update:</para>
@@ -2139,16 +2603,16 @@ service cloudstack-agent start
             </listitem>
           </orderedlist>
         </listitem>
-        <listitem id="upgrade-rpm-packages">
+        <listitem id="upgrade-rpm-packages-41to42">
           <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If
-            not, skip to step <xref linkend="restart-system-vms"/>.</para>
+            not, skip to step <xref linkend="restart-system-vms-41to42"/>.</para>
           <note>
             <title>Community Packages</title>
             <para>This section assumes you're using the community supplied packages for &PRODUCT;.
               If you've created your own packages and yum repository, substitute your own URL for
               the ones used in these examples.</para>
           </note>
-          <orderedlist id="rpmsteps" numeration="loweralpha">
+          <orderedlist id="rpmsteps-41to42" numeration="loweralpha">
             <listitem>
               <para>The first order of business will be to change the yum repository for each system
                 with &PRODUCT; packages. This means all management servers, and any hosts that have
@@ -2170,13 +2634,13 @@ gpgcheck=0
               <para>If you're using your own package repository, change this line to read as
                 appropriate for your 4.2.1 repository.</para>
             </listitem>
-            <listitem id="rpm-master">
+            <listitem id="rpm-master-41to42">
               <para>Now that you have the repository configured, it's time to install the
                   <filename>cloudstack-management</filename> package by upgrading the older
                   <filename>cloudstack-management</filename> package.</para>
               <programlisting language="Bash">$ sudo yum upgrade cloudstack-management</programlisting>
             </listitem>
-            <listitem id="kvm-agent-rpm">
+            <listitem id="kvm-agent-rpm-41to42">
               <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename>
                 package, similarly installing the new version as
                   <filename>cloudstack-agent</filename>.</para>
@@ -2199,11 +2663,11 @@ service cloudstack-agent start
             </listitem>
           </orderedlist>
         </listitem>
-        <listitem id="restart-mgmt-server">
+        <listitem id="restart-mgmt-server-41to42">
           <para>Now it's time to restart the management server</para>
           <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
         </listitem>
-        <listitem id="restart-system-vms">
+        <listitem id="restart-system-vms-41to42">
           <para>Once you've upgraded the packages on your management servers, you'll need to restart
             the system VMs. Ensure that the admin port is set to 8096 by using the
             "integration.api.port" global parameter. This port is used by the cloud-sysvmadm script
@@ -2237,6 +2701,352 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
+    <section id="upgrade-from-4.0-to-4.2.1">
+      <title>Upgrade from 4.0.x to 4.2.1</title>
+      <para>This section will guide you from &PRODUCT; 4.0.x versions to &PRODUCT; 4.2.1.</para>
+      <para>Any steps that are hypervisor-specific will be called out with a note.</para>
+      <warning>
+        <title>Package Structure Changes</title>
+        <para>The package structure for &PRODUCT; has changed significantly since the 4.0.x
+          releases. If you've compiled your own packages, you'll notice that the package names and
+          the number of packages has changed. This is <emphasis>not</emphasis> a bug.</para>
+        <para>However, this <emphasis>does</emphasis> mean that the procedure is not as simple as an
+            <command>apt-get upgrade</command> or <command>yum update</command>, so please follow
+          this section carefully.</para>
+      </warning>
+      <para>We recommend reading through this section once or twice before beginning your upgrade
+        procedure, and working through it on a test system before working on a production
+        system.</para>
+      <orderedlist>
+        <listitem>
+          <para>Most users of &PRODUCT; manage the installation and upgrades of &PRODUCT; with one
+            of Linux's predominant package systems, RPM or APT. This guide assumes you'll be using
+            RPM and Yum (for Red Hat Enterprise Linux or CentOS), or APT and Debian packages (for
+            Ubuntu).</para>
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.1.0
+            source, or check the Apache CloudStack downloads page at <ulink
+              url="http://cloudstack.apache.org/downloads.html"
+              >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
+            by community members. You will need them for step <xref
+              linkend="upgrade-deb-packages-40to41"/> or step <xref
+              linkend="upgrade-rpm-packages-40to41"/>.</para>
+          <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
+              url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
+            Guide</ulink>.</para>
+        </listitem>
+        <listitem>
+          <note>
+            <para>The following upgrade instructions should be performed regardless of hypervisor
+              type.</para>
+          </note>
+          <orderedlist numeration="loweralpha">
+            <listitem>
+              <para>While running the existing 4.0.0 system, log in to the UI as root
+                administrator.</para>
+            </listitem>
+            <listitem>
+              <para>In the left navigation bar, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>In Select view, click Templates.</para>
+            </listitem>
+            <listitem>
+              <para>Click Register template.</para>
+              <para>The Register template dialog box is displayed.</para>
+            </listitem>
+            <listitem>
+              <para>In the Register template dialog box, specify the following values (do not change
+                these):</para>
+              <informaltable>
+                <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                  <colspec colwidth="1*" colname="1" colnum="1"/>
+                  <colspec colwidth="2*" colname="2" colnum="2"/>
+                  <thead>
+                    <row>
+                      <entry><para>Hypervisor</para></entry>
+                      <entry><para>Description</para></entry>
+                    </row>
+                  </thead>
+                  <tbody>
+                    <row>
+                      <entry><para>XenServer</para></entry>
+                      <entry><para>Name: systemvm-xenserver-4.2</para>
+                        <para>Description: systemvm-xenserver-4.2</para>
+                        <para>URL:http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 </para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: XenServer</para>
+                        <para>Format: VHD</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>KVM</para></entry>
+                      <entry><para>Name: systemvm-kvm-4.2</para>
+                        <para>Description: systemvm-kvm-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: KVM</para>
+                        <para>Format: QCOW2</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                    <row>
+                      <entry><para>VMware</para></entry>
+                      <entry><para>Name: systemvm-vmware-4.2</para>
+                        <para>Description: systemvm-vmware-4.2</para>
+                        <para>URL:
+                          http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ova</para>
+                        <para>Zone: Choose the zone where this hypervisor is used</para>
+                        <para>Hypervisor: VMware</para>
+                        <para>Format: OVA</para>
+                        <para>OS Type: Debian GNU/Linux 7.0 (32-bit) (or the highest Debian release
+                          number available in the dropdown)</para>
+                        <para>Extractable: no</para>
+                        <para>Password Enabled: no</para>
+                        <para>Public: no</para>
+                        <para>Featured: no</para>
+                      </entry>
+                    </row>
+                  </tbody>
+                </tgroup>
+              </informaltable>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem>
+          <para>Stop your management server or servers. Run this on all management server
+            hosts:</para>
+          <programlisting><prompt>#</prompt> service cloud-management stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>If you are running a usage server or usage servers, stop those as well:</para>
+          <programlisting><prompt>#</prompt> service cloud-usage stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>Make a backup of your MySQL database. If you run into any issues or need to roll
+            back the upgrade, this will assist in debugging or restoring your existing environment.
+            You'll be prompted for your password.</para>
+          <programlisting><prompt>#</prompt> mysqldump -u root -p cloud &gt; cloudstack-backup.sql</programlisting>
+        </listitem>
+        <listitem>
+          <para>Whether you're upgrading a Red Hat/CentOS based system or Ubuntu based system,
+            you're going to need to stop the CloudStack management server before proceeding.</para>
+          <programlisting language="Bash"><prompt>#</prompt> service cloud-management stop</programlisting>
+        </listitem>
+        <listitem>
+          <para>If you have made changes to
+              <filename>/etc/cloud/management/components.xml</filename>, you'll need to carry these
+            over manually to the new file,
+              <filename>/etc/cloudstack/management/componentContext.xml</filename>. This is not done
+            automatically. (If you're unsure, we recommend making a backup of the original
+              <filename>components.xml</filename> to be on the safe side.</para>
+        </listitem>
+        <listitem>
+          <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for
+            login and user creation, instead of MD5 hash. Incase, api client changes are not
+            acceptable, following changes are to be made for backward compatibility:</para>
+          <para>Modify componentsContext.xml, and make PlainTextUserAuthenticator as the default
+            authenticator (1st entry in the userAuthenticators adapter list is default)</para>
+          <programlisting language="XML">
+&lt;!-- Security adapters --&gt;
+&lt;bean id="userAuthenticators" class="com.cloud.utils.component.AdapterList"&gt;
+  &lt;property name="Adapters"&gt;
+    &lt;list&gt;
+      &lt;ref bean="PlainTextUserAuthenticator"/&gt;
+      &lt;ref bean="MD5UserAuthenticator"/&gt;
+      &lt;ref bean="LDAPUserAuthenticator"/&gt;
+    &lt;/list&gt;
+  &lt;/property&gt;
+&lt;/bean&gt;
+                    </programlisting>
+          <para>PlainTextUserAuthenticator works the same way MD5UserAuthenticator worked prior to
+            4.2.1.</para>
+        </listitem>
+        <listitem id="upgrade-deb-packages-40to41">
+          <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
+            skip to step <xref linkend="upgrade-rpm-packages-40to41"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and APT repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="debsteps-40to41">
+            <listitem>
+              <para>The first order of business will be to change the sources list for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/apt/sources.list.d/cloudstack.list</filename> on
+                any systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have one line, which contains:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.0</programlisting>
+              <para>We'll change it to point to the new package repository:</para>
+              <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.1</programlisting>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.1.0 repository.</para>
+            </listitem>
+            <listitem>
+              <para>Now update your apt package list:</para>
+              <programlisting language="Bash">$ sudo apt-get update</programlisting>
+            </listitem>
+            <listitem id="deb-master-40to41">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package. This will pull in any other
+                dependencies you need.</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-deb-40to41">
+              <para>You will need to manually install the <filename>cloudstack-agent</filename>
+                package:</para>
+              <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
+              <para>During the installation of <filename>cloudstack-agent</filename>, APT will copy
+                your <filename>agent.properties</filename>, <filename>log4j-cloud.xml</filename>,
+                and <filename>environment.properties</filename> from
+                  <filename>/etc/cloud/agent</filename> to
+                  <filename>/etc/cloudstack/agent</filename>.</para>
+              <para>When prompted whether you wish to keep your configuration, say Yes.</para>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
+                                service cloud-agent stop
+                                killall jsvc
+                                service cloudstack-agent start
+                            </programlisting>
+            </listitem>
+            <listitem>
+              <para>During the upgrade, <filename>log4j-cloud.xml</filename> was simply copied over,
+                so the logs will continue to be added to
+                  <filename>/var/log/cloud/agent/agent.log</filename>. There's nothing
+                  <emphasis>wrong</emphasis> with this, but if you prefer to be consistent, you can
+                change this by copying over the sample configuration file:</para>
+              <programlisting language="Bash">
+                                cd /etc/cloudstack/agent
+                                mv log4j-cloud.xml.dpkg-dist log4j-cloud.xml
+                                service cloudstack-agent restart
+                            </programlisting>
+            </listitem>
+            <listitem>
+              <para>Once the agent is running, you can uninstall the old cloud-* packages from your
+                system:</para>
+              <programlisting language="Bash">sudo dpkg --purge cloud-agent</programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="upgrade-rpm-packages-40to41">
+          <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If
+            not, skip to step <xref linkend="restart-system-vms-40to41"/>.</para>
+          <note>
+            <title>Community Packages</title>
+            <para>This section assumes you're using the community supplied packages for &PRODUCT;.
+              If you've created your own packages and yum repository, substitute your own URL for
+              the ones used in these examples.</para>
+          </note>
+          <orderedlist id="rpmsteps-40to41">
+            <listitem>
+              <para>The first order of business will be to change the yum repository for each system
+                with &PRODUCT; packages. This means all management servers, and any hosts that have
+                the KVM agent. (No changes should be necessary for hosts that are running VMware or
+                Xen.)</para>
+              <para>Start by opening <filename>/etc/yum.repos.d/cloudstack.repo</filename> on any
+                systems that have &PRODUCT; packages installed.</para>
+              <para>This file should have content similar to the following:</para>
+              <programlisting language="Bash">
+                                [apache-cloudstack]
+                                name=Apache CloudStack
+                                baseurl=http://cloudstack.apt-get.eu/rhel/4.0/
+                                enabled=1
+                                gpgcheck=0
+                            </programlisting>
+              <para>If you are using the community provided package repository, change the baseurl
+                to http://cloudstack.apt-get.eu/rhel/4.1/</para>
+              <para>If you're using your own package repository, change this line to read as
+                appropriate for your 4.2.1 repository.</para>
+            </listitem>
+            <listitem id="rpm-master-40to41">
+              <para>Now that you have the repository configured, it's time to install the
+                  <filename>cloudstack-management</filename> package by upgrading the older
+                  <filename>cloud-client</filename> package.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloud-client</programlisting>
+            </listitem>
+            <listitem id="kvm-agent-rpm-40to41">
+              <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename>
+                package, similarly installing the new version as
+                  <filename>cloudstack-agent</filename>.</para>
+              <programlisting language="Bash">$ sudo yum upgrade cloud-agent</programlisting>
+              <para>During the installation of <filename>cloudstack-agent</filename>, the RPM will
+                copy your <filename>agent.properties</filename>,
+                  <filename>log4j-cloud.xml</filename>, and
+                  <filename>environment.properties</filename> from
+                  <filename>/etc/cloud/agent</filename> to
+                  <filename>/etc/cloudstack/agent</filename>.</para>
+            </listitem>
+            <listitem>
+              <para>Verify that the file
+                  <filename>/etc/cloudstack/agent/environment.properties</filename> has a line that
+                reads:</para>
+              <programlisting language="Bash">paths.script=/usr/share/cloudstack-common</programlisting>
+              <para>If not, add the line.</para>
+            </listitem>
+            <listitem>
+              <para>Restart the agent:</para>
+              <programlisting language="Bash">
+                                service cloud-agent stop
+                                killall jsvc
+                                service cloudstack-agent start
+                            </programlisting>
+            </listitem>
+          </orderedlist>
+        </listitem>
+        <listitem id="restart-system-vms-40to41">
+          <para>Once you've upgraded the packages on your management servers, you'll need to restart
+            the system VMs. Make sure port 8096 is open in your local host firewall to do
+            this.</para>
+          <para>There is a script that will do this for you, all you need to do is run the script
+            and supply the IP address for your MySQL instance and your MySQL credentials:</para>
+          <programlisting language="Bash"><prompt>#</prompt> nohup cloudstack-sysvmadm -d <replaceable>IP address</replaceable> -u cloud -p -a &gt; sysvm.log 2&gt;&amp;1 &amp;</programlisting>
+          <para>You can monitor the log for progress. The process of restarting the system VMs can
+            take an hour or more.</para>
+          <programlisting language="Bash"><prompt>#</prompt> tail -f sysvm.log</programlisting>
+          <para>The output to <filename>sysvm.log</filename> will look something like this:</para>
+          <programlisting language="Bash">
+                        Stopping and starting 1 secondary storage vm(s)...
+                        Done stopping and starting secondary storage vm(s)
+                        Stopping and starting 1 console proxy vm(s)...
+                        Done stopping and starting console proxy vm(s).
+                        Stopping and starting 4 running routing vm(s)...
+                        Done restarting router(s).
+                    </programlisting>
+        </listitem>
+        <listitem>
+          <note>
+            <title>For Xen Hosts: Copy vhd-utils</title>
+            <para>This step is only for CloudStack installs that are using Xen hosts.</para>
+          </note>
+          <para>Copy the file <filename>vhd-utils</filename> to
+              <filename>/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver</filename>.</para>
+        </listitem>
+      </orderedlist>
+    </section>
     <section id="upgrade-from-3.0.x-to-4.2.1">
       <title>Upgrade from 3.0.x to 4.2.1</title>
       <para>This section will guide you from Citrix CloudStack 3.0.x to Apache CloudStack 4.2.1.
@@ -2247,7 +3057,6 @@ Done restarting router(s).
             <para>The following upgrade instructions should be performed regardless of hypervisor
               type.</para>
           </note>
-          <para>In each zone that includes VMware hosts, you need to add a new system VM template. </para>
           <orderedlist numeration="loweralpha">
             <listitem>
               <para>While running the existing 3.0.x system, log in to the UI as root
@@ -2393,7 +3202,7 @@ Done restarting router(s).
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
           <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
-<prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename></programlisting>
         </listitem>
         <listitem>
           <para>Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -2893,7 +3702,7 @@ service cloudstack-agent start
           <para>Using the UI, add a new System VM template for each hypervisor type that is used in
             your cloud. In each zone, add a system VM template for each hypervisor used in that
             zone</para>
-          <orderedlist numeration="loweralpha">
+          <orderedlist>
             <listitem>
               <para>In the left navigation bar, click Templates.</para>
             </listitem>
@@ -2976,7 +3785,7 @@ service cloudstack-agent start
         </listitem>
         <listitem>
           <para>Watch the screen to be sure that the template downloads successfully and enters the
-            READY state. Do not proceed until this is successful.</para>
+            READY state. Do not proceed until this is successful</para>
         </listitem>
         <listitem>
           <para><emphasis role="bold">WARNING</emphasis>: If you use more than one type of
@@ -3008,7 +3817,7 @@ service cloudstack-agent start
             gpgcheck=0
             [apache CloudStack]
             name= Apache CloudStack
-            baseurl= http://cloudstack.apt-get.eu/rhel/4.0/
+            baseurl= http://cloudstack.apt-get.eu/rhel/4.2/
             enabled=1
             gpgcheck=0</programlisting>
               <para>If you are using the community provided package repository, change the baseurl
@@ -3039,8 +3848,8 @@ service cloudstack-agent start
             database, which is a CloudStack recommended best practice. Substitute your own MySQL
             root password.</para>
           <programlisting><prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud > <filename>cloud-backup.dmp</filename>
- <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename>
-</programlisting>
+                        <prompt>#</prompt> <command>mysqldump</command> -u root -p<replaceable>mysql_password</replaceable> cloud_usage > <filename>cloud-usage-backup.dmp</filename>
+                    </programlisting>
         </listitem>
         <listitem>
           <para> Either build RPM/DEB packages as detailed in the Installation Guide, or use one of
@@ -3217,7 +4026,7 @@ service cloudstack-agent start
             <listitem>
               <para>Merge your changes from the backup file into the new components.xml file.</para>
               <programlisting><prompt>#</prompt> <command>vi</command> <filename>/etc/cloudstack/management/components.xml</filename>
-</programlisting>
+                            </programlisting>
             </listitem>
           </orderedlist>
         </listitem>
@@ -3326,7 +4135,7 @@ service cloudstack-agent start
               <programlisting>
  <prompt>#</prompt> <command>apt-get</command> update
  <prompt>#</prompt> <command>apt-get</command> upgrade cloud-*
-</programlisting>
+                            </programlisting>
             </listitem>
             <listitem>
               <para> Copy the contents of the <filename>agent.properties</filename> file to the new
