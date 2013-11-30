@@ -167,7 +167,7 @@ under the License.
       <section id="vm-snapshots">
         <title>XenServer VM Snapshots</title>
         <para>VM Snapshots are now supported on both VMware and XenServer hosts. Previously, they
-          were suported only on VMware.</para>
+          were supported only on VMware.</para>
         <para>In addition to the existing &PRODUCT; ability to snapshot individual VM volumes, you
           can now take a VM snapshot to preserve all the VM's data volumes as well as (optionally)
           its CPU/memory state. This is useful for quick restore of a VM. For example, you can
@@ -249,7 +249,7 @@ under the License.
         <title>Management Server Support on CentOS 6.4</title>
         <para>&PRODUCT; Management Server is now certified on CentOS 6.4.</para>
       </section>
-      <section id="devide-id-xen">
+      <section id="device-id-xen">
         <title>Device ID Changes for XenServer</title>
         <para>In XenServer 6.1 version and above, a new parameter, <code>device_id: 0002</code>, is
           introduced for Windows VM with PV drivers. Due to this change, Windows VMs deployed with
