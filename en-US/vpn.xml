@@ -56,6 +56,7 @@
     </listitem>
   </itemizedlist>
   <xi:include href="configure-vpn.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="configure-vpn-vpc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="using-vpn-with-windows.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="using-vpn-with-mac.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="site-to-site-vpn.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
