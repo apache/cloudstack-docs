@@ -134,30 +134,33 @@
             <para>clusterDefaultMaxIops%3D[Max IOPS (whole number) to set for a volume; used if Max IOPS is not specified by administrator or user]</para>
         </listitem>
         <listitem>
-            <para>clusterDefaultBurstIopsPercentOfMaxIops%3D[Burst IOPS is determined by (Min IOPS * clusterDefaultBurstIopsPercentOfMaxIops parameter) (can be a decimal value)]
-            </para>
+            <para>clusterDefaultBurstIopsPercentOfMaxIops%3D[Burst IOPS is determined by (Min IOPS * clusterDefaultBurstIopsPercentOfMaxIops parameter) (can be a decimal value)]</para>
+        </listitem>
+        <listitem>
+            <para>useMutualChapForVMware%3D[boolean value (default is "true")]</para>
         </listitem>
     </itemizedlist>
-        <para>Example URL to add primary storage to &PRODUCT; based on the SolidFire plug-in (note that URL encoding is used with the value of the url key, so '%3A' equals ':','%3B' equals '&amp;' and '%3D' equals '='):</para>
-    <para>
-        http://127.0.0.1:8080/client/api?command=createStoragePool
-        &amp;scope=zone
-        &amp;zoneId=cf4e6ddf-8ae7-4194-8270-d46733a52b55
-        &amp;name=SolidFire_121258566
-        &amp;url=MVIP%3D192.168.138.180%3A443
-        %3BSVIP%3D192.168.56.7
-        %3BclusterAdminUsername%3Dadmin
-        %3BclusterAdminPassword%3Dpassword
-        %3BclusterDefaultMinIops%3D200
-        %3BclusterDefaultMaxIops%3D300
-        %3BclusterDefaultBurstIopsPercentOfMaxIop%3D2.5
-        &amp;provider=SolidFire
-        &amp;tags=SolidFire_SAN_1
-        &amp;capacityIops=4000000
-        &amp;capacityBytes=2251799813685248
-        &amp;hypervisor=Any
-        &amp;response=json
-        &amp;apiKey=VrrkiZQWFFgSdA6k3DYtoKLcrgQJjZXoSWzicHXt8rYd9Bl47p8L39p0p8vfDpiljtlcMLn_jatMSqCWv5Cs-Q&amp;signature=wqf8KzcPpY2JmT1Sxk%2F%2BWbgX3l8%3D
-    </para>
+        <para>Example URL to add primary storage to &PRODUCT; based on the SolidFire plug-in (note that URL encoding is used with the value of the url key, so '%3A' equals ':','%3B' equals ';' (';' is a key/value pair delimiter for the url field) and '%3D' equals '='):</para>
+        <para>http://127.0.0.1:8080/client/api?</para>
+        <para>command=createStoragePool</para>
+        <para>&amp;scope=zone</para>
+        <para>&amp;zoneId=cf4e6ddf-8ae7-4194-8270-d46733a52b55</para>
+        <para>&amp;name=SolidFire_121258566</para>
+        <para>&amp;url=</para>
+        <para>MVIP%3D192.168.138.180%3A443</para>
+        <para>%3BSVIP%3D192.168.56.7</para>
+        <para>%3BclusterAdminUsername%3Dadmin</para>
+        <para>%3BclusterAdminPassword%3Dpassword</para>
+        <para>%3BclusterDefaultMinIops%3D200</para>
+        <para>%3BclusterDefaultMaxIops%3D300</para>
+        <para>%3BclusterDefaultBurstIopsPercentOfMaxIops%3D2.5</para>
+        <para>&amp;provider=SolidFire</para>
+        <para>&amp;tags=SolidFire_SAN_1</para>
+        <para>&amp;capacityIops=4000000</para>
+        <para>&amp;capacityBytes=2251799813685248</para>
+        <para>&amp;hypervisor=Any</para>
+        <para>&amp;response=json</para>
+        <para>&amp;apiKey=VrrkiZQWFFgSdA6k3DYtoKLcrgQJjZXoSWzicHXt8rYd9Bl47p8L39p0p8vfDpiljtlcMLn_jatMSqCWv5Cs-Q</para>
+        <para>&amp;signature=wqf8KzcPpY2JmT1Sxk%2F%2BWbgX3l8%3D</para>
     </section>
 </section>
