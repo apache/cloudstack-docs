@@ -136,9 +136,6 @@
         <listitem>
             <para>clusterDefaultBurstIopsPercentOfMaxIops%3D[Burst IOPS is determined by (Min IOPS * clusterDefaultBurstIopsPercentOfMaxIops parameter) (can be a decimal value)]</para>
         </listitem>
-        <listitem>
-            <para>useMutualChapForVMware%3D[boolean value (default is "true")]</para>
-        </listitem>
     </itemizedlist>
         <para>Example URL to add primary storage to &PRODUCT; based on the SolidFire plug-in (note that URL encoding is used with the value of the url key, so '%3A' equals ':','%3B' equals ';' (';' is a key/value pair delimiter for the url field) and '%3D' equals '='):</para>
         <para>http://127.0.0.1:8080/client/api?</para>
