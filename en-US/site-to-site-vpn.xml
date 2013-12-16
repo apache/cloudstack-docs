@@ -47,7 +47,7 @@
       establish VPN connections.</para>
   </note>
   <para></para>
-  <para> To set up a Site-to-Site VPN connection, perform the following:</para>
+  <para>To set up a Site-to-Site VPN connection, perform the following:</para>
   <orderedlist>
     <listitem>
       <para>Create a Virtual Private Cloud (VPC).</para>
