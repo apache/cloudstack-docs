@@ -21,6 +21,7 @@
 <section id="create-vpn-connection-vpc">
   <title>Creating a VPN Connection</title>
   <note><para>&PRODUCT; supports creating up to 8 VPN connections.</para></note>
+  <para/>
   <orderedlist>
     <listitem>
       <para>Log in to the &PRODUCT; UI as an administrator or end user.</para>
@@ -88,13 +89,20 @@
           <imagedata fileref="./images/create-vpn-connection.png"/>
         </imageobject>
         <textobject>
-          <phrase>createvpnconnection.png: creating a vpn connection to the customer
+          <phrase>createvpnconnection.png: creating a VPN connection to the customer
             gateway.</phrase>
         </textobject>
       </mediaobject>
     </listitem>
     <listitem>
-      <para>Select the desired customer gateway, then click OK to confirm.</para>
+      <para>Select the desired customer gateway.</para>
+    </listitem>
+    <listitem>
+      <para>Select Passive if you want to establish a connection between two VPC virtual
+        routers.</para>
+    </listitem>
+    <listitem>
+      <para>Click OK to confirm.</para>
       <para>Within a few moments, the VPN Connection is displayed.</para>
       <para>The following information on the VPN connection is displayed:</para>
       <itemizedlist>

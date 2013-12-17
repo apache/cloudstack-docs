@@ -26,8 +26,9 @@
   <para>A Site-to-Site VPN connection helps you establish a secure connection from an enterprise
     datacenter to the cloud infrastructure. This allows users to access the guest VMs by
     establishing a VPN connection to the virtual router of the account from a device in the
-    datacenter of the enterprise. Having this facility eliminates the need to establish VPN
-    connections to individual VMs.</para>
+    datacenter of the enterprise. You can also establish a secure connection between two VPC setups
+    or high availability zones in your environment. Having this facility eliminates the need to
+    establish VPN connections to individual VMs. </para>
   <para>The difference from Remote VPN is that Site-to-site VPNs connects entire networks to each
     other, for example, connecting a branch office network to a company headquarters network. In a
     site-to-site VPN, hosts do not have VPN client software; they send and receive normal TCP/IP
@@ -40,13 +41,16 @@
     <listitem>
       <para>Juniper J-Series routers with JunOS 9.5 or later</para>
     </listitem>
+    <listitem>
+      <para>&PRODUCT; virtual routers</para>
+    </listitem>
   </itemizedlist>
   <note>
     <para>In addition to the specific Cisco and Juniper devices listed above, the expectation is
       that any Cisco or Juniper device running on the supported operating systems are able to
       establish VPN connections.</para>
   </note>
-  <para></para>
+  <para/>
   <para>To set up a Site-to-Site VPN connection, perform the following:</para>
   <orderedlist>
     <listitem>
@@ -66,5 +70,6 @@
   <xi:include href="create-vpn-customer-gateway.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="create-vpn-gateway-for-vpc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="create-vpn-connection-vpc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="create-passive-vpn-vpc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="delete-reset-vpn.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<section id="create-passive-vpn-vpc">
+  <title>Creating a VPN Connection</title>
+  <para>&PRODUCT; provides you with the ability to establish a site-to-site VPN connection between
+    &PRODUCT; virtual routers. To achieve that, add a passive mode Site-to-Site VPN. With this
+    functionality, users can deploy applications in multiple Availability Zones or VPCs, which can
+    communicate with each other by using a secure Site-to-Site VPN Tunnel.</para>
+  <para>This feature is supported on all the hypervisors.</para>
+  <orderedlist>
+    <listitem>
+      <para>Create two VPCs. For example, VPC A and VPC B.</para>
+      <para>For more information, see <xref linkend="configure-vpc"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Create VPN gateways on both the VPCs you created.</para>
+      <para>For more information, see <xref linkend="create-vpn-gateway-for-vpc"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Create VPN customer gateway for both the VPCs.</para>
+      <para>For more information, see <xref linkend="create-vpn-customer-gateway"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Enable a VPN connection on VPC A in passive mode. </para>
+      <para>For more information, see <xref linkend="create-vpn-connection-vpc"/>.</para>
+      <para>Ensure that the customer gateway is pointed to VPC B. The VPN connection is shown in the
+        Disconnected state.</para>
+    </listitem>
+    <listitem>
+      <para>Enable a VPN connection on VPC B in passive mode. </para>
+      <para>Ensure that the customer gateway is pointed to VPC A. The VPN connection is shown in the
+        Disconnected state.</para>
+      <para>Creating VPN connection on both the VPCs initiates a VPN connection. Wait for few seconds. The default is 30 seconds for both the VPN connections to show the Connected state.</para>
+    </listitem>
+  </orderedlist>
+</section>
