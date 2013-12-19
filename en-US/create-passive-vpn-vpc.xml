@@ -45,9 +45,11 @@
         Disconnected state.</para>
     </listitem>
     <listitem>
-      <para>Enable a VPN connection on VPC B in passive mode. </para>
-      <para>Ensure that the customer gateway is pointed to VPC A. The VPN connection is shown in the
-        Disconnected state.</para>
+      <para>Enable a VPN connection on VPC B. </para>
+      <para>Ensure that the customer gateway is pointed to VPC A.  Because virtual router of VPC A,
+        in this case, is in passive mode and is waiting for the virtual router of VPC B to initiate
+        the connection, VPC B virtual router should not be in passive mode. </para>
+      <para>The VPN connection is shown in the Disconnected state. </para>
       <para>Creating VPN connection on both the VPCs initiates a VPN connection. Wait for few seconds. The default is 30 seconds for both the VPN connections to show the Connected state.</para>
     </listitem>
   </orderedlist>

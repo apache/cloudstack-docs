@@ -35,7 +35,7 @@
       <para>In the Select view, select VPN Customer Gateway.</para>
     </listitem>
     <listitem>
-      <para>Click Add site-to-site VPN.</para>
+      <para>Click Add VPN Customer Gateway.</para>
       <mediaobject>
         <imageobject>
           <imagedata fileref="./images/add-vpn-customer-gateway.png"/>

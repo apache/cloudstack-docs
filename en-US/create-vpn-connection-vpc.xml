@@ -20,7 +20,9 @@
 -->
 <section id="create-vpn-connection-vpc">
   <title>Creating a VPN Connection</title>
-  <note><para>&PRODUCT; supports creating up to 8 VPN connections.</para></note>
+  <note>
+    <para>&PRODUCT; supports creating up to 8 VPN connections.</para>
+  </note>
   <para/>
   <orderedlist>
     <listitem>
@@ -100,6 +102,10 @@
     <listitem>
       <para>Select Passive if you want to establish a connection between two VPC virtual
         routers.</para>
+      <para>If you want to establish a connection between two VPC virtual routers, select Passive 
+        only on one of the VPC virtual routers, which waits for the other VPC virtual router to initiate
+        the connection. Do not select Passive on the VPC virtual router that initiates the
+        connection.</para>
     </listitem>
     <listitem>
       <para>Click OK to confirm.</para>
