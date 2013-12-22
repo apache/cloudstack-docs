@@ -25,7 +25,7 @@
   <title>Virtual Machine Snapshots</title>
   <para>(Supported on VMware and XenServer)</para>
   <para>In addition to the existing &PRODUCT; ability to snapshot individual VM
-    volumes, you can now take a VM snapshot to preserve all the VM's data volumes as well as
+    volumes, you can take a VM snapshot to preserve all the VM's data volumes as well as
     (optionally) its CPU/memory state. This is useful for quick restore of a VM. For example, you
     can snapshot a VM, then make changes such as software upgrades. If anything goes wrong, simply
     restore the VM to its previous state using the previously saved VM snapshot. </para>
@@ -60,14 +60,6 @@
       <listitem>
         <para>You can't make a VM snapshot at the same time as you are taking a volume
           snapshot.</para>
-      </listitem>
-      <listitem>
-        <para>You can not specify the "quiesce" option on the &PRODUCT;
-          side when taking a VM snapshot. This option is provided by the underlying
-          snapshot facility so that you can choose whether to quiesce the file system on a
-          running virtual machine before taking the snapshot. The quiesce option is
-          passed along from the user's choice on the hypervisor side,
-          through the underlying API, and up to &PRODUCT;.</para>
       </listitem>
       <listitem>
         <para>You should use only &PRODUCT; to create VM snapshots on hosts managed by
@@ -122,7 +114,7 @@
       <listitem>
         <para>Click the Take VM Snapshot button. <inlinemediaobject>
             <imageobject>
-              <imagedata fileref="./images/VMSnapshotButton.png" format="PNG"/>
+              <imagedata fileref="./images/SnapshotButton.png" format="PNG"/>
             </imageobject>
           </inlinemediaobject></para>
         <note>
@@ -141,6 +133,13 @@
           don't check this box, then only the current state of the VM disk is saved. Checking this
           box makes the snapshot take longer.</para>
       </listitem>
+      <listitem><para>Quiesce VM: check this box if you want to quiesce the file system on the VM
+        before taking the snapshot. Not supported on XenServer when used with &PRODUCT;-provided primary storage.</para>
+        <para>When this option is used with &PRODUCT;-provided primary storage,
+        the quiesce operation is performed by the underlying hypervisor (VMware is supported).
+        When used with another primary storage vendor's plugin, the quiesce operation is provided according
+        to the vendor's implementation.
+      </para></listitem>
       <listitem>
         <para>Click OK.</para>
       </listitem>
