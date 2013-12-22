@@ -37,15 +37,25 @@
             <listitem><para><emphasis role="bold">Storage type</emphasis>: The type of disk that should be allocated.
                         Local allocates from storage attached directly to the host where the system
                         VM is running. Shared allocates from storage accessible via NFS.</para></listitem>
+            <listitem><para><emphasis role="bold">Custom</emphasis>: If checked, the end-user must fill in the desired values for
+                number of CPU cores, CPU MHz, and Memory when creating a VM based on this offering.
+                When you check this box, those three input fields are hidden in the dialog box.</para></listitem>
             <listitem><para><emphasis role="bold"># of CPU cores</emphasis>: The number of cores which should be allocated
-                        to a system VM with this offering</para></listitem>
+                        to a system VM with this offering.
+                        If Custom is checked, this field does not appear.</para></listitem>
             <listitem><para><emphasis role="bold">CPU (in MHz)</emphasis>: The CPU speed of the cores that the system VM
-                        is allocated. For example, “2000” would provide for a 2 GHz clock.</para></listitem>
+                        is allocated. For example, “2000” would provide for a 2 GHz clock.
+                        If Custom is checked, this field does not appear.</para></listitem>
             <listitem><para><emphasis role="bold">Memory (in MB)</emphasis>: The amount of memory in megabytes that the
                         system VM should be allocated. For example, “2048” would provide for a 2 GB
-                        RAM allocation.</para></listitem>
+                        RAM allocation.
+                        If Custom is checked, this field does not appear.</para></listitem>
             <listitem><para><emphasis role="bold">Network Rate</emphasis>: Allowed data transfer rate in MB per
                         second.</para></listitem>
+            <listitem><para><emphasis role="bold">Disk Read Rate</emphasis>: Allowed disk read rate in bits per second.</para></listitem>
+            <listitem><para><emphasis role="bold">Disk Write Rate</emphasis>: Allowed disk write rate in bits per second.</para></listitem>
+            <listitem><para><emphasis role="bold">Disk Read Rate</emphasis>: Allowed disk read rate in IOPS (input/output operations per second).</para></listitem>
+            <listitem><para><emphasis role="bold">Disk Write Rate</emphasis>: Allowed disk write rate in IOPS  (input/output operations per second).</para></listitem>    
             <listitem><para><emphasis role="bold">Offer HA</emphasis>: If yes, the administrator can choose to have the
                         system VM be monitored and as highly available as possible.</para></listitem>
             <listitem><para><emphasis role="bold">Storage Tags</emphasis>: The tags that should be associated with the
@@ -54,14 +64,32 @@
                         hosts</para></listitem>
             <listitem><para><emphasis role="bold">CPU cap</emphasis>: Whether to limit the level of CPU usage even if
                         spare capacity is available.</para></listitem>
-            <listitem><para><emphasis role="bold">isVolatile</emphasis>: If checked, VMs created from this service
-                offering will have their root disks reset upon reboot. This is useful for
-                secure environments that need a fresh start on every boot and for desktops
-                that should not retain state. </para></listitem>
             <listitem><para><emphasis role="bold">Public</emphasis>: Indicate whether the service offering should be
                         available all domains or only some domains. Choose Yes to make it available
                         to all domains. Choose No to limit the scope to a subdomain; &PRODUCT;
                         will then prompt for the subdomain's name.</para></listitem>
+            <listitem><para><emphasis role="bold">isVolatile</emphasis>: If checked, VMs created from this service
+                        offering will have their root disks reset upon reboot. This is useful for
+                        secure environments that need a fresh start on every boot and for desktops
+                        that should not retain state.</para></listitem>
+            <listitem><para><emphasis role="bold">Deployment Planner</emphasis>: Choose the technique that you would like &PRODUCT;
+                to use when deploying VMs based on this service offering.</para>
+                <para>First Fit places new VMs on the first host that is found having sufficient capacity to support the VM's requirements.</para>
+                <para>User Dispersing makes the best effort to evenly distribute VMs belonging to the same account on different clusters or pods.</para>
+                <para>User Concentrated prefers to deploy VMs belonging to the same account within a single pod.</para>
+                <para>Implicit Dedication will deploy VMs on private infrastructure that is dedicated to a specific domain or account.
+                  If you choose this planner, then you must also pick a value for Planner Mode.
+                  <phrase condition="admin">See <xref linkend="dedicated-host-cluster-pod"/>.</phrase>
+                  <phrase condition="install">See Dedicating Resources to Accounts and Domains in the Administration Guide.</phrase></para>
+                <para>Bare Metal is used with bare metal hosts.
+                    <phrase condition="admin">See Bare Metal Installation in the Installation Guide.</phrase>
+                    <phrase condition="install">See <xref linkend="baremetal-install"/>.</phrase></para>
+            </listitem>
+            <listitem><para><emphasis role="bold">Planner Mode</emphasis>: Used when ImplicitDedicationPlanner is selected in the previous field.
+              The planner mode determines how VMs will be deployed on private infrastructure that is dedicated to a single domain or account.</para>
+              <para>Strict: A host will not be shared across multiple accounts. For example, strict implicit dedication is useful for deployment of certain types of applications, such as desktops, where no host can be shared between different accounts without violating the desktop software's terms of license.</para>
+              <para>Preferred: The VM will be deployed in dedicated infrastructure if possible. Otherwise, the VM can be deployed in shared infrastructure.</para>
+           </listitem>
         </itemizedlist></listitem> 
         <listitem><para>Click Add.</para></listitem>        
     </orderedlist>                
