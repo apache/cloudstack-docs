@@ -44,7 +44,7 @@
         <para>To add a third-party storage option to &PRODUCT;, follow these general steps (explained in more detail
             later in this section):</para>
         <orderedlist>
-            <listitem><para>Iimplement the following interfaces in Java:</para>
+            <listitem><para>Implement the following interfaces in Java:</para>
                 <itemizedlist>
                     <listitem><para>DataStoreDriver</para></listitem>
                     <listitem><para>DataStoreLifecycle</para></listitem>
