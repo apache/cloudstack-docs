@@ -21,12 +21,20 @@
     specific language governing permissions and limitations
     under the License.
 -->
-
 <section id="virtual-router">
-    <title>Virtual Router</title>
-    <para>The virtual router is a type of System Virtual Machine. The virtual router is one of the most frequently used service providers in &PRODUCT;. The end user has no direct access to the virtual router. Users can ping the virtual router and take actions that affect it (such as setting up port forwarding), but users do not have SSH access into the virtual router.</para>
-    <para>There is no mechanism for the administrator to log in to the virtual router. Virtual routers can be restarted by administrators, but this will interrupt public network access and other services for end users. A basic test in debugging networking issues is to attempt to ping the virtual router from a guest VM. Some of the characteristics of the virtual router are determined by its associated system service offering..</para>
-    <xi:include href="configure-virtual-router.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-    <xi:include href="upgrade-virtual-router-with-service-offering.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
-    <xi:include href="best-practices-virtual-router.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />  
+  <title>Virtual Router</title>
+  <para>The virtual router is a type of System Virtual Machine. The virtual router is one of the
+    most frequently used service providers in &PRODUCT;. The end user has no direct access to the
+    virtual router. Users can ping the virtual router and take actions that affect it (such as
+    setting up port forwarding), but users do not have SSH access into the virtual router.</para>
+  <para>There is no mechanism for the administrator to log in to the virtual router. Virtual routers
+    can be restarted by administrators, but this will interrupt public network access and other
+    services for end users. A basic test in debugging networking issues is to attempt to ping the
+    virtual router from a guest VM. Some of the characteristics of the virtual router are determined
+    by its associated system service offering.</para>
+  <xi:include href="configure-virtual-router.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="upgrade-virtual-router-with-service-offering.xml"
+    xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="best-practices-virtual-router.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="vr-monitor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>
