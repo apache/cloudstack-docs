@@ -34,11 +34,13 @@
   <para>Additionally, using multiple versions of VRs in a single instance is supported. In the
     Details tab of a VR, you can view the version and whether it requires upgrade. During the
     Management Server upgrade, &PRODUCT; checks whether VR is at the latest version before
-    performing any operation on the VR. Operation is not performed if the VR is not at the latest
-    version. Services of the older version VR continue to be available, but no further operations
-    can be performed on the VR until it is upgraded to the latest version. This will be a transient
-    state until the VR is upgraded. This will ensure that the availability of VR services and VR
-    state is not impacted due to the Management Server upgrade.</para>
+    performing any operation on the VR. To support this, a new global parameter,
+      <parameter>router.version.check</parameter>, has been added. If set to true, minimum required
+    version of VR is checked before performing any operation. No operation is performed if the VR is
+    not at the required version. Services of the older version VR continue to be available, but no
+    further operations can be performed on the VR until it is upgraded to the latest version. This
+    will be a transient state until the VR is upgraded. This will ensure that the availability of VR
+    services and VR state is not impacted due to the Management Server upgrade. </para>
   <para>The following service will be available even if the VR is not upgraded. However, no changes
     for any of the services can be sent to the VR, until it is upgraded:</para>
   <itemizedlist>
