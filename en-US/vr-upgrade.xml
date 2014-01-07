@@ -22,13 +22,148 @@
     under the License.
 -->
 <section id="vr-upgrade">
-  <title>Rolling Upgrade for System VMs</title>
-  <para>Upgrading System VMs is made flexible. The &PRODUCT; administrators will be able to control
-    the sequence of the System VM upgrades. The sequencing is based on Infrastructure hierarchy,
-    such as by Cluster, Pod, or Zone, and Administrative hierarchy, such as by Tenant or Domain. As
+  <title>Enhanced Upgrade for Virtual Routers</title>
+  <para>Upgrading VR is made flexible. The &PRODUCT; administrators will be able to control the
+    sequence of the VR upgrades. The sequencing is based on Infrastructure hierarchy, such as by
+    Cluster, Pod, or Zone, and Administrative (Account) hierarchy, such as by Tenant or Domain. As
     an administrator, you can also determine when a particular customer service, such as VR, is
     upgraded within a specified upgrade interval. During the entire duration of the upgrade, users
-    can launch new services or make changes to an existing service. Additionally, upgrade operation
-    is enhanced to increase the upgrade speed by allowing as many upgrade operations in parallel as
+    can launch new services or make changes to an existing service. Upgrade operation is enhanced to
+    increase the upgrade speed by allowing as many upgrade operations in parallel as
     possible.</para>
+  <para>Additionally, using multiple versions of VRs in a single instance is supported. In the
+    Details tab of a VR, you can view the version and whether it requires upgrade. During the
+    Management Server upgrade, &PRODUCT; checks whether VR is at the latest version before
+    performing any operation on the VR. Operation is not performed if the VR is not at the latest
+    version. Services of the older version VR continue to be available, but no further operations
+    can be performed on the VR until it is upgraded to the latest version. This will be a transient
+    state until the VR is upgraded. This will ensure that the availability of VR services and VR
+    state is not impacted due to the Management Server upgrade.</para>
+  <para>The following service will be available even if the VR is not upgraded. However, no changes
+    for any of the services can be sent to the VR, until it is upgraded:</para>
+  <itemizedlist>
+    <listitem>
+      <para>SecurityGroup </para>
+    </listitem>
+    <listitem>
+      <para>UserData</para>
+    </listitem>
+    <listitem>
+      <para>DHCP</para>
+    </listitem>
+    <listitem>
+      <para>DNS</para>
+    </listitem>
+    <listitem>
+      <para> LB </para>
+    </listitem>
+    <listitem>
+      <para>Port Forwarding </para>
+    </listitem>
+    <listitem>
+      <para>VPN </para>
+    </listitem>
+    <listitem>
+      <para>Static NAT </para>
+    </listitem>
+    <listitem>
+      <para>Source NAT</para>
+    </listitem>
+    <listitem>
+      <para>Firewall </para>
+    </listitem>
+    <listitem>
+      <para>Gateway </para>
+    </listitem>
+    <listitem>
+      <para>NetworkACL</para>
+    </listitem>
+  </itemizedlist>
+  <section id="supported-vr">
+    <title>Supported Virtual Routers</title>
+    <itemizedlist>
+      <listitem>
+        <para>VR</para>
+      </listitem>
+      <listitem>
+        <para>VPC VR</para>
+      </listitem>
+      <listitem>
+        <para>Redundant VR</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section id="upgradevr">
+    <title>Upgrading Virtual Routers</title>
+    <orderedlist>
+      <listitem>
+        <para>Download the latest System VM template.</para>
+      </listitem>
+      <listitem>
+        <para>Download the latest System VM to all the primary storage pools.</para>
+      </listitem>
+      <listitem>
+        <para>Upgrade the Management Server.</para>
+      </listitem>
+      <listitem>
+        <para>Upgrade CPVM and SSVM either from the UI or by using the following script:</para>
+        <programlisting># cloudstack-sysvmadm -d &lt;<emphasis role="italic">IP address</emphasis>&gt; -u cloud -p -s</programlisting>
+        <para>Even when the VRs are still on older versions, existing services will continue to be
+          available to the VMs. The Management Server cannot perform any operations on the VRs until
+          they are upgraded.</para>
+      </listitem>
+      <listitem>
+        <para>Selectively upgrade the VRs:</para>
+        <orderedlist numeration="loweralpha">
+          <listitem>
+            <para>Log in to the &PRODUCT; UI as the root administrator.</para>
+          </listitem>
+          <listitem>
+            <para>In the left navigation, choose Infrastructure.</para>
+          </listitem>
+          <listitem>
+            <para>On Virtual Routers, click View More.</para>
+            <para>All the VRs are listed in the Virtual Routers page.</para>
+          </listitem>
+          <listitem>
+            <para>In Select View drop-down, select desired grouping based on your
+              requirement.</para>
+            <para>You can use either of the following:</para>
+            <itemizedlist>
+              <listitem>
+                <para>Group by zone</para>
+              </listitem>
+              <listitem>
+                <para>Group by pod</para>
+              </listitem>
+              <listitem>
+                <para>Group by cluster</para>
+              </listitem>
+              <listitem>
+                <para>Group by account</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+          <listitem>
+            <para>Click the group which has the VRs to be upgraded.</para>
+            <para>For example, if you have selected Group by zone, select the name of the desired
+              zone.</para>
+          </listitem>
+          <listitem>
+            <para>Click the Upgrade button to upgrade all the VRs.<inlinemediaobject>
+                <imageobject>
+                  <imagedata fileref="./images/vr-upgrade.png"/>
+                </imageobject>
+                <textobject>
+                  <phrase>vr-upgrade.png: Button to upgrade VR to use the new template.</phrase>
+                </textobject>
+              </inlinemediaobject></para>
+          </listitem>
+          <listitem>
+            <para>Click OK to confirm.</para>
+          </listitem>
+        </orderedlist>
+      </listitem>
+    </orderedlist>
+  </section>
 </section>
