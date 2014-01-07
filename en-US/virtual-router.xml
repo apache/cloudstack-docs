@@ -37,4 +37,5 @@
     xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="best-practices-virtual-router.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="vr-monitor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="vr-upgrade.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </section>
