@@ -27,7 +27,12 @@
     <section id="sys-require-secondary-storage">
     <title>System Requirements for Secondary Storage</title>
     <itemizedlist>
-        <listitem><para>NFS storage appliance or Linux NFS server</para></listitem>
+        <listitem>
+        <para>NFS storage appliance or Linux NFS server</para>
+      </listitem>
+      <listitem>
+        <para>CIFS (Hyper-V)</para>
+      </listitem>
         <listitem><para>(Optional) OpenStack Object Storage (Swift) (see http://swift.openstack.org)</para></listitem>
         <listitem><para>100GB minimum capacity</para></listitem>
         <listitem><para>A secondary storage device must be located in the same zone as the guest VMs it serves.</para></listitem>
@@ -37,7 +42,8 @@
     <section id="adding-secondary-storage">
     <title>Adding Secondary Storage</title>
     <para>When you create a new zone, the first secondary storage is added as part of that procedure. You can add secondary storage servers at any time to add more servers to an existing zone.</para>
-    <warning><para>Be sure there is nothing stored on the server. Adding the server to &PRODUCT; will destroy any existing data.</para></warning>
+    <warning><para>Ensure that nothing is stored on the server. Adding the server to &PRODUCT; will destroy any
+        existing data.</para></warning>
     <orderedlist>
         <listitem><para>To prepare for the zone-based Secondary Staging Store, you should have created and mounted an NFS share during Management Server installation. <phrase condition="install">See <xref linkend="prepare-nfs-shares" />.</phrase><phrase condition="admin">See Preparing NFS Shares in the Installation Guide.</phrase></para></listitem>
         <listitem><para>Make sure you prepared the system VM template during Management Server installation. <phrase condition="install">See <xref linkend="prepare-system-vm-template" />.</phrase><phrase condition="admin">See Prepare the System VM Template in the Installation Guide.</phrase></para></listitem>
@@ -48,11 +54,12 @@
         <listitem><para>Fill in the following fields:</para>
             <itemizedlist>
                 <listitem><para>Name. Give the storage a descriptive name.</para></listitem>
-                <listitem><para>Provider. Choose S3, Swift, or NFS, then fill in the related fields which appear.
-                    The fields will vary depending on the storage provider; for more information, consult the
-                    provider's documentation (such as the S3 or Swift website).
-                    NFS can be used for zone-based storage, and the others for region-wide storage.</para>
-                    <warning><para>You can use only a single S3 or Swift account per region.</para></warning></listitem>
+                <listitem><para>Provider. Choose S3, Swift, NFS, or CIFS then fill in the related fields which appear. The
+              fields will vary depending on the storage provider; for more information, consult the
+              provider's documentation (such as the S3 or Swift website). NFS can be used for
+              zone-based storage, and the others for region-wide storage.</para>
+                    <warning><para>Heterogeneous Secondary Storage is not supported in Regions. You can use only a single NFS,
+                S3, or Swift account per region.</para></warning></listitem>
                 <listitem><para>Create NFS Secondary Staging Store. This box must always be checked.</para>
                     <warning><para>Even if the UI allows you to uncheck this box, do not do so.
                         This checkbox and the three fields below it must be filled in.
@@ -84,4 +91,5 @@
             </listitem>
         </orderedlist>
     </section>
+
 </section>
