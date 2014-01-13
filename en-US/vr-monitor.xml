@@ -40,9 +40,10 @@
     </listitem>
   </itemizedlist>
   <note>
-    <para>Only those services with daemons are monitored. The services that are failed due to errors in the service/daemon configuration file cannot
-      be restarted by the Monitoring tool.</para>
+    <para>Only those services with daemons are monitored. The services that are failed due to errors
+      in the service/daemon configuration file cannot be restarted by the Monitoring tool.</para>
   </note>
+  <para/>
   <para>The following services are monitored in a VR:</para>
   <itemizedlist>
     <listitem>
@@ -67,49 +68,5 @@
       <para>Shared Networks in both Advanced and Basic zone</para>
     </listitem>
   </itemizedlist>
-  <para>The following table lists down various scenarios for virtual router and corresponding
-    actions taken by &PRODUCT;.</para>
-  <informaltable>
-    <tgroup cols="2" align="left" colsep="1" rowsep="1">
-      <colspec colwidth="1.0*" colname="1" colnum="1"/>
-      <colspec colwidth="9.87*" colname="2" colnum="2"/>
-      <thead>
-        <row>
-          <entry><para>Scenarios</para></entry>
-          <entry><para>Action Taken by &PRODUCT;</para></entry>
-        </row>
-      </thead>
-      <tbody>
-        <row>
-          <entry><para>VR is shutdown externally.</para></entry>
-          <entry><para>&PRODUCT; brings it up into running state.</para></entry>
-        </row>
-        <row>
-          <entry><para>VR is shutdown internally.</para></entry>
-          <entry><para>VR continues to stay in stopped state. &PRODUCT;will not automatically change
-              the VR state into running.</para></entry>
-        </row>
-        <row>
-          <entry><para>VR is stopped and VM is deployed in that network.</para></entry>
-          <entry><para>VR state is automatically changed into running state during the VM deployment
-              process.</para></entry>
-        </row>
-        <row>
-          <entry><para>VR is destroyed internally.</para></entry>
-          <entry><para>&PRODUCT; will not automatically spin up a new router.</para></entry>
-        </row>
-        <row>
-          <entry><para>Deploy a VM in a network where router is destroyed by
-            &PRODUCT;.</para></entry>
-          <entry><para>&PRODUCT; spins up a new router.</para></entry>
-        </row>
-        <row>
-          <entry><para>Running VR is destroyed externally.</para></entry>
-          <entry><para>&PRODUCT; shows that the VR is stopped. The router will not be brought back
-              to running state.</para></entry>
-        </row>
-      </tbody>
-    </tgroup>
-  </informaltable>
   <para>This feature is supported on the following hypervisors: XenServer, VMware, and KVM.</para>
 </section>
