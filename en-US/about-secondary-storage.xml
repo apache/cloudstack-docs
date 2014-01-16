@@ -44,6 +44,7 @@
     object storage in addition to the zone-based NFS Secondary Staging Store. It is not necessary to
     copy templates and snapshots from one zone to another, as would be required when using zone NFS
     alone. Everything is available everywhere.</para>
+  <para>For Hyper-V, SMB/CIFS storage is supported.</para>
   <para>&PRODUCT; provides plugins that enable both OpenStack Object Storage (Swift, <ulink
       url="http://swift.openstack.org">swift.openstack.org</ulink>) and Amazon Simple Storage
     Service (S3) object storage. When using one of these storage plugins, you configure Swift or S3

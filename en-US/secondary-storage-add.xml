@@ -31,7 +31,7 @@
         <para>NFS storage appliance or Linux NFS server</para>
       </listitem>
       <listitem>
-        <para>CIFS (Hyper-V)</para>
+        <para>SMB/CIFS (Hyper-V)</para>
       </listitem>
         <listitem><para>(Optional) OpenStack Object Storage (Swift) (see http://swift.openstack.org)</para></listitem>
         <listitem><para>100GB minimum capacity</para></listitem>
@@ -57,7 +57,8 @@
                 <listitem><para>Provider. Choose S3, Swift, NFS, or CIFS then fill in the related fields which appear. The
               fields will vary depending on the storage provider; for more information, consult the
               provider's documentation (such as the S3 or Swift website). NFS can be used for
-              zone-based storage, and the others for region-wide storage.</para>
+              zone-based storage, and the others for region-wide storage. For Hyper-V, select
+              SMB/CIFS.</para>
                     <warning><para>Heterogeneous Secondary Storage is not supported in Regions. You can use only a single NFS,
                 S3, or Swift account per region.</para></warning></listitem>
                 <listitem><para>Create NFS Secondary Staging Store. This box must always be checked.</para>
@@ -66,6 +67,19 @@
                         Even when Swift or S3 is used as the secondary storage provider, an NFS
                         staging storage in each zone is still required.</para></warning><para/></listitem>
                 <listitem><para>Zone. The zone where the NFS Secondary Staging Store is to be located.</para></listitem>
+              <listitem>
+                <para><emphasis role="bold">SMB Username</emphasis>: Applicable only if you select
+                  SMB/CIFS provider. The username of the account which has the necessary permissions to
+                  the SMB shares. The user must be part of the Hyper-V administrator group.</para>
+              </listitem>
+              <listitem>
+                <para><emphasis role="bold">SMB Password</emphasis>: Applicable only if you select
+                  SMB/CIFS provider. The password associated with the account.</para>
+              </listitem>
+              <listitem>
+                <para><emphasis role="bold">SMB Domain</emphasis>: Applicable only if you select
+                  SMB/CIFS provider. The Active Directory domain that the SMB share is a part of.</para>
+              </listitem>
                 <listitem><para>NFS server. The name of the zone's Secondary Staging Store.</para></listitem>
                 <listitem><para>Path. The path to the zone's Secondary Staging Store.</para></listitem>
             </itemizedlist>
