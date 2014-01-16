@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "file:///C:/Program%20Files%20(x86)/Publican/DocBook_DTD/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<section id="hyperv-checklist">
+  <title>Preparation Checklist for Hyper-V</title>
+  <para>For a smoother installation, gather the following information before you start:</para>
+  <informaltable frame="all">
+    <tgroup cols="3" align="left" colsep="1" rowsep="1">
+      <colspec colname="c1" colwidth="1.22*"/>
+      <colspec colname="c2" colwidth="1.0*"/>
+      <colspec colname="c3" colwidth="6.05*"/>
+      <thead>
+        <row>
+          <entry><para>Hyper-V Requirements</para></entry>
+          <entry><para>Value</para></entry>
+          <entry><para>Description</para></entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry><para>Server Roles</para></entry>
+          <entry><para>Hyper-V</para></entry>
+          <entry><para>After the Windows Server 2012 R2 installation, ensure that Hyper-V is selected from Server
+              Roles. For more information, see <ulink
+                url="http://technet.microsoft.com/en-us/library/jj134187.aspx#BKMK_Step2">Installing
+                Hyper-V</ulink>.</para></entry>
+        </row>
+        <row>
+          <entry><para>Server Roles</para></entry>
+          <entry><para>File and Storage Services</para></entry>
+          <entry><para>After the Windows Server 2012 R2 installation, ensure that File and Storage Services is
+              selected from Server Roles to create an SMB file share. For more information, see
+                <ulink url="http://technet.microsoft.com/en-us/library/jj134187.aspx#BKMK_Step3"
+                >Creating an SMB File Share Using Server Manager</ulink>.</para></entry>
+        </row>
+        <row>
+          <entry><para>Share Location</para></entry>
+          <entry><para>New folders in the /Share directory</para></entry>
+          <entry><para>The location of the file share for the Hyper-V deployment will be the new folder created in
+              the \Shares on the selected volume. You can create sub-folders for both &PRODUCT;
+              Primary and Secondary storage within the share location.</para>
+            <para>When you select the profile for the file shares, ensure that you select SMB Share
+              -Applications. This creates the file shares with settings appropriate for
+              Hyper-V.</para></entry>
+        </row>
+        <row>
+          <entry><para>Preferred DNS Server</para></entry>
+          <entry><para>The IP address of the Active Directory domain.</para></entry>
+          <entry><para>While adding an Hyper-V host to the domain, use the domain IP as the DNS
+              server.</para></entry>
+        </row>
+        <row>
+          <entry><para>Domain and Hosts</para></entry>
+          <entry><para/></entry>
+          <entry><para>Hosts should be part of the Active Directory domain.</para></entry>
+        </row>
+        <row>
+          <entry><para>Hyper-V Users</para></entry>
+          <entry><para>Full control</para></entry>
+          <entry><para>Full control on the SMB File share.</para></entry>
+        </row>
+        <row>
+          <entry><para>Virtual Switch</para></entry>
+          <entry><para/></entry>
+          <entry><para>If you are using Hyper-V 2012 R2, manually create an external virtual switch
+              before adding the host to &PRODUCT;. If the Hyper-V host is added to the Hyper-V
+              manager, select the host, then click Virtual Switch Manager, then New Virtual Switch.
+              In the External Network, select the desired NIC adapter and click Apply. </para>
+            <para>If you are using Windows 2012 R2, virtual switch is created
+            automatically.</para></entry>
+        </row>
+        <row>
+          <entry><para>Virtual Switch Name</para></entry>
+          <entry><para/></entry>
+          <entry><para>Take a note of the name of the virtual switch. You need to specify that when
+              configuring &PRODUCT; physical network labels.</para></entry>
+        </row>
+        <row>
+          <entry><para>Hyper-V Admin User</para></entry>
+          <entry><para/></entry>
+          <entry><para>Add the Hyper-V administrator to the Hyper-V Administrators
+            group.</para></entry>
+        </row>
+        <row>
+          <entry><para>Delegation</para></entry>
+          <entry><para/></entry>
+          <entry><para>Enable Delegation to the Microsoft Virtual System Migration
+            service.</para></entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </informaltable>
+</section>
