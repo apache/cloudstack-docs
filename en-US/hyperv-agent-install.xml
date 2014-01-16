@@ -29,12 +29,9 @@
     the host. Install the &PRODUCT; Agent on each host using the following steps.</para>
   <orderedlist>
     <listitem>
-      <para>Download the CloudStack Agent for Hyper-V from <ulink
-          url="
-      http://repo-ccp.citrix.com/releases/ASF/hyperv/4.3/CloudPlatform-4.3-01-hypervagent.msi"
-          >CloudStack Hyper-V Agent</ulink>.</para>
-      <para>You should have a file in the form of
-        “CloudPlatform-&lt;version&gt;-N-hypervagent.msi”.</para>
+      <para>Build the CloudStack Agent for Hyper-V as given in <ulink
+          url="https://cwiki.apache.org/confluence/display/CLOUDSTACK/Creating+Hyperv+Agent+Installer"
+          >Building CloudStack Hyper-V Agent</ulink>.</para>
     </listitem>
     <listitem>
       <para>Run the installer.</para>
