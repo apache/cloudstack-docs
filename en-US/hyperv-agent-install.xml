@@ -23,11 +23,37 @@
 -->
 <section id="hyperv-agent-install">
   <title>Installing the &PRODUCT; Agent on a Hyper-V Host</title>
-  <para>&PRODUCT; Agent helps &PRODUCT; perform operations on the Hyper-V hosts. Therefore, each
-    Hyper-V host must have the &PRODUCT; Agent installed on it. &PRODUCT; Agent runs as a Windows
-    service. This Agent communicates with the Management Server and controls all the instances on
-    the host. Install the &PRODUCT; Agent on each host using the following steps.</para>
+  <para>The Hyper-V Agent helps &PRODUCT; perform operations on the Hyper-V hosts. This Agent
+    communicates with the Management Server and controls all the instances on the host. Each Hyper-V
+    host must have the Hyper-V Agent installed on it for successful interaction between the host and
+    &PRODUCT;. The Hyper-V Agent runs as a Windows service. Install the Agent on each host using the
+    following steps.</para>
+  <para>&PRODUCT; Management Server communicates with Hyper-V Agent by using HTTPS. For secure
+    communication between the Management Server and the host, install a self-signed certificate on
+    port 8250.</para>
+  <note>
+    <para>The Agent installer automatically perform this operation. You have not selected this
+      option during the Agent installation, it can also be done manually as given in <xref
+        linkend="ssl"/>.</para>
+  </note>
+  <para/>
   <orderedlist>
+    <listitem>
+      <para>Create and add a self-signed SSL certificate on port 8250:</para>
+      <orderedlist numeration="loweralpha" id="ssl">
+        <listitem>
+          <para>Create A self-signed SSL certificate:</para>
+          <programlisting>#  New-SelfSignedCertificate -DnsName apachecloudstack -CertStoreLocation Cert:\LocalMachine\My</programlisting>
+          <para>This command creates the self-signed certificate and add that to the certificate
+            store <filename>LocalMachine\My</filename>.</para>
+        </listitem>
+        <listitem>
+          <para>Add the created certificate to port 8250 for https communication:</para>
+          <programlisting>netsh http add sslcert ipport=0.0.0.0:8250 certhash=&lt;thumbprint&gt; appid="{727beb1c-6e7c-49b2-8fbd-f03dbe481b08}"</programlisting>
+          <para>Thumbprint is the thumbprint of the certificate you created.</para>
+        </listitem>
+      </orderedlist>
+    </listitem>
     <listitem>
       <para>Build the CloudStack Agent for Hyper-V as given in <ulink
           url="https://cwiki.apache.org/confluence/display/CLOUDSTACK/Creating+Hyperv+Agent+Installer"
