@@ -40,44 +40,32 @@
         <row>
           <entry><para>Server Roles</para></entry>
           <entry><para>Hyper-V</para></entry>
-          <entry><para>After the Windows Server 2012 R2 installation, ensure that Hyper-V is selected from Server
-              Roles. For more information, see <ulink
+          <entry><para>After the Windows Server 2012 R2 installation, ensure that Hyper-V is
+              selected from Server Roles. For more information, see <ulink
                 url="http://technet.microsoft.com/en-us/library/jj134187.aspx#BKMK_Step2">Installing
                 Hyper-V</ulink>.</para></entry>
         </row>
         <row>
-          <entry><para>Server Roles</para></entry>
-          <entry><para>File and Storage Services</para></entry>
-          <entry><para>After the Windows Server 2012 R2 installation, ensure that File and Storage Services is
-              selected from Server Roles to create an SMB file share. For more information, see
-                <ulink url="http://technet.microsoft.com/en-us/library/jj134187.aspx#BKMK_Step3"
-                >Creating an SMB File Share Using Server Manager</ulink>.</para></entry>
-        </row>
-        <row>
           <entry><para>Share Location</para></entry>
           <entry><para>New folders in the /Share directory</para></entry>
-          <entry><para>The location of the file share for the Hyper-V deployment will be the new folder created in
-              the \Shares on the selected volume. You can create sub-folders for both &PRODUCT;
-              Primary and Secondary storage within the share location.</para>
-            <para>When you select the profile for the file shares, ensure that you select SMB Share
-              -Applications. This creates the file shares with settings appropriate for
-              Hyper-V.</para></entry>
-        </row>
-        <row>
-          <entry><para>Preferred DNS Server</para></entry>
-          <entry><para>The IP address of the Active Directory domain.</para></entry>
-          <entry><para>While adding an Hyper-V host to the domain, use the domain IP as the DNS
-              server.</para></entry>
+          <entry><para>Ensure that folders are created for Primary and Secondary storage. The SMB
+              share and the hosts should be part of the same domain.</para>
+            <para>If you are using Windows SMB shre, the location of the file share for the Hyper-V
+              deployment will be the new folder created in the \Shares on the selected volume. You
+              can create sub-folders for both &PRODUCT; Primary and Secondary storage within the
+              share location. When you select the profile for the file shares, ensure that you
+              select SMB Share -Applications. This creates the file shares with settings appropriate
+              for Hyper-V.</para></entry>
         </row>
         <row>
           <entry><para>Domain and Hosts</para></entry>
           <entry><para/></entry>
-          <entry><para>Hosts should be part of the Active Directory domain.</para></entry>
+          <entry><para>Hosts should be part of the same Active Directory domain.</para></entry>
         </row>
         <row>
           <entry><para>Hyper-V Users</para></entry>
           <entry><para>Full control</para></entry>
-          <entry><para>Full control on the SMB File share.</para></entry>
+          <entry><para>Full control on the SMB file share.</para></entry>
         </row>
         <row>
           <entry><para>Virtual Switch</para></entry>
@@ -96,16 +84,60 @@
               configuring &PRODUCT; physical network labels.</para></entry>
         </row>
         <row>
-          <entry><para>Hyper-V Admin User</para></entry>
+          <entry><para>Hyper-V Domain Users</para></entry>
           <entry><para/></entry>
-          <entry><para>Add the Hyper-V administrator to the Hyper-V Administrators
-            group.</para></entry>
+          <entry>
+            <itemizedlist>
+              <listitem>
+                <para>Add the Hyper-V domain users to the Hyper-V Administrators group.</para>
+              </listitem>
+              <listitem>
+                <para>A domain user should have full control on the SMB share that is exported for
+                  primary and secondary storage. </para>
+              </listitem>
+              <listitem>
+                <para>This domain user should be part of the Hyper-V Administrators and Local
+                  Administrators group on the Hyper-V hosts that are to be managed by
+                  &PRODUCT;.</para>
+              </listitem>
+              <listitem>
+                <para>The Hyper-V Agent service runs with the credentials of this domain user
+                  account.</para>
+              </listitem>
+              <listitem>
+                <para>Specify the credential of the domain user while adding a host to &PRODUCT; so
+                  that it can manage it.</para>
+              </listitem>
+              <listitem>
+                <para>Specify the credential of the domain user while adding a shared SMB primary or
+                  secondary storage.</para>
+              </listitem>
+            </itemizedlist>
+          </entry>
         </row>
         <row>
+          <entry><para>Migration</para></entry>
+          <entry><para>Migration</para></entry>
+          <entry><para>Enable Migration.</para>
+          </entry>
+        </row>
+        <row>
+          <entry><para>Migration</para></entry>
           <entry><para>Delegation</para></entry>
-          <entry><para/></entry>
-          <entry><para>Enable Delegation to the Microsoft Virtual System Migration
-            service.</para></entry>
+          <entry><para>If you want to use Live Migration, enable Delegation. Enable the following services of other
+              hosts participating in Live Migration: CIFS and Microsoft Virtual System Migration
+              Service.</para>
+          </entry>
+        </row>
+        <row>
+          <entry><para>Migration</para></entry>
+          <entry><para>Kerberos</para></entry>
+          <entry><para>Enable Kerberos for Live Migration.</para></entry>
+        </row>
+        <row>
+          <entry><para>Network Access Permission for Dial-in</para></entry>
+          <entry><para>Allow access</para></entry>
+          <entry><para>Allow access for Dial-in connections.</para></entry>
         </row>
       </tbody>
     </tgroup>

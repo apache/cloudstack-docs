@@ -37,6 +37,7 @@
           <entry><para>VMware vSphere</para></entry>
           <entry><para>Citrix XenServer</para></entry>
           <entry><para>KVM</para></entry>
+          <entry><para>Hyper-V</para></entry>
         </row>
       </thead>
       <tbody>
@@ -46,27 +47,33 @@
           <entry><para>VMDK</para></entry>
           <entry><para>VHD</para></entry>
           <entry><para>QCOW2</para></entry>
+          <entry><para>VHD</para>
+            <para>Snapshorts are not supported.</para></entry>
         </row>
         <row>
           <entry><para><emphasis role="bold">iSCSI support</emphasis></para></entry>
           <entry><para>VMFS</para></entry>
           <entry><para>Clustered LVM</para></entry>
           <entry><para>Yes, via Shared Mountpoint</para></entry>
+          <entry><para>No</para></entry>
         </row>
         <row>
           <entry><para><emphasis role="bold">Fiber Channel support</emphasis></para></entry>
           <entry><para>VMFS</para></entry>
           <entry><para>Yes, via Existing SR</para></entry>
           <entry><para>Yes, via Shared Mountpoint</para></entry>
+          <entry><para>No</para></entry>
         </row>
         <row>
           <entry><para><emphasis role="bold">NFS support</emphasis></para></entry>
           <entry><para>Y</para></entry>
           <entry><para>Y</para></entry>
           <entry><para>Y</para></entry>
+          <entry><para>No</para></entry>
         </row>
         <row>
           <entry><para><emphasis role="bold">Local storage support</emphasis></para></entry>
+          <entry><para>Y</para></entry>
           <entry><para>Y</para></entry>
           <entry><para>Y</para></entry>
           <entry><para>Y</para></entry>
@@ -76,6 +83,14 @@
           <entry><para>NFS and iSCSI</para></entry>
           <entry><para>NFS</para></entry>
           <entry><para>NFS</para></entry>
+          <entry><para>No</para></entry>
+        </row>
+        <row>
+          <entry><para><emphasis role="bold">SMB/CIFS</emphasis></para></entry>
+          <entry><para>No</para></entry>
+          <entry><para>No</para></entry>
+          <entry><para>No</para></entry>
+          <entry><para>Yes</para></entry>
         </row>
       </tbody>
     </tgroup>

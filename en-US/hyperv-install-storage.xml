@@ -24,15 +24,24 @@
 <section id="hyperv-install-storage">
   <title>Storage Preparation for Hyper-V (Optional)</title>
   <para>&PRODUCT; allows administrators to set up shared Primary Storage and Secondary Storage that
-    uses CIFS.</para>
+    uses SMB.</para>
   <orderedlist>
     <listitem>
-      <para>Create a CIFS storage and expose it over smb3.</para>
+      <para>Create a SMB storage and expose it over SMB Version 3.</para>
+      <para>For more information, see <ulink
+          url="http://technet.microsoft.com/en-us/library/jj134187.aspx">Deploying Hyper-V over
+          SMB</ulink>.</para>
+      <para>You can also create and export SMB share using Windows. After the Windows Server 2012 R2
+        installation, select File and Storage Services from Server Roles to create an SMB file
+        share. For more information, see <ulink
+          url="http://technet.microsoft.com/en-us/library/jj134187.aspx#BKMK_Step3">Creating an SMB
+          File Share Using Server Manager</ulink>.</para>
     </listitem>
     <listitem>
-      <para>Add the storage to an Active Directory domain.</para>
-      <para>The CIFS storage and host need not be in the same domain. However, the storage should be
-        accessible from the Management Server with the domain user privileges. </para>
+      <para>Add the SMB share to the Active Directory domain.</para>
+      <para>The SMB share and the hosts managed by &PRODUCT; need to be in the same domain. However,
+        the storage should be accessible from the Management Server with the domain user privileges.
+      </para>
     </listitem>
     <listitem>
       <para>While adding storage to &PRODUCT;, ensure that the correct domain, and credentials are

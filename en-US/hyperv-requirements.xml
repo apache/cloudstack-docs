@@ -66,18 +66,4 @@
       </listitem>
     </itemizedlist>
   </section>
-  <section id="other-prereq">
-    <title>Miscellaneous Prerequisites</title>
-    <itemizedlist>
-      <listitem>
-        <para>Domain-joined hosts. This is needed for Live Migration.</para>
-      </listitem>
-      <listitem>
-        <para>Permissions are given as given in <xref linkend="hyperv-checklist"/>.</para>
-      </listitem>
-      <listitem>
-        <para>Pure Hyper-V zones</para>
-      </listitem>
-    </itemizedlist>
-  </section>
 </section>

@@ -27,11 +27,11 @@
     <listitem>
       <para>Before adding a host to the &PRODUCT; configuration, ensure that you install Hyper-V on
         the host.</para>
-      <para/>
       <warning>
         <para>Be sure you have performed the additional &PRODUCT;-specific configuration steps
           described in the Hyper-V installation section.</para>
       </warning>
+      <para/>
     </listitem>
     <listitem>
       <para>If you have not already done so, install Hyper-V on the host. You will need to know
@@ -66,15 +66,15 @@
           </para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Username</emphasis>: Usually root. Specify domain name in the
-            path. For example, domain 1/ admin.</para>
+          <para><emphasis role="bold">Username</emphasis>: Username of the domain user you created.
+            Specify domain name in the path. For example, domain 1\ admin.</para>
         </listitem>
         <listitem>
           <para><emphasis role="bold">Password</emphasis>: This is the password for the user named
             above.</para>
         </listitem>
         <listitem>
-          <para><emphasis role="bold">Host Tags</emphasis> (Optional). Any labels that you use to
+          <para><emphasis role="bold">Host Tags</emphasis> (Optional): Any labels that you use to
             categorize hosts for ease of maintenance. For example, you can set to the cloud's HA tag
             (set in the ha.tag global configuration parameter) if you want this host to be used only
             for VMs with the "high availability" feature enabled. For more information, see

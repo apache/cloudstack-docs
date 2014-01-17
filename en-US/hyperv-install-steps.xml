@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+-->
+<section id="hyperv-install-steps">
+  <title>Hyper-V Installation Steps</title>
+  <orderedlist>
+    <listitem>
+      <para>Download the operating system from <ulink
+          url="http://technet.microsoft.com/en-us/windowsserver/hh534429">Windows Server 2012
+          R2</ulink> .</para>
+    </listitem>
+    <listitem>
+      <para>Install it on the host as given in <ulink
+          url="http://technet.microsoft.com/library/hh831620">Install and Deploy Windows Server 2012
+          R2</ulink>.</para>
+    </listitem>
+    <listitem>
+      <para>Post installation, ensure that you enable Hyper-V role in the server.</para>
+    </listitem>
+    <listitem>
+      <para>If no Active Directory domain exists in your deployment, create one and add users to the
+        domain.</para>
+    </listitem>
+    <listitem>
+      <para>In the Active Directory domain, ensure that all the Hyper-v hosts are added so that all
+        the hosts are part of the domain.</para>
+    </listitem>
+    <listitem>
+      <para>Add the domain user to the following groups on the Hyper-V host: Hyper-V Administrators
+        and Local Administrators.</para>
+    </listitem>
+    <listitem>
+      <para>After installation, perform the following configuration tasks, which are described in
+        the next few sections.</para>
+    </listitem>
+  </orderedlist>
+  <informaltable>
+    <tgroup cols="2" align="left" colsep="1" rowsep="1">
+      <colspec colwidth="1.0*" colname="1" colnum="1"/>
+      <colspec colwidth="3.76*" colname="2" colnum="2"/>
+      <thead>
+        <row>
+          <entry><para>Required</para></entry>
+          <entry><para>Optional</para></entry>
+        </row>
+      </thead>
+      <tbody>
+        <row>
+          <entry><para><xref linkend="hyperv-agent-install"/></para></entry>
+          <entry><para><xref linkend="hyperv-install-storage"/></para></entry>
+        </row>
+        <row>
+          <entry><para><xref linkend="hyperv-install-network"/></para></entry>
+          <entry><para/></entry>
+        </row>
+      </tbody>
+    </tgroup>
+  </informaltable>
+</section>

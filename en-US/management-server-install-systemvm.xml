@@ -42,6 +42,10 @@
         up to 30 minutes each time it runs.</para>
       <itemizedlist>
         <listitem>
+          <para>For Hyper-V</para>
+          <programlisting># /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://download.cloud.com/templates/4.3/systemvm64template-2013-12-23-hyperv.vhd.bz2 -h hyperv -s &lt;optional-management-server-secret-key&gt; -F</programlisting>
+        </listitem>
+        <listitem>
           <para>For XenServer:</para>
           <programlisting># /usr/lib64/cloud/common/scripts/storage/secondary/cloud-install-sys-tmplt -m /mnt/secondary -u http://download.cloud.com/templates/acton/acton-systemvm-02062012.vhd.bz2 -h xenserver -s &lt;optional-management-server-secret-key&gt; -F</programlisting>
         </listitem>

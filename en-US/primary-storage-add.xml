@@ -28,7 +28,7 @@
     <para>Hardware requirements:</para>
     <itemizedlist>
       <listitem>
-        <para>Any standards-compliant iSCSI or NFS server that is supported by the underlying
+        <para>Any standards-compliant iSCSI, SMB, or NFS server that is supported by the underlying
           hypervisor.</para>
       </listitem>
       <listitem>
@@ -106,7 +106,7 @@
           <listitem>
             <para><emphasis role="bold">Protocol.</emphasis> For XenServer, choose either NFS,
               iSCSI, or PreSetup. For KVM, choose NFS or SharedMountPoint. For vSphere choose either
-              VMFS (iSCSI or FiberChannel) or NFS.</para>
+              VMFS (iSCSI or FiberChannel) or NFS. For Hyper-V, choose SMB.</para>
           </listitem>
           <listitem>
             <para><emphasis role="bold">Server (for NFS, iSCSI, or PreSetup).</emphasis> The IP

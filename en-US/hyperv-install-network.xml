@@ -26,4 +26,9 @@
   <para>You should have a plan for how the hosts will be cabled and which physical NICs will carry
     what types of traffic. By default, &PRODUCT; will use the device that is used for the default
     route.</para>
+  <para>If you are using Hyper-V 2012 R2, manually create an external virtual switch before adding
+    the host to &PRODUCT;. If the Hyper-V host is added to the Hyper-V manager, select the host,
+    then click Virtual Switch Manager, then New Virtual Switch. In the External Network, select the
+    desired NIC adapter and click Apply. </para>
+  <para>If you are using Windows 2012 R2, virtual switch is created automatically.</para>
 </section>
