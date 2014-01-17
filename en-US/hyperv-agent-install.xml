@@ -34,13 +34,13 @@
   <note>
     <para>The Agent installer automatically perform this operation. You have not selected this
       option during the Agent installation, it can also be done manually as given in <xref
-        linkend="ssl"/>.</para>
+        linkend="ssl-agent"/>.</para>
   </note>
   <para/>
   <orderedlist>
     <listitem>
       <para>Create and add a self-signed SSL certificate on port 8250:</para>
-      <orderedlist numeration="loweralpha" id="ssl">
+      <orderedlist numeration="loweralpha" id="ssl-agent">
         <listitem>
           <para>Create A self-signed SSL certificate:</para>
           <programlisting>#  New-SelfSignedCertificate -DnsName apachecloudstack -CertStoreLocation Cert:\LocalMachine\My</programlisting>
