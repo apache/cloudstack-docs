@@ -50,7 +50,7 @@
           <entry><para>New folders in the /Share directory</para></entry>
           <entry><para>Ensure that folders are created for Primary and Secondary storage. The SMB
               share and the hosts should be part of the same domain.</para>
-            <para>If you are using Windows SMB shre, the location of the file share for the Hyper-V
+            <para>If you are using Windows SMB share, the location of the file share for the Hyper-V
               deployment will be the new folder created in the \Shares on the selected volume. You
               can create sub-folders for both &PRODUCT; Primary and Secondary storage within the
               share location. When you select the profile for the file shares, ensure that you
@@ -119,14 +119,17 @@
           <entry><para>Migration</para></entry>
           <entry><para>Migration</para></entry>
           <entry><para>Enable Migration.</para>
+            <para>For more information, see <ulink
+                url="http://technet.microsoft.com/en-us/library/jj134199.aspx ">Configuring Live
+                Migration</ulink>.</para>
           </entry>
         </row>
         <row>
           <entry><para>Migration</para></entry>
           <entry><para>Delegation</para></entry>
-          <entry><para>If you want to use Live Migration, enable Delegation. Enable the following services of other
-              hosts participating in Live Migration: CIFS and Microsoft Virtual System Migration
-              Service.</para>
+          <entry><para>If you want to use Live Migration, enable Delegation. Enable the following
+              services of other hosts participating in Live Migration: CIFS and Microsoft Virtual
+              System Migration Service.</para>
           </entry>
         </row>
         <row>

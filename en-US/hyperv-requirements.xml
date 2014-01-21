@@ -23,7 +23,6 @@
 -->
 <section id="hyperv-requirements">
   <title>System Requirements for Hyper-V Hypervisor Hosts</title>
-  <para/>
   <section id="hyperv-supported-os">
     <title>Supported Operating Systems for Hyper-V Hosts</title>
     <itemizedlist>

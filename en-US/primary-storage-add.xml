@@ -61,12 +61,14 @@
         storage (ex. you have an empty SAN volume or an empty NFS share). Adding the storage to
         &PRODUCT; will destroy any existing data.</para>
     </warning>
+    <para></para>
     <note>
       <para>Primary storage can also be added at the zone level through the &PRODUCT; API (adding
         zone-level primary storage is not yet supported through the &PRODUCT; UI).</para>
       <para>Once primary storage has been added at the zone level, it can be managed through the
         &PRODUCT; UI.</para>
     </note>
+    <para></para>
     <orderedlist>
       <listitem>
         <para>Log in to the &PRODUCT; UI (see <xref linkend="log-in"/>).</para>

@@ -21,12 +21,12 @@
  specific language governing permissions and limitations
  under the License.
 -->
-
 <chapter id="hypervisor-installation">
-    <title>Hypervisor Installation</title>
-    <xi:include href="hypervisor-kvm-install-flow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="citrix-xenserver-installation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="vmware-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <!--    <xi:include href="ovm-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> -->
-    <xi:include href="lxc-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <title>Hypervisor Installation</title>
+  <xi:include href="hypervisor-kvm-install-flow.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="citrix-xenserver-installation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="hyperv-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="vmware-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <!--    <xi:include href="ovm-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/> -->
+  <xi:include href="lxc-install.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>

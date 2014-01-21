@@ -33,8 +33,7 @@
     port 8250.</para>
   <note>
     <para>The Agent installer automatically perform this operation. You have not selected this
-      option during the Agent installation, it can also be done manually as given in <xref
-        linkend="ssl-agent"/>.</para>
+      option during the Agent installation, it can also be done manually as given in step 1.</para>
   </note>
   <para/>
   <orderedlist>
@@ -60,7 +59,7 @@
           >Building CloudStack Hyper-V Agent</ulink>.</para>
     </listitem>
     <listitem>
-      <para>Run the installer.</para>
+      <para>As an administrator, run the installer.</para>
     </listitem>
     <listitem>
       <para>Provide the Hyper-V admin credentials when prompted.</para>

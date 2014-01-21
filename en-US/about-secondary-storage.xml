@@ -57,4 +57,5 @@
     <para>Heterogeneous Secondary Storage is not supported in Regions. For example, you cannot set
       up multiple zones, one using NFS secondary and the other using S3 or Swift secondary.</para>
   </warning>
+  <para></para>
 </section>

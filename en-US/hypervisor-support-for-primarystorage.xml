@@ -48,7 +48,7 @@
           <entry><para>VHD</para></entry>
           <entry><para>QCOW2</para></entry>
           <entry><para>VHD</para>
-            <para>Snapshorts are not supported.</para></entry>
+            <para>Snapshots are not supported.</para></entry>
         </row>
         <row>
           <entry><para><emphasis role="bold">iSCSI support</emphasis></para></entry>
