@@ -18,15 +18,15 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<bookinfo id="book-release-notes-4.2">
-  <title>Version 4.2.1 Release Notes</title>
-  <subtitle>Revised November 18, 2013 9:00 am IST</subtitle>
+<bookinfo id="book-release-notes-4.3">
+  <title>Version 4.3 Release Notes</title>
+  <subtitle>Revised January 22, 2014 9:00 am IST</subtitle>
   <productname>Apache &PRODUCT;</productname>
-  <productnumber>4.2.1</productnumber>
+  <productnumber>4.3</productnumber>
   <edition>1</edition>
   <pubsnumber/>
   <abstract>
-    <para>Release notes for the Apache &PRODUCT; 4.2.1 release.</para>
+    <para>Release notes for the Apache &PRODUCT; 4.3 release.</para>
   </abstract>
   <corpauthor>
     <inlinemediaobject>

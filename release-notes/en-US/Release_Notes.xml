@@ -432,6 +432,14 @@ under the License.
           </listitem>
         </orderedlist>
       </section>
+      <section id="cpu-sockets">
+        <title>Reporting CPU Sockets</title>
+        <para>&PRODUCT; now provides an additional infrastructure statistics for CPU sockets managed
+          by &PRODUCT;, which in turn reflects the size of the cloud. The Infrastructure tab has a
+          new tab for sockets. The Socket page will give you the number of hosts an sockets used for
+          each hypervisor type. This feature is not supported in versions prior to XenServer
+          6.2.</para>
+      </section>
       <section id="new-ui">
         <title>Enhanced &PRODUCT; UI</title>
         <para>A complete UI makeover is implemented to enhance the usability and user experience in
@@ -3420,6 +3428,29 @@ service cloudstack-agent start
               <entry><para>addImageStore</para></entry>
               <entry><para>To this existing API, the following field has been added:
                 smb</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+    <section id="socket-api">
+      <title>Reporting CPU Sockets</title>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="9.87*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry><para>API</para></entry>
+              <entry><para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><para>listhost</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  hypervisor.</para><para>The new response parameter added is:
+                cpusockets</para></entry>
             </row>
           </tbody>
         </tgroup>
