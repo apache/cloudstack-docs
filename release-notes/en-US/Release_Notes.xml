@@ -373,24 +373,21 @@ under the License.
           See section 17.5.4. Service Monitoring Tool for Virtual Router.</para>
       </section>
       <section id="dynamic-compute-offering">
-        <title>Dynamic Compute Offering</title>
+        <title>Custom Compute Offering</title>
         <para>&PRODUCT; provides you the flexibility to specify the desired values for the number of
-          CPU, CPU speed, and RAM memory while deploying a VM. The admin creates a Compute Offering
-          by marking CPU, memory, and root disk as dynamic parameters, and as an user, you will be
-          able to customize this dynamic Compute Offering by specifying the memory, CPU and root
-          disk at the time of VM creation or upgrade.</para>
-        <para>Dynamic Compute Offering is same as the normal Compute Offering except that the values
+          CPU, CPU speed, and memory while deploying a VM. The admin creates a Compute Offering by
+          marking it as custom, and as an user, you will be able to customize this dynamic Compute
+          Offering by specifying the memory, CPU and root disk at the time of VM creation or
+          upgrade.</para>
+        <para>Custom Compute Offering is same as the normal Compute Offering except that the values
           of the dynamic parameters will be set to zeros in the given set of templates. Use this
           offering to deploy VM by specifying custom values for the dynamic parameters. Memory, CPU
           and number of CPUs are considered as dynamic parameters. Dynamic Compute Offerings can be
           used in following cases: deploying a VM, changing the compute offering of a stopped VM and
           running VMs, which is nothing but scaling up. To support this feature a new field, Custom,
           has been added to the Create Compute Offering page. If the Custom field is checked, the
-          end-user must fill in the desired values for number of CPU, CPU speed, and RAM Memory when
-          using a custom compute offering. </para>
-        <para>Note that you are not allowed to restrict yourself to specifying only one or more
-          custom parameters. If you decide to use, you must specify values for all the three
-          parameters. This feature is not supported on System Service Offerings.</para>
+          end-user will be able to create a custom Compute Offering by filling in the desired values
+          for number of CPU, CPU speed, and memory. </para>
       </section>
       <section id="remote-vpn-vpc">
         <title>Remote Access VPN for VPC</title>
