@@ -27,7 +27,7 @@
     It is not required to add a network element nor to reconfigure the network offering.
     The only thing you have to do is configure the physical network to use VXLAN as the isolation method for Guest Network.
   </para>
-  <section id="plugin-vxlan-config-management-zone">
+  <section id="plugin-vxlan-config-management-physical-network">
     <title>Configure the physical network</title>
     <mediaobject>
       <imageobject>
@@ -50,8 +50,27 @@
       </textobject>
     </mediaobject>
      <para>
-      Guest Network traffic label should be name of the bridge interface and the bridge interface should have an IPv4 address.
-      See <xref linkend="plugin-vxlan-config-hypervisor-kvm-ip"/> for details.
+      Guest Network traffic label should be the name of the physical interface or the name of the bridge interface and the bridge interface and they should have an IPv4 address.
+      See <xref linkend="plugin-vxlan-config-hypervisor-kvm-bridge"/> for details.
     </para>
+  </section>
+  <section id="plugin-vxlan-config-management-guest-traffic">
+    <title>Configure the guest traffic</title>
+    <mediaobject>
+      <imageobject>
+        <imagedata fileref="./images/vxlan-vniconfig.png"/>
+      </imageobject>
+      <textobject>
+        <phrase>vxlan-vniconfig.png: VNI configuration</phrase>
+      </textobject>
+    </mediaobject>
+    <para>
+      Specify a range of VNIs you would like to use for carrying guest network traffic.
+    </para>
+    <warning>
+      <para>
+        VNI must be unique per zone and no duplicate VNIs can exist in the zone. Exercise care when designing your VNI allocation policy.
+      </para>
+    </warning>
   </section>
 </section>

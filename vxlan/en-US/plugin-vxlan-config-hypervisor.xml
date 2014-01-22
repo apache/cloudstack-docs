@@ -24,19 +24,24 @@
   <title>Configure hypervisor</title>
   <section id="plugin-vxlan-config-hypervisor-kvm">
     <title>Configure hypervisor: KVM</title>
-    <para>In addition to "KVM Hypervisor Host Installation" in "&PRODUCT; Installation Guide", you have to configure the following item on the host.</para>
-    <section id="plugin-vxlan-config-hypervisor-kvm-ip">
+    <para>
+      In addition to "KVM Hypervisor Host Installation" in "&PRODUCT; Installation Guide", you have to configure the following item on the host.
+    </para>
+    <section id="plugin-vxlan-config-hypervisor-kvm-bridge">
       <title>Create bridge interface with IPv4 address</title>
       <para>
         This plugin requires an IPv4 address on the KVM host to terminate and originate VXLAN traffic.
-        The address should be assinged to bridge interface created for the instances' private network.
+        The address should be assinged to a physical interface or a bridge interface bound to a physical interface.
         Both a private address or a public address are fine for the purpose.
         It is not required to be in the same subnet for all hypervisors in a zone, but they should be able to reach each other via IP multicast with UDP/8472 port.
+        A name of a physical interface or a name of a bridge interface bound to a physical interface can be used as a traffic label.
+        Physical interface name fits for almost all cases, but if physical interface name differs per host, you may use a bridge to set a same name.
+        If you would like to use a bridge name as a traffic label, you may create a bridge in this way.
       </para>
       <para>
         Let <parameter>cloudbr1</parameter> be the bridge interface for the instances' private network.
       </para>
-      <section id="plugin-vxlan-config-hypervisor-kvm-centos">
+      <section id="plugin-vxlan-config-hypervisor-kvm-bridge-rhel">
         <title>Configure in RHEL or CentOS</title>
         <para>
           When you configured the <parameter>cloudbr1</parameter> interface as below,
@@ -66,29 +71,9 @@ IPV6_AUTOCONF=no
 DELAY=5
 STP=yes
         </programlisting>
-        <para>
-          RHEL and CentOS use iptables for firewalling the system, you can open extra ports by executing the following iptable commands:
-        </para>
-        <programlisting language="Bash">$ sudo iptables -I INPUT -p udp -m udp --dport 8472 -j ACCEPT
-        </programlisting>
-        <para>
-          These iptable settings are not persistent accross reboots, we have to save them first.
-        </para>
-        <programlisting language="Bash">$ sudo iptables-save > /etc/sysconfig/iptables
-        </programlisting>
-        <para>
-          With this configuration you should be able to restart the network, although a reboot is recommended to see if everything works properly.
-        </para>
-        <programlisting language="Bash">$ sudo service network restart
-$ sudo reboot
-        </programlisting>
-        <warning>
-          <para>
-            Make sure you have an alternative way like IPMI or ILO to reach the machine in case you made a configuration error and the network stops functioning!
-         </para>
-        </warning>
+        
       </section>
-      <section id="plugin-vxlan-config-hypervisor-kvm-ubuntu">
+      <section id="plugin-vxlan-config-hypervisor-kvm-bridge-ubuntu">
         <title>Configure in Ubuntu</title>
         <para>
           When you configured <parameter>cloudbr1</parameter> as below,
@@ -156,6 +141,39 @@ iface cloudbr1 inet static
     bridge_stp off
     bridge_maxwait 1
         </programlisting>
+      </section>
+    </section>
+    <section id="plugin-vxlan-config-hypervisor-kvm-iptables">
+      <title>Configure iptables to pass XVLAN packets</title>
+        <para>
+          Since VXLAN uses UDP packet to forward encapsulated the L2 frames, UDP/8472 port must be opened.
+        </para>
+      <section id="plugin-vxlan-config-hypervisor-kvm-iptables-rhel">
+        <title>Configure in RHEL or CentOS</title>
+   	    <para>
+	      RHEL and CentOS use iptables for firewalling the system, you can open extra ports by executing the following iptable commands:
+	    </para>
+	    <programlisting language="Bash">$ sudo iptables -I INPUT -p udp -m udp --dport 8472 -j ACCEPT
+	    </programlisting>
+	    <para>
+	      These iptable settings are not persistent accross reboots, we have to save them first.
+	    </para>
+	    <programlisting language="Bash">$ sudo iptables-save > /etc/sysconfig/iptables
+	    </programlisting>
+	    <para>
+	      With this configuration you should be able to restart the network, although a reboot is recommended to see if everything works properly.
+   	    </para>
+	    <programlisting language="Bash">$ sudo service network restart
+	$ sudo reboot
+	    </programlisting>
+	    <warning>
+	      <para>
+	        Make sure you have an alternative way like IPMI or ILO to reach the machine in case you made a configuration error and the network stops functioning!
+	     </para>
+	    </warning>
+	  </section>
+      <section id="plugin-vxlan-config-hypervisor-kvm-iptables-ubuntu">
+        <title>Configure in Ubuntu</title>
         <para>
           The default firewall under Ubuntu is UFW (Uncomplicated FireWall), which is a Python wrapper around iptables.
         </para>
@@ -180,7 +198,7 @@ $ sudo reboot
             Make sure you have an alternative way like IPMI or ILO to reach the machine in case you made a configuration error and the network stops functioning!
           </para>
         </warning>
-      </section>
+	  </section>
     </section>
   </section>
 </section>

@@ -27,6 +27,19 @@
   <simpara>
     <revhistory>
       <revision>
+        <revnumber>0-2</revnumber>
+        <date>January 21 2014</date>
+        <author>
+          <firstname>Yoshikazu</firstname>
+          <surname>Nojima</surname>
+          <email/>
+        </author>
+        <revdescription>
+          <simplelist>
+            <member>Add a section to describe VNI allocation matter. Add a description that explain a physical interface name can be used for traffic label.</member>
+          </simplelist>
+        </revdescription>
+      </revision>      <revision>
         <revnumber>0-1</revnumber>
         <date>October 3 2013</date>
         <author>

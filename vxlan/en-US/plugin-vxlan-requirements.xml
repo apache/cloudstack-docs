@@ -89,6 +89,12 @@
             <entry>3.9.10 (2013/07/23)</entry>
             <entry>Latest kernel packages are available in "update" repository.</entry>
           </row>
+          <row>
+            <entry>CentOS</entry>
+            <entry>&gt;= 6.5</entry>
+            <entry>2.6.32-431.3.1.el6.x86_64 (2014/01/21)</entry>
+            <entry></entry>
+          </row>
         </tbody>
       </tgroup>
     </table>
