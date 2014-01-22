@@ -21,9 +21,9 @@ under the License.
 <book>
   <xi:include href="Book_Info_Release_Notes_4.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="Preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <chapter id="welcome-4.2">
-    <title>Welcome to &PRODUCT; 4.2.1</title>
-    <para>Welcome to the 4.2.1 release of &PRODUCT;. This version is the first defect fix release of
+  <chapter id="welcome-4.3">
+    <title>Welcome to &PRODUCT; 4.3</title>
+    <para>Welcome to the 4.3 release of &PRODUCT;. This version is the first defect fix release of
       &PRODUCT; in the 4.2.<emphasis role="italic">x</emphasis> line.</para>
     <para>This document contains information specific to this release of &PRODUCT;, including
       upgrade instructions from prior releases, new features added to &PRODUCT;, API changes, and
@@ -35,16 +35,16 @@ under the License.
         >&PRODUCT; Administrator's Guide</ulink>. Developers and users who wish to work with the API
       will find instruction in the <ulink
         url="http://cloudstack.apache.org/docs/en-US/Apache_CloudStack/4.0.1-incubating/html/API_Developers_Guide/index.html"
-        >&PRODUCT; API Developer's Guide</ulink></para>
+        >&PRODUCT; API Developer's Guide</ulink>.</para>
     <para>If you find any errors or problems in this guide, please see <xref linkend="feedback"/>.
       We hope you enjoy working with &PRODUCT;!</para>
   </chapter>
   <chapter id="supported-os">
     <title>Compatibility Matrix</title>
     <para>This section describes the operating systems, browsers, and hypervisors that have been
-      newly tested and certified compatible with &PRODUCT; 4.2.1. Most earlier OS and hypervisor
-      versions are also still supported for use with 4.2.1 It might work well on other platforms,
-      but the platforms listed below are the ones that are specifically tested against and are more
+      newly tested and certified compatible with &PRODUCT; 4.3. Most earlier OS and hypervisor
+      versions are also still supported for use with 4.3 It might work well on other platforms, but
+      the platforms listed below are the ones that are specifically tested against and are more
       likely to be able to help troubleshoot if you run into any issues.</para>
     <section id="management-server">
       <title>Supported OS Versions for Management Server</title>
@@ -70,6 +70,12 @@ under the License.
         vSphere.</para>
       <itemizedlist>
         <listitem>
+          <para>Windows Server 2012 R2 (with Hyper-V Role enabled)</para>
+        </listitem>
+        <listitem>
+          <para>Hyper-V 2012 R2</para>
+        </listitem>
+        <listitem>
           <para>CentOS 6.2 with KVM</para>
         </listitem>
         <listitem>
@@ -79,10 +85,10 @@ under the License.
           <para>XenServer 6.0.2 (with Hotfix)</para>
         </listitem>
         <listitem>
-          <para>XenServer 6.1</para>
+          <para>XenServer versions 6.1 and 6.2 SPI with latest hotfixes</para>
         </listitem>
         <listitem>
-          <para>VMware vSphere/vCenter 5.1</para>
+          <para>VMware versions 5.0, 5.1, and 5.5</para>
         </listitem>
         <listitem>
           <para>Bare metal hosts are supported, which have no hypervisor. These hosts can run the
@@ -131,13 +137,13 @@ under the License.
         recommended:</para>
       <itemizedlist>
         <listitem>
-          <para>Internet Explorer versions 8 and 9</para>
+          <para>Internet Explorer versions 10 and 11</para>
         </listitem>
         <listitem>
-          <para>Firefox version 10 and beyond</para>
+          <para>Firefox version 26 or lower</para>
         </listitem>
         <listitem>
-          <para>Google Chrome versions 17 and 20.0.1132.47m</para>
+          <para>Google Chrome version 31</para>
         </listitem>
         <listitem>
           <para>Safari 5</para>
@@ -147,14 +153,14 @@ under the License.
   </chapter>
   <chapter id="version-4.2">
     <title>About This New Release</title>
-    <section id="whats-new-in-4.2.1">
-      <title>What's New in 4.2.1</title>
-      <para>&PRODUCT; 4.2.1 includes the following new features.</para>
+    <section id="whats-new-in-4.3">
+      <title>What's New in 4.3</title>
+      <para>&PRODUCT; 4.3 includes the following new features.</para>
       <section id="xen64-bit-temp">
-        <title>Optional XenServer 64-Bit Template Support</title>
-        <para>&PRODUCT; now provides XenServer 64-bit templates for System VMs. With this support,
-          you will be able to upgrade virtual routers in a zone. The following parameters have been
-          introduced for the same purpose:</para>
+        <title>Optional 64-Bit System VM Template Support</title>
+        <para>&PRODUCT; now provides 64-bit templates for System VMs. With this support, you will be
+          able to upgrade virtual routers in a zone. The following parameters have been introduced
+          for the same purpose:</para>
         <itemizedlist>
           <listitem>
             <para>XenServer: <parameter>router.template.xen</parameter></para>
@@ -162,144 +168,286 @@ under the License.
           <listitem>
             <para>KVM: <parameter>router.template.kvm</parameter></para>
           </listitem>
+          <listitem>
+            <para>VMware:</para>
+          </listitem>
+          <listitem>
+            <para>Hyper-V:</para>
+          </listitem>
         </itemizedlist>
       </section>
-      <section id="vm-snapshots">
-        <title>XenServer VM Snapshots</title>
-        <para>VM Snapshots are now supported on both VMware and XenServer hosts. Previously, they
-          were supported only on VMware.</para>
-        <para>In addition to the existing &PRODUCT; ability to snapshot individual VM volumes, you
-          can now take a VM snapshot to preserve all the VM's data volumes as well as (optionally)
-          its CPU/memory state. This is useful for quick restore of a VM. For example, you can
-          snapshot a VM, then make changes such as software upgrades. If anything goes wrong, simply
-          restore the VM to its previous state using the previously saved VM snapshot. The VM
-          snapshot includes not only the data volumes, but optionally also whether the VM is running
-          or turned off (CPU state) and the memory contents. The snapshot is stored in &PRODUCT;'s
-          primary storage.</para>
-        <para>VM snapshots can have a parent/child relationship. Each successive snapshot of the
-          same VM is the child of the snapshot that came before it. Each time you take an additional
-          snapshot of the same VM, it saves only the differences between the current state of the VM
-          and the state stored in the most recent previous snapshot. The previous snapshot becomes a
-          parent, and the new snapshot is its child. It is possible to create a long chain of these
-          parent/child snapshots, which amount to a "redo" record leading from the current state of
-          the VM back to the original.</para>
+      <section id="hyperv">
+        <title>Hyper-V Support</title>
+        <para>&PRODUCT; 4.3 Beta rolls out support for Hyper-V hosts. For Hyper-V, &PRODUCT;
+          supports SMB-based storage. If you want to run guest VMs on Hyper-V hosts, install
+          &PRODUCT; Agents on each Hyper-V hosts. Before you use Hyper-V, review the following list
+          of supported and non-supported features. For detailed instruction, see Hyper-V Quick Start
+          Guide. You can also see the chapter Installing Hyper-V for &PRODUCT; in the &PRODUCT; 4.3
+          Beta Installation Guide.</para>
+        <section id="supported-functions">
+          <title>Supported Functionalities</title>
+          <itemizedlist>
+            <listitem>
+              <para>VM Compute</para>
+              <itemizedlist>
+                <listitem>
+                  <para>All the VM operations, except VM Snapshots</para>
+                </listitem>
+                <listitem>
+                  <para>Live Migration</para>
+                </listitem>
+                <listitem>
+                  <para>Service Offerings (Scale up on stopped VMs)</para>
+                </listitem>
+                <listitem>
+                  <para>Console access</para>
+                </listitem>
+                <listitem>
+                  <para>SSH key and reseting SSH key</para>
+                </listitem>
+                <listitem>
+                  <para>Upload and download templates, volumes, and ISO</para>
+                </listitem>
+                <listitem>
+                  <para>Create VMs from template and ISO</para>
+                </listitem>
+                <listitem>
+                  <para>Create template from volume</para>
+                </listitem>
+                <listitem>
+                  <para>Attach and detach VMs from ISO and password-enabled template</para>
+                </listitem>
+                <listitem>
+                  <para>Copy template across zone</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+            <listitem>
+              <para>Storage</para>
+              <itemizedlist>
+                <listitem>
+                  <para>Primary Storage (SMB and Local)</para>
+                </listitem>
+                <listitem>
+                  <para>Root and data volumes on Local and SMB</para>
+                </listitem>
+                <listitem>
+                  <para>Add, delete, attach, detach volumes (one or more volumes per VM)</para>
+                </listitem>
+                <listitem>
+                  <para>Single and multiple secondary storage (SMB)</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+            <listitem>
+              <para>Network</para>
+              <itemizedlist>
+                <listitem>
+                  <para>VLANs (Isolated and Shared)</para>
+                </listitem>
+                <listitem>
+                  <para>All VR services: DNS, DHCP, SourceNAT, LB, PF, Firewall, StaticNAT,
+                    Userdata, and VPN</para>
+                </listitem>
+                <listitem>
+                  <para>External device support for both Isolated and Shared networks: Netscaler,
+                    SRX, F5</para>
+                </listitem>
+                <listitem>
+                  <para>Multiple physical networks</para>
+                </listitem>
+                <listitem>
+                  <para>Dedicated IP range, Public VLANs (to account)</para>
+                </listitem>
+                <listitem>
+                  <para>Network Offering upgrades and updates</para>
+                </listitem>
+                <listitem>
+                  <para>L4-L7 services in Shared network</para>
+                </listitem>
+                <listitem>
+                  <para>Multiple IP ranges and portable IPs</para>
+                </listitem>
+              </itemizedlist>
+            </listitem>
+            <listitem>
+              <para>Host and Storage in maintenance mode</para>
+            </listitem>
+          </itemizedlist>
+        </section>
+        <section id="unsupported-hyperv">
+          <title>Unsupported Functionalities</title>
+          <itemizedlist>
+            <listitem>
+              <para>Affinity an Anti-Affinity Groups</para>
+            </listitem>
+            <listitem>
+              <para>Network throttling </para>
+            </listitem>
+            <listitem>
+              <para>Security groups (Advanced Zone)</para>
+            </listitem>
+            <listitem>
+              <para>IPv6</para>
+            </listitem>
+            <listitem>
+              <para>Snapshot: VM and disk</para>
+            </listitem>
+            <listitem>
+              <para>PVLAN</para>
+            </listitem>
+            <listitem>
+              <para>VPC</para>
+            </listitem>
+            <listitem>
+              <para>HA of guest VMs</para>
+            </listitem>
+            <listitem>
+              <para>Redundant VR</para>
+            </listitem>
+            <listitem>
+              <para>Object Store</para>
+            </listitem>
+            <listitem>
+              <para>Mixed hypervisor zone</para>
+            </listitem>
+            <listitem>
+              <para>Zone-wide Primary storage</para>
+            </listitem>
+            <listitem>
+              <para>NIC bonding</para>
+            </listitem>
+          </itemizedlist>
+        </section>
       </section>
-      <section id="ucs-enhancements">
-        <title>Cisco UCS Enhancements</title>
-        <para>Several modifications have been made to improve the user experience when working with
-          Cisco UCS blades and the UCS Manager.</para>
+      <section id="sysvm-upgrade">
+        <title>Enhanced Upgrade for Virtual Routers</title>
+        <para>Upgrading VRs is made flexible. The &PRODUCT; administrators will be able to control
+          the sequence of the VR upgrades. The sequencing is based on Infrastructure hierarchy, such
+          as by Cluster, Pod, or Zone, and Administrative hierarchy, such as by Tenant or Domain.
+          This implies, for example, that you will have the flexibility to upgrade a VR in a
+          specified zone. As an administrator, you can also determine when a particular VR can be
+          upgraded within a specified upgrade interval. Additionally, upgrade operation is enhanced
+          to increase the upgrade speed by allowing as many upgrade operations in parallel as
+          possible. During the entire duration of the upgrade, users cannot launch new services or
+          make changes to an existing service.</para>
+        <para>To support this feature, a new API, upgradeRouterTemplate, has been introduced.</para>
+        <para>The detailed instruction is provided in the &PRODUCT; 4.3 Beta Administration Guide.
+          See section 17.5.5. Enhanced Upgrade for Virtual Routers.</para>
+      </section>
+      <section id="monitor-vr">
+        <title>Service Monitoring Tool for Virtual Router</title>
+        <para>Various services running on the &PRODUCT; virtual routers can be monitored by using a
+          Service Monitoring tool. The tool ensures that services are successfully running until
+          &PRODUCT; deliberately disables them. If a service goes down, the tool automatically
+          performs a restart, and if that does not help bringing up the service, an alert as well as
+          an event is generated indicating the failure.</para>
+        <para>The following services are monitored in a VR:</para>
         <itemizedlist>
           <listitem>
-            <para>The internal procedure for associating a profile to a blade has been modified.
-              When a user wants to associate a profile to a blade in &PRODUCT; 4.2.1, the user
-              chooses a profile template. &PRODUCT; instantiates a profile from that template. In
-              the previous version, &PRODUCT; would instead create a clone of a profile chosen by
-              the user.</para>
+            <para>DNS</para>
           </listitem>
           <listitem>
-            <para>As a consequence of this change, the user now views a list of profile templates
-              rather than a list of profiles when associating a blade. </para>
+            <para>HA Proxy</para>
           </listitem>
           <listitem>
-            <para>A new mechanism is provided for making &PRODUCT; aware of any changes that are
-              made manually on the Cisco UCS Manager. For example, at any time, &PRODUCT; users
-              might directly associate or dissociate blades on the UCS Manager, and &PRODUCT; would
-              not be aware of these changes. In order to synchronize the state of &PRODUCT; with UCS
-              Manager, the user can click a new Refresh Blades button in the &PRODUCT; UI. This
-              button is located in the Blades tab, above the list of associated blades.</para>
+            <para>SSH</para>
           </listitem>
           <listitem>
-            <para>To support the UCS enhancements, several changes have been made to the &PRODUCT;
-              API. See <xref linkend="api-changes"/>.</para>
+            <para>Apache Web Server</para>
           </listitem>
         </itemizedlist>
-      </section>
-      <section id="s3-api-upload">
-        <title>Choose Single-part or Multi-part Upload to Object Storage</title>
-        <para>&PRODUCT; 4.2.1 supports both multi-part and single-part upload for registering
-          templates, uploading volumes, and backing up snapshots to object storage in secondary
-          storage. Previously, only multi-part upload was supported for registering templates and
-          uploading volumes, and only single-part upload was supported for backing up
-          snapshots.</para>
-        <para>The type of upload &PRODUCT; will use depends on the value of the new global
-          configuration setting s3.singleupload.max.size. You can use this setting to set up three
-          different upload scenarios:</para>
+        <para>Only the services with daemons are monitored.</para>
+        <para>The following networks are supported:</para>
         <itemizedlist>
           <listitem>
-            <para>Choose the upload technique dynamically depending on the size of the object to be
-              uploaded. Smaller objects will be uploaded as a single unit, and larger objects will
-              be split into multiple parts for upload. To set the threshold for switching to
-              multi-part upload, set s3.singleupload.max.size to the desired object size in GB
-              (default: 5GB).</para>
+            <para>Isolated Networks</para>
           </listitem>
           <listitem>
-            <para>To use multi-part upload for all objects regardless of size, set
-              s3.singleupload.max.size to 0.</para>
-          </listitem>
-          <listitem>
-            <para>To use single-part upload for all objects, set s3.singleupload.max.size to
-              -1.</para>
+            <para>Shared Networks in both Advanced and Basic zone</para>
           </listitem>
         </itemizedlist>
-        <para>Multi-part upload is useful to make the transfer of templates and volumes to remote
-          storage more resilient to network failure and to optimize throughput. Single-part upload
-          may be preferable when using storage that is local to the data center.</para>
+        <para>This feature is supported on the following hypervisors: XenServer, VMware, and
+          KVM.</para>
+        <para>The detailed instruction is provided in the &PRODUCT; 4.3 Beta Administration Guide.
+          See section 17.5.4. Service Monitoring Tool for Virtual Router.</para>
       </section>
-      <section id="centos64">
-        <title>Management Server Support on CentOS 6.4</title>
-        <para>&PRODUCT; Management Server is now certified on CentOS 6.4.</para>
+      <section id="dynamic-compute-offering">
+        <title>Dynamic Compute Offering</title>
+        <para>&PRODUCT; provides you the flexibility to specify the desired values for the number of
+          CPU, CPU speed, and RAM memory while deploying a VM. The admin creates a Compute Offering
+          by marking CPU, memory, and root disk as dynamic parameters, and as an user, you will be
+          able to customize this dynamic Compute Offering by specifying the memory, CPU and root
+          disk at the time of VM creation or upgrade.</para>
+        <para>Dynamic Compute Offering is same as the normal Compute Offering except that the values
+          of the dynamic parameters will be set to zeros in the given set of templates. Use this
+          offering to deploy VM by specifying custom values for the dynamic parameters. Memory, CPU
+          and number of CPUs are considered as dynamic parameters. Dynamic Compute Offerings can be
+          used in following cases: deploying a VM, changing the compute offering of a stopped VM and
+          running VMs, which is nothing but scaling up. To support this feature a new field, Custom,
+          has been added to the Create Compute Offering page. If the Custom field is checked, the
+          end-user must fill in the desired values for number of CPU, CPU speed, and RAM Memory when
+          using a custom compute offering. </para>
+        <para>Note that you are not allowed to restrict yourself to specifying only one or more
+          custom parameters. If you decide to use, you must specify values for all the three
+          parameters. This feature is not supported on System Service Offerings.</para>
       </section>
-      <section id="device-id-xen">
-        <title>Device ID Changes for XenServer</title>
-        <para>In XenServer 6.1 version and above, a new parameter, <code>device_id: 0002</code>, is
-          introduced for Windows VM with PV drivers. Due to this change, Windows VMs deployed with
-          PV drivers on XenServer 6.0.2 or earlier hosts are not able to successfully boot after
-          stopping and starting once the hosts have been upgraded to XenServer version 6.1 or 6.2.
-          In order to address this issue, a new Global Parameter, <code>xen.pvdriver.version</code>,
-          is introduced to reflect the default PV driver version that is used when registering
-          templates as regular users. Default value for this Global parameter on fresh install will
-          be set to <code>xenserver61</code>, which implies that the new deployments will have only
-          XenServer 6.1 or XenServer 6.2 hosts. Default value for this Global parameter on upgrades
-          would be set to <code>xenserver61</code> only if all the hosts in the deployment are
-          XenServer 6.1 or above. Even if a host is below XenServer 6.1 version, this value will be
-          set to <code>xenserver56</code>. The administrators are provided with following abilities
-          with respect to setting or altering PV driver version:</para>
-        <itemizedlist>
+      <section id="remote-vpn-vpc">
+        <title>Remote Access VPN for VPC</title>
+        <para>Support for Remote access VPN in Isolated networks is now extended to VPC networks.
+          Remote users will now be able to initiate a VPN connection to a VPC network. To enable
+          this feature, enable VPN in the Source NAT IP of the VPC.</para>
+      </section>
+      <section id="site-site-vpn-vr">
+        <title>Site to Site VPN Connection Between VPC Networks</title>
+        <para>&PRODUCT; provides you with the ability to establish a site-to-site VPN connection
+          between &PRODUCT; virtual routers. With this functionality, users can deploy applications
+          in multiple Availability Zones or VPCs, which can communicate with each other by using a
+          secure Site-to-Site VPN Tunnel. Creating a typical Site to Site VPN connection between VPC
+          networks involves the following:</para>
+        <orderedlist>
           <listitem>
-            <para>Ability to set the PV driver version 6.1+ option for a template when registering
-              templates. </para>
-            <para>Regular and Domain admin users will not have the ability to set the PV driver
-              version when registering templates. In this case the PV driver version is defaulted to
-              the Global parameter, <code>xen.pvdriver.version</code>. The PV driver version of the
-              template is stored in <code>vm_template_details</code>.</para>
+            <para>Create two VPCs. For example, VPC A and VPC B.</para>
           </listitem>
           <listitem>
-            <para>Ability to update the PV driver version 6.1 + option for an existing
-              template.</para>
+            <para>Create VPN gateways on both the VPCs you created.</para>
           </listitem>
           <listitem>
-            <para>Ability to update the PV driver version 6.1 + option for a VM when it is in
-              stopped state.</para>
+            <para>Create VPN customer gateway for both the VPCs.</para>
           </listitem>
-        </itemizedlist>
+          <listitem>
+            <para>Enable a VPN connection on VPC A in passive mode. </para>
+            <para>Ensure that the customer gateway is pointed to VPC B. The VPN connection is shown
+              in the Disconnected state.</para>
+          </listitem>
+          <listitem>
+            <para>Enable a VPN connection on VPC B. </para>
+            <para>Ensure that the customer gateway is pointed to VPC A. Because virtual router of
+              VPC A, in this case, is in passive mode and is waiting for the virtual router of VPC B
+              to initiate the connection. The virtual router of VPC B should not be in passive mode. </para>
+            <para>The VPN connection is shown in the Disconnected state. </para>
+            <para>Creating VPN connection on both the VPCs initiates a VPN connection. Wait for few
+              seconds. The default is 30 seconds for both the VPN connections to show the Connected
+              state.</para>
+          </listitem>
+        </orderedlist>
       </section>
-      <section id="no-sourceNAT-lb">
-        <title>Acquiring IP Without Enabling SourceNAT Service</title>
-        <para>The SourceNAT dependency for acquiring IPs has been removed. Therefore, an IP can now
-          be acquired and LB rules can be created on it without enabling the SourceNAT service in a
-          network. In both shared and isolated networks, DNS, DHCP and LB services provided by
-          &PRODUCT; is a valid service combination. In this case gateway is defined externally on
-          the configured LB device and &PRODUCT; does not provide any NAT service.</para>
+      <section id="new-ui">
+        <title>Enhanced &PRODUCT; UI</title>
+        <para>A complete UI makeover is implemented to enhance the usability and user experience in
+          modern browsers. The visual look-and-feel has been changed for the Header, Navigation,
+          Buttons, text fields, drop-downs, tables and so on. Consistent color themes has been
+          introduced to match with the Apache branding. </para>
+        <para>The current UI flow remains the same.</para>
       </section>
     </section>
-    <section id="issues-fixed-4.2.1">
-      <title>Issues Fixed in 4.2.1</title>
+    <section id="issues-fixed-4.3">
+      <title>Issues Fixed in 4.3</title>
       <para>Apache CloudStack uses <ulink url="https://issues.apache.org/jira/browse/CLOUDSTACK"
-          >Jira</ulink> to track its issues. All new features and bugs for 4.2.1 have been tracked
-        in Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the
-        issue number.</para>
-      <para>This section includes a summary of known issues were fixed in 4.2.1. Approximately 150
-        bugs were resolved or closed in the 4.2.1 cycle.</para>
+          >Jira</ulink> to track its issues. All new features and bugs for 4.3 have been tracked in
+        Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the issue
+        number.</para>
+      <para>This section includes a summary of known issues were fixed in 4.3. .</para>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
           <colspec colwidth="1.0*" colname="1" colnum="1"/>
@@ -316,1222 +464,70 @@ under the License.
           </thead>
           <tbody>
             <row>
-              <entry>
-                <para>CLOUDSTACK-3237</para>
-              </entry>
-              <entry>
-                <para>[VMware] Migrate volume is failing when snapshots exist for that
-                  volume.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4300</para>
-              </entry>
-              <entry>
-                <para>[KVM] [Upgrade][2.2.14 to 4.2] System VMs are not coming up after
-                  upgrade.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4405</para>
-              </entry>
-              <entry>
-                <para>[Upgrade] Migration failed between existing hosts and new hosts.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4436</para>
-              </entry>
-              <entry>
-                <para>Virtual Router fails to start on RHEL6.2.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4446</para>
-              </entry>
-              <entry>
-                <para>AWSAPI server fails to start due to an error in bean creation.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4464</para>
-              </entry>
-              <entry>
-                <para>[VMware] When deploying 30 parallel VMs, a VM fails to get deployed due to the
-                  "StartCommand failed due to Exception: javax.xml.ws.soap.SOAPFaultException"
-                  error.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4479</para>
-              </entry>
-              <entry>
-                <para>VPC Network Tier creation fails.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4516</para>
-              </entry>
-              <entry>
-                <para>[VMware][Upgrade] MySQLIntegrityConstraintViolationException while performing
-                  any task by using local storage after upgrade from 3.0.7 to 4.2.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4522</para>
-              </entry>
-              <entry>
-                <para>[VMware][Upgrade] Creation of VM from ISO fails. </para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4554</para>
-              </entry>
-              <entry>
-                <para>[VMware][Upgrade from 3.0.6 to 4.2] System VM agent doesn't come up after
-                  adding a zone on an upgraded setup.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4555</para>
-              </entry>
-              <entry>
-                <para>[VMware][Upgrade from 3.0.6 to 4.2] After upgrade the system VMs fail to come
-                  up because the Secondary Storage mount point is pointing to a wrong
-                  location.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4561</para>
-              </entry>
-              <entry>
-                <para>Deploying a VM fails after upgrading to 4.2 from earlier version having a
-                  private zone.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4579</para>
-              </entry>
-              <entry>
-                <para>[KVM] [Upgrade 2.2.14 to 4.2] After upgrade, deploying VMs with existing
-                  templates does not work.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4580</para>
-              </entry>
-              <entry>
-                <para>[KVM] [Upgrade 2.2.14 - 4.2] After upgrade, existing VMs cannot be started
-                  after stopping them.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4618</para>
-              </entry>
-              <entry>
-                <para>Storage refactoring has broken CLVM.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4671</para>
-              </entry>
-              <entry>
-                <para>ListZone API failed with Assertion error if assertion is turned on for
-                  Management Server.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4864</para>
-              </entry>
-              <entry>
-                <para>[VMware] 64-bit system VM template does not exist.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-5065</para>
-              </entry>
-              <entry>
-                <para>[KVM] Snapshot doesn't take VM snapshot if the VM is running.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-532</para>
-              </entry>
-              <entry>
-                <para>Cleaning up Storage template corrupts templates.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-732</para>
-              </entry>
-              <entry>
-                <para>[KVM] No Snapshot support.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-1670</para>
-              </entry>
-              <entry>
-                <para>When a VM is part of two networks, the IP address from the first network is
-                  being assigned to eth1.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-1775</para>
-              </entry>
-              <entry>
-                <para>Events related to User/Domain/Account are not generated, instead USER-DISABLE,
-                  DOMAIN-DELETE and ACCOUNT.DISABLE event are generated.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-1819</para>
-              </entry>
-              <entry>
-                <para>In AWS Regions, various issues persist when moving a zone from one region to
-                  another.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2792</para>
-              </entry>
-              <entry>
-                <para>In a Redundant router, password is reset again after a fail-over.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3010</para>
-              </entry>
-              <entry>
-                <para>[VMware] Router VM deployment fails with a "Message: Invalid configuration for
-                  device '2' error in Shared networks.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3285</para>
-              </entry>
-              <entry>
-                <para>No support for HTTP redirects and HTTPS certificate handling in UCS.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3424</para>
-              </entry>
-              <entry>
-                <para>[IPv6] When a VM is expunged and a new VM is deployed with the same name,
-                  <code>/etc/dhchosts.txt</code> has two entries with the same name.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3583</para>
-              </entry>
-              <entry>
-                <para>Stopping Management Server does not remove PID. </para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3715</para>
-              </entry>
-              <entry>
-                <para>Live Migration of virtual instances operation is getting timed out.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3737</para>
-              </entry>
-              <entry>
-                <para>Uploaded volume is not getting deleted from Secondary storage after attaching
-                  it to guest VM.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3765</para>
-              </entry>
-              <entry>
-                <para>[Packaging] Unable to upgrade 4.2 build on Centos 5.5.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3808</para>
-              </entry>
-              <entry>
-                <para>Attaching a volume does not work when root is at zone-level primary store and
-                  data at cluster-level or host-level store.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3911</para>
-              </entry>
-              <entry>
-                <para>[Portable IP] No mechanism to check while adding a zone-level public range to
-                  check whether the same VLAN exists in portable IP range.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4095</para>
-              </entry>
-              <entry>
-                <para>Region ID appears within the Database Transaction code.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4128</para>
-              </entry>
-              <entry>
-                <para>Starting a System VMs does not check for existence of staging Secondary
-                  Storage in a zone.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4137</para>
-              </entry>
-              <entry>
-                <para>[KVM]After unmanaging a cluster, managing another cluster does not bring hosts
-                  to UP state. </para>
-                <para>To work around manually restart cloud-agent on KVM hosts.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4190</para>
-              </entry>
-              <entry>
-                <para>Volume is not deleted from staging storage after a successful volume
-                  migration.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4199</para>
-              </entry>
-              <entry>
-                <para>In Redundant Virtual Router,no failover occurs.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4239</para>
-              </entry>
-              <entry>
-                <para>[VMware] Snapshot creation on ESX 4.1 host fails with a
-                  ""BackupSnapshotCommand exception: javax.xml.ws.soap.SOAPFaultException"
-                  error.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4327</para>
-              </entry>
-              <entry>
-                <para>SSVM, CPVM and router VMs are running even after storage entered into
-                  maintenance.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4350</para>
-              </entry>
-              <entry>
-                <para>[Performance Testing] Adding hosts take much longer time than
-                  baselines.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4432</para>
-              </entry>
-              <entry>
-                <para>[VMware] Null Pointer exception is thrown during VM deployment.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4433</para>
-              </entry>
-              <entry>
-                <para>[VMware] Registration of template by using the downloaded template URL is
-                  failing.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4434</para>
-              </entry>
-              <entry>
-                <para>[Ubuntu] Direct input ""- _ "", ""? /"", ""keyboard /"" ,""keyboard -"" keys
-                  are not working well for the US keyboard.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4454</para>
-              </entry>
-              <entry>
-                <para>Not able to delete secondary storage when existing snapshots are
-                  deleted.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4455</para>
-              </entry>
-              <entry>
-                <para>Template sync results in private templates being synced to all the secondary
-                  stores.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4458</para>
-              </entry>
-              <entry>
-                <para>[VMware] Failed to create Snapshot on data disk because of backup snapshot
-                  exception.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4465</para>
-              </entry>
-              <entry>
-                <para>Resource count is not decremented for domain if user VM is being destroyed as
-                  a part of account removal.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4485</para>
-              </entry>
-              <entry>
-                <para>[VMware] [3.0.6 to ASF 4.2 Upgrade] System VMs is not created in the cluster
-                  due to invalid path information of the template on the Primary Storage in the
-                  cluster.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4495</para>
-              </entry>
-              <entry>
-                <para>System VM template URL is pointing to old template location in the Upgrade
-                  file.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4499</para>
-              </entry>
-              <entry>
-                <para>[XenServer v 6.1 and 6.2] Hosts initially transition to 'Alert' state and then
-                  to 'Up' after adding a host.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4513</para>
-              </entry>
-              <entry>
-                <para>[VMware] In a new mapping between a datacenter and a zone, when hosts in the
-                  second cluster in data center put in maintenance mode, CPVM and guest VMs that are
-                  migrated failed to come up.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4520</para>
-              </entry>
-              <entry>
-                <para>[VMware][Upgrade] ExtractVolumeCmd fails with NPE while attempting to download
-                  a volume.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4530</para>
-              </entry>
-              <entry>
-                <para>Creating template from a Snapshot fails with having not able to find any
-                  ova/ovf snapshot when multiple secondary storage exist for a zone.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4539</para>
-              </entry>
-              <entry>
-                <para>[VMware] If <parameter>vmware.create.full.clone</parameter> is set to true in
-                  an upgraded setup, default nature of VMs are full clone.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4551</para>
-              </entry>
-              <entry>
-                <para>Migrating the data volume from NFS to local storage does not change the
-                  underlying disk offering.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4573</para>
-              </entry>
-              <entry>
-                <para>Acquiring IP addresses above domain limit is possible in VPC.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4596</para>
-              </entry>
-              <entry>
-                <para>Same IP range is allowed to be defined in different VLANs across public and
-                  portable ranges.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4600</para>
-              </entry>
-              <entry>
-                <para>Registered cross-zone template does not populate template_zone_ref for later
-                  added zones using S3.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4624</para>
-              </entry>
-              <entry>
-                <para>VM Migration fails in Security Group-enabled Advanced Zone with
-                  'CloudRuntimeException: callHostPlugin failed for cmd: network_rules'
-                  error.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4625</para>
-              </entry>
-              <entry>
-                <para>Snapshots and templates cannot be deleted from staging storage after create
-                  template from snapshot on S3.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4674</para>
-              </entry>
-              <entry>
-                <para>[Baremetal]
-                    <filename>/usr/share/cloudstack-common/scripts/util/ipmi.py</filename> script
-                  need to recognize various IPMI version and BMC type of server.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4698</para>
-              </entry>
-              <entry>
-                <para>DHCP-service enabled network cannot expunge VMs.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4704</para>
-              </entry>
-              <entry>
-                <para>Database upgrade bug is caused by the vpc_service_map table.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4707</para>
-              </entry>
-              <entry>
-                <para>The sourcetemplateid field is not getting set for derived templates.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4711</para>
-              </entry>
-              <entry>
-                <para>Premature API response prevents &PRODUCT; from syncing association status in UCS environment.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4717</para>
-              </entry>
-              <entry>
-                <para>Associate IP does not work on shared networks without Source NAT
-                  service.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4725</para>
-              </entry>
-              <entry>
-                <para>KVM agent fails to join if local pool is already registered.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4745</para>
-              </entry>
-              <entry>
-                <para>Exception occurs when trying to apply static NAT rule by using
-                  CreateIpForwardingCmd API.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4746</para>
-              </entry>
-              <entry>
-                <para>Allocation capacity of a cluster during HA.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4750</para>
-              </entry>
-              <entry>
-                <para>The bond.VLAN mapping in iptables forward chain is not created
-                  consistently.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4777</para>
-              </entry>
-              <entry>
-                <para>NullPointerException instead of working KVM HA.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4783</para>
-              </entry>
-              <entry>
-                <para>Unable to see a derived template if the parent template is deleted.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4816</para>
-              </entry>
-              <entry>
-                <para>No configurable option to choose single or  multipart upload to S3 object
-                  storage.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4817</para>
-              </entry>
-              <entry>
-                <para>Backup snapshot on XenServer should take global setting
-                  s3.multipart.enabled.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4828</para>
-              </entry>
-              <entry>
-                <para>Removing NIC fails if DHCP was not enabled in the network offering.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4836</para>
-              </entry>
-              <entry>
-                <para>Restart network with cleanup=true  does not reprogram remote access VPN users
-                  in the virtual router.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4849</para>
-              </entry>
-              <entry>
-                <para>LXC not working when using non-oss build.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4859</para>
-              </entry>
-              <entry>
-                <para>No global configuration available to disable storage migration during HA. </para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4862</para>
-              </entry>
-              <entry>
-                <para>Admin cannot delete shared network scoped to user account.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4872</para>
-              </entry>
-              <entry>
-                <para>VM provisioned using a registered Windows Server 2012 template will show as
-                  other OS in vCenter.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4888</para>
-              </entry>
-              <entry>
-                <para>Refresh blades on a decommissioned chassis results in NPE in UCS
-                  environment.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4913</para>
-              </entry>
-              <entry>
-                <para>Disabling security group for bridge mode non-security group zone</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4921</para>
-              </entry>
-              <entry>
-                <para>Usage service does not start after reboot.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4946</para>
-              </entry>
-              <entry>
-                <para>[VMware] Restore VM with template ID feature does not work.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4988</para>
-              </entry>
-              <entry>
-                <para>The public templates created in ROOT/a/b domains  are not visible in /ROOT/a
-                  domains</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-5061</para>
-              </entry>
-              <entry>
-                <para>[VMware] Storage over-provisioning factor is not considered when using thin
-                  provisioning over VMFS datastores.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-5066</para>
-              </entry>
-              <entry>
-                <para>Existed remote access VPN is dropped when adding new VPN users.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-5076</para>
-              </entry>
-              <entry>
-                <para>[Upgrade] Rebooting VM failed after bridge name change.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-5122</para>
-              </entry>
-              <entry>
-                <para>[VMware] System VMs are getting recreated with old template after upgrading to
-                  4.2.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-1236</para>
-              </entry>
-              <entry>
-                <para>Warning while adding XenServer 6.1 host: Unable to create local link
-                  network.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-1749</para>
-              </entry>
-              <entry>
-                <para>Cloud agent service running on Secondary Storage VM and Console Proxy VM is
-                  named as cloud.com service.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2024</para>
-              </entry>
-              <entry>
-                <para>The cloudstack-setup-management script with https does not work due to
-                  incorrect path and missing keystore file.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2034</para>
-              </entry>
-              <entry>
-                <para>No alert generated when deleting a primary storage is failed.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2413</para>
-              </entry>
-              <entry>
-                <para>The Change Compute Offering dialog box for a instance displays the Description
-                  instead of the Name of compute offering.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2767</para>
-              </entry>
-              <entry>
-                <para>There is no check on input parameters in API for Global settings, zone
-                  settings, and account settings.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2804</para>
-              </entry>
-              <entry>
-                <para>The getEthByIp function in vpc_func.sh can return the wrong network
-                  interface.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-2918</para>
-              </entry>
-              <entry>
-                <para>In a scaledup environment, hosts fail to come up after Management Server
-                  restart in a clustered setup.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3223</para>
-              </entry>
-              <entry>
-                <para>[VMware] Exception occurred while creating the CPVM in a setup using the
-                  latest SystemVM template.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3508</para>
-              </entry>
-              <entry>
-                <para>NullPointerException observed during the ListVolumeAnswer API call.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3603</para>
-              </entry>
-              <entry>
-                <para>The template_store_ref"" table has Invalid URL References.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3803</para>
-              </entry>
-              <entry>
-                <para>Unable to complete Add zone wizard.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-3873</para>
-              </entry>
-              <entry>
-                <para>No error notification is generated when cluster-level Primary storage is added
-                  with wrong path.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4449</para>
-              </entry>
-              <entry>
-                <para>Possibility of /tmp/xapilog filling up the Root disk on XenServer.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4466</para>
-              </entry>
-              <entry>
-                <para>DHCP capability breaks in 4.2.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4482</para>
-              </entry>
-              <entry>
-                <para>The getVMPassword() API call does not return password for VMs that are
-                  deployed with password enabled templates.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4521</para>
-              </entry>
-              <entry>
-                <para>[VMware] [upgrade] Attaching an uploaded volume to a VM throws NPE.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4572</para>
-              </entry>
-              <entry>
-                <para>The findHostsForMigration API does not return correct host list.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4612</para>
-              </entry>
-              <entry>
-                <para>Specified keyboard language is not showing as default in consoleView passed
-                  during deployVM.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4613</para>
-              </entry>
-              <entry>
-                <para>Security group rules issue in hosts.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4627</para>
-              </entry>
-              <entry>
-                <para>HA does not work, nor user VM migrate.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4636</para>
-              </entry>
-              <entry>
-                <para>In a scaled-up setup all VMs in a cluster were stopped or started after
-                  Management Server restart.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4661</para>
-              </entry>
-              <entry>
-                <para>[DB Upgrade] The SecondaryStorage entry in the host table before upgrade is
-                  not marked as removed after migrating them to image_store table.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4716</para>
-              </entry>
-              <entry>
-                <para>[Upgrade] The resource_count table is not updated after upgrade to 4.2</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4755</para>
-              </entry>
-              <entry>
-                <para>Version 4.x does not allow memory upgrade.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4765</para>
-              </entry>
-              <entry>
-                <para>PF rules configure public IP address is not set on the VR when network is up
-                  after GC.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4785</para>
-              </entry>
-              <entry>
-                <para>No support for adding details to a user VM.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4786</para>
-              </entry>
-              <entry>
-                <para>Redundant router has a priority limitation.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4797</para>
-              </entry>
-              <entry>
-                <para>[Documentation] Installation guide for 4.2 instructs users to install
-                  4.1.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4813</para>
-              </entry>
-              <entry>
-                <para>Get ExitValue when running bash commands.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4827</para>
-              </entry>
-              <entry>
-                <para>Build failed on 4.2.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4839</para>
-              </entry>
-              <entry>
-                <para>[Documentation] The section 3.5 in the Install Guide provides wrong list of
-                  .deb packages.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4867</para>
-              </entry>
-              <entry>
-                <para>NullPointerException on agent while remounting primary storage.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4882</para>
-              </entry>
-              <entry>
-                <para>listClusters/pods/zones and listCapacity(dashboard view) API not accounting
-                  for reserved in the used capacity percentage.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4895</para>
-              </entry>
-              <entry>
-                <para>Management Server fails to start because snapshot policy time zones have day
-                  light savings.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4911</para>
-              </entry>
-              <entry>
-                <para>[Mixed Hypervisor] VM status is marked as alive when exit status of ping
-                  command is not available within command timeout.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4923</para>
-              </entry>
-              <entry>
-                <para>Network limits is missing in Accounts details page.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4924</para>
-              </entry>
-              <entry>
-                <para>AcountCleanup: The IP address is not released if the network failed to
-                  delete.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4947</para>
-              </entry>
-              <entry>
-                <para>if apply.allocation.algorithm.to.pods is set to true VM creation fails.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4948</para>
-              </entry>
-              <entry>
-                <para>DeploymentPlanner: Logic to check if cluster can be avoided needs to consider
-                  if VM is using a local storage and shared storage.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4964</para>
-              </entry>
-              <entry>
-                <para>Nexus password is logged in Management Server logs during guest network
-                  implementation with Cisco VNMC provider.</para>
-              </entry>
-            </row>
-            <row>
-              <entry>
-                <para>CLOUDSTACK-4985</para>
-              </entry>
-              <entry>
-                <para>NPE while deleting old root volumes of a restored VM during storage garbage
-                  collection.</para>
-              </entry>
+              <entry><para>CLOUDSTACK-2562</para></entry>
+              <entry><para>When a virtual router on a VMware ESX is restarted out of band by VMware
+                  HA, &PRODUCT; does not re-program the port forwarding, NAT, and load balancer
+                  rules. </para></entry>
             </row>
             <row>
-              <entry>
-                <para>CLOUDSTACK-4987</para>
-              </entry>
-              <entry>
-                <para>Adding an Isolated network belonging to an account to a VM belonging to
-                  different account is possible.</para>
-              </entry>
+              <entry><para>CLOUDSTACK-3154</para></entry>
+              <entry><para>When deleting the VMware DataCenter from the Zone the DataCenter gets
+                  deleted but UI screen stays in processing state.</para></entry>
             </row>
             <row>
-              <entry>
-                <para>CLOUDSTACK-4998</para>
-              </entry>
-              <entry>
-                <para>The assignVirtualMachine API has wrong response string, causing Cloudmonkey to
-                  crash.</para>
-              </entry>
+              <entry><para>CLOUDSTACK-3252</para></entry>
+              <entry><para>An instance deployed by using explicit or implicit dedication doesn't
+                  generate a usage event.</para></entry>
             </row>
             <row>
-              <entry>
-                <para>CLOUDSTACK-5018</para>
-              </entry>
-              <entry>
-                <para>Creation of VM using template from snapshot of RBD volume fails.</para>
-              </entry>
+              <entry><para>CLOUDSTACK-4861</para></entry>
+              <entry><para>Selection of physical network to implement guest network is now work as
+                  expected if guest traffic spans across multiple physical networks.</para></entry>
             </row>
             <row>
-              <entry>
-                <para>CLOUDSTACK-5029</para>
-              </entry>
-              <entry>
-                <para>The cloud-bugtool is not available release package.</para>
-              </entry>
+              <entry><para>CLOUDSTACK-5145</para></entry>
+              <entry><para>The ListNetworkACL API lists the ACLs owned only by the
+                user.</para></entry>
             </row>
             <row>
               <entry>
-                <para>CLOUDSTACK-5038</para>
+                <para/>
               </entry>
               <entry>
-                <para>[Upgrade] Used CPU is getting bumped up when the over provisioning factor is
-                  greater than 1.</para>
+                <para>.</para>
               </entry>
             </row>
             <row>
               <entry>
-                <para>CLOUDSTACK-5096</para>
+                <para/>
               </entry>
               <entry>
-                <para>[VMware] Corrupt template is left behind after the copy of a template from
-                  secondary to primary fails.</para>
+                <para/>
               </entry>
             </row>
             <row>
               <entry>
-                <para>CLOUDSTACK-5140</para>
+                <para/>
               </entry>
               <entry>
-                <para>A stopped VM cant start after disable threshold has been reached on the
-                  storage pool.</para>
+                <para/>
               </entry>
             </row>
             <row>
               <entry>
-                <para>CLOUDSTACK-3100</para>
+                <para/>
               </entry>
               <entry>
-                <para>Add the displayvmflag to listVirtualMachines API.</para>
+                <para/>
               </entry>
             </row>
           </tbody>
         </tgroup>
       </informaltable>
     </section>
-    <section id="known-issues-4.2.1">
-      <title>Known Issues in 4.2.1</title>
-      <para>This section includes a summary of known issues in 4.2.1 </para>
+    <section id="known-issues-4.3">
+      <title>Known Issues in 4.3</title>
+      <para>This section includes a summary of known issues in 4.3.</para>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
           <colspec colwidth="1.0*" colname="1" colnum="1"/>
@@ -1651,7 +647,7 @@ under the License.
               </entry>
               <entry>
                 <para>VM migration involving storage migration on vmware fails with the 'The object
-                  has already been deleted or has not been completely created'  exception.</para>
+                  has already been deleted or has not been completely created' exception.</para>
               </entry>
             </row>
             <row>
@@ -1833,7 +829,8 @@ under the License.
               </entry>
               <entry>
                 <para>Destroying VM does not work. VM destroy failed with the Stop i-2-59-VM command
-                  due to invalid object reference. The object may have recently been deleted. </para>
+                  due to invalid object reference. The object may have recently been deleted.
+                </para>
               </entry>
             </row>
             <row>
@@ -1876,8 +873,9 @@ under the License.
                 <para>CLOUDSTACK-5098</para>
               </entry>
               <entry>
-                <para>[VMware] Entries in <code>vmware_data_center</code> and <code>vmware_data_center_zone_map</code> are not
-                  cleaned up when there is a failure to add the cluster.</para>
+                <para>[VMware] Entries in <code>vmware_data_center</code> and
+                    <code>vmware_data_center_zone_map</code> are not cleaned up when there is a
+                  failure to add the cluster.</para>
               </entry>
             </row>
             <row>
@@ -1901,17 +899,17 @@ under the License.
       </informaltable>
     </section>
   </chapter>
-  <chapter id="upgrade-instructions">
-    <title>Upgrade Instructions for 4.2.1</title>
+  <chapter id="upgrade-instructions-4.3">
+    <title>Upgrade Instructions for 4.3</title>
     <para>This section contains upgrade instructions from prior versions of CloudStack to Apache
-      CloudStack 4.2.1. We include instructions on upgrading to Apache CloudStack from pre-Apache
+      CloudStack 4.3. We include instructions on upgrading to Apache CloudStack from pre-Apache
       versions of Citrix &PRODUCT; (last version prior to Apache is 3.0.2) and from the releases
       made while CloudStack was in the Apache Incubator.</para>
     <para>If you run into any issues during upgrades, please feel free to ask questions on
       users@cloudstack.apache.org or dev@cloudstack.apache.org.</para>
-    <section id="upgrade-from-4.2-to-4.2.1">
-      <title>Upgrade from 4.2.0 to 4.2.1</title>
-      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.2.1.</para>
+    <section id="upgrade-from-4.2-to-4.3">
+      <title>Upgrade from 4.2.0 to 4.3</title>
+      <para>This section will guide you from &PRODUCT; 4.2 to &PRODUCT; 4.3.</para>
       <para>Any steps that are hypervisor-specific will be called out with a note.</para>
       <para>We recommend reading through this section once or twice before beginning your upgrade
         procedure, and working through it on a test system before working on a production
@@ -2014,13 +1012,13 @@ under the License.
             Ubuntu).</para>
         </listitem>
         <listitem>
-          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.2.1
-            source, or check the Apache CloudStack downloads page at <ulink
+          <para>Create RPM or Debian packages (as appropriate) and a repository from the 4.3 source,
+            or check the Apache CloudStack downloads page at <ulink
               url="http://cloudstack.apache.org/downloads.html"
               >http://cloudstack.apache.org/downloads.html</ulink> for package repositories supplied
             by community members. You will need them for step <xref
-              linkend="upgrade-deb-packages-4.2.1"/> or step <xref
-              linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+              linkend="upgrade-deb-packages-4.3"/> or step <xref linkend="upgrade-rpm-packages-4.3"
+            />.</para>
           <para>Instructions for creating packages from the &PRODUCT; source are in the <ulink
               url="http://cloudstack.apache.org/docs/en-US/index.html">Installation
             Guide</ulink>.</para>
@@ -2057,9 +1055,9 @@ under the License.
             </listitem>
             <listitem>
               <para>Verify signatures and hash files:</para>
-              <programlisting>#gpg --verify apache-cloudstack-4.2.1-src.tar.bz2.asc
-#gpg --print-md MD5 apache-cloudstack-4.2.1-src.tar.bz2 | diff - apache-cloudstack-4.2.1-src.tar.bz2.md5
-#gpg --print-md SHA512 apache-cloudstack-4.2.1-src.tar.bz2 | diff - apache-cloudstack-4.2.1-src.tar.bz2.sha</programlisting>
+              <programlisting>#gpg --verify apache-cloudstack-4.3-src.tar.bz2.asc
+#gpg --print-md MD5 apache-cloudstack-4.3-src.tar.bz2 | diff - apache-cloudstack-4.3-src.tar.bz2.md5
+#gpg --print-md SHA512 apache-cloudstack-4.3-src.tar.bz2 | diff - apache-cloudstack-4.3-src.tar.bz2.sha</programlisting>
               <para>Each of these commands should return no output. Any output from them implies
                 that there is a difference between the hash you generated locally and the hash that
                 has been pulled from the server.</para>
@@ -2075,7 +1073,7 @@ under the License.
 #mkdir /tmp/cloudstack/tree</programlisting>
             </listitem>
             <listitem>
-              <para>Check out the 4.2.1 branch:</para>
+              <para>Check out the 4.3 branch:</para>
               <programlisting>#git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git /tmp/cloudstack/git
 #cd /tmp/cloudstack/git
 #git archive --format=tar --prefix=/tmp/cloudstack/tree/ &lt;commit-hash&gt; | tar Pxf - </programlisting>
@@ -2083,17 +1081,17 @@ under the License.
             <listitem>
               <para>Unpack the release artifact:</para>
               <programlisting>#cd /tmp/cloudstack
-#tar xvfj apache-cloudstack-4.2.1-src.tar.bz2</programlisting>
+#tar xvfj apache-cloudstack-4.3-src.tar.bz2</programlisting>
             </listitem>
             <listitem>
               <para>Compare the contents of the release artifact with the contents pulled from the
                 repo:</para>
-              <programlisting>#diff -r /tmp/cloudstack/apache-cloudstack-4.2.1-src /tmp/cloudstack/tree</programlisting>
+              <programlisting>#diff -r /tmp/cloudstack/apache-cloudstack-4.3-src /tmp/cloudstack/tree</programlisting>
               <para>Ensure that content is the same.</para>
             </listitem>
             <listitem>
               <para>Verify the Code License Headers:</para>
-              <programlisting>#cd /tmp/cloudstack/apache-cloudstack-4.2.1-src
+              <programlisting>#cd /tmp/cloudstack/apache-cloudstack-4.3-src
 #mvn --projects='org.apache.cloudstack:cloudstack' org.apache.rat:apache-rat-plugin:0.8:check</programlisting>
               <para>The build fails if any non-compliant files are present that are not specifically
                 excluded from the ASF license header requirement. You can optionally review the
@@ -2111,16 +1109,16 @@ under the License.
             <programlisting><prompt>#</prompt>mysql -u cloud -p -e 'update cloud.storage_pool set path="/var/lib/libvirt/images" where path="/var/lib/libvirt/images/"';</programlisting>
           </para>
         </listitem>
-        <listitem id="upgrade-deb-packages-4.2.1">
+        <listitem id="upgrade-deb-packages-4.3">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
-            skip to step <xref linkend="upgrade-rpm-packages-4.2.1"/>.</para>
+            skip to step <xref linkend="upgrade-rpm-packages-4.3"/>.</para>
           <note>
             <title>Community Packages</title>
             <para>This section assumes you're using the community supplied packages for &PRODUCT;.
               If you've created your own packages and APT repository, substitute your own URL for
               the ones used in these examples.</para>
           </note>
-          <orderedlist id="debsteps-4.2.1" numeration="loweralpha">
+          <orderedlist id="debsteps-4.3" numeration="loweralpha">
             <listitem>
               <para>The first order of business will be to change the sources list for each system
                 with &PRODUCT; packages. This means all management servers, and any hosts that have
@@ -2133,19 +1131,19 @@ under the License.
               <para>We'll change it to point to the new package repository:</para>
               <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem>
               <para>Now update your apt package list:</para>
               <programlisting language="Bash">$ sudo apt-get update</programlisting>
             </listitem>
-            <listitem id="deb-master-4.2.1">
+            <listitem id="deb-master-4.3">
               <para>Now that you have the repository configured, it's time to install the
                   <filename>cloudstack-management</filename> package. This will pull in any other
                 dependencies you need.</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-management</programlisting>
             </listitem>
-            <listitem id="kvm-agent-deb-4.2.1">
+            <listitem id="kvm-agent-deb-4.3">
               <para>You will need to manually install the <filename>cloudstack-agent</filename>
                 package:</para>
               <programlisting language="Bash">$ sudo apt-get install cloudstack-agent</programlisting>
@@ -2242,16 +1240,16 @@ service cloudstack-agent start
             </listitem>
           </orderedlist>
         </listitem>
-        <listitem id="upgrade-rpm-packages-4.2.1">
+        <listitem id="upgrade-rpm-packages-4.3">
           <para>If you are using CentOS or RHEL, follow this procedure to upgrade your packages. If
-            not, skip to step <xref linkend="restart-system-vms-4.2.1"/>.</para>
+            not, skip to step <xref linkend="restart-system-vms-4.3"/>.</para>
           <note>
             <title>Community Packages</title>
             <para>This section assumes you're using the community supplied packages for &PRODUCT;.
               If you've created your own packages and yum repository, substitute your own URL for
               the ones used in these examples.</para>
           </note>
-          <orderedlist id="rpmsteps-4.2.1" numeration="loweralpha">
+          <orderedlist id="rpmsteps-4.3" numeration="loweralpha">
             <listitem>
               <para>The first order of business will be to change the yum repository for each system
                 with &PRODUCT; packages. This means all management servers, and any hosts that have
@@ -2271,15 +1269,15 @@ gpgcheck=0
               <para>If you are using the community provided package repository, change the base url
                 to http://cloudstack.apt-get.eu/rhel/4.2/</para>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
-            <listitem id="rpm-master-4.2.1">
+            <listitem id="rpm-master-4.3">
               <para>Now that you have the repository configured, it's time to install the
                   <filename>cloudstack-management</filename> package by upgrading the older
                   <filename>cloudstack-management</filename> package.</para>
               <programlisting language="Bash">$ sudo yum upgrade cloudstack-management</programlisting>
             </listitem>
-            <listitem id="kvm-agent-rpm-4.2.1">
+            <listitem id="kvm-agent-rpm-4.3">
               <para>For KVM hosts, you will need to upgrade the <filename>cloud-agent</filename>
                 package, similarly installing the new version as
                   <filename>cloudstack-agent</filename>.</para>
@@ -2302,11 +1300,11 @@ service cloudstack-agent start
             </listitem>
           </orderedlist>
         </listitem>
-        <listitem id="restart-mgmt-server-4.2.1">
+        <listitem id="restart-mgmt-server-4.3">
           <para>Now it's time to restart the management server</para>
           <programlisting language="Bash"><prompt>#</prompt> service cloudstack-management start</programlisting>
         </listitem>
-        <listitem id="restart-system-vms-4.2.1">
+        <listitem id="restart-system-vms-4.3">
           <para>Once you've upgraded the packages on your management servers, you'll need to restart
             the system VMs. Ensure that the admin port is set to 8096 by using the
             "integration.api.port" global parameter. This port is used by the cloud-sysvmadm script
@@ -2340,9 +1338,9 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
-    <section id="upgrade-from-4.1-to-4.2.1">
-      <title>Upgrade from 4.1.x to 4.2.1</title>
-      <para>This section will guide you from &PRODUCT; 4.1.x versions to &PRODUCT; 4.2.1.</para>
+    <section id="upgrade-from-4.1-to-4.3">
+      <title>Upgrade from 4.1.x to 4.3</title>
+      <para>This section will guide you from &PRODUCT; 4.1.x versions to &PRODUCT; 4.3.</para>
       <para>Any steps that are hypervisor-specific will be called out with a note.</para>
       <para>We recommend reading through this section once or twice before beginning your upgrade
         procedure, and working through it on a test system before working on a production
@@ -2502,7 +1500,7 @@ Done restarting router(s).
               <para>We'll change it to point to the new package repository:</para>
               <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem>
               <para>Now update your apt package list:</para>
@@ -2640,7 +1638,7 @@ gpgcheck=0
               <para>If you are using the community provided package repository, change the base url
                 to http://cloudstack.apt-get.eu/rhel/4.2/</para>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem id="rpm-master-41to42">
               <para>Now that you have the repository configured, it's time to install the
@@ -2709,9 +1707,9 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
-    <section id="upgrade-from-4.0-to-4.2.1">
-      <title>Upgrade from 4.0.x to 4.2.1</title>
-      <para>This section will guide you from &PRODUCT; 4.0.x versions to &PRODUCT; 4.2.1.</para>
+    <section id="upgrade-from-4.0-to-4.3">
+      <title>Upgrade from 4.0.x to 4.3</title>
+      <para>This section will guide you from &PRODUCT; 4.0.x versions to &PRODUCT; 4.3.</para>
       <para>Any steps that are hypervisor-specific will be called out with a note.</para>
       <warning>
         <title>Package Structure Changes</title>
@@ -2861,7 +1859,7 @@ Done restarting router(s).
               <filename>components.xml</filename> to be on the safe side.</para>
         </listitem>
         <listitem>
-          <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for
+          <para>After upgrading to 4.3, API clients are expected to send plain text passwords for
             login and user creation, instead of MD5 hash. Incase, api client changes are not
             acceptable, following changes are to be made for backward compatibility:</para>
           <para>Modify componentsContext.xml, and make PlainTextUserAuthenticator as the default
@@ -2879,7 +1877,7 @@ Done restarting router(s).
 &lt;/bean&gt;
                     </programlisting>
           <para>PlainTextUserAuthenticator works the same way MD5UserAuthenticator worked prior to
-            4.2.1.</para>
+            4.3.</para>
         </listitem>
         <listitem id="upgrade-deb-packages-40to41">
           <para>If you are using Ubuntu, follow this procedure to upgrade your packages. If not,
@@ -2988,7 +1986,7 @@ Done restarting router(s).
               <para>If you are using the community provided package repository, change the baseurl
                 to http://cloudstack.apt-get.eu/rhel/4.1/</para>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem id="rpm-master-40to41">
               <para>Now that you have the repository configured, it's time to install the
@@ -3055,9 +2053,9 @@ Done restarting router(s).
         </listitem>
       </orderedlist>
     </section>
-    <section id="upgrade-from-3.0.x-to-4.2.1">
-      <title>Upgrade from 3.0.x to 4.2.1</title>
-      <para>This section will guide you from Citrix CloudStack 3.0.x to Apache CloudStack 4.2.1.
+    <section id="upgrade-from-3.0.x-to-4.3">
+      <title>Upgrade from 3.0.x to 4.3</title>
+      <para>This section will guide you from Citrix CloudStack 3.0.x to Apache CloudStack 4.3.
         Sections that are hypervisor-specific will be called out with a note.</para>
       <orderedlist>
         <listitem>
@@ -3239,7 +2237,7 @@ Done restarting router(s).
               <para>We'll change it to point to the new package repository:</para>
               <programlisting language="Bash">deb http://cloudstack.apt-get.eu/ubuntu precise 4.2</programlisting>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem>
               <para>Now update your apt package list:</para>
@@ -3389,7 +2387,7 @@ service cloudstack-agent start
           </note>
         </listitem>
         <listitem>
-          <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for
+          <para>After upgrading to 4.3, API clients are expected to send plain text passwords for
             login and user creation, instead of MD5 hash. Incase, api client changes are not
             acceptable, following changes are to be made for backward compatibility:</para>
           <para>Modify componentContext.xml, and make PlainTextUserAuthenticator as the default
@@ -3407,7 +2405,7 @@ service cloudstack-agent start
 &lt;/bean&gt;
             </programlisting>
           <para>PlainTextUserAuthenticator works the same way MD5UserAuthenticator worked prior to
-            4.2.1</para>
+            4.3</para>
         </listitem>
         <listitem>
           <para>Start the first Management Server. Do not start any other Management Server nodes
@@ -3522,8 +2520,8 @@ service cloudstack-agent start
         </listitem>
         <listitem>
           <para>If needed, upgrade all Citrix XenServer hypervisor hosts in your cloud to a version
-            supported by CloudStack 4.2.1. The supported versions are XenServer 5.6 SP2 and 6.0.2.
-            Instructions for upgrade can be found in the CloudStack 4.2.1 Installation Guide under
+            supported by CloudStack 4.3. The supported versions are XenServer 5.6 SP2 and 6.0.2.
+            Instructions for upgrade can be found in the CloudStack 4.3 Installation Guide under
             "Upgrading XenServer Versions."</para>
         </listitem>
         <listitem>
@@ -3678,8 +2676,8 @@ service cloudstack-agent start
           issues are seen, try clearing your browser cache and reloading the UI page.</para>
       </note>
     </section>
-    <section id="upgrade-from-2.2.x-to-4.2.1">
-      <title>Upgrade from 2.2.14 to 4.2.1</title>
+    <section id="upgrade-from-2.2.x-to-4.3">
+      <title>Upgrade from 2.2.14 to 4.3</title>
       <orderedlist>
         <listitem>
           <para>Ensure that you query your IPaddress usage records and process them; for example,
@@ -3687,8 +2685,8 @@ service cloudstack-agent start
           <para>Starting in 3.0.2, the usage record format for IP addresses is the same as the rest
             of the usage types. Instead of a single record with the assignment and release dates,
             separate records are generated per aggregation period with start and end dates. After
-            upgrading to 4.2.1, any existing IP address usage records in the old format will no
-            longer be available.</para>
+            upgrading to 4.3, any existing IP address usage records in the old format will no longer
+            be available.</para>
         </listitem>
         <listitem>
           <para>If you are using version 2.2.0 - 2.2.13, first upgrade to 2.2.14 by using the
@@ -3700,7 +2698,7 @@ service cloudstack-agent start
             <para>If KVM hypervisor is used in your cloud, be sure you completed the step to insert
               a valid username and password into the host_details table on each KVM node as
               described in the 2.2.14 Release Notes. This step is critical, as the database will be
-              encrypted after the upgrade to 4.2.1.</para>
+              encrypted after the upgrade to 4.3.</para>
           </warning>
         </listitem>
         <listitem>
@@ -3971,7 +2969,7 @@ gpgcheck=0
               <para>If you are using the community provided package repository, change the baseurl
                 to http://cloudstack.apt-get.eu/rhel/4.2/</para>
               <para>If you're using your own package repository, change this line to read as
-                appropriate for your 4.2.1 repository.</para>
+                appropriate for your 4.3 repository.</para>
             </listitem>
             <listitem id="rpm-master-22">
               <para>Now that you have the repository configured, it's time to install the
@@ -4039,7 +3037,7 @@ service cloudstack-agent start
           </orderedlist>
         </listitem>
         <listitem>
-          <para>After upgrading to 4.2.1, API clients are expected to send plain text passwords for
+          <para>After upgrading to 4.3, API clients are expected to send plain text passwords for
             login and user creation, instead of MD5 hash. If API client changes are not acceptable,
             following changes are to be made for backward compatibility:</para>
           <para>Modify componentContext.xml, and make PlainTextUserAuthenticator as the default
@@ -4398,28 +3396,154 @@ service cloudstack-agent start
       </orderedlist>
     </section>
   </chapter>
-  <chapter id="api-changes">
-    <title>API Changes from 4.2 to 4.2.1</title>
-    <para>Due to the <xref linkend="ucs-enhancements"/>, the following API changes have been
-      introduced:</para>
-    <itemizedlist>
-      <listitem>
-        <para>listUcsProfiles is deprecated.</para>
-      </listitem>
-      <listitem>
-        <para>listUcsTemplates is added. This is to replace listUcsProfiles. Retrieve pre-created
-          UCS templates from UCS Manager. Typically used when preparing to create a profile from the
-          template and associate the profile to a selected blade.</para>
-      </listitem>
-      <listitem>
-        <para>instantiateUcsTemplateAndAssocaciateToBlade is added. Associates a profile to a blade,
-          using a given profile template. First call listUcsTemplates to get the template and
-          listUcsBlade to get the blade.</para>
-      </listitem>
-      <listitem>
-        <para>refreshUcsBlades is added. Syncs &PRODUCT; with any changes that have been made on the
-          UCS Manager side.</para>
-      </listitem>
-    </itemizedlist>
+  <chapter id="api-changes-4.3">
+    <title>API Changes Introduced in 4.3</title>
+    <section id="hyperv-api">
+      <title>Hyper-V</title>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="9.87*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry><para>API</para></entry>
+              <entry><para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><para>addPrimaryStorage</para></entry>
+              <entry><para>To this existing API, the following field has been added:
+                smb</para></entry>
+            </row>
+            <row>
+              <entry><para>addImageStore</para></entry>
+              <entry><para>To this existing API, the following field has been added:
+                smb</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+    <section id="dynamic-compute">
+      <title>Dynamic Compute Offering</title>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="9.87*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry><para>API</para></entry>
+              <entry><para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><para>DeployVM</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  details.</para></entry>
+            </row>
+            <row>
+              <entry><para>ScaleVM</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  details.</para></entry>
+            </row>
+            <row>
+              <entry><para>ScaleSystemVM</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  details.</para></entry>
+            </row>
+            <row>
+              <entry><para>UpgradeVM</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  details.</para></entry>
+            </row>
+            <row>
+              <entry><para>UpgradeSysytemVM</para></entry>
+              <entry><para>To this existing API, the following request parameter has been added:
+                  details.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+    <section id="vr-api">
+      <title>Enhanced Upgrade for Virtual Routers</title>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="9.87*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry><para>API</para></entry>
+              <entry><para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><para>upgradeRouterTemplate</para></entry>
+              <entry><para>This is a new API which has been added in this release.</para>
+                <para>The following are the request parameters:</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>id: Upgrade the specified VR</para>
+                  </listitem>
+                  <listitem>
+                    <para>zone_id : Upgrade the VRs in the specified zone.</para>
+                  </listitem>
+                  <listitem>
+                    <para>pod_id : Upgrade the VRs in the specified pod.</para>
+                  </listitem>
+                  <listitem>
+                    <para>cluster_id : Upgrade the VRs in the specified cluster.</para>
+                  </listitem>
+                  <listitem>
+                    <para>domain_id : Upgrade the VRs belonging to the specified domain.</para>
+                  </listitem>
+                  <listitem>
+                    <para>account_id : Upgrade the VRs belonging to the specified account.</para>
+                  </listitem>
+                </itemizedlist>
+              </entry>
+            </row>
+            <row>
+              <entry><para>listRouters</para></entry>
+              <entry><para>For this existing API, the following request parameters has been
+                  added:</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>version: Lists routers by specified version.</para>
+                  </listitem>
+                  <listitem>
+                    <para>zone_id : lists routers in specified zone.</para>
+                  </listitem>
+                  <listitem>
+                    <para>pod_id : Lists routers in the specified pod.</para>
+                  </listitem>
+                  <listitem>
+                    <para>cluster_id : Lists routers in the specified cluster.</para>
+                  </listitem>
+                  <listitem>
+                    <para>domain_id : Lists routers owned by specified domain.</para>
+                  </listitem>
+                  <listitem>
+                    <para>account: Lists routers owned by specified account.</para>
+                  </listitem>
+                </itemizedlist>
+                <para>The following response parameters has been added:</para>
+                <itemizedlist>
+                  <listitem>
+                    <para>version : (String) The router version. For example, 4.3.0.</para>
+                  </listitem>
+                  <listitem>
+                    <para>requiresupgrade: (Boolean) The flag to indicate if the router template
+                      requires an upgrade.</para>
+                  </listitem>
+                </itemizedlist></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
   </chapter>
 </book>
