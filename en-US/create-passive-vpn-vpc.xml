@@ -19,7 +19,7 @@
     under the License.
 -->
 <section id="create-passive-vpn-vpc">
-  <title>Creating a VPN Connection</title>
+  <title>Site-to-Site VPN Connection Between VPC Networks</title>
   <para>&PRODUCT; provides you with the ability to establish a site-to-site VPN connection between
     &PRODUCT; virtual routers. To achieve that, add a passive mode Site-to-Site VPN. With this
     functionality, users can deploy applications in multiple Availability Zones or VPCs, which can
