@@ -23,8 +23,8 @@ under the License.
   <xi:include href="Preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <chapter id="welcome-4.3">
     <title>Welcome to &PRODUCT; 4.3</title>
-    <para>Welcome to the 4.3 release of &PRODUCT;. This version is the first defect fix release of
-      &PRODUCT; in the 4.2.<emphasis role="italic">x</emphasis> line.</para>
+    <para>Welcome to the 4.3 release of &PRODUCT;. This version is the first feature release of
+      &PRODUCT; in the 4.3.<emphasis role="italic">x</emphasis> line.</para>
     <para>This document contains information specific to this release of &PRODUCT;, including
       upgrade instructions from prior releases, new features added to &PRODUCT;, API changes, and
       issues fixed in the release. For installation instructions, please see the <ulink
@@ -437,6 +437,15 @@ under the License.
           each hypervisor type. This feature is not supported in versions prior to XenServer
           6.2.</para>
       </section>
+      <section id="ha-db">
+        <title>Database High Availability</title>
+        <para>To help ensure high availability of the databases that store the internal data for
+          &PRODUCT;, you can set up database replication. This covers both the main &PRODUCT;
+          database and the Usage database. Replication is achieved using the MySQL connector
+          parameters and two-way replication. Tested with MySQL 5.1 and 5.5. Database replication in
+          &PRODUCT; is provided using the MySQL replication capabilities. The steps to set up
+          replication can be found in the MySQL documentation.</para>
+      </section>
       <section id="new-ui">
         <title>Enhanced &PRODUCT; UI</title>
         <para>A complete UI makeover is implemented to enhance the usability and user experience in
@@ -444,6 +453,24 @@ under the License.
           Buttons, text fields, drop-downs, tables and so on. Consistent color themes has been
           introduced to match with the Apache branding. </para>
         <para>The current UI flow remains the same.</para>
+      </section>
+      <section id="alert-publish">
+        <title>Publishing Alert Using the Web ROOT Admin API</title>
+        <para>In previous releases of &PRODUCT; code alerts are generated for &PRODUCT; services
+          (Usage service)only if they run on the same host as the Management Server. A new API has
+          been introduced in 4.3 so that alerts are generated and published though the following
+          services run on a separate host:</para>
+        <itemizedlist>
+          <listitem>
+            <para>Any new services added to &PRODUCT;.</para>
+          </listitem>
+          <listitem>
+            <para>Usage service when run on a separate storage host.</para>
+          </listitem>
+          <listitem>
+            <para>Console Proxy and Secondary Storage VM services.</para>
+          </listitem>
+        </itemizedlist>
       </section>
     </section>
     <section id="issues-fixed-4.3">
@@ -3448,6 +3475,29 @@ service cloudstack-agent start
               <entry><para>To this existing API, the following request parameter has been added:
                   hypervisor.</para><para>The new response parameter added is:
                 cpusockets</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+    <section id="alert-api">
+      <title>Reporting CPU Sockets</title>
+      <informaltable>
+        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+          <colspec colwidth="1.0*" colname="1" colnum="1"/>
+          <colspec colwidth="9.87*" colname="2" colnum="2"/>
+          <thead>
+            <row>
+              <entry><para>API</para></entry>
+              <entry><para>Description</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><para>generateAlert</para></entry>
+              <entry><para>A new API has been added to generate and publish alerts for usage
+                  services. The usage services can be installed on a different host or the same host
+                  where the Management Server is running.</para></entry>
             </row>
           </tbody>
         </tgroup>
