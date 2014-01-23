@@ -23,6 +23,9 @@
 -->
 <section id="configure-vpn-vpc">
   <title>Configuring Remote Access VPN in VPC</title>
+  <para>On enabling Remote Access VPN on a VPC, any VPN client present outside the VPC can access
+    VMs present in the VPC by using the Remote VPN connection. The VPN client can be present
+    anywhere except inside the VPC on which the user enabled the Remote Access VPN service. </para>
   <para>To enable VPN for a VPC:</para>
   <orderedlist>
     <listitem>
@@ -75,7 +78,7 @@
       <para>In the Router node, select Public IP Addresses.</para>
       <para>The IP Addresses page is displayed.</para>
     </listitem>
-       <listitem>
+    <listitem>
       <para>Click Source NAT IP address.</para>
     </listitem>
     <listitem>
@@ -95,9 +98,17 @@
     <listitem>
       <para>Click the Source NAT IP.</para>
     </listitem>
-  <listitem><para>Select the VPN tab.</para></listitem>
-  <listitem><para>Add the username and the corresponding password of the user you wanted to add.</para></listitem>
-    <listitem><para>Click Add.</para>
+    <listitem>
+      <para>Select the VPN tab.</para>
     </listitem>
-    <listitem><para>Repeat the same steps to add the VPN users.</para></listitem></orderedlist>
+    <listitem>
+      <para>Add the username and the corresponding password of the user you wanted to add.</para>
+    </listitem>
+    <listitem>
+      <para>Click Add.</para>
+    </listitem>
+    <listitem>
+      <para>Repeat the same steps to add the VPN users.</para>
+    </listitem>
+  </orderedlist>
 </section>
