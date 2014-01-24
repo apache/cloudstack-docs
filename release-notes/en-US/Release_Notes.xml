@@ -454,13 +454,31 @@ under the License.
           have been imported to &PRODUCT;, in contrast to manually adding them in previous releases,
           users are allowed to directly log in to &PRODUCT; by using the LDAP credentials.</para>
       </section>
-      <section id="new-ui">
-        <title>Enhanced &PRODUCT; UI</title>
-        <para>A complete UI makeover is implemented to enhance the usability and user experience in
-          modern browsers. The visual look-and-feel has been changed for the Header, Navigation,
-          Buttons, text fields, drop-downs, tables and so on. Consistent color themes has been
-          introduced to match with the Apache branding. </para>
-        <para>The current UI flow remains the same.</para>
+      <section id="migrate-nfs-objectstore">
+        <title>Migrating NFS Secondary Storage to Object Store</title>
+        <para>In an existing zone that is using NFS for secondary storage, you can upgrade the zone
+          to use a region-wide object storage without causing downtime. The existing NFS storage in
+          the zone will be converted to an NFS Staging Store. After migration, the data that was on
+          the NFS storage remains there. &PRODUCT; does not provide a way to automatically migrate
+          all data to the new object storage. The data remaining on the old NFS storage will remain
+          accessible for read and delete operations only. Newly created snapshots and templates will
+          be placed in the newly configured object storage. </para>
+      </section>
+      <section id="vxlan-plugin">
+        <title>VXLAN Plugin Support</title>
+        <para>The VXLAN plugin adds VXLAN as one of the guest network isolation methods in
+          &PRODUCT;. This plugin enables more than 4096 isolated guest networks in a Zone, with
+          almost the same usability as VLAN isolation. This plugin provides no network services. Use
+          virtual router for network services. This plugin is supported on KVM hypervisors.</para>
+      </section>
+      <section id="contrail-plugin">
+        <title>Contrail Network Plugin Support</title>
+        <para>The Contrail virtual network controller is an open source project that provides an
+          overlay implementation of network virtualization that is interoperable with network
+          devices that support existing network virtualization standards. Support for the Contrail
+          plugin has been added to &PRODUCT; to provide NAT services to the XenServer hosts. The
+          plugin supports isolated networks, Static NAT implemented by the VRouter dataplane, and
+          Source NAT implemented by using a virtual appliance with full NAT functionality.</para>
       </section>
       <section id="alert-publish">
         <title>Publishing Alert Using the Web ROOT Admin API</title>
@@ -483,6 +501,14 @@ under the License.
         <para>The main advantage of this feature is that the third party systems integrating with
           &PRODUCT; will be able to utilize the Alert notification system publish alerts. </para>
       </section>
+      <section id="new-ui">
+        <title>Enhanced &PRODUCT; UI</title>
+        <para>A complete UI makeover is implemented to enhance the usability and user experience in
+          modern browsers. The visual look-and-feel has been changed for the Header, Navigation,
+          Buttons, text fields, drop-downs, tables and so on. Consistent color themes has been
+          introduced to match with the Apache branding. </para>
+        <para>The current UI flow remains the same.</para>
+      </section>
     </section>
     <section id="issues-fixed-4.3">
       <title>Issues Fixed in 4.3.0</title>
@@ -490,16 +516,20 @@ under the License.
           >Jira</ulink> to track its issues. All new features and bugs for 4.3 have been tracked in
         Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the issue
         number.</para>
-      <para>For the list of issues fixed, see <ulink url="https://issues.apache.org/jira/issues/?filter=12326161">Issues Fixed in 4.3</ulink>.</para>
+      <para>For the list of issues fixed, see <ulink
+          url="https://issues.apache.org/jira/issues/?filter=12326161">Issues Fixed in
+        4.3</ulink>.</para>
     </section>
     <section id="known-issues-4.3">
       <title>Known Issues in 4.3.0</title>
-	  <para>Apache CloudStack uses <ulink url="https://issues.apache.org/jira/browse/CLOUDSTACK"
+      <para>Apache CloudStack uses <ulink url="https://issues.apache.org/jira/browse/CLOUDSTACK"
           >Jira</ulink> to track its issues. All new features and bugs for 4.3 have been tracked in
         Jira, and have a standard naming convention of "CLOUDSTACK-NNNN" where "NNNN" is the issue
         number.</para>
-      <para>For the list of known issues, see <ulink url="https://issues.apache.org/jira/issues/?filter=12326162">Known Issues in 4.3</ulink>.</para>
-	</section>
+      <para>For the list of known issues, see <ulink
+          url="https://issues.apache.org/jira/issues/?filter=12326162">Known Issues in
+        4.3</ulink>.</para>
+    </section>
   </chapter>
   <chapter id="upgrade-instructions-4.3">
     <title>Upgrade Instructions for 4.3</title>
