@@ -446,6 +446,14 @@ under the License.
           &PRODUCT; is provided using the MySQL replication capabilities. The steps to set up
           replication can be found in the MySQL documentation.</para>
       </section>
+      <section id="ldap-provisoion">
+        <title>LDAP User Provisioning</title>
+        <para>LDAP user provisioning has been enhanced by allowing user import from the configured
+          LDAP servers. You will be able to add multiple LDAP servers and selectively import LDAP
+          users. You can o filter by group name and import all the users within a group. After they
+          have been imported to &PRODUCT;, in contrast to manually adding them in previous releases,
+          users are allowed to directly log in to &PRODUCT; by using the LDAP credentials.</para>
+      </section>
       <section id="new-ui">
         <title>Enhanced &PRODUCT; UI</title>
         <para>A complete UI makeover is implemented to enhance the usability and user experience in
@@ -457,9 +465,10 @@ under the License.
       <section id="alert-publish">
         <title>Publishing Alert Using the Web ROOT Admin API</title>
         <para>In previous releases of &PRODUCT; code alerts are generated for &PRODUCT; services
-          (Usage service)only if they run on the same host as the Management Server. A new API has
-          been introduced in 4.3 so that alerts are generated and published though the following
-          services run on a separate host:</para>
+          (Usage service) only if they run on the same host as the Management Server. A new API has
+          been introduced in 4.3, which can be used by the following services to generate and
+          publish. The services need not be running on the same host where the Management Server is
+          running.</para>
         <itemizedlist>
           <listitem>
             <para>Any new services added to &PRODUCT;.</para>
@@ -471,6 +480,8 @@ under the License.
             <para>Console Proxy and Secondary Storage VM services.</para>
           </listitem>
         </itemizedlist>
+        <para>The main advantage of this feature is that the third party systems integrating with
+          &PRODUCT; will be able to utilize the Alert notification system publish alerts. </para>
       </section>
     </section>
     <section id="issues-fixed-4.3">
@@ -3481,7 +3492,7 @@ service cloudstack-agent start
       </informaltable>
     </section>
     <section id="alert-api">
-      <title>Reporting CPU Sockets</title>
+      <title>Publishing Alerts Using the Web ROOT Admin API</title>
       <informaltable>
         <tgroup cols="2" align="left" colsep="1" rowsep="1">
           <colspec colwidth="1.0*" colname="1" colnum="1"/>
@@ -3497,7 +3508,13 @@ service cloudstack-agent start
               <entry><para>generateAlert</para></entry>
               <entry><para>A new API has been added to generate and publish alerts for usage
                   services. The usage services can be installed on a different host or the same host
-                  where the Management Server is running.</para></entry>
+                  where the Management Server is running. This API is available only to the Root
+                  Admin.</para></entry>
+            </row>
+            <row>
+              <entry><para>listAlerts</para></entry>
+              <entry><para>To this existing API, a new response parameter has been added: name. An
+                  alert can be searched on the basis of alert name.</para></entry>
             </row>
           </tbody>
         </tgroup>
