@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+    
+    http://www.apache.org/licenses/LICENSE-2.0
+    
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<section id="cpu-sockets">
+  <title>Reporting CPU Sockets</title>
+  <para>&PRODUCT; manages different types of hosts that contains one or more physical CPU sockets.
+    CPU socket is considered as a unit of measure used for licensing and billing cloud
+    infrastructure. &PRODUCT; provides both UI and API support to collect the CPU socket statistics
+    for billing purpose. The Infrastructure tab has a new tab for CPU sockets. You can view the
+    statistics for CPU sockets managed by &PRODUCT;, which in turn reflects the size of the cloud.
+    The CPU Socket page will give you the number of hosts and sockets used for each host
+    type.</para>
+  <orderedlist>
+    <listitem>
+      <para>Log in to the &PRODUCT; UI.</para>
+    </listitem>
+    <listitem>
+      <para>In the left navigation bar, click Infrastructure.</para>
+    </listitem>
+    <listitem>
+      <para>On CPU Sockets, click View all.</para>
+      <para>The CPU Socket page is displayed. The page shows the number of hosts and CPU sockets
+        based on hypervisor types.</para>
+    </listitem>
+  </orderedlist>
+</section>
