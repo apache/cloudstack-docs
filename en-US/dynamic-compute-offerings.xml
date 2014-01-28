@@ -41,6 +41,7 @@
     <title>Recording Usage Events for Dynamically Assigned Resources</title>
     <para>To support this feature, usage events has been enhanced to register events for dynamically
       assigned resources. Usage events are registered when a VM is created from a custom compute
-      offering. The values of the parameters, such as CPU, speed, RAM are recorded. </para>
+      offering, and upon changing the compute offering of a stopped or running VM. The values of the
+      parameters, such as CPU, speed, RAM are recorded. </para>
   </formalpara>
 </section>
