@@ -542,10 +542,10 @@ under the License.
               <para>Firewall between VM instances</para>
             </listitem>
           </itemizedlist>
+          <para>For more information, see <ulink
+              url="https://cwiki.apache.org/confluence/display/CLOUDSTACK/Palo+Alto+Firewall+Integration"
+              >Palo Alto Firewall Integration</ulink>.</para>
         </section>
-        <para>For more information, see <ulink
-            url="https://cwiki.apache.org/confluence/display/CLOUDSTACK/Palo+Alto+Firewall+Integration"
-            >Palo Alto Firewall Integration</ulink>.</para>
       </section>
       <section id="root-volume-metering">
         <title>Root Volume Metering</title>
