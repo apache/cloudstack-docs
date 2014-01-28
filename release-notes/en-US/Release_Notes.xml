@@ -550,9 +550,10 @@ under the License.
       <section id="root-volume-metering">
         <title>Root Volume Metering</title>
         <para>&PRODUCT; supports recording usage events as per the dynamically assigned resources.
-          Records usage events when a VM is created from dynamic service offering, and record the
-          values of parameters, such as CPU, speed, RAM. If VM is deployed by using template and
-          dynamic root disk size is mentioned, the same value is recorded in the usage event.</para>
+          Usage events are registered when a VM is created from dynamic service offering, and the
+          values of parameters, such as CPU, speed, RAM are recorded. If VM is deployed by using
+          template and dynamic root disk size is mentioned, the same value is recorded in the usage
+          event.</para>
       </section>
       <section id="ssl-termination">
         <title>Support for SSL Termination</title>
