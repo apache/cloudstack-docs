@@ -25,23 +25,28 @@
   <title>Service Monitoring Tool for Virtual Router</title>
   <para>Various services running on the &PRODUCT; virtual routers can be monitored by using a
     Service Monitoring tool. The tool ensures that services are successfully running until &PRODUCT;
-    deliberately disables them. If a service goes down, the tool automatically restarts the VR, and
-    if that does not bring up the VR, an alert as well as an event is generated indicating the
-    failure.</para>
+    deliberately disables them. If a service goes down, the tool automatically restarts the service,
+    and if that does not help bringing up the service, an alert as well as an event is generated
+    indicating the failure. A new global parameter,
+      <code>network.router.enableservicemonitoring</code>, has been introduced to control this
+    feature. The default value is false, implies, monitoring is disabled. When you enable, ensure
+    that the Management Server and the router are restarted.</para>
   <para>Monitoring tool can help to start a VR service, which is crashed due to an unexpected
     reason. For example:</para>
   <itemizedlist>
     <listitem>
-      <para>The services crashed due to defects in the source code.</para>
+      <para>The services crashed due to the defects in the source code.</para>
     </listitem>
     <listitem>
       <para>The services that are terminated by the OS when memory or CPU is not sufficiently
         available for the service.</para>
     </listitem>
   </itemizedlist>
+  <para/>
   <note>
     <para>Only those services with daemons are monitored. The services that are failed due to errors
       in the service/daemon configuration file cannot be restarted by the Monitoring tool.</para>
+    <para>VPC networks are not supported.</para>
   </note>
   <para/>
   <para>The following services are monitored in a VR:</para>
@@ -60,13 +65,16 @@
     </listitem>
   </itemizedlist>
   <para>The following networks are supported:</para>
-  <itemizedlist>
+   <itemizedlist>
     <listitem>
       <para>Isolated Networks</para>
     </listitem>
     <listitem>
       <para>Shared Networks in both Advanced and Basic zone</para>
     </listitem>
-  </itemizedlist>
+   </itemizedlist>
+  <note>
+    <para>VPC networks are not supported.</para>
+  </note>
   <para>This feature is supported on the following hypervisors: XenServer, VMware, and KVM.</para>
 </section>
