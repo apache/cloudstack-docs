@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+  
+  http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<section id="ldap-provision">
+  <title>Provisioning LDAP Users in &PRODUCT;</title>
+  <para>You can import LDAP users without creating users individually in &PRODUCT;. After users are
+    imported to &PRODUCT; they can by authenticated to use &PRODUCT; by using their LDAP
+    credentials. You can either directly import users from a given basedn, or alternatively, specify
+    the search string or user attributes for &PRODUCT; to search the LDAP directory tree based on
+    the query strings.</para>
+  <orderedlist>
+    <listitem>
+      <para>Log in to the CloudPlatform UI as an administrator.</para>
+    </listitem>
+    <listitem>
+      <para>In the left navigation bar, click Accounts.</para>
+      <para>The Account page is displayed.</para>
+    </listitem>
+    <listitem>
+      <para>In the Account page, click Add LDAP Users.</para>
+      <para>The Add LDAP User screen lists all the users associated with the LDAP server you have
+        configured.</para>
+    </listitem>
+    <listitem>
+      <para>In the Add LDAP Account screen, perform either of the following:</para>
+      <itemizedlist>
+        <listitem>
+          <para>Manually select the users from the user list.</para>
+          <para>&PRODUCT; displays all the users from the LDAP group configured.</para>
+        </listitem>
+        <listitem>
+          <para>Specify the search string or desired user attribute, then import users.</para>
+          <itemizedlist>
+            <listitem>
+              <para>Domain</para>
+            </listitem>
+            <listitem>
+              <para>Account</para>
+            </listitem>
+            <listitem>
+              <para>User type</para>
+            </listitem>
+            <listitem>
+              <para>Timezone</para>
+            </listitem>
+            <listitem>
+              <para>Network Domain</para>
+            </listitem>
+            <listitem>
+              <para>LDAP Group</para>
+            </listitem>
+          </itemizedlist>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    <listitem>
+      <para>Click Add.</para>
+    </listitem>
+  </orderedlist>
+</section>

@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE section PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+  
+  http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<section id="ldap-config">
+  <title>Configuring an LDAP Server</title>
+  <para>You can configure &PRODUCT; to authenticate user access with a LDAP server. To set up LDAP
+    authentication, provide the following:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Hostname or IP address and listening port of the LDAP server.</para>
+    </listitem>
+    <listitem>
+      <para>The LDAP global parameters.</para>
+    </listitem>
+    <listitem>
+      <para>Base directory and query filter.</para>
+    </listitem>
+    <listitem>
+      <para>Search user DN credentials, which give &PRODUCT; permission to search on the LDAP
+        server.</para>
+    </listitem>
+    <listitem>
+      <para>SSL keystore and password, if SSL is used.</para>
+    </listitem>
+  </itemizedlist>
+  <section id="add-ldap">
+    <title>Adding an LDAP Server</title>
+    <orderedlist>
+      <listitem>
+        <para>Log in to the &PRODUCT; UI.</para>
+      </listitem>
+      <listitem>
+        <para>From the left navigational bar, click Global Settings.</para>
+      </listitem>
+      <listitem>
+        <para>From the Select view drop down, select LDAP Configuration.</para>
+      </listitem>
+      <listitem>
+        <para>Click Configure LDAP.</para>
+        <para>The Configure LDAP dialog is displayed.</para>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="./images/ldap-config.png"/>
+          </imageobject>
+          <textobject>
+            <phrase>ldap-config.png: LDAP configuration</phrase>
+          </textobject>
+        </mediaobject>
+      </listitem>
+      <listitem>
+        <para>Specify the following:</para>
+        <itemizedlist>
+          <listitem>
+            <para><emphasis role="bold">Hostname</emphasis>: Hostname or IP address of the LDAP
+              server.</para>
+          </listitem>
+          <listitem>
+            <para><emphasis role="bold">Port</emphasis>: The Listening port of the LDAP
+              server.</para>
+            <para>The port numbers for LDAP connections are: </para>
+            <itemizedlist>
+              <listitem>
+                <para>389 for unsecured LDAP connections. This is the default value.</para>
+              </listitem>
+              <listitem>
+                <para>636 for secure LDAP connections.</para>
+              </listitem>
+              <listitem>
+                <para>3268 for Microsoft unsecure LDAP connections.</para>
+              </listitem>
+              <listitem>
+                <para>3269 for Microsoft secure LDAP connections.</para>
+              </listitem>
+              <listitem>
+                <para>10389 for ApacheDS.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+        </itemizedlist>
+      </listitem>
+      <listitem>
+        <para>Click OK.</para>
+      </listitem>
+    </orderedlist>
+  </section>
+  <section id="ldap-param">
+    <title>Configuring LDAP Attributes in &PRODUCT;</title>
+    <para>&PRODUCT; provides the following global LDAP configuration parameters:</para>
+    <itemizedlist>
+      <listitem>
+        <para><parameter>ldap basedn</parameter>: Defines the location of the users. This is usually
+          derived from the <code>binddn</code>. Remove the user name from <code>bind dn</code> and
+          specify the group where users are located. The entire subtree under the
+            <code>binddn</code> will be searched for user accounts.</para>
+        <para>For example:
+          <programlisting>cn=users,dc=&lt;sub-domain>,dc=&lt;domain>. dc=com</programlisting></para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap bind password</parameter>: The password used in association with the
+          administrator bind DN. This is used for querying the LDAP directory. If this is left blank
+          along with bind principal then anonymous binding is used.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap bind principal</parameter>: The principle to bind to the LDAP server
+          for creating the system context. The value is frequently the DN (Distinguished Name) of
+          the user entry with the user ID. If this field is left blank along with the bind password
+          then anonymous binding is used.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap email attribute</parameter>: The attribute that your LDAP directory
+          uses to hold the user’s e-mail address. Default attribute name is
+            <parameter>mail</parameter>.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap firstname attribute</parameter>: The attribute that your LDAP
+          directory uses to hold the first name of the user. Default is <parameter>cn</parameter>.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap group object</parameter>: The attribute that sets the object types for
+          groups.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap group user uniquemember</parameter>: The attribute that your LDAP
+          directory uses to hold the unique members of the group.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap lastname attribute</parameter>: The attribute that your LDAP directory
+          uses to hold the last name of the user.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap search group principle</parameter>: Sets the principle of the group
+          that the LDAP users must be part of.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap trust store</parameter>: Sets the path to the trust store to be used
+          for secure connections. You can use the trust store to install CA certificates and client
+          certificates.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap trust store password</parameter>: Sets the password for the trust
+          store. Password protects the trust store.</para>
+      </listitem>
+      <listitem>
+        <para><parameter>ldap user object</parameter>: The object type of user accounts within LDAP.
+          The default is <parameter>inetOrgperson</parameter>.</para>
+      </listitem>
+    </itemizedlist>
+  </section>
+  <section id="remove-ldap">
+    <title>Removing an LDAP Configuration</title>
+    <orderedlist>
+      <listitem>
+        <para>Log in to the &PRODUCT;.</para>
+      </listitem>
+      <listitem>
+        <para>From the left navigational bar, click Global Settings.</para>
+      </listitem>
+      <listitem>
+        <para>From the Select view drop down, select LDAP Configuration.</para>
+      </listitem>
+      <listitem>
+        <para>In the Quick View, click Remove LDAP.</para>
+        <para>Alternatively, you can click Remove LDAP in the LDAP Configuration Details
+          page.</para>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
