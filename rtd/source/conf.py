@@ -192,7 +192,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'CloudStackReleaseNotesdoc'
+htmlhelp_basename = 'CloudStackDocs'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -212,7 +212,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'CloudStackReleaseNotes.tex', u'CloudStack Release Notes Documentation',
+  ('index', 'CloudStackDocs.tex', u'CloudStack Documentation',
    u'Apache CloudStack', 'manual'),
 ]
 
@@ -242,7 +242,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'cloudstackreleasenotes', u'CloudStack Release Notes Documentation',
+    ('index', 'cloudstackdocs', u'CloudStack Documentation',
      [u'Apache CloudStack'], 1)
 ]
 
@@ -256,8 +256,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'CloudStackReleaseNotes', u'CloudStack Release Notes Documentation',
-   u'Apache CloudStack', 'CloudStackReleaseNotes', 'One line description of project.',
+  ('index', 'CloudStack', u'CloudStack Documentation',
+   u'Apache CloudStack', 'CloudStackDocs', 'One line description of project.',
    'Miscellaneous'),
 ]
 
@@ -277,13 +277,13 @@ texinfo_documents = [
 # -- Options for Epub output ----------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title = u'CloudStack Release Notes'
+epub_title = u'CloudStack Docs'
 epub_author = u'Apache CloudStack'
 epub_publisher = u'Apache CloudStack'
 epub_copyright = u'2014, Apache CloudStack'
 
 # The basename for the epub file. It defaults to the project name.
-#epub_basename = u'CloudStack Release Notes'
+#epub_basename = u'CloudStack Docs'
 
 # The HTML theme for the epub output. Since the default themes are not optimized
 # for small screen space, using the same theme for HTML and epub output is
