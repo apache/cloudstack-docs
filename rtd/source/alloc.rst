@@ -1,7 +1,7 @@
 Allocators
 ==========
 
-PRODUCT enables administrators to write custom allocators that will
+CloudStack enables administrators to write custom allocators that will
 choose the Host to place a new guest and the storage host from which to
 allocate guest virtual disk images.
 
