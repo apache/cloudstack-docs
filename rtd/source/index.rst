@@ -17,10 +17,10 @@ Networking Guides
 
     networking/nicira-plugin 
     networking/midonet
+    networking/vxlan.rst
     networking/ovs-plugin
     networking/autoscale_without_netscaler.rst
     networking/troubleshoot_internet_traffic.rst
-    networking/vxlan.rst
 
 Allocator Guide
 ---------------
@@ -37,6 +37,7 @@ Developer's Guide
     :maxdepth: 2
 
     developer_guide
+    plugins
     ansible
 
 Indices and tables
