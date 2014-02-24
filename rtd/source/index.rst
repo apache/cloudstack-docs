@@ -9,6 +9,14 @@ Welcome to CloudStack Documentation !
 .. figure:: /_static/images/acslogo.png
     :align: center
 
+Introduction
+------------
+
+.. toctree::
+    :maxdepth: 2
+    concepts
+
+
 Networking Guides
 ------------------
 
@@ -39,14 +47,6 @@ Developer's Guide
 
     developer_guide
     dev
-    usage
     plugins
     ansible
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
