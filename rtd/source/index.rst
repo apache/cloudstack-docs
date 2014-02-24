@@ -19,6 +19,7 @@ Networking Guides
     networking/midonet
     networking/vxlan.rst
     networking/ovs-plugin
+    networking/ipv6
     networking/autoscale_without_netscaler.rst
     networking/troubleshoot_internet_traffic.rst
 
@@ -37,6 +38,8 @@ Developer's Guide
     :maxdepth: 2
 
     developer_guide
+    dev
+    usage
     plugins
     ansible
 
