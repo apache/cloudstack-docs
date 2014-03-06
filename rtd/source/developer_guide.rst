@@ -235,7 +235,8 @@ run:
 
     mvn -Pdeveloper,systemvm clean install
 
-If you want to skip the tests add ``-DskipTests`` to the command above
+If you want to skip the tests add ``-DskipTests`` to the command above. 
+Do NOT use ``-Dmaven.test.skip=true`` because that will break the build.
 
 You will have made sure to set the proper db password in
 ``utils/conf/db.properties``
