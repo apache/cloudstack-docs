@@ -17,8 +17,8 @@ Introduction
 
     concepts
 
-Guides
-------
+Navigating the docs
+-------------------
 
 Now that you have gone over the basic concepts of CloudStack you are ready to dive into the installation and operation.
 
@@ -30,7 +30,16 @@ See the `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-re
 
 Below you will find very specific documentation on advanced networking_, which you can skip if you are just getting started.
 
-Developers will also find below a short developer_ guide. 
+Developers will also find below a short developers_ guide. 
+
+`Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
+--------------------------------------------------------------------------------------
+
+`Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
+------------------------------------------------------------------------------------------
+
+`Administration Guide <http://docs.cloudstack.apache.org/projects/cloudstack-administration>`_
+----------------------------------------------------------------------------------------------
 
 .. _networking:
 
@@ -50,8 +59,8 @@ Advanced Networking Guides
 
 .. _developer:
 
-Developer's Guide
-------------------
+Developers Guide
+----------------
 
 .. toctree::
     :maxdepth: 2
