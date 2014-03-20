@@ -55,7 +55,6 @@ Advanced Networking Guides
     networking/ovs-plugin
     networking/ipv6
     networking/autoscale_without_netscaler.rst
-    networking/troubleshoot_internet_traffic.rst
 
 .. _developer:
 
