@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to CloudStack Documentation !
-=======================================
+=====================================
 
 .. figure:: /_static/images/acslogo.png
     :align: center
@@ -17,9 +17,25 @@ Introduction
 
     concepts
 
+Guides
+------
 
-Networking Guides
-------------------
+Now that you have gone over the basic concepts of CloudStack you are ready to dive into the installation and operation.
+
+See the `Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
+
+See the `Administration Guide <http://docs.cloudstack.apache.org/projects/cloudstack-administration>`_
+
+See the `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
+
+Below you will find very specific documentation on advanced networking_, which you can skip if you are just getting started.
+
+Developers will also find below a short developer_ guide. 
+
+.. _networking:
+
+Advanced Networking Guides
+--------------------------
 
 .. toctree::
     :maxdepth: 2
@@ -32,13 +48,7 @@ Networking Guides
     networking/autoscale_without_netscaler.rst
     networking/troubleshoot_internet_traffic.rst
 
-Allocator Guide
----------------
-
-.. toctree::
-    :maxdepth: 2
-
-    alloc.rst
+.. _developer:
 
 Developer's Guide
 ------------------
@@ -49,5 +59,6 @@ Developer's Guide
     developer_guide
     dev
     plugins
+    alloc.rst
     ansible
 
