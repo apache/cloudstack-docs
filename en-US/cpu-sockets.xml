@@ -28,7 +28,7 @@
     infrastructure. &PRODUCT; provides both UI and API support to collect the CPU socket statistics
     for billing purpose. The Infrastructure tab has a new tab for CPU sockets. You can view the
     statistics for CPU sockets managed by &PRODUCT;, which in turn reflects the size of the cloud.
-    The CPU Socket page will give you the number of hosts and sockets used for each host
+    The CPU Socket page will give you the number of hosts and sockets used for each hypervisor
     type.</para>
   <orderedlist>
     <listitem>
@@ -41,6 +41,11 @@
       <para>On CPU Sockets, click View all.</para>
       <para>The CPU Socket page is displayed. The page shows the number of hosts and CPU sockets
         based on hypervisor types.</para>
+      <para>CPU sockets are displayed for XenServer version 6.2 and beyond, KVM, Hyper-V and VMware
+        hypervisors.</para>
+      <para>This feature is not available for XenServer versions prior to 6.2 as they don't support
+        retrieving CPU socket information. Additionally, this feature is not supported for
+        Baremetal.</para>
     </listitem>
   </orderedlist>
 </section>
