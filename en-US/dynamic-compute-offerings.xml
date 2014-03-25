@@ -26,22 +26,16 @@
   <para>&PRODUCT; provides you the flexibility to specify the desired values for the number of CPU,
     CPU speed, and memory while deploying a VM. As an admin, you create a Compute Offering by
     marking it as custom, and the users will be able to customize this dynamic Compute Offering by
-    specifying the memory, and CPU at the time of VM creation or upgrade. Custom Compute Offering is
-    same as the normal Compute Offering except that the values of the dynamic parameters will be set
-    to zeros in the given set of templates. Use this offering to deploy VM by specifying custom
-    values for the dynamic parameters. Memory, CPU and number of CPUs are considered as dynamic
-    parameters. </para>
+    specifying the memory, and CPU at the time of VM creation or upgrade. Use this offering to
+    deploy VM by specifying custom values for the dynamic parameters. </para>
   <para>Dynamic Compute Offerings can be used in following cases: deploying a VM, changing the
     compute offering of a stopped VM and running VMs, which is nothing but scaling up. To support
-    this feature a new field, Custom, has been added to the Create Compute Offering page. If the
-    Custom field is checked, the user will be able to create a custom Compute Offering by filling in
-    the desired values for number of CPU, CPU speed, and memory. See <xref
-      linkend="creating-compute-offerings"/> for more information on this.</para>
-  <formalpara>
-    <title>Recording Usage Events for Dynamically Assigned Resources</title>
-    <para>To support this feature, usage events has been enhanced to register events for dynamically
-      assigned resources. Usage events are registered when a VM is created from a custom compute
-      offering, and upon changing the compute offering of a stopped or running VM. The values of the
-      parameters, such as CPU, speed, RAM are recorded. </para>
-  </formalpara>
+    this feature a new field, Custom, has been added to the Create Compute Offering page in the UI.
+    If the Custom field is checked, the user will be able to create a custom Compute Offering.
+    During VM deployment you can specify desired values for number of CPU, CPU speed, and memory.
+    See <xref linkend="creating-compute-offerings"/> for more information on this.</para>
+  <para>To support this feature, usage events has been enhanced to register events for dynamically
+    assigned resources. Usage events are registered when a VM is created from a custom compute
+    offering, and upon changing the compute offering of a stopped or running VM. The values of the
+    parameters, such as CPU, speed, RAM are recorded. </para>
 </section>
