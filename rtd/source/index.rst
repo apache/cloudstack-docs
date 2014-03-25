@@ -9,6 +9,9 @@ Welcome to CloudStack Documentation !
 .. figure:: /_static/images/acslogo.png
     :align: center
 
+.. warning:: We are in the process of changing documentation format as well as hosting mechanism.
+             Please be patient with us as we migrate our entire documentation to this new setup.
+
 Introduction
 ------------
 
@@ -28,18 +31,9 @@ See the `Administration Guide <http://docs.cloudstack.apache.org/projects/clouds
 
 See the `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
 
-Below you will find very specific documentation on advanced networking_, which you can skip if you are just getting started.
+Below you will find very specific documentation on advanced networking_ which you can skip if you are just getting started.
 
 Developers will also find below a short developers_ guide. 
-
-`Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
---------------------------------------------------------------------------------------
-
-`Installation Guide <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
-------------------------------------------------------------------------------------------
-
-`Administration Guide <http://docs.cloudstack.apache.org/projects/cloudstack-administration>`_
-----------------------------------------------------------------------------------------------
 
 .. _networking:
 
@@ -56,7 +50,7 @@ Advanced Networking Guides
     networking/ipv6
     networking/autoscale_without_netscaler.rst
 
-.. _developer:
+.. _developers:
 
 Developers Guide
 ----------------
