@@ -119,17 +119,14 @@
           <entry><para>Migration</para></entry>
           <entry><para>Migration</para></entry>
           <entry><para>Enable Migration.</para>
-            <para>For more information, see <ulink
-                url="http://technet.microsoft.com/en-us/library/jj134199.aspx ">Configuring Live
-                Migration</ulink>.</para>
           </entry>
         </row>
         <row>
           <entry><para>Migration</para></entry>
           <entry><para>Delegation</para></entry>
-          <entry><para>If you want to use Live Migration, enable Delegation. Enable the following
-              services of other hosts participating in Live Migration: CIFS and Microsoft Virtual
-              System Migration Service.</para>
+          <entry><para>If you want to use Live Migration, enable Delegation. Enable the following services of other
+              hosts participating in Live Migration: CIFS and Microsoft Virtual System Migration
+              Service.</para>
           </entry>
         </row>
         <row>
