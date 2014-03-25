@@ -50,11 +50,4 @@
   </orderedlist>
   <xi:include href="ldap-config.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="ldap-user-add.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <!-- <xi:include href="example-LDAP-configuration-commands.xml"
-    xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="search-base.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="query-filter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="search-user-bind-dn.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="SSL-keystore-path-and-password.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="ldap-custom-auth.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>-->
 </section>
