@@ -21,10 +21,33 @@
     specific language governing permissions and limitations
     under the License.
 -->
-
 <section id="ha-for-hosts">
-    <title>HA for Hosts</title>
-    <para>The user can specify a virtual machine as HA-enabled. By default, all virtual router VMs and Elastic Load Balancing VMs are automatically configured as HA-enabled. When an HA-enabled VM crashes, &PRODUCT; detects the crash and restarts the VM automatically within the same Availability Zone. HA is never performed across different Availability Zones. &PRODUCT; has a conservative policy towards restarting VMs and ensures that there will never be two instances of the same VM running at the same time. The Management Server attempts to start the VM on another Host in the same cluster.</para>
-    <para>HA features work with iSCSI or NFS primary storage.  HA with local storage is not supported.</para>
-    <xi:include href="dedicated-ha-hosts.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+  <title>HA for Hosts</title>
+  <title>Dedicated HA Hosts</title>
+  <para>One or more hosts can be designated for use only by HA-enabled VMs that are restarting due
+    to a host failure. Setting up a pool of such dedicated HA hosts as the recovery destination for
+    all HA-enabled VMs is useful to:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Make it easier to determine which VMs have been restarted as part of the CloudPlatform
+        high-availability function. If a VM is running on a dedicated HA host, then it must be an
+        HA-enabled VM whose original host failed. (With one exception: It is possible for an
+        administrator to manually migrate any VM to a dedicated HA host.).</para>
+    </listitem>
+    <listitem>
+      <para>Keep HA-enabled VMs from restarting on hosts which may be reserved for other
+        purposes.</para>
+    </listitem>
+  </itemizedlist>
+  <para>The dedicated HA option is set through a special host tag when the host is created. To allow
+    the administrator to dedicate hosts to only HA-enabled VMs, set the global configuration
+    variable ha.tag to the desired tag (for example, "ha_host"), and restart the Management Server.
+    Enter the value in the Host Tags field when adding the host(s) that you want to dedicate to
+    HA-enabled VMs.</para>
+  <note>
+    <para>If you set ha.tag, be sure to actually use that tag on at least one host in your cloud. If
+      the tag specified in ha.tag is not set for any host in the cloud, the HA-enabled VMs will fail
+      to restart after a crash.</para>
+  </note>
+  <para/>
 </section>
