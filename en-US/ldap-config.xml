@@ -105,7 +105,8 @@
   </section>
   <section id="ldap-param">
     <title>Configuring LDAP Attributes in &PRODUCT;</title>
-    <para>&PRODUCT; provides the following global LDAP configuration parameters:</para>
+    <para>&PRODUCT; provides the following global LDAP configuration parameters. You can locate them
+      by searching for ldap in the Global settings.</para>
     <itemizedlist>
       <listitem>
         <para><parameter>ldap basedn</parameter>: Defines the location of the users. This is usually
