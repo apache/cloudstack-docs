@@ -103,7 +103,8 @@
         <para>Download the latest System VM template.</para>
       </listitem>
       <listitem>
-        <para>Download the latest System VM to all the primary storage pools.</para>
+        <para>By using the prepareTemplate API, download the latest System VM to all the primary
+          storage pools.</para>
       </listitem>
       <listitem>
         <para>Upgrade the Management Server.</para>

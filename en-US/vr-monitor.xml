@@ -23,14 +23,13 @@
 -->
 <section id="vr-monitor">
   <title>Service Monitoring Tool for Virtual Router</title>
-  <para>Various services running on the &PRODUCT; virtual routers can be monitored by using a
-    Service Monitoring tool. The tool ensures that services are successfully running until &PRODUCT;
-    deliberately disables them. If a service goes down, the tool automatically restarts the service,
-    and if that does not help bringing up the service, an alert as well as an event is generated
-    indicating the failure. A new global parameter,
+  <para>The network service daemons running on the &PRODUCT; virtual routers can be monitored by
+    using the Service Monitoring tool. If a service goes down, the tool automatically restarts the
+    service, and if that does not help bringing up the service, an event log is written to
+      <filename>/var/log/messages</filename> indicating the failure. A new global parameter,
       <code>network.router.enableservicemonitoring</code>, has been introduced to control this
-    feature. The default value is false, implies, monitoring is disabled. When you enable, ensure
-    that the Management Server and the router are restarted.</para>
+    feature. The default value is true, implies, monitoring is enabled. On changing this parameter,
+    you need to restart the Management Server and the virtual router.</para>
   <para>Monitoring tool can help to start a VR service, which is crashed due to an unexpected
     reason. For example:</para>
   <itemizedlist>
@@ -55,13 +54,16 @@
       <para>DNS</para>
     </listitem>
     <listitem>
-      <para>HA Proxy</para>
+      <para>DHCP</para>
     </listitem>
     <listitem>
       <para>SSH</para>
     </listitem>
     <listitem>
       <para>Apache Web Server</para>
+    </listitem>
+    <listitem>
+      <para>Load balancing service</para>
     </listitem>
   </itemizedlist>
   <para>The following networks are supported:</para>
@@ -70,11 +72,14 @@
       <para>Isolated Networks</para>
     </listitem>
     <listitem>
-      <para>Shared Networks in both Advanced and Basic zone</para>
+      <para>Shared Networks in Advanced zone</para>
     </listitem>
+     <listitem>
+       <para>Shared Networks in Basic zone</para>
+     </listitem>
    </itemizedlist>
   <note>
     <para>VPC networks are not supported.</para>
   </note>
-  <para>This feature is supported on the following hypervisors: XenServer, VMware, and KVM.</para>
+  <para>This feature is supported on all the hypervisors.</para>
 </section>
