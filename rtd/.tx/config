@@ -1,0 +1,49 @@
+[main]
+host = https://www.transifex.com
+type = PO
+
+[apache-cloudstack-rtd.administration_guide]
+file_filter = source/locale/<lang>/LC_MESSAGES/administration_guide.po
+source_file = source/locale/pot/administration_guide.pot
+source_lang = en
+
+[apache-cloudstack-rtd.alloc]
+file_filter = source/locale/<lang>/LC_MESSAGES/alloc.po
+source_file = source/locale/pot/alloc.pot
+source_lang = en
+
+[apache-cloudstack-rtd.ansible]
+file_filter = source/locale/<lang>/LC_MESSAGES/ansible.po
+source_file = source/locale/pot/ansible.pot
+source_lang = en
+
+[apache-cloudstack-rtd.concepts]
+file_filter = source/locale/<lang>/LC_MESSAGES/concepts.po
+source_file = source/locale/pot/concepts.pot
+source_lang = en
+
+[apache-cloudstack-rtd.dev]
+file_filter = source/locale/<lang>/LC_MESSAGES/dev.po
+source_file = source/locale/pot/dev.pot
+source_lang = en
+
+[apache-cloudstack-rtd.developer_guide]
+file_filter = source/locale/<lang>/LC_MESSAGES/developer_guide.po
+source_file = source/locale/pot/developer_guide.pot
+source_lang = en
+
+[apache-cloudstack-rtd.index]
+file_filter = source/locale/<lang>/LC_MESSAGES/index.po
+source_file = source/locale/pot/index.pot
+source_lang = en
+
+[apache-cloudstack-rtd.networking]
+file_filter = source/locale/<lang>/LC_MESSAGES/networking.po
+source_file = source/locale/pot/networking.pot
+source_lang = en
+
+[apache-cloudstack-rtd.plugins]
+file_filter = source/locale/<lang>/LC_MESSAGES/plugins.po
+source_file = source/locale/pot/plugins.pot
+source_lang = en
+
