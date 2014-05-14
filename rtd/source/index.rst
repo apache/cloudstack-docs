@@ -34,7 +34,6 @@ Now that you have gone over the basic concepts of CloudStack you are ready to di
 - `Release Notes <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
 
 Below you will find very specific documentation on advanced networking_ which you can skip if you are just getting started.
-
 Developers will also find below a short developers_ guide. 
 
 .. _networking:
