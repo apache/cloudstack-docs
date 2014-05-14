@@ -38,11 +38,13 @@ CloudStack works with a variety of hypervisors and hypervisor-like technologies.
 cloud can contain multiple hypervisor implementations. As of the current release CloudStack 
 supports: 
 
-* vSphere (via vCenter)
-* KVM
-* Xenserver
-* LXC
 * BareMetal (via IPMI)
+* Hyper-V
+* KVM
+* LXC
+* vSphere (via vCenter)
+* Xenserver
+* Xen Project
 
 Massively Scalable Infrastructure Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
