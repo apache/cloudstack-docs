@@ -74,7 +74,7 @@ the following whether in HTTP or HTTPS:
 -  
 
    CloudStack API URL: This is the web services API entry point(for
-   example, http://www.cloud.com:8080/client/api)
+   example, http://www.example.com:8080/client/api)
 
 -  
 
@@ -90,7 +90,7 @@ A sample API GET request looks like the following:
 
 .. sourcecode:: bash
 
-http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
+    http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
 Or in a more readable format:
 
@@ -137,7 +137,7 @@ To show how to sign a request, we will re-use the previous example.
 
 .. sourcecode:: bash
 
-http://http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
+    http://http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
 Breaking this down, we have several distinct parts to this URL.
 
@@ -163,12 +163,11 @@ Breaking this down, we have several distinct parts to this URL.
    Command String: This part of the query string comprises of the
    command, its parameters, and the API Key that identifies the account.
 
-   .. note:: As with all query string parameters of field-value pairs, the "field"
-   component is case insensitive while all "value" values are case sensitive.
+   .. note:: As with all query string parameters of field-value pairs, the "field" component is case insensitive while all "value" values are case sensitive.
 
    .. sourcecode: bash
 
-	command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ
+        command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ
 
 -  
 
@@ -200,7 +199,8 @@ To generate the signature.
    look like the following.
 
    .. sourcecode:: bash
-                 	apikey=mivr6x7u6bn_sdahobpjnejpgest35exq-jb8cg20yi3yaxxcgpyuairmfi_ejtvwz0nukkjbpmy3y2bcikwfq&command=deployvirtualmachine&diskofferingid=1&serviceofferingid=1&templateid=2&zoneid=4
+
+        apikey=mivr6x7u6bn_sdahobpjnejpgest35exq-jb8cg20yi3yaxxcgpyuairmfi_ejtvwz0nukkjbpmy3y2bcikwfq&command=deployvirtualmachine&diskofferingid=1&serviceofferingid=1&templateid=2&zoneid=4
 
 #. 
 
@@ -215,7 +215,8 @@ To generate the signature.
    Path+Command String+Signature, the final URL should look like:
 
    .. sourcecode:: bash
- 	http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
+
+       http://localhost:8080/client/api?command=deployVirtualMachine&serviceOfferingId=1&diskOfferingId=1&templateId=2&zoneId=4&apiKey=miVr6X7u6bN_sdahOBpjNejPgEsT35eXq-jB8CG20YI3yaxXcgpyuaIRmFI_EJTVwZ0nUkkJbPmY3y2bciKwFQ&signature=Lxx1DM40AjcXU%2FcaiK8RAP0O1hU%3D
 
 How to sign an API call with Python
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
