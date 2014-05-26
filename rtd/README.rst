@@ -13,16 +13,19 @@
    specific language governing permissions and limitations
    under the License.
 
+
 Apache CloudStack
 =================
 
 Apache CloudStack is an Apache project, see <http://cloudstack.apache.org> for
 more information.
 
+
 Website
-=============
+=======
 
 These docs are on-line at <http://docs.cloudstack.apache.org/en/latest/>
+
 
 Translation
 ===========
@@ -58,18 +61,15 @@ Build the translated docs:
    sphinx-intl build --locale-dir source/locale
    make -e SPHINXOPTS="-D language='ja'" html
 
+
 Feedback
 ========
 
 Please send feedback to the mailing list at <dev@cloudstack.apache.org>,
 or the JIRA at <https://issues.apache.org/jira/browse/CLOUDSTACK>.
 
-Contributing
-============
 
-You can submit a pull request via github or submit patches via review board <https://reviews.apache.org>
+Contributing to the documentation
+=================================
 
-For information on how to contribute, please see the Contributing
-chapter in our documentation <http://cloudstack.apache.org/developers.html>
-
-
+Refer to the README.rst file in the root directory of this project for instructions on how to contribute to this documentation.
