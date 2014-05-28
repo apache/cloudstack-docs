@@ -1,3 +1,19 @@
+.. Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information#
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.
+
+
 The MidoNet Plugin
 ==================
 
@@ -9,11 +25,13 @@ networking solution as a provider for CloudStack networks and services. For
 more information on MidoNet and how it works, see
 http://www.midokura.com/midonet/.
 
+
 Features of the MidoNet Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::    In CloudStack 4.2.0 only the KVM hypervisor is supported for use in
-    combination with MidoNet.
+.. note::
+   In CloudStack 4.2.0 only the KVM hypervisor is supported for use in
+   combination with MidoNet.
 
 In CloudStack release 4.2.0 this plugin supports several services in the
 Advanced Isolated network mode.
@@ -39,6 +57,7 @@ supported in the 4.2.0 release:
 
 The plugin has been tested with MidoNet version 12.12. (Caddo).
 
+
 Using the MidoNet Plugin
 ------------------------
 
@@ -50,11 +69,11 @@ the MidoNet Agent, and the MidoNet API server must be available. Please
 consult the MidoNet User Guide for more information. The following
 section describes the CloudStack side setup.
 
-1. CloudStack needs to have at least one physical network with the
+#. CloudStack needs to have at least one physical network with the
    isolation method set to "MIDO". This network should be enabled for
    the Guest and Public traffic types.
 
-2. Next, we need to set the following CloudStack settings under "Global
+#. Next, we need to set the following CloudStack settings under "Global
    Settings" in the UI:
 
    +-----------------------------+------------------------------------------------------------------------+--------------------------------------------+
@@ -67,33 +86,35 @@ section describes the CloudStack side setup.
 
    Table: CloudStack settings
 
-3. We also want MidoNet to take care of public traffic, so in
+#. We also want MidoNet to take care of public traffic, so in
    *componentContext.xml* we need to replace this line:
 
    ::
 
-       <bean id="PublicNetworkGuru" class="com.cloud.network.guru.PublicNetworkGuru">
+      <bean id="PublicNetworkGuru" class="com.cloud.network.guru.PublicNetworkGuru">
          
 
    With this:
 
    ::
 
-       <bean id="PublicNetworkGuru" class="com.cloud.network.guru.MidoNetPublicNetworkGuru">
+      <bean id="PublicNetworkGuru" class="com.cloud.network.guru.MidoNetPublicNetworkGuru">
          
 
-.. note::    On the compute host, MidoNet takes advantage of per-traffic type VIF
-    driver support in CloudStack KVM.
+.. note::
+   On the compute host, MidoNet takes advantage of per-traffic type VIF
+   driver support in CloudStack KVM.
 
-    In agent.properties, we set the following to make MidoNet take care
-    of Guest and Public traffic:
+   In agent.properties, we set the following to make MidoNet take care
+   of Guest and Public traffic:
 
-    ::
+   ::
 
-        libvirt.vif.driver.Guest=com.cloud.network.resource.MidoNetVifDriver
-        libvirt.vif.driver.Public=com.cloud.network.resource.MidoNetVifDriver
+      libvirt.vif.driver.Guest=com.cloud.network.resource.MidoNetVifDriver
+      libvirt.vif.driver.Public=com.cloud.network.resource.MidoNetVifDriver
 
-    This is explained further in MidoNet User Guide.
+   This is explained further in MidoNet User Guide.
+
 
 Enabling the MidoNet service provider via the UI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -103,21 +124,22 @@ needs to be enabled on the physical network.
 
 The steps to enable via the UI are as follows:
 
-1. In the left navbar, click Infrastructure
+#. In the left navbar, click Infrastructure
 
-2. In Zones, click View All
+#. In Zones, click View All
 
-3. Click the name of the Zone on which you are setting up MidoNet
+#. Click the name of the Zone on which you are setting up MidoNet
 
-4. Click the Physical Network tab
+#. Click the Physical Network tab
 
-5. Click the Name of the Network on which you are setting up MidoNet
+#. Click the Name of the Network on which you are setting up MidoNet
 
-6. Click Configure on the Network Service Providers box
+#. Click Configure on the Network Service Providers box
 
-7. Click on the name MidoNet
+#. Click on the name MidoNet
 
-8. Click the Enable Provider button in the Network tab
+#. Click the Enable Provider button in the Network tab
+
 
 Enabling the MidoNet service provider via the API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -135,6 +157,7 @@ To enable via the API, use the following API calls:
 -  id = <the provider uuid returned by the previous call>
 
 -  state = "Enabled"
+
 
 Revision History
 ----------------
