@@ -1,3 +1,19 @@
+.. Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information#
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.
+
+
 The VXLAN Plugin
 ================
 
@@ -21,6 +37,7 @@ The following table lists the requirements for the hypervisor.
 
 Table: Hypervisor Requirement for VXLAN
 
+
 Linux Distributions that meet the requirements
 ----------------------------------------------
 
@@ -39,6 +56,7 @@ The following table lists distributions which meet requirements.
 Table: List of Linux distributions which meet the hypervisor
 requirements
 
+
 Check the capability of your system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -46,13 +64,13 @@ To check the capability of your system, execute the following commands.
 
 ::
 
-    $ sudo modprobe vxlan && echo $?
-    # Confirm the output is "0".
-    # If it's non-0 value or error message, your kernel doesn't have VXLAN kernel module.
+   $ sudo modprobe vxlan && echo $?
+   # Confirm the output is "0".
+   # If it's non-0 value or error message, your kernel doesn't have VXLAN kernel module.
 
-    $ ip link add type vxlan help
-    # Confirm the output is usage of the command and that it's for VXLAN.
-    # If it's not, your iproute2 utility doesn't support VXLAN.
+   $ ip link add type vxlan help
+   # Confirm the output is usage of the command and that it's for VXLAN.
+   # If it's not, your iproute2 utility doesn't support VXLAN.
         
 
 Advanced: Build kernel and iproute2
@@ -62,54 +80,55 @@ Even if your system doesn't support VXLAN, you can compile the kernel
 and iproute2 by yourself. The following procedure is an example for
 CentOS 6.4.
 
+
 Build kernel
 ^^^^^^^^^^^^
 
 ::
 
-    $ sudo yum groupinstall "Development Tools"
-    $ sudo yum install ncurses-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel bc
+   $ sudo yum groupinstall "Development Tools"
+   $ sudo yum install ncurses-devel hmaccalc zlib-devel binutils-devel elfutils-libelf-devel bc
 
-    $ KERNEL_VERSION=3.10.4
-    # Declare the kernel version you want to build.
+   $ KERNEL_VERSION=3.10.4
+   # Declare the kernel version you want to build.
 
-    $ wget https://www.kernel.org/pub/linux/kernel/v3.x/linux-${KERNEL_VERSION}.tar.xz
-    $ tar xvf linux-${KERNEL_VERSION}.tar.xz
-    $ cd linux-${KERNEL_VERSION}
-    $ cp /boot/config-`uname -r` .config
-    $ make oldconfig
-    # You may keep hitting enter and choose the default.
+   $ wget https://www.kernel.org/pub/linux/kernel/v3.x/linux-${KERNEL_VERSION}.tar.xz
+   $ tar xvf linux-${KERNEL_VERSION}.tar.xz
+   $ cd linux-${KERNEL_VERSION}
+   $ cp /boot/config-`uname -r` .config
+   $ make oldconfig
+   # You may keep hitting enter and choose the default.
 
-    $ make menuconfig
-    # Dig into "Device Drivers" -> "Network device support",
-    # then select "Virtual eXtensible Local Area Network (VXLAN)" and hit space.
-    # Make sure it indicates "<M>" (build as module), then Save and Exit.
+   $ make menuconfig
+   # Dig into "Device Drivers" -> "Network device support",
+   # then select "Virtual eXtensible Local Area Network (VXLAN)" and hit space.
+   # Make sure it indicates "<M>" (build as module), then Save and Exit.
 
-    # You may also want to check "IPv4 NAT" and its child nodes in "IP: Netfilter Configuration"
-    # and "IPv6 NAT" and its child nodes in "IPv6: Netfilter Configuration".
-    # In 3.10.4, you can find the options in
-    # "Networking support" -> "Networking options"
-    #   -> "Network packet filtering framework (Netfilter)".
+   # You may also want to check "IPv4 NAT" and its child nodes in "IP: Netfilter Configuration"
+   # and "IPv6 NAT" and its child nodes in "IPv6: Netfilter Configuration".
+   # In 3.10.4, you can find the options in
+   # "Networking support" -> "Networking options"
+   #   -> "Network packet filtering framework (Netfilter)".
 
-    $ make # -j N
-    # You may use -j N option to make the build process parallel and faster,
-    # generally N = 1 + (cores your machine have).
+   $ make # -j N
+   # You may use -j N option to make the build process parallel and faster,
+   # generally N = 1 + (cores your machine have).
 
-    $ sudo make modules_install
-    $ sudo make install
-    # You would get an error like "ERROR: modinfo: could not find module XXXX" here.
-    # This happens mainly due to config structure changes between kernel versions.
-    # You can ignore this error, until you find you need the kernel module.
-    # If you feel uneasy, you can go back to make menuconfig,
-    # find module XXXX by using '/' key, enable the module, build and install the kernel again.
+   $ sudo make modules_install
+   $ sudo make install
+   # You would get an error like "ERROR: modinfo: could not find module XXXX" here.
+   # This happens mainly due to config structure changes between kernel versions.
+   # You can ignore this error, until you find you need the kernel module.
+   # If you feel uneasy, you can go back to make menuconfig,
+   # find module XXXX by using '/' key, enable the module, build and install the kernel again.
 
-    $ sudo vi /etc/grub.conf
-    # Make sure the new kernel isn't set as the default and the timeout is long enough,
-    # so you can select the new kernel during boot process.
-    # It's not a good idea to set the new kernel as the default until you confirm the kernel works fine.
+   $ sudo vi /etc/grub.conf
+   # Make sure the new kernel isn't set as the default and the timeout is long enough,
+   # so you can select the new kernel during boot process.
+   # It's not a good idea to set the new kernel as the default until you confirm the kernel works fine.
 
-    $ sudo reboot
-    # Select the new kernel during the boot process.
+   $ sudo reboot
+   # Select the new kernel during the boot process.
           
 
 Build iproute2
@@ -117,21 +136,22 @@ Build iproute2
 
 ::
 
-    $ sudo yum install db4-devel
+   $ sudo yum install db4-devel
 
-    $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/shemminger/iproute2.git
-    $ cd iproute2
-    $ git tag
-    # Find the version that matches the kernel.
-    # If you built kernel 3.10.4 as above, it would be v3.10.0.
+   $ git clone git://git.kernel.org/pub/scm/linux/kernel/git/shemminger/iproute2.git
+   $ cd iproute2
+   $ git tag
+   # Find the version that matches the kernel.
+   # If you built kernel 3.10.4 as above, it would be v3.10.0.
 
-    $ git checkout v3.10.0
-    $ ./configure
-    $ make # -j N
-    $ sudo make install
+   $ git checkout v3.10.0
+   $ ./configure
+   $ make # -j N
+   $ sudo make install
           
 
 .. note:: Please use rebuild kernel and tools at your own risk.
+
 
 Configure PRODUCT to use VXLAN Plugin
 -------------------------------------
@@ -145,6 +165,7 @@ Configure hypervisor: KVM
 In addition to "KVM Hypervisor Host Installation" in "PRODUCT
 Installation Guide", you have to configure the following item on the
 host.
+
 
 Create bridge interface with IPv4 address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -165,6 +186,7 @@ this way.
 Let ``cloudbr1`` be the bridge interface for the instances' private
 network.
 
+
 Configure in RHEL or CentOS
 '''''''''''''''''''''''''''
 
@@ -172,35 +194,33 @@ When you configured the ``cloudbr1`` interface as below,
 
 ::
 
-    $ sudo vi /etc/sysconfig/network-scripts/ifcfg-cloudbr1
-            
+   $ sudo vi /etc/sysconfig/network-scripts/ifcfg-cloudbr1
 
 ::
 
-    DEVICE=cloudbr1
-    TYPE=Bridge
-    ONBOOT=yes
-    BOOTPROTO=none
-    IPV6INIT=no
-    IPV6_AUTOCONF=no
-    DELAY=5
-    STP=yes
-            
+   DEVICE=cloudbr1
+   TYPE=Bridge
+   ONBOOT=yes
+   BOOTPROTO=none
+   IPV6INIT=no
+   IPV6_AUTOCONF=no
+   DELAY=5
+   STP=yes
 
 you would change the configuration similar to below.
 
 ::
 
-    DEVICE=cloudbr1
-    TYPE=Bridge
-    ONBOOT=yes
-    BOOTPROTO=static
-    IPADDR=192.0.2.X
-    NETMASK=255.255.255.0
-    IPV6INIT=no
-    IPV6_AUTOCONF=no
-    DELAY=5
-    STP=yes
+   DEVICE=cloudbr1
+   TYPE=Bridge
+   ONBOOT=yes
+   BOOTPROTO=static
+   IPADDR=192.0.2.X
+   NETMASK=255.255.255.0
+   IPV6INIT=no
+   IPV6_AUTOCONF=no
+   DELAY=5
+   STP=yes
             
 
 Configure in Ubuntu
@@ -210,72 +230,71 @@ When you configured ``cloudbr1`` as below,
 
 ::
 
-    $ sudo vi /etc/network/interfaces
+   $ sudo vi /etc/network/interfaces
 
 ::
 
-    auto lo
-    iface lo inet loopback
+   auto lo
+   iface lo inet loopback
 
-    # The primary network interface
-    auto eth0.100
-    iface eth0.100 inet static
-        address 192.168.42.11
-        netmask 255.255.255.240
-        gateway 192.168.42.1
-        dns-nameservers 8.8.8.8 8.8.4.4
-        dns-domain lab.example.org
+   # The primary network interface
+   auto eth0.100
+   iface eth0.100 inet static
+       address 192.168.42.11
+       netmask 255.255.255.240
+       gateway 192.168.42.1
+       dns-nameservers 8.8.8.8 8.8.4.4
+       dns-domain lab.example.org
 
-    # Public network
-    auto cloudbr0
-    iface cloudbr0 inet manual
-        bridge_ports eth0.200
-        bridge_fd 5
-        bridge_stp off
-        bridge_maxwait 1
+   # Public network
+   auto cloudbr0
+   iface cloudbr0 inet manual
+       bridge_ports eth0.200
+       bridge_fd 5
+       bridge_stp off
+       bridge_maxwait 1
 
-    # Private network
-    auto cloudbr1
-    iface cloudbr1 inet manual
-        bridge_ports eth0.300
-        bridge_fd 5
-        bridge_stp off
-        bridge_maxwait 1
-            
+   # Private network
+   auto cloudbr1
+   iface cloudbr1 inet manual
+       bridge_ports eth0.300
+       bridge_fd 5
+       bridge_stp off
+       bridge_maxwait 1
 
 you would change the configuration similar to below.
 
 ::
 
-    auto lo
-    iface lo inet loopback
+   auto lo
+   iface lo inet loopback
 
-    # The primary network interface
-    auto eth0.100
-    iface eth0.100 inet static
-        address 192.168.42.11
-        netmask 255.255.255.240
-        gateway 192.168.42.1
-        dns-nameservers 8.8.8.8 8.8.4.4
-        dns-domain lab.example.org
+   # The primary network interface
+   auto eth0.100
+   iface eth0.100 inet static
+       address 192.168.42.11
+       netmask 255.255.255.240
+       gateway 192.168.42.1
+       dns-nameservers 8.8.8.8 8.8.4.4
+       dns-domain lab.example.org
 
-    # Public network
-    auto cloudbr0
-    iface cloudbr0 inet manual
-        bridge_ports eth0.200
-        bridge_fd 5
-        bridge_stp off
-        bridge_maxwait 1
+   # Public network
+   auto cloudbr0
+   iface cloudbr0 inet manual
+       bridge_ports eth0.200
+       bridge_fd 5
+       bridge_stp off
+       bridge_maxwait 1
 
-    # Private network
-    auto cloudbr1
-    iface cloudbr1 inet static
-        addres 192.0.2.X
-        netmask 255.255.255.0
-        bridge_ports eth0.300
-        bridge_fd 5
-        bridge_stp off
-        bridge_maxwait 1
+   # Private network
+   auto cloudbr1
+   iface cloudbr1 inet static
+       addres 192.0.2.X
+       netmask 255.255.255.0
+       bridge_ports eth0.300
+       bridge_fd 5
+       bridge_stp off
+       bridge_maxwait 1
             
 
 Configure iptables to pass XVLAN packets
@@ -283,6 +302,7 @@ Configure iptables to pass XVLAN packets
 
 Since VXLAN uses UDP packet to forward encapsulated the L2 frames,
 UDP/8472 port must be opened.
+
 
 Configure in RHEL or CentOS
 '''''''''''''''''''''''''''
@@ -292,7 +312,7 @@ extra ports by executing the following iptable commands:
 
 ::
 
-    $ sudo iptables -I INPUT -p udp -m udp --dport 8472 -j ACCEPT
+   $ sudo iptables -I INPUT -p udp -m udp --dport 8472 -j ACCEPT
             
 
 These iptable settings are not persistent accross reboots, we have to
@@ -300,7 +320,7 @@ save them first.
 
 ::
 
-    $ sudo iptables-save > /etc/sysconfig/iptables
+   $ sudo iptables-save > /etc/sysconfig/iptables
             
 
 With this configuration you should be able to restart the network,
@@ -308,11 +328,14 @@ although a reboot is recommended to see if everything works properly.
 
 ::
 
-    $ sudo service network restart
-        $ sudo reboot
+   $ sudo service network restart
+   $ sudo reboot
             
 
-.. warning:: Make sure you have an alternative way like IPMI or ILO to reach the machine in case you made a configuration error and the network stops functioning!
+.. warning:: 
+   Make sure you have an alternative way like IPMI or ILO to reach the machine 
+   in case you made a configuration error and the network stops functioning!
+
 
 Configure in Ubuntu
 '''''''''''''''''''
@@ -324,21 +347,24 @@ To open the required ports, execute the following commands:
 
 ::
 
-    $ sudo ufw allow proto udp from any to any port 8472
+   $ sudo ufw allow proto udp from any to any port 8472
             
-
-.. note:: By default UFW is not enabled on Ubuntu. Executing these commands with the firewall disabled does not enable the firewall.
+.. note:: 
+   By default UFW is not enabled on Ubuntu. Executing these commands with the 
+   firewall disabled does not enable the firewall.
 
 With this configuration you should be able to restart the network,
 although a reboot is recommended to see if everything works properly.
 
 ::
 
-    $ sudo service networking restart
-    $ sudo reboot
+   $ sudo service networking restart
+   $ sudo reboot
             
+.. warning:: 
+   Make sure you have an alternative way like IPMI or ILO to reach the machine 
+   in case you made a configuration error and the network stops functioning!
 
-.. warning:: Make sure you have an alternative way like IPMI or ILO to reach the machine in case you made a configuration error and the network stops functioning!
 
 Setup zone using VXLAN
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -348,6 +374,7 @@ setup istruction in "PRODUCT Installation Guide" to use this plugin. It
 is not required to add a network element nor to reconfigure the network
 offering. The only thing you have to do is configure the physical
 network to use VXLAN as the isolation method for Guest Network.
+
 
 Configure the physical network
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -363,6 +390,7 @@ Guest Network traffic label should be the name of the physical interface
 or the name of the bridge interface and the bridge interface and they
 should have an IPv4 address. See ? for details.
 
+
 Configure the guest traffic
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -371,6 +399,6 @@ Configure the guest traffic
 Specify a range of VNIs you would like to use for carrying guest network
 traffic.
 
-.. warning:: VNI must be unique per zone and no duplicate VNIs can exist in the zone. Exercise care when designing your VNI allocation policy.
-
-
+.. warning:: 
+   VNI must be unique per zone and no duplicate VNIs can exist in the zone. 
+   Exercise care when designing your VNI allocation policy.

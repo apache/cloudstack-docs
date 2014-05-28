@@ -1,3 +1,19 @@
+.. Licensed to the Apache Software Foundation (ASF) under one
+   or more contributor license agreements.  See the NOTICE file
+   distributed with this work for additional information#
+   regarding copyright ownership.  The ASF licenses this file
+   to you under the Apache License, Version 2.0 (the
+   "License"); you may not use this file except in compliance
+   with the License.  You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
+   Unless required by applicable law or agreed to in writing,
+   software distributed under the License is distributed on an
+   "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+   KIND, either express or implied.  See the License for the
+   specific language governing permissions and limitations
+   under the License.
+
+
 CloudStack Installation from Source for Developers
 ==================================================
 
@@ -7,13 +23,19 @@ and were tested with the 4.2 release of Apache CloudStack, please adapt
 them if you are on a different operating system or using a newer/older
 version of CloudStack. This book is composed of the following sections:
 
-1. Installation of the prerequisites
-2. Compiling and installation from source
-3. Using the CloudStack simulator
-4. Installation with DevCloud the CloudStack sandbox
-5. Building your own packages
-6. The CloudStack API
-7. Testing the AWS API interface
+#. Installation of the prerequisites
+
+#. Compiling and installation from source
+
+#. Using the CloudStack simulator
+
+#. Installation with DevCloud the CloudStack sandbox
+
+#. Building your own packages
+
+#. The CloudStack API
+
+#. Testing the AWS API interface
 
 
 Prerequisites
@@ -22,6 +44,7 @@ Prerequisites
 In this section we'll look at installing the dependencies you'll need
 for Apache CloudStack development.
 
+
 On Ubuntu 12.04
 ~~~~~~~~~~~~~~~
 
@@ -29,21 +52,21 @@ First update and upgrade your system:
 
 ::
 
-    apt-get update 
-    apt-get upgrade
+   apt-get update 
+   apt-get upgrade
 
 NTP might already be installed, check it with ``service ntp status``. If
 it's not then install NTP to synchronize the clocks:
 
 ::
 
-    apt-get install openntpd
+   apt-get install openntpd
 
 Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
 
 ::
 
-    apt-get install openjdk-6-jdk
+   apt-get install openjdk-6-jdk
 
 Install ``tomcat6``, note that the new version of tomcat on
 `Ubuntu <http://packages.ubuntu.com/precise/all/tomcat6>`__ is the
@@ -51,13 +74,13 @@ Install ``tomcat6``, note that the new version of tomcat on
 
 ::
 
-    apt-get install tomcat6
+   apt-get install tomcat6
 
 Next, we'll install MySQL if it's not already present on the system.
 
 ::
 
-    apt-get install mysql-server
+   apt-get install mysql-server
 
 Remember to set the correct ``mysql`` password in the CloudStack
 properties file. Mysql should be running but you can check it's status
@@ -65,7 +88,7 @@ with:
 
 ::
 
-    service mysql status
+   service mysql status
 
 Developers wanting to build CloudStack from source will want to install
 the following additional packages. If you dont' want to build from
@@ -75,13 +98,13 @@ Install ``git`` to later clone the CloudStack source code:
 
 ::
 
-    apt-get install git
+   apt-get install git
 
 Install ``Maven`` to later build CloudStack
 
 ::
 
-    apt-get install maven
+   apt-get install maven
 
 This should have installed Maven 3.0, check the version number with
 ``mvn --version``
@@ -91,35 +114,36 @@ package management tools:
 
 ::
 
-    apt-get install python-pip python-setuptools
+   apt-get install python-pip python-setuptools
 
 Finally install ``mkisofs`` with:
 
 ::
 
-    apt-get install genisoimage
+   apt-get install genisoimage
 
-On centOS 6.4
+
+On CentOS 6.4
 ~~~~~~~~~~~~~
 
 First update and upgrade your system:
 
 ::
 
-    yum -y update
-    yum -y upgrade
+   yum -y update
+   yum -y upgrade
 
 If not already installed, install NTP for clock synchornization
 
 ::
 
-    yum -y install ntp
+   yum -y install ntp
 
 Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
 
 ::
 
-    yum -y install java-1.6.0-openjdk
+   yum -y install java-1.6.0-openjdk
 
 Install ``tomcat6``, note that the version of tomcat6 in the default
 CentOS 6.4 repo is 6.0.24, so we will grab the 6.0.35 version. The
@@ -127,22 +151,22 @@ CentOS 6.4 repo is 6.0.24, so we will grab the 6.0.35 version. The
 
 ::
 
-    wget https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.35/bin/apache-tomcat-6.0.35.tar.gz
-    tar xzvf apache-tomcat-6.0.35.tar.gz -C /usr/local
+   wget https://archive.apache.org/dist/tomcat/tomcat-6/v6.0.35/bin/apache-tomcat-6.0.35.tar.gz
+   tar xzvf apache-tomcat-6.0.35.tar.gz -C /usr/local
 
 Setup tomcat6 system wide by creating a file
 ``/etc/profile.d/tomcat.sh`` with the following content:
 
 ::
 
-    export CATALINA_BASE=/usr/local/apache-tomcat-6.0.35
-    export CATALINA_HOME=/usr/local/apache-tomcat-6.0.35
+   export CATALINA_BASE=/usr/local/apache-tomcat-6.0.35
+   export CATALINA_HOME=/usr/local/apache-tomcat-6.0.35
 
 Next, we'll install MySQL if it's not already present on the system.
 
 ::
 
-    yum -y install mysql mysql-server
+   yum -y install mysql mysql-server
 
 Remember to set the correct ``mysql`` password in the CloudStack
 properties file. Mysql should be running but you can check it's status
@@ -150,37 +174,37 @@ with:
 
 ::
 
-    service mysqld status
+   service mysqld status
 
 Install ``git`` to later clone the CloudStack source code:
 
 ::
 
-    yum -y install git
+   yum -y install git
 
 Install ``Maven`` to later build CloudStack. Grab the 3.0.5 release from
 the Maven `website <http://maven.apache.org/download.cgi>`__
 
 ::
 
-    wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
-    tar xzf apache-maven-3.0.5-bin.tar.gz -C /usr/local
-    cd /usr/local
-    ln -s apache-maven-3.0.5 maven
+   wget http://mirror.cc.columbia.edu/pub/software/apache/maven/maven-3/3.0.5/binaries/apache-maven-3.0.5-bin.tar.gz
+   tar xzf apache-maven-3.0.5-bin.tar.gz -C /usr/local
+   cd /usr/local
+   ln -s apache-maven-3.0.5 maven
 
 Setup Maven system wide by creating a ``/etc/profile.d/maven.sh`` file
 with the following content:
 
 ::
 
-    export M2_HOME=/usr/local/maven
-    export PATH=${M2_HOME}/bin:${PATH}
+   export M2_HOME=/usr/local/maven
+   export PATH=${M2_HOME}/bin:${PATH}
 
 Log out and log in again and you will have maven in your PATH:
 
 ::
 
-    mvn --version
+   mvn --version
 
 This should have installed Maven 3.0, check the version number with
 ``mvn --version``
@@ -190,16 +214,16 @@ package management tools:
 
 ::
 
-    yum -y install python-setuptools
+   yum -y install python-setuptools
 
 To install python-pip you might want to setup the Extra Packages for
 Enterprise Linux (EPEL) repo
 
 ::
 
-    cd /tmp
-    wget http://mirror-fpt-telecom.fpt.net/fedora/epel/6/i386/epel-release-6-8.noarch.rpm
-    rpm -ivh epel-release-6-8.noarch.rpm
+   cd /tmp
+   wget http://mirror-fpt-telecom.fpt.net/fedora/epel/6/i386/epel-release-6-8.noarch.rpm
+   rpm -ivh epel-release-6-8.noarch.rpm
 
 Then update you repository cache ``yum update`` and install pip
 ``yum -y install python-pip``
@@ -208,7 +232,7 @@ Finally install ``mkisofs`` with:
 
 ::
 
-    yum -y install genisoimage
+   yum -y install genisoimage
 
 
 Installing from Source
@@ -220,20 +244,20 @@ setup on your machine, pull the source with:
 
 ::
 
-    git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git
+   git clone https://git-wip-us.apache.org/repos/asf/cloudstack.git
 
 To build the latest stable release:
 
 ::
 
-    git checkout 4.2
+   git checkout 4.2
 
 To compile Apache CloudStack, go to the cloudstack source folder and
 run:
 
 ::
 
-    mvn -Pdeveloper,systemvm clean install
+   mvn -Pdeveloper,systemvm clean install
 
 If you want to skip the tests add ``-DskipTests`` to the command above. 
 Do NOT use ``-Dmaven.test.skip=true`` because that will break the build.
@@ -245,14 +269,14 @@ Deploy the database next:
 
 ::
 
-    mvn -P developer -pl developer -Ddeploydb
+   mvn -P developer -pl developer -Ddeploydb
 
 Run Apache CloudStack with jetty for testing. Note that ``tomcat`` maybe
 be running on port 8080, stop it before you use ``jetty``
 
 ::
 
-    mvn -pl :cloud-client-ui jetty:run
+   mvn -pl :cloud-client-ui jetty:run
 
 Log Into Apache CloudStack:
 
@@ -260,17 +284,20 @@ Open your Web browser and use this URL to connect to CloudStack:
 
 ::
 
-    http://localhost:8080/client/
+   http://localhost:8080/client/
 
 Replace ``localhost`` with the IP of your management server if need be.
 
-.. note:: If you have iptables enabled, you may have to open the ports used by CloudStack. Specifically, ports 8080, 8250, and 9090.
+.. note:: 
+   If you have iptables enabled, you may have to open the ports used by 
+   CloudStack. Specifically, ports 8080, 8250, and 9090.
 
 You can now start configuring a Zone, playing with the API. Of course we
 did not setup any infrastructure, there is no storage, no
 hypervisors...etc. However you can run tests using the simulator. The
 following section shows you how to use the simulator so that you don't
 have to setup a physical infrastructure.
+
 
 Using the Simulator
 -------------------
@@ -287,39 +314,39 @@ Do a clean build:
 
 ::
 
-    mvn -Pdeveloper -Dsimulator -DskipTests clean install
+   mvn -Pdeveloper -Dsimulator -DskipTests clean install
 
 Deploy the database:
 
 ::
 
-    mvn -Pdeveloper -pl developer -Ddeploydb
-    mvn -Pdeveloper -pl developer -Ddeploydb-simulator
+   mvn -Pdeveloper -pl developer -Ddeploydb
+   mvn -Pdeveloper -pl developer -Ddeploydb-simulator
 
 Install marvin. Note that you will need to have installed ``pip``
 properly in the prerequisites step.
 
 ::
 
-    pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
+   pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
 
 Stop jetty (from any previous runs)
 
 ::
 
-    mvn -pl :cloud-client-ui jetty:stop
+   mvn -pl :cloud-client-ui jetty:stop
 
 Start jetty
 
 ::
 
-    mvn -pl client jetty:run
+   mvn -pl client jetty:run
 
 Setup a basic zone with Marvin. In a separate shell://
 
 ::
 
-    mvn -Pdeveloper,marvin.setup -Dmarvin.config=setup/dev/basic.cfg -pl :cloud-marvin integration-test
+   mvn -Pdeveloper,marvin.setup -Dmarvin.config=setup/dev/basic.cfg -pl :cloud-marvin integration-test
 
 At this stage log in the CloudStack management server at
 http://localhost:8080/client with the credentials admin/password, you
@@ -327,6 +354,7 @@ should see a fully configured basic zone infrastructure. To simulate an
 advanced zone replace ``basic.cfg`` with ``advanced.cfg``.
 
 You can now run integration tests, use the API etc...
+
 
 Using DevCloud
 --------------
@@ -345,24 +373,25 @@ with the VirtualBox image. For KVM see the
 
 \*\* DevCloud Pre-requisites
 
-1. Install `VirtualBox <http://www.virtualbox.org>`__ on your machine
+#. Install `VirtualBox <http://www.virtualbox.org>`__ on your machine
 
-2. Run VirtualBox and under >Preferences create a *host-only interface*
+#. Run VirtualBox and under >Preferences create a *host-only interface*
    on which you disable the DHCP server
 
-3. Download the DevCloud
-   `image <http://people.apache.org/~bhaisaab/cloudstack/devcloud/devcloud2.ova>`__
+#. Download the DevCloud `image 
+   <http://people.apache.org/~bhaisaab/cloudstack/devcloud/devcloud2.ova>`__
 
-4. In VirtualBox, under File > Import Appliance import the DevCloud
+#. In VirtualBox, under File > Import Appliance import the DevCloud
    image.
 
-5. Verify the settings under > Settings and check the ``enable PAE``
+#. Verify the settings under > Settings and check the ``enable PAE``
    option in the processor menu
 
-6. Once the VM has booted try to ``ssh`` to it with credentials:
+#. Once the VM has booted try to ``ssh`` to it with credentials:
    ``root/password``
 
    ssh root@192.168.56.10
+
 
 Adding DevCloud as an Hypervisor
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -371,28 +400,28 @@ Picking up from a clean build:
 
 ::
 
-    mvn -Pdeveloper,systemvm clean install
-    mvn -P developer -pl developer,tools/devcloud -Ddeploydb
+   mvn -Pdeveloper,systemvm clean install
+   mvn -P developer -pl developer,tools/devcloud -Ddeploydb
 
 At this stage install marvin similarly than with the simulator:
 
 ::
 
-    pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
+   pip install tools/marvin/dist/Marvin-0.1.0.tar.gz
 
 Start the management server
 
 ::
 
-    mvn -pl client jetty:run
+   mvn -pl client jetty:run
 
 Then you are going to configure CloudStack to use the running DevCloud
 instance:
 
 ::
 
-    cd tools/devcloud
-    python ../marvin/marvin/deployDataCenter.py -i devcloud.cfg
+   cd tools/devcloud
+   python ../marvin/marvin/deployDataCenter.py -i devcloud.cfg
 
 If you are curious, check the ``devcloud.cfg`` file and see how the data
 center is defined: 1 Zone, 1 Pod, 1 Cluster, 1 Host, 1 primary Storage,
@@ -406,6 +435,7 @@ Do note that the management server is running in your local machine and
 that DevCloud is used only as a n Hypervisor. You could potentially run
 the management server within DevCloud as well, or memory granted, run
 multiple DevClouds.
+
 
 Building Packages
 -----------------
@@ -425,34 +455,35 @@ not need to install for source compilation:
 
 ::
 
-    apt-get install python-mysqldb
-    apt-get install debhelper
+   apt-get install python-mysqldb
+   apt-get install debhelper
 
 Then build the packages with:
 
 ::
 
-    dpkg-buildpackage -uc -us
+   dpkg-buildpackage -uc -us
 
 One directory up from the CloudStack root dir you will find:
 
 ::
 
-    cloudstack_4.2.0_amd64.changes
-    cloudstack_4.2.0.dsc
-    cloudstack_4.2.0.tar.gz
-    cloudstack-agent_4.2.0_all.deb
-    cloudstack-awsapi_4.2.0_all.deb
-    cloudstack-cli_4.2.0_all.deb
-    cloudstack-common_4.2.0_all.deb
-    cloudstack-docs_4.2.0_all.deb
-    cloudstack-management_4.2.0_all.deb
-    cloudstack-usage_4.2.0_all.deb
+   cloudstack_4.2.0_amd64.changes
+   cloudstack_4.2.0.dsc
+   cloudstack_4.2.0.tar.gz
+   cloudstack-agent_4.2.0_all.deb
+   cloudstack-awsapi_4.2.0_all.deb
+   cloudstack-cli_4.2.0_all.deb
+   cloudstack-common_4.2.0_all.deb
+   cloudstack-docs_4.2.0_all.deb
+   cloudstack-management_4.2.0_all.deb
+   cloudstack-usage_4.2.0_all.deb
 
 Of course the community provides a repository for these packages and you
 can use it instead of building your own packages and putting them in
 your own repo. Instructions on how to use this community repository are
 available in the installation book.
+
 
 The CloudStack API
 ------------------
@@ -498,8 +529,8 @@ using the ``Generate Keys`` icon. You will see an ``API Key`` and
 
 ::
 
-    API Key : XzAz0uC0t888gOzPs3HchY72qwDc7pUPIO8LxC-VkIHo4C3fvbEBY_Ccj8fo3mBapN5qRDg_0_EbGdbxi8oy1A
-    Secret Key: zmBOXAXPlfb-LIygOxUVblAbz7E47eukDS_0JYUxP3JAmknOYo56T0R-AcM7rK7SMyo11Y6XW22gyuXzOdiybQ
+   API Key : XzAz0uC0t888gOzPs3HchY72qwDc7pUPIO8LxC-VkIHo4C3fvbEBY_Ccj8fo3mBapN5qRDg_0_EbGdbxi8oy1A
+   Secret Key: zmBOXAXPlfb-LIygOxUVblAbz7E47eukDS_0JYUxP3JAmknOYo56T0R-AcM7rK7SMyo11Y6XW22gyuXzOdiybQ
 
 Open a Python shell and import the basic modules necessary to make the
 request. Do note that this request could be made many different ways,
@@ -511,15 +542,15 @@ encoded using the ``base64`` module.
 
 ::
 
-    $python
-    Python 2.7.3 (default, Nov 17 2012, 19:54:34) 
-    [GCC 4.2.1 Compatible Apple Clang 4.1 ((tags/Apple/clang-421.11.66))] on darwin
-    Type "help", "copyright", "credits" or "license" for more information.
-    >>> import urllib2
-    >>> import urllib
-    >>> import hashlib
-    >>> import hmac
-    >>> import base64
+   $python
+   Python 2.7.3 (default, Nov 17 2012, 19:54:34) 
+   [GCC 4.2.1 Compatible Apple Clang 4.1 ((tags/Apple/clang-421.11.66))] on darwin
+   Type "help", "copyright", "credits" or "license" for more information.
+   >>> import urllib2
+   >>> import urllib
+   >>> import hashlib
+   >>> import hmac
+   >>> import base64
 
 Define the endpoint of the Cloud, the command that you want to execute,
 the type of the response (i.e XML or JSON) and the keys of the user.
@@ -528,21 +559,21 @@ it is only used to compute the hmac.
 
 ::
 
-    >>> baseurl='http://localhost:8080/client/api?'
-    >>> request={}
-    >>> request['command']='listUsers'
-    >>> request['response']='json'
-    >>> request['apikey']='plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg'
-    >>> secretkey='VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ'
+   >>> baseurl='http://localhost:8080/client/api?'
+   >>> request={}
+   >>> request['command']='listUsers'
+   >>> request['response']='json'
+   >>> request['apikey']='plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg'
+   >>> secretkey='VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ'
 
 Build the base request string, the combination of all the key/pairs of
 the request, url encoded and joined with ampersand.
 
 ::
 
-    >>> request_str='&'.join(['='.join([k,urllib.quote_plus(request[k])]) for k in request.keys()])
-    >>> request_str
-    'apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listUsers&response=json'
+   >>> request_str='&'.join(['='.join([k,urllib.quote_plus(request[k])]) for k in request.keys()])
+   >>> request_str
+   'apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listUsers&response=json'
 
 Compute the signature with hmac, do a 64 bit encoding and a url
 encoding, the string used for the signature is similar to the base
@@ -551,37 +582,53 @@ joined in a sorted order
 
 ::
 
-    >>> sig_str='&'.join(['='.join([k.lower(),urllib.quote_plus(request[k].lower().replace('+','%20'))])for k in sorted(request.iterkeys())]) 
-    >>> sig_str
-    'apikey=plgwjfzk4gys3momtvmjuvg-x-jlwlnfauj9gabbbf9edm-kaymmailqzzq1elzlyq_u38zcm0bewzgudp66mg&command=listusers&response=json'
-    >>> sig=hmac.new(secretkey,sig_str,hashlib.sha1).digest()
-    >>> sig
-    'M:]\x0e\xaf\xfb\x8f\xf2y\xf1p\x91\x1e\x89\x8a\xa1\x05\xc4A\xdb'
-    >>> sig=base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest())
-    >>> sig
-    'TTpdDq/7j/J58XCRHomKoQXEQds=\n'
-    >>> sig=base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest()).strip()
-    >>> sig
-    'TTpdDq/7j/J58XCRHomKoQXEQds='
-    >>> sig=urllib.quote_plus(base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest()).strip())
+   >>> sig_str='&'.join(['='.join([k.lower(),urllib.quote_plus(request[k].lower().replace('+','%20'))])for k in sorted(request.iterkeys())]) 
+   >>> sig_str
+   'apikey=plgwjfzk4gys3momtvmjuvg-x-jlwlnfauj9gabbbf9edm-kaymmailqzzq1elzlyq_u38zcm0bewzgudp66mg&command=listusers&response=json'
+   >>> sig=hmac.new(secretkey,sig_str,hashlib.sha1).digest()
+   >>> sig
+   'M:]\x0e\xaf\xfb\x8f\xf2y\xf1p\x91\x1e\x89\x8a\xa1\x05\xc4A\xdb'
+   >>> sig=base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest())
+   >>> sig
+   'TTpdDq/7j/J58XCRHomKoQXEQds=\n'
+   >>> sig=base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest()).strip()
+   >>> sig
+   'TTpdDq/7j/J58XCRHomKoQXEQds='
+   >>> sig=urllib.quote_plus(base64.encodestring(hmac.new(secretkey,sig_str,hashlib.sha1).digest()).strip())
 
 Finally, build the entire string by joining the baseurl, the request str
 and the signature. Then do an http GET:
 
 ::
 
-    >>> req=baseurl+request_str+'&signature='+sig
-    >>> req
-    'http://localhost:8080/client/api?apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listUsers&response=json&signature=TTpdDq%2F7j%2FJ58XCRHomKoQXEQds%3D'
-    >>> res=urllib2.urlopen(req)
-    >>> res.read()
-    '{ "listusersresponse" : { "count":1 ,"user" : [  {"id":"7ed6d5da-93b2-4545-a502-23d20b48ef2a","username":"admin","firstname":"admin",
-                                                       "lastname":"cloud","created":"2012-07-05T12:18:27-0700","state":"enabled","account":"admin",
-                                                       "accounttype":1,"domainid":"8a111e58-e155-4482-93ce-84efff3c7c77","domain":"ROOT",
-                                                       "apikey":"plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg",
-                                                       "secretkey":"VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ",
-                                                       "accountid":"7548ac03-af1d-4c1c-9064-2f3e2c0eda0d"}]}}
-                                                       
+   >>> req=baseurl+request_str+'&signature='+sig
+   >>> req
+   'http://localhost:8080/client/api?apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listUsers&response=json&signature=TTpdDq%2F7j%2FJ58XCRHomKoQXEQds%3D'
+   >>> res=urllib2.urlopen(req)
+   >>> res.read()
+   {
+      "listusersresponse" : { 
+         "count":1 ,
+         "user" : [  
+            {
+               "id":"7ed6d5da-93b2-4545-a502-23d20b48ef2a",
+               "username":"admin",
+               "firstname":"admin",
+               "lastname":"cloud",
+               "created":"2012-07-05T12:18:27-0700",
+               "state":"enabled",
+               "account":"admin",
+               "accounttype":1,
+               "domainid":"8a111e58-e155-4482-93ce-84efff3c7c77",
+               "domain":"ROOT",
+               "apikey":"plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg",
+               "secretkey":"VDaACYb0LV9eNjTetIOElcVQkvJck_J_QljX_FcHRj87ZKiy0z0ty0ZsYBkoXkY9b7eq1EhwJaw7FF3akA3KBQ",
+               "accountid":"7548ac03-af1d-4c1c-9064-2f3e2c0eda0d"
+            }
+         ]
+      }
+   }
+                                                      
 
 All the clients that you will find on github will implement this
 signature technique, you should not have to do it by hand. Now that you
@@ -591,6 +638,7 @@ low level calls, pick your favorite client of use
 is a sub-project of Apache CloudStack and gives operators/developers the
 ability to use any of the API methods. It has nice auto-completion and
 help feature as well as an API discovery mechanism since 4.2.
+
 
 Testing the AWS API interface
 -----------------------------
@@ -608,7 +656,7 @@ start the AWS API interface in a separate shell with:
 
 ::
 
-    mvn -Pawsapi -pl :cloud-awsapi jetty:run
+   mvn -Pawsapi -pl :cloud-awsapi jetty:run
 
 Log into the CloudStack UI ``http://localhost:8080/client``, go to
 *Service Offerings* and edit one of the compute offerings to have the
@@ -619,23 +667,24 @@ to use Python `Boto <http://docs.pythonboto.org/en/latest/>`__ module:
 
 ::
 
-    import boto
-    import boto.ec2
+   import boto
+   import boto.ec2
 
-    accesskey="2IUSA5xylbsPSnBQFoWXKg3RvjHgsufcKhC1SeiCbeEc0obKwUlwJamB_gFmMJkFHYHTIafpUx0pHcfLvt-dzw"
-    secretkey="oxV5Dhhk5ufNowey7OVHgWxCBVS4deTl9qL0EqMthfPBuy3ScHPo2fifDxw1aXeL5cyH10hnLOKjyKphcXGeDA"
+   accesskey="2IUSA5xylbsPSnBQFoWXKg3RvjHgsufcKhC1SeiCbeEc0obKwUlwJamB_gFmMJkFHYHTIafpUx0pHcfLvt-dzw"
+   secretkey="oxV5Dhhk5ufNowey7OVHgWxCBVS4deTl9qL0EqMthfPBuy3ScHPo2fifDxw1aXeL5cyH10hnLOKjyKphcXGeDA"
 
-    region = boto.ec2.regioninfo.RegionInfo(name="ROOT", endpoint="localhost")
-    conn = boto.connect_ec2(aws_access_key_id=accesskey, aws_secret_access_key=secretkey, is_secure=False, region=region, port=7080, path="/awsapi", api_version="2012-08-15")
+   region = boto.ec2.regioninfo.RegionInfo(name="ROOT", endpoint="localhost")
+   conn = boto.connect_ec2(aws_access_key_id=accesskey, aws_secret_access_key=secretkey, is_secure=False, region=region, port=7080, path="/awsapi", api_version="2012-08-15")
 
-    images=conn.get_all_images()
-    print images
+   images=conn.get_all_images()
+   print images
 
-    res = images[0].run(instance_type='m1.small',security_groups=['default'])
+   res = images[0].run(instance_type='m1.small',security_groups=['default'])
 
 Note the new ``api_version`` number in the connection object and also
 note that there was no user registration to make like in previous
 CloudStack releases.
+
 
 Conclusions
 -----------
