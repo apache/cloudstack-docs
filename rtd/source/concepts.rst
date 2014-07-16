@@ -73,7 +73,7 @@ CloudStack automatically configures the network and storage settings for each
 virtual machine deployment. Internally, a pool of virtual appliances support 
 the operation of configuration of the cloud itself. These appliances offer 
 services such as firewalling, routing, DHCP, VPN, console proxy, storage 
-acces, and storage replication. The extensive use of horizontally scalable 
+access, and storage replication. The extensive use of horizontally scalable 
 virtual machines simplifies the installation and ongoing operation of a cloud. 
 
 
@@ -129,7 +129,7 @@ both the Management Server and the hypervisor host (using the KVM hypervisor).
 
 A more full-featured installation consists of a highly-available multi-node 
 Management Server installation and up to tens of thousands of hosts using any 
-of severa  networking technologies.
+of several networking technologies.
 
 
 Management Server Overview
