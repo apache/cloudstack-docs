@@ -30,7 +30,7 @@ intent to Chef and Puppet. It allows (usually) DevOps teams to
 orchestrate the deployment and configuration of their environments
 without having to re-write custom scripts to make changes.
 
-Like Chef and Puppet, Ansible is designed to be idempotent, these means
+Like Chef and Puppet, Ansible is designed to be idempotent. This means
 that you determine the state you want a host to be in and Ansible will
 decide if it needs to act in order to achieve that state.
 
@@ -41,7 +41,7 @@ There’s already Chef and Puppet, so what’s the fuss about Ansible?
 Let’s take it as a given that configuration management makes life much
 easier (and is quite cool), Ansible only needs an SSH connection to the
 hosts that you’re going to manage to get started. While Ansible requires
-Python 2.4 or greater to on the host you’re going to manage in order to
+Python 2.4 or greater on the host you’re going to manage in order to
 leverage the vast majority of its functionality, it is able to connect
 to hosts which don’t have Python installed in order to then install
 Python, so it’s not really a problem. This greatly simplifies the
