@@ -73,6 +73,16 @@ To check the capability of your system, execute the following commands.
    # If it's not, your iproute2 utility doesn't support VXLAN.
         
 
+Important note on MTU size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When new vxlan interfaces are created, kernel will obtain current MTU size of the physical interface (ethX or the bridge)
+and then create vxlan interface/bridge that are exactly 50 bytes smaller than the MTU on physical interface/bridge.
+This means that in order to support default MTU size of 1500 bytes inside VM, your vxlan interface/bridge must also
+have MTU of 1500 bytes, meaning that your physical interface/bridge must have MTU of at least 1550 bytes.
+In order to configure "jumbo frames" you can i.e. make physical interface/bridge with 9000 bytes MTU, then all the vxlan
+interfaces will be created with MTU of 8950 bytes, and then MTU size inside VM can be set to 8950 bytes.
+
 Advanced: Build kernel and iproute2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
