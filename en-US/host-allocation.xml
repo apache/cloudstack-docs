@@ -70,7 +70,7 @@
                     <listitem><para>Name. Give the group a name.</para></listitem>
                     <listitem><para>Description. Any desired text to tell more about the purpose of the group.</para></listitem>
                     <listitem><para>Type. The only supported type shipped with &PRODUCT; is Host Anti-Affinity.
-                        This indicates that the VMs in this group should avoid being placed on the same VM with each other.
+                        This indicates that the VMs in this group should avoid being placed on the same host with each other.
                         If you see other types in this list, it means that your installation of &PRODUCT; has been extended
                         with customized affinity group plugins.</para></listitem>
                 </itemizedlist>
