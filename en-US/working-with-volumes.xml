@@ -39,7 +39,8 @@
     used on a guest of another hypervisor type. </para>
   <note>
     <para>&PRODUCT; supports attaching up to 13 data disks to a VM on XenServer hypervisor versions
-      6.0 and above. For the VMs on other hypervisor types, the data disk limit is 6.</para>
+      6.0 and above, And VMware hypervisor versions 5.0 and above.
+      For the VMs on other hypervisor types, the data disk limit is 6.</para>
   </note>
   <xi:include href="creating-new-volumes.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="upload-existing-volume-to-vm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

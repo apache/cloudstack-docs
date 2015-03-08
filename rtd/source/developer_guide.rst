@@ -66,7 +66,7 @@ Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
 
 ::
 
-   apt-get install openjdk-6-jdk
+   apt-get install openjdk-7-jdk
 
 Install ``tomcat6``, note that the new version of tomcat on
 `Ubuntu <http://packages.ubuntu.com/precise/all/tomcat6>`__ is the
@@ -143,7 +143,7 @@ Install ``openjdk``. As we're using Linux, OpenJDK is our first choice.
 
 ::
 
-   yum -y install java-1.6.0-openjdk
+   yum -y install java-1.7.0-openjdk-devel
 
 Install ``tomcat6``, note that the version of tomcat6 in the default
 CentOS 6.4 repo is 6.0.24, so we will grab the 6.0.35 version. The
