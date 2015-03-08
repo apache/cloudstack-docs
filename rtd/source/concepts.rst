@@ -15,7 +15,7 @@
 
 
 Concepts and Terminology
-========================
+========================Primary storage is associated with a cluster
 
 What is Apache CloudStack?
 --------------------------
@@ -410,8 +410,9 @@ For a host to function in CloudStack, you must do the following:
 About Primary Storage
 ~~~~~~~~~~~~~~~~~~~~~
 
-Primary storage is associated with a cluster or (in KVM and VMware) a
-zone, and it stores the disk volumes for all the VMs running on hosts.
+Primary storage is associated with a cluster, and it stores
+virtual disks for all the VMs running on hosts in that cluster.
+On KVM and VMware, you can provision primary storage on a per-zone basis.
 
 You can add multiple primary storage servers to a cluster or zone. At
 least one is required. It is typically located close to the hosts for
