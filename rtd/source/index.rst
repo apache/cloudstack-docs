@@ -95,3 +95,4 @@ Developers Guide
    plugins
    alloc.rst
    ansible
+   get_help
