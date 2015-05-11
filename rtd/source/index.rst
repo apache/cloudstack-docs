@@ -25,10 +25,6 @@ Welcome to CloudStack Documentation !
 .. figure:: /_static/images/acslogo.png
    :align: center
 
-.. warning:: 
-   We are in the process of changing documentation format as well as hosting 
-   mechanism. Please be patient with us as we migrate our entire documentation 
-   to this new setup.
 
 .. toctree::
 

@@ -737,6 +737,8 @@ Job has failed:
 Event Types
 -----------
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +-------------------+--------------------------------------------------------+
 | Types             | Events                                                 |
 +===================+========================================================+
@@ -1291,6 +1293,8 @@ The following time zone identifiers are accepted by PRODUCT. There are
 several places that have a time zone as a required or optional
 parameter. These include scheduling recurring snapshots, creating a
 user, and specifying the usage time zone in the Configuration table.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +-----------------------------------+-----------------------+------------------------+
 | Etc/GMT+12                        | Etc/GMT+11            | Pacific/Samoa          |

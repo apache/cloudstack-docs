@@ -88,6 +88,8 @@ persistence or stickiness across multiple sessions. The following chart lists
 the ports that should be load balanced and whether or not persistence is 
 required.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 ============ ======================== ============== ======================
 Source port   Destination port        Protocol       Persistence Required?
 ============ ======================== ============== ======================

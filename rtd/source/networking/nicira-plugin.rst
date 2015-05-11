@@ -32,6 +32,8 @@ Features of the Nicira NVP Plugin
 The following table lists the CloudStack network services provided by
 the Nicira NVP Plugin.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+----------------------+---------------+
 | Network Service      | CloudStack version   | NVP version   |
 +======================+======================+===============+
@@ -51,6 +53,8 @@ Table: Supported Services
    in CloudStack 4.0
 
 The following hypervisors are supported by the Nicira NVP Plugin.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +--------------+----------------------+
 | Hypervisor   | CloudStack version   |
@@ -154,6 +158,8 @@ Networking enabled and configured to use the NiciraNvp element. Typical
 use cases combine services from the Virtual Router appliance and the
 Nicira NVP plugin.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+-----------------+
 | Service              | Provider        |
 +======================+=================+
@@ -192,6 +198,8 @@ Router.
 
 Isolated network with network services. The virtual router is still
 required to provide network services like dns and dhcp.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +----------------------+-----------------+
 | Service              | Provider        |
@@ -273,6 +281,8 @@ NiciraNVP provider.
 In a typical configuration two network offerings need to be created. One
 with the loadbalancing service enabled and one without loadbalancing.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+--------------------+
 | Service              | Provider           |
 +======================+====================+
@@ -329,6 +339,8 @@ Database tables
 The following tables are added to the cloud database for the Nicira NVP
 Plugin
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +---------------------+--------------------------------------------------------------+
 | id                  | auto incrementing id                                         |
 +---------------------+--------------------------------------------------------------+
@@ -340,6 +352,8 @@ Plugin
 +---------------------+--------------------------------------------------------------+
 
 Table: nicira\_nvp\_nic\_map
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +-------------------------+-------------------------------------------------------------+
 | id                      | auto incrementing id                                        |
@@ -356,6 +370,8 @@ Table: nicira\_nvp\_nic\_map
 +-------------------------+-------------------------------------------------------------+
 
 Table: external\_nicira\_nvp\_devices
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +-----------------------+----------------------------------------------+
 | id                    | auto incrementing id                         |

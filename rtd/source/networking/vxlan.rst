@@ -25,6 +25,8 @@ standard linux bridge.
 
 The following table lists the requirements for the hypervisor.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------+-----------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | Item           | Requirement                                   | Note                                                                                                           |
 +================+===============================================+================================================================================================================+
@@ -42,6 +44,8 @@ Linux Distributions that meet the requirements
 ----------------------------------------------
 
 The following table lists distributions which meet requirements.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +----------------+-------------------+-------------------------------------------+----------------------------------------------------------------+
 | Distribution   | Release Version   | Kernel Version (Date confirmed)           | Note                                                           |

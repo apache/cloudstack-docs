@@ -120,7 +120,7 @@ pygments_style = 'sphinx'
 html_theme = 'bootstrap'
 html_theme_options = {
     # Navigation bar title. (Default: ``project`` value)
-    'navbar_title': "Release Notes",
+    'navbar_title': "CloudStack Documentation",
 
     # Tab name for entire site. (Default: "Site")
     'navbar_site_name': "Sections",

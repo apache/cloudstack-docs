@@ -235,6 +235,8 @@ Interface AmazonS3
 
 http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3.html
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +------------------+---------------------------------------------------------+
 | Modifier and     | Method and Description                                  |
 | Type             |                                                         |
@@ -311,6 +313,8 @@ http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/A
 
 http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/transfer/TransferManager.html
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +------------------+---------------------------------------------------------+
 | Modifier and     | Method and Description                                  |
 | Type             |                                                         |
@@ -323,6 +327,8 @@ http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/t
 *Class PutObjectRequest*
 
 http://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/PutObjectRequest.html
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +------------------+---------------------------------------------------------+
 | Modifier and     | Method and Description                                  |

@@ -14,8 +14,8 @@
    under the License.
 
 
-CloudStack Installation from Source for Developers
-==================================================
+CloudStack Installation from GIT repo for Developers
+====================================================
 
 This book is aimed at CloudStack developers who need to build the code.
 These instructions are valid on a Ubuntu 12.04 and CentOS 6.4 systems

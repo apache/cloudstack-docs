@@ -76,6 +76,8 @@ section describes the CloudStack side setup.
 #. Next, we need to set the following CloudStack settings under "Global
    Settings" in the UI:
 
+   .. cssclass:: table-striped table-bordered table-hover
+
    +-----------------------------+------------------------------------------------------------------------+--------------------------------------------+
    | Setting Name                | Description                                                            | Example                                    |
    +=============================+========================================================================+============================================+

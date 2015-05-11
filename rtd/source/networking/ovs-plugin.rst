@@ -32,6 +32,8 @@ Features of the OVS Plugin
 The following table lists the CloudStack network services provided by
 the OVS Plugin.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+----------------------+
 | Network Service      | CloudStack version   |
 +======================+======================+
@@ -51,6 +53,8 @@ Table: Supported Services
    in CloudStack 4.0
 
 The following hypervisors are supported by the OVS Plugin.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +--------------+----------------------+
 | Hypervisor   | CloudStack version   |
@@ -191,6 +195,8 @@ Networking enabled and configured to use the OVS element. Typical
 use cases combine services from the Virtual Router appliance and the
 OVS plugin.
 
+.. cssclass:: table-striped table-bordered table-hover
+
 +----------------------+-----------------+
 | Service              | Provider        |
 +======================+=================+
@@ -229,6 +235,8 @@ Router.
 
 Isolated network with network services. The virtual router is still
 required to provide network services like dns and dhcp.
+
+.. cssclass:: table-striped table-bordered table-hover
 
 +----------------------+-----------------+
 | Service              | Provider        |

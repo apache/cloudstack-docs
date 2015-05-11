@@ -15,7 +15,9 @@
 
 
 Concepts and Terminology
-========================Primary storage is associated with a cluster
+========================
+
+Primary storage is associated with a cluster
 
 What is Apache CloudStack?
 --------------------------
