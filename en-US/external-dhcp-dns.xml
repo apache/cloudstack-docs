@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+<!ENTITY % BOOK_ENTITIES SYSTEM "cloudstack.ent">
+%BOOK_ENTITIES;
+]>
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+  http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+<section id="external-dhcp-dns">
+    <title>Using DHCP and DNS Services Configured External to &PRODUCT;</title>
+    <para>In a &PRODUCT; deployment, the virtual router (VR) provides DHCP and DNS services. Additionally, &PRODUCT; that is configured with advanced zone and shared network supports the external DHCP and DNS services. You can leverage this feature and use your infrastructure to provide DHCP and DNS services to &PRODUCT;. Also, this feature helps you provide user data that contains sensitive information to &PRODUCT;.</para>
+    <para>&PRODUCT; configured with the following hypervisors supports this feature:</para>
+    <itemizedlist>
+        <listitem><para>XenServer</para></listitem>
+        <listitem><para>VMWare vCenter</para></listitem>
+        <listitem><para>KVM</para></listitem>
+    </itemizedlist>
+    <para><emphasis role="bold">Prerequisites</emphasis></para>
+    <para>You must ensure the following before you deploy VMs in a shared network where DHCP and DNS services are provided externally:</para>
+    <itemizedlist>
+        <listitem><para>Configure an Advanced zone with shared network.</para></listitem>
+        <listitem><para>Configure the DHCP server with the IP address range for the shared network.</para></listitem>
+        <listitem><para>Configure the DHCP server in such a way that it runs in the broadcast domain of the shared network.</para></listitem>
+        <listitem><para>Set a lease time for the IP addresses that the DHCP server provides. This must not be infinite as in the case of a VR.</para></listitem>
+        <listitem><para>Configure the DNS server outside &PRODUCT;.</para></listitem>
+    </itemizedlist>
+    <para>As an administrator, you must perform the following tasks for using external DHCP and DNS servers with &PRODUCT;:</para>
+    <itemizedlist>
+        <listitem><para>Create a network offering without any services for the shared network.</para>
+            <para>For more information, see <xref linkend="creating-network-offerings"/></para></listitem>
+        <listitem><para>Create a shared network using the new network offering that you created.</para>
+            <para>For more information, see <xref linkend="creating-shared-network"/></para></listitem>
+        <listitem><para>Create the template for user VM. This template must contain the required hypervisor-specific tools and the scripts to access user data, information on password setting, and SSH key.</para>
+            <note><para>Windows VMs must contain PV tools. Moreover, if you want to deploy a VM from an ISO, you must install PV Drivers irrespective of the OS types of the VMs. Also, you must have installed PV drivers for all types of VM deployments using VMWare.</para>
+                <para>After you deploy the VMs using an ISO, you must stop and start the VMs to retrieve their IP Addresses.</para></note>
+            <para>For more information, see <xref linkend="working-with-templates"/></para></listitem>
+        <listitem><para>Deploy the user VMs in the shared network that you created.</para></listitem>
+    </itemizedlist>
+    <para>When deploying a user VM in the shared network that you created, &PRODUCT; attaches an ISO that contains the user data, metadata, information on password settings, and the SSH key to the VM. 
+        This ISO is known as Config Drive. In the user VM, Config Drive is available at <code>/dev/disk/by-label/config</code>. The scripts that are provided with the template for creating user VM read the 
+        information available in the Config drive.</para>
+    <note><para>In a shared network configured with an external DHCP server, IP addresses of Windows guests are not retrieved because of a missing <code>guestfs</code> package on certain versions of RHEL OS. To fetch the IP addresses of Windows guests on KVM, the <code>libguestfs-winsupport</code> package is required. You can install this package from the following vendor repositories:</para>
+        <itemizedlist>
+            <listitem><para>RHEL el6: <ulink url="https://rhn.redhat.com/rhn/software/packages/details/Overview.do?pid=631818">https://rhn.redhat.com/rhn/software/packages/details/Overview.do?pid=631818</ulink></para></listitem>
+            <listitem><para>CentOS el6: <ulink url="http://vault.centos.org/6.5/updates/x86_64/Packages/libguestfs-winsupport-1.0-7.el6.x86_64.rpm">http://vault.centos.org/6.5/updates/x86_64/Packages/libguestfs-winsupport-1.0-7.el6.x86_64.rpm</ulink></para></listitem>
+        </itemizedlist></note>
+    <note><para>To add the password reset script to Windows Start up, do the following:</para>
+        <orderedlist>
+            <listitem><para>Navigate to <guibutton>Start</guibutton> > <guibutton>All Programs</guibutton>.</para></listitem>
+            <listitem><para>Right-click <guibutton>Start up</guibutton> and select <guibutton>Open</guibutton> from the sub-menu.</para></listitem>
+            <listitem><para>Right-click the batch file and select <guibutton>Create Shortcut</guibutton> from the sub-menu.</para></listitem>
+            <listitem><para>Drag the shortcut to the Start up folder.</para></listitem>
+        </orderedlist></note>
+    <para>When the VM is deployed, the <code>ip4_address</code> column of the NIC tables in the
+        &PRODUCT; database will be empty. After successful boot up, the user VM requests the
+        external DHCP server for IP addresses. After the user VM receives the IP addresses and
+        enters into the Running state, &PRODUCT; retrieves these IP addresses from the VM and
+        populates the ip4_address column of the NIC table in its database. This update requires some time to take effect. Because of this delay, you will not find the IPs for the VMs soon after they
+        enter the Running state.</para>
+    <!-- <para>After you deploy a VM using an ISO, do the following to associate the Config Drive with the VM:</para>
+		<orderedlist>
+			<listitem><para>Stop the VM.</para></listitem>
+			<listitem><para>Detach the ISO that you used to deploy the VM.</para></listitem>
+			<listitem><para>Start the VM.</para></listitem> 
+		</orderedlist> -->
+</section>
