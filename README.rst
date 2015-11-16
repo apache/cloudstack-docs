@@ -50,8 +50,8 @@ On your computer, follow these steps to setup a local repository for working on 
    $ git clone https://github.com/YOUR_ACCOUNT/cloudstack-docs.git
    $ cd cloudstack-docs
    $ git remote add upstream https://github.com/apache/cloudstack-docs.git
-   $ git checkout master
    $ git fetch upstream
+   $ git checkout master
    $ git merge upstream/master
 
 
