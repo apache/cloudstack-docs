@@ -432,6 +432,9 @@ time-consuming.
 For Hyper-V, SMB/CIFS storage is supported. Note that Zone-wide Primary
 Storage is not supported in Hyper-V.
 
+Ceph/RBD storage is only supported by the KVM hypervisor. It can be used
+as Zone-wide Primary Storage.
+
 CloudStack is designed to work with all standards-compliant iSCSI and
 NFS servers that are supported by the underlying hypervisor, including,
 for example:
