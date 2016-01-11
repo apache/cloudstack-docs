@@ -70,7 +70,8 @@ Advanced Networking Guides
 .. toctree::
    :maxdepth: 2
 
-   networking/nicira-plugin 
+   networking/nicira-plugin
+   networking/nuage-plugin
    networking/midonet
    networking/vxlan.rst
    networking/ovs-plugin
