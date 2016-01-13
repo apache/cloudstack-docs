@@ -96,7 +96,7 @@ Before building and using the Nuage plugin for ACS 4.7, verify that the platform
 Supported Versions
 ~~~~~~~~~~~~~~~~~~
 
-* Nuage VSP 3.2.R2
+* Nuage VSP 3.2
 * Apache CloudStack 4.7
 * Citrix XenServer 6.2
 * KVM on Enterprise Linux 7.x
@@ -179,7 +179,7 @@ Create and Enable VPC Network Offering
    *  Static NAT
    *	Virtual Networking 
 
-3. (Optional) Select **VirtualRouter** as the UserData provider if password reset or metadata feature is desired.
+3. (Optional) Select **VpcVirtualRouter** as the UserData provider if password reset or metadata feature is desired.
 
 4. (Optional) If network ACL is required, select **NuageVsp** as the network ACL provider. 
 
