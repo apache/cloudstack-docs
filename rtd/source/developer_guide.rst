@@ -250,7 +250,7 @@ To build the latest stable release:
 
 ::
 
-   git checkout 4.2
+   git checkout 4.8
 
 To compile Apache CloudStack, go to the cloudstack source folder and
 run:
@@ -448,7 +448,7 @@ security reasons and due to network connectivity constraints. This
 section shows you the gist of how to build packages. We assume that the
 reader will know how to create a repository to serve this packages. The
 complete documentation is available on the
-`website <http://cloudstack.apache.org/docs/en-US/Apache_CloudStack/4.2.0/html/Installation_Guide/sect-source-builddebs.html>`__
+`website <http://docs.cloudstack.apache.org/projects/cloudstack-installation/en/latest/building_from_source.html#building-deb-packages>`_
 
 To build debian packages you will need couple extra packages that we did
 not need to install for source compilation:
@@ -468,16 +468,16 @@ One directory up from the CloudStack root dir you will find:
 
 ::
 
-   cloudstack_4.2.0_amd64.changes
-   cloudstack_4.2.0.dsc
-   cloudstack_4.2.0.tar.gz
-   cloudstack-agent_4.2.0_all.deb
-   cloudstack-awsapi_4.2.0_all.deb
-   cloudstack-cli_4.2.0_all.deb
-   cloudstack-common_4.2.0_all.deb
-   cloudstack-docs_4.2.0_all.deb
-   cloudstack-management_4.2.0_all.deb
-   cloudstack-usage_4.2.0_all.deb
+   cloudstack_4.8.0_amd64.changes
+   cloudstack_4.8.0.dsc
+   cloudstack_4.8.0.tar.gz
+   cloudstack-agent_4.8.0_all.deb
+   cloudstack-awsapi_4.8.0_all.deb
+   cloudstack-cli_4.8.0_all.deb
+   cloudstack-common_4.8.0_all.deb
+   cloudstack-docs_4.8.0_all.deb
+   cloudstack-management_4.8.0_all.deb
+   cloudstack-usage_4.8.0_all.deb
 
 Of course the community provides a repository for these packages and you
 can use it instead of building your own packages and putting them in
