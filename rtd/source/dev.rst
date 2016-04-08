@@ -249,6 +249,11 @@ Build the request string:
    >>> request_str
    'apikey=plgWJfZK4gyS3mOMTVmjUVg-X-jlWlnfaUJ9GAbBbf9EdM-kAYMmAiLqzzq1ElZLYq_u38zCm0bewzGUdP66mg&command=listUsers&response=json'
       
+.. note:: 
+   If you have API calls which contain * (asterisk) characters, you will need to add the option "safe = '*'" for the URL encoding. 
+   The reason is that Python's urllib will encode * characters by default, while CloudStack's internal encoder does not encode them; 
+   this results in an authentication failure for your API call. In the above you would replace "urllib.quote_plus(request[k])" 
+   with "urllib.quote_plus(request[k], safe='*')".
 
 Compute the signature with hmac, do a 64 bit encoding and a url
 encoding:
