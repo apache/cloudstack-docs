@@ -73,8 +73,6 @@ The following hypervisors are supported by the Nuage VSP Plugin.
 +--------------+----------------------+
 | Hypervisor   | CloudStack version   |
 +==============+======================+
-| XenServer    | >= 4.5               |
-+--------------+----------------------+
 | VmWare ESXi  | >= 4.5               |
 +--------------+----------------------+
 | KVM          | >= 4.7               |
@@ -98,7 +96,6 @@ Supported Versions
 
 * Nuage VSP 3.2
 * Apache CloudStack 4.7
-* Citrix XenServer 6.2
 * KVM on Enterprise Linux 7.x
 
 Required VSD Configuration
@@ -124,10 +121,7 @@ Update Traffic Labels
 
 **Guest Traffic Type**
 
-Select **Edit** on the **Guest** traffic type panel and update the Traffic Label:
-
--  For XenServer, use **nuageManagedNetwork** as the **XenServer Traffic Label**.
--  For KVM, use **alubr0** as the **KVM Traffic Label**.
+Select **Edit** on the **Guest** traffic type panel and update the Traffic Label: for KVM, use **alubr0** as the **KVM Traffic Label**.
 
 Enabling the Service Provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
