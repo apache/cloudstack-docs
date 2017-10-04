@@ -47,7 +47,6 @@ msgid "At that time, AutoScaling without NetScaler only supports for Xenserver. 
 msgstr ""
 
 #: ../../networking/autoscale_without_netscaler.rst:17
-#: ../../networking/midonet.rst:46
 #: ../../networking/nicira-plugin.rst:54
 #: ../../networking/ovs-plugin.rst:51
 # d15bd6b6f1064d51bfaf9e80a5565e96
@@ -418,47 +417,6 @@ msgstr ""
 msgid "On Ubuntu 12.10"
 msgstr ""
 
-#: ../../networking/midonet.rst:2
-# f4e5c6a4da61434aa40dd7ba93484347
-msgid "The MidoNet Plugin"
-msgstr ""
-
-#: ../../networking/midonet.rst:5
-# 5b3351f0b1bc467ab6133d431de2a226
-msgid "Introduction to the MidoNet Plugin"
-msgstr ""
-
-#: ../../networking/midonet.rst:7
-# 43f5b5c6fc1241dfb632510a30e519ae
-msgid "The MidoNet plugin allows CloudStack to use the MidoNet virtualized networking solution as a provider for CloudStack networks and services. For more information on MidoNet and how it works, see http://www.midokura.com/midonet/."
-msgstr ""
-
-#: ../../networking/midonet.rst:13
-# c889a6c491c042388e4a20497669eb79
-msgid "Features of the MidoNet Plugin"
-msgstr ""
-
-#: ../../networking/midonet.rst:15
-# 835bde43c8534aefac5e1ccd81e317f4
-msgid "In CloudStack 4.2.0 only the KVM hypervisor is supported for use in combination with MidoNet."
-msgstr ""
-
-#: ../../networking/midonet.rst:18
-# cb53a8ffabf047298535ec3e31beb1ad
-msgid "In CloudStack release 4.2.0 this plugin supports several services in the Advanced Isolated network mode."
-msgstr ""
-
-#: ../../networking/midonet.rst:21
-# 5408bf0f7ed04335a07c1ac3f3448d26
-msgid "When tenants create new isolated layer 3 networks, instead of spinning up extra Virtual Router VMs, the relevant L3 elements (routers etc) are created in the MidoNet virtual topology by making the appropriate calls to the MidoNet API. Instead of using VLANs, isolation is provided by MidoNet."
-msgstr ""
-
-#: ../../networking/midonet.rst:27
-# 08c1c37a1bbd47dc96340d462ad72de6
-msgid "Aside from the above service (Connectivity), several extra features are supported in the 4.2.0 release:"
-msgstr ""
-
-#: ../../networking/midonet.rst:30
 #: ../../networking/nicira-plugin.rst:135
 #: ../../networking/nicira-plugin.rst:171
 #: ../../networking/nicira-plugin.rst:249
@@ -473,12 +431,6 @@ msgstr ""
 msgid "DHCP"
 msgstr ""
 
-#: ../../networking/midonet.rst:32
-# 0114445c01474c868169c1cc09fcf6a3
-msgid "Firewall (ingress)"
-msgstr ""
-
-#: ../../networking/midonet.rst:34
 #: ../../networking/nicira-plugin.rst:23
 #: ../../networking/nicira-plugin.rst:145
 #: ../../networking/nicira-plugin.rst:177
@@ -495,7 +447,6 @@ msgstr ""
 msgid "Source NAT"
 msgstr ""
 
-#: ../../networking/midonet.rst:36
 #: ../../networking/nicira-plugin.rst:25
 #: ../../networking/nicira-plugin.rst:147
 #: ../../networking/nicira-plugin.rst:179
@@ -514,7 +465,6 @@ msgstr ""
 msgid "Static NAT"
 msgstr ""
 
-#: ../../networking/midonet.rst:38
 #: ../../networking/nicira-plugin.rst:27
 #: ../../networking/ovs-plugin.rst:24
 # 0de776336a694f4dafd899038007d024
@@ -523,213 +473,12 @@ msgstr ""
 msgid "Port Forwarding"
 msgstr ""
 
-#: ../../networking/midonet.rst:40
-# 5ecfd1fd0fc6494988c5a472673fbc7d
-msgid "The plugin has been tested with MidoNet version 12.12. (Caddo)."
-msgstr ""
-
-#: ../../networking/midonet.rst:43
-# b8b2387b8d4b4e849ba66caea5e01c81
-msgid "Using the MidoNet Plugin"
-msgstr ""
-
-#: ../../networking/midonet.rst:48
-# 2668ec6a367641e69ff49062e49ce7e6
-msgid "In order to use the MidoNet plugin, the compute hosts must be running the MidoNet Agent, and the MidoNet API server must be available. Please consult the MidoNet User Guide for more information. The following section describes the CloudStack side setup."
-msgstr ""
-
-#: ../../networking/midonet.rst:53
-# 99b96e8acec34a0d8d7c21d78e2703fd
-msgid "CloudStack needs to have at least one physical network with the isolation method set to \"MIDO\". This network should be enabled for the Guest and Public traffic types."
-msgstr ""
-
-#: ../../networking/midonet.rst:57
-# 8b171ca5cb9e484397531f31e7b4d842
-msgid "Next, we need to set the following CloudStack settings under \"Global Settings\" in the UI:"
-msgstr ""
-
-#: ../../networking/midonet.rst:61
-# b69a22dee5ce48f4938914d6c4377874
-msgid "Setting Name"
-msgstr ""
-
-#: ../../networking/midonet.rst:61
-# db6dfe91d7fc49a7a23c8ec6f5589d9b
-msgid "Description"
-msgstr ""
-
-#: ../../networking/midonet.rst:61
-# 8ce816e9b802465f8f5f6375c4bda427
-msgid "Example"
-msgstr ""
-
-#: ../../networking/midonet.rst:63
-# 9b5539562d8347e5a40e744f9b8086e7
-msgid "midonet.apiserver.address"
-msgstr ""
-
-#: ../../networking/midonet.rst:63
-# a95222e0e61e4a3c9b250cd37d5cf298
-msgid "Specify the address at which the Midonet API server can be contacted"
-msgstr ""
-
-#: ../../networking/midonet.rst:63
-# 4188583e5177441b9821e4f5f89578a2
-msgid "http://192.168.1.144:8081/midolmanj-mgmt"
-msgstr ""
-
-#: ../../networking/midonet.rst:65
-# 665afa499ac44b54a7a8c0e53a749d66
-msgid "midonet.providerrouter.id"
-msgstr ""
-
-#: ../../networking/midonet.rst:65
-# 78c4feefb6d543d1ba12f3992e48e7fa
-msgid "Specifies the UUID of the Midonet provider router"
-msgstr ""
-
-#: ../../networking/midonet.rst:65
-# f7035c39c3a04d189249f37810cd413f
-msgid "d7c5e6a3-e2f4-426b-b728-b7ce6a0448e5"
-msgstr ""
-
-#: ../../networking/midonet.rst:68
-# 65914ae089bc4ab6ad82c66df94e9d49
-msgid "Table: CloudStack settings"
-msgstr ""
-
-#: ../../networking/midonet.rst:70
-# 20e830daf68a461a81d396114ad184ec
-msgid "We also want MidoNet to take care of public traffic, so in *componentContext.xml* we need to replace this line:"
-msgstr ""
-
-#: ../../networking/midonet.rst:78
-# 00b49b309af944c58397a9f4dbf0ff2a
-msgid "With this:"
-msgstr ""
-
-#: ../../networking/midonet.rst:85
-# 6c11d6b3c68e4451a5ca2b6c31e2c584
-msgid "On the compute host, MidoNet takes advantage of per-traffic type VIF driver support in CloudStack KVM."
-msgstr ""
-
-#: ../../networking/midonet.rst:88
-# d02ca0b479ba4720b56679504af434b7
-msgid "In agent.properties, we set the following to make MidoNet take care of Guest and Public traffic:"
-msgstr ""
-
-#: ../../networking/midonet.rst:96
-# 29db8f221b5641ea84be16cfdf0202f0
-msgid "This is explained further in MidoNet User Guide."
-msgstr ""
-
-#: ../../networking/midonet.rst:99
-# 3a516331b1ea440298354c98069645bb
-msgid "Enabling the MidoNet service provider via the UI"
-msgstr ""
-
-#: ../../networking/midonet.rst:101
-# 830c1e31051e44c98c0f34a05952b2f7
-msgid "To allow CloudStack to use the MidoNet Plugin the network service provider needs to be enabled on the physical network."
-msgstr ""
-
-#: ../../networking/midonet.rst:104
-# cb5416ba9cad4f6b82d36a759957167f
-msgid "The steps to enable via the UI are as follows:"
-msgstr ""
-
-#: ../../networking/midonet.rst:106
-# 3c9f034a471d460fa1e78d7fc0d23038
-msgid "In the left navbar, click Infrastructure"
-msgstr ""
-
-#: ../../networking/midonet.rst:108
-# bcb7494347d2406d87ebd01a0c91fb20
-msgid "In Zones, click View All"
-msgstr ""
-
-#: ../../networking/midonet.rst:110
-# 95f2fb5dc5884524a69094143f6bb76d
-msgid "Click the name of the Zone on which you are setting up MidoNet"
-msgstr ""
-
-#: ../../networking/midonet.rst:112
-# 188fd04a8ae145fda2c3a8c890d5462e
-msgid "Click the Physical Network tab"
-msgstr ""
-
-#: ../../networking/midonet.rst:114
-# 1e542d7390884d2bad2f3c47877542b1
-msgid "Click the Name of the Network on which you are setting up MidoNet"
-msgstr ""
-
-#: ../../networking/midonet.rst:116
-# aaaf74a3d52b42ebae8f4e88c8b40355
-msgid "Click Configure on the Network Service Providers box"
-msgstr ""
-
-#: ../../networking/midonet.rst:118
-# 04d5bfd6646f4a97989e347474116368
-msgid "Click on the name MidoNet"
-msgstr ""
-
-#: ../../networking/midonet.rst:120
-# 642adc3b1cf44faab16425e912c923f5
-msgid "Click the Enable Provider button in the Network tab"
-msgstr ""
-
-#: ../../networking/midonet.rst:123
-# cf7eda3b5d3f4866846e763c3caf4b70
-msgid "Enabling the MidoNet service provider via the API"
-msgstr ""
-
-#: ../../networking/midonet.rst:125
-# c59c00a7fa6f46119faf3eca40367b44
-msgid "To enable via the API, use the following API calls:"
-msgstr ""
-
-#: ../../networking/midonet.rst:127
-# 8282ec8f110b4fe89bffca6181a46725
-msgid "*addNetworkServiceProvider*"
-msgstr ""
-
-#: ../../networking/midonet.rst:129
-# 60147b795fda499aa9cf7558014d88d5
-msgid "name = \"MidoNet\""
-msgstr ""
-
-#: ../../networking/midonet.rst:131
-# bcc67ccf4214467e8e400256884b5a51
-msgid "physicalnetworkid = <the uuid of the physical network>"
-msgstr ""
-
-#: ../../networking/midonet.rst:133
-# ea8ad1ea1ce440f293268c6ce2be6c7d
-msgid "*updateNetworkServiceProvider*"
-msgstr ""
-
-#: ../../networking/midonet.rst:135
-# 4415a0b5d7c345c297f91727eda61212
-msgid "id = <the provider uuid returned by the previous call>"
-msgstr ""
-
-#: ../../networking/midonet.rst:137
-# df55f4d520bf4f90a9d0988e752af678
-msgid "state = \"Enabled\""
-msgstr ""
-
-#: ../../networking/midonet.rst:140
 #: ../../networking/nicira-plugin.rst:338
 #: ../../networking/ovs-plugin.rst:226
 # dfc989938200446f8f7792e0488afccf
 # 82db7e6f7b3144439a90257872b027ff
 # 05f9bc2018e743d09a919067bab537a8
 msgid "Revision History"
-msgstr ""
-
-#: ../../networking/midonet.rst:142
-# 65c949887213426e8c750fcc37c11160
-msgid "0-0 Wed Mar 13 2013 Dave Cahill dcahill@midokura.com Documentation created for 4.2.0 version of the MidoNet Plugin"
 msgstr ""
 
 #: ../../networking/nicira-plugin.rst:2
