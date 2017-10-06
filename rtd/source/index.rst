@@ -61,6 +61,18 @@ Below you will find very specific documentation on advanced networking_ which
 you can skip if you are just getting started. Developers will also find below 
 a short developers_ guide. 
 
+
+.. _integrations:
+
+Integration Guides
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   integration/cloudian-connector.rst
+
+
 .. _networking:
 
 
@@ -77,6 +89,7 @@ Advanced Networking Guides
    networking/ovs-plugin
    networking/ipv6
    networking/autoscale_without_netscaler.rst
+
 
 .. _developers:
 
