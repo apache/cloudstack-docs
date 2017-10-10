@@ -72,7 +72,6 @@ Advanced Networking Guides
 
    networking/nicira-plugin
    networking/nuage-plugin
-   networking/midonet
    networking/vxlan.rst
    networking/ovs-plugin
    networking/ipv6
