@@ -83,6 +83,16 @@ have MTU of 1500 bytes, meaning that your physical interface/bridge must have MT
 In order to configure "jumbo frames" you can i.e. make physical interface/bridge with 9000 bytes MTU, then all the vxlan
 interfaces will be created with MTU of 8950 bytes, and then MTU size inside VM can be set to 8950 bytes.
 
+Important note on max number of multicast groups (and thus VXLAN intefaces)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Default value of "net.ipv4.igmp_max_memberships" (cat /proc/sys/net/ipv4/igmp_max_memberships) is "20", which means that host can be joined to max 20 multicast groups (attach max 20 multicast IPs on the host).
+Since all VXLAN (VTEP) interfaces provisioned on host are multicast-based (belong to certain multicast group, and thus has it's own multicast IP that is used as VTEP), this means that you can not provision more than 20 (working) VXLAN interfaces per host.
+On Linux kernel 3.x you actually can provision more than 20, but ARP request will silently fail and cause client's networking problems
+On Linux kernel 4.x you can NOT provision (start) more than 20 VXLAN interfaces and error message "No buffer space available" can be observed in Cloudstack Agent logs after provisioning required bridges and VXLAN interfaces.
+Increase needed parameter to sane value (i.e. 100 or 200) as required.
+If you need to operate more than 20 VMs from different client's network, this change above is required.
+
 Advanced: Build kernel and iproute2
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
