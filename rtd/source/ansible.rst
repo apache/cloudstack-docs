@@ -294,7 +294,7 @@ For the management server role we create a main.yml task like this:
 
    - name: Ensure vhdutil is in correct location
 
-     get\_url: url=http://download.cloud.com.s3.amazonaws.com/tools/vhd-util dest=/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/vhd-util mode=0755
+     get\_url: url=https://download.cloudstack.org/tools/vhd-util dest=/usr/share/cloudstack-common/scripts/vm/hypervisor/xenserver/vhd-util mode=0755
 
 
 Save this as `/etc/ansible/roles/cloudstack-management/tasks/main.yml`
@@ -355,13 +355,13 @@ storage.  The playbook for this would look as follows:
 
    - name: Seed secondary storage
      command:
-   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u http://download.cloud.com/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2 -h kvm -F
+   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u https://download.cloudstack.org/templates/4.2/systemvmtemplate-2013-06-12-master-kvm.qcow2.bz2 -h kvm -F
 
      command:
-   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u http://download.cloud.com/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 -h xenserver -F
+   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u https://download.cloudstack.org/templates/4.2/systemvmtemplate-2013-07-12-master-xen.vhd.bz2 -h xenserver -F
 
      command:
-   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u http://download.cloud.com/templates/4.2/systemvmtemplate-4.2-vh7.ov -h vmware -F
+   /usr/share/cloudstack-common/scripts/storage/secondary/cloud-install-sys-tmplt -m {{ tmp\_nfs\_path }} -u https://download.cloudstack.org/templates/4.2/systemvmtemplate-4.2-vh7.ov -h vmware -F
 
 
 Save this as `/etc/ansible/roles/cloudstack-manager/tasks/seedstorage.yml`
