@@ -19,8 +19,8 @@
    contain the root `toctree` directive.
 
 
-Welcome to CloudStack Documentation !
-=====================================
+Welcome to CloudStack Documentation!
+====================================
 
 .. figure:: /_static/images/acslogo.png
    :align: center
@@ -32,8 +32,8 @@ Welcome to CloudStack Documentation !
 Introduction
 ------------
 
-If you are new to CloudStack you should go through this short introduction on 
-concepts and terminology before proceeding to the installation or 
+If you are new to CloudStack, you should go through this short introduction on
+concepts and terminology before proceeding to the installation or
 administration guides.
 
 .. toctree::
@@ -45,21 +45,21 @@ administration guides.
 Navigating the docs
 -------------------
 
-Now that you have gone over the basic concepts of CloudStack you are ready to 
+Now that you have gone over the basic concepts of CloudStack you are ready to
 dive into installation and operation documentation.
 
--  `Installation Guide 
+-  `Installation Guide
    <http://docs.cloudstack.apache.org/projects/cloudstack-installation>`_
 
--  `Administration Guide 
+-  `Administration Guide
    <http://docs.cloudstack.apache.org/projects/cloudstack-administration>`_
 
--  `Release Notes 
+-  `Release Notes
    <http://docs.cloudstack.apache.org/projects/cloudstack-release-notes>`_
 
-Below you will find very specific documentation on advanced networking_ which 
-you can skip if you are just getting started. Developers will also find below 
-a short developers_ guide. 
+Below you will find very specific documentation on advanced networking_ which
+you can skip if you are just getting started. Developers will also find below
+a short developers_ guide.
 
 
 .. _integrations:
