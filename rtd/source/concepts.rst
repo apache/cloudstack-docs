@@ -141,7 +141,7 @@ The management server orchestrates and allocates the resources in your cloud
 deployment.
 
 The management server typically runs on a dedicated machine or as a virtual 
-machine.  It controls allocation of virtual machines to hosts and assigns 
+machine. It controls allocation of virtual machines to hosts and assigns 
 storage and IP addresses to the virtual machine instances. The Management 
 Server runs in an Apache Tomcat container and requires a MySQL database for 
 persistence.
