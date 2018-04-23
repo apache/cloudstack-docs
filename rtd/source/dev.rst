@@ -378,8 +378,8 @@ Response Formats: XML and JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 CloudStack supports two formats as the response to an API call. The
-default response is XML. If you would like the response to be in JSON,
-add `&response=json` to the Command String.
+default response is JSON. If you would like the response to be in XML,
+add `&response=xml` to the Command String.
 
 The two response formats differ in how they handle blank fields. In
 JSON, if there is no value for a response field, it will not appear in
